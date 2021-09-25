@@ -1,0 +1,35 @@
+td[colspan="2"], td[rowspan="2"]{
+	background-color: #234E54;
+}
+td[colspan="3"], td[rowspan="3"]{
+	background-color: #ACA759;
+}
+td[colspan="4"], td[rowspan="4"]{
+	background-color: #CEA885;
+}
+li[id^="pregunta"]{
+	font-family: Verdana, Geneva, sans-serif;
+	color: #442A5D;
+}
+.negrita{
+	font-weight: bold;
+}
+li[id^="pregunta"]>.negrita{
+	background-color: #cada40;
+}
+.comentarios{
+	font-style: italic;
+	border: thin dotted #AC8159;
+	margin-left: 10%;
+	margin-right: 10%;
+
+}
+p+p{
+	text-decoration: underline;
+}
+li>a{
+	background-color: #755E8B;
+}
+.cursiva{
+	font-style: italic;
+}
