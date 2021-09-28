@@ -1,0 +1,40 @@
+p:first-of-type{
+    font-weight: bold;
+    font-style: italic;
+    text-indent: 2rem;
+}
+
+#consejo{
+    font-family: Tahoma, sans-serif;
+    color: indigo;
+    background-color: darkkhaki;
+
+}
+#textolinea{
+    font-family: Tahoma, sans-serif;
+    text-decoration: underline;
+    text-transform: capitalize;
+    font-variant: small-caps;
+    color: indigo;
+    background-color: Bisque;
+}
+
+h3{
+    background-color: peru;
+    color: lightyellow;
+}
+
+.clase{
+    font-style: italic;
+    color: mediumpurple;
+    font-family: Tahoma, sans-serif;
+    font-weight: 400;
+}
+
+#idparaestilo{
+    background-color: mediumpurple;
+    font-family: garamond, serif;
+    color: white;
+    letter-spacing: .35em;
+    font-weight: lighter;
+}
