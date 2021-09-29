@@ -1,0 +1,52 @@
+table{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+table, th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.cabecera{
+    background: url("imagenes/fondo_gris.gif");
+    background-repeat: no-repeat;
+}
+
+tr{
+    height: 60px;
+}
+
+th, td{
+    vertical-align: bottom;
+    padding: 5px;
+    text-align: center;
+}
+
+.par{
+    background-color: #f4fc4f;
+}
+.yen, .libra, .dolar, .euro{
+    background-color:  #d1f2eb;
+    width: 110px;
+}
+
+tr ~ .par{
+    background-color: lightyellow;
+}
+
+.yen{
+    background-image: url("imagenes/yen.png");
+    background-repeat: no-repeat;
+}
+.libra{
+    background-image: url("imagenes/libra.png");
+    background-repeat: no-repeat;
+}
+.dolar{
+    background-image: url("imagenes/dolar.png");
+    background-repeat: no-repeat;
+}
+.euro{
+    background-image: url("imagenes/euro.png");
+    background-repeat: no-repeat;
+}
