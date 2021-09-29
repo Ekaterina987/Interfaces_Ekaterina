@@ -1,0 +1,33 @@
+#negrita{
+    display: block;
+}
+p:nth-child(2), p:nth-child(3){
+    display: inline;
+}
+
+p:nth-child(5), p:nth-child(6){
+    text-indent: 2rem;
+    display: list-item;
+    list-style-type: square; 
+    list-style-position: inside;
+}
+
+p:nth-child(8){
+    display: none;
+}
+
+.bloqueenlinea{
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+}
+
+p:nth-child(10), p:nth-child(11), p:nth-child(12){
+    display: table-cell;
+}
+
+p:nth-child(13){
+    position: relative;
+    top: 20px;
+    right: 20px;
+}
