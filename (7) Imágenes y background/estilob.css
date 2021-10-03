@@ -1,0 +1,13 @@
+#parent{
+    width: 200px;
+    height: 200px;
+    overflow:scroll;     
+    white-space: nowrap;
+    box-shadow: 10px 10px 5px #000;
+}
+
+body{
+    background-image: url("madrid.jpg");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
