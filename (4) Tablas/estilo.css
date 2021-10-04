@@ -30,7 +30,7 @@ th, td{
     width: 110px;
 }
 
-tr:hover{
+tr:hover td{
     background-color: #FFFF66 ;
 }
 
