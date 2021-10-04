@@ -1,6 +1,11 @@
-#logo{
-    box-shadow: 10px 10px 5px #000;
+#parent{
     width: 200px;
+    height: 200px;
+    background-size: contain;
+    background-image: url("logo.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 10px 10px 5px #000;
 }
 
 body{
