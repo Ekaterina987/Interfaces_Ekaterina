@@ -9,5 +9,6 @@
 body{
     background-image: url("madrid.jpg");
     background-repeat: no-repeat;
+    background-attachment: fixed;
     background-position: 50% 50%;
 }
