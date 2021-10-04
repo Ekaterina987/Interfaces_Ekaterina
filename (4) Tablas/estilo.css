@@ -23,15 +23,15 @@ th, td{
 }
 
 .par{
-    background-color: #f4fc4f;
+    background-color: #FFFFCC;
 }
 .yen, .libra, .dolar, .euro{
     background-color:  #d1f2eb;
     width: 110px;
 }
 
-tr ~ .par{
-    background-color: lightyellow;
+tr:hover{
+    background-color: #FFFF66 ;
 }
 
 .yen{
