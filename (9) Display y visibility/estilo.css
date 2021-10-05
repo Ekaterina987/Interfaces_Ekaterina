@@ -1,0 +1,42 @@
+body{
+    display: flex;
+    justify-content: center;            
+    flex-wrap: wrap;
+}
+
+.box{
+    width: calc(33.33% - 30px);
+    height: 300px;
+    display: inline-block;
+    border: 1px solid black;
+    margin: 20px 0 0 20px;
+    flex: 1;
+    box-sizing: border-box;
+}
+
+p{
+    margin: 0;
+}
+
+.contenedor{
+    
+    border: 1px solid black;
+    width: 990px;
+}
+
+.middle{
+    background-color: green;
+}
+.box:nth-child(9){
+    margin-bottom: 20px;
+}
+.bottom{
+    background-color: blue;
+}
+
+.box:nth-child(2), .box:nth-child(6){
+    visibility: hidden;
+}
+.box:nth-child(4), .box:nth-child(8){
+    display: none;
+}
