@@ -85,7 +85,7 @@ div[id^="absoluta"]{
     background-color: #31174A;
     color: #F932C3;
     position: sticky;
-    top: 800px;
+    bottom: 10px;
 }
 
 #vacio{
