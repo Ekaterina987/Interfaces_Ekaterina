@@ -1,0 +1,29 @@
+.contenedor{
+    display: flex;
+    background-color: #16119C;
+    width: 320px;
+    height: 200px;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+    justify-content: space-around;
+}
+
+.box{
+    background-color: #4B9CFF;
+    height: 4rem;
+    width: 4rem;
+    text-align: center;
+    border: 1px solid white;
+    color: white;
+    align-self: flex-end;
+    display:table;
+}
+p{
+    margin: 0;
+    display:table-cell;
+    vertical-align: middle;
+    
+}
+.box:last-child{
+    align-self: flex-start;
+}

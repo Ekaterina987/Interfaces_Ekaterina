@@ -1,0 +1,17 @@
+.contenedor{
+    display: flex;
+    background-color: #3BF5C8;
+    width: 900px;
+    height: 200px;
+    align-items: flex-end;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+}
+
+.box{
+    background-color: #DE3138;
+    height: 3rem;
+    width: 10rem;
+    text-align: center;
+    color: white;
+}
