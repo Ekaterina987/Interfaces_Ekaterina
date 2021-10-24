@@ -1,0 +1,58 @@
+.container, header, #cuerpo, footer, .top, .bottom, .right{
+    border: 1px solid black;
+}
+
+
+.container{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+#cuerpo{
+    padding: 20px;
+    display: flex;
+}
+.right{
+    padding: 120px 0 120px 120px;
+    width: 80%;
+    display: flex;
+    margin-left: 10px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+.box{
+    border: 1px dashed blue;
+    width: 18rem;
+    height: 6rem;
+    margin: 10px;
+}
+.inside-container{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+    
+}
+
+#box4, #box8, #box9{
+    margin-right: 0;
+}
+
+.top{
+    flex-grow: 1;
+    margin-bottom: 10px;
+}
+.bottom{
+    flex-grow: 4;
+    margin-top: 10px;
+}
+header{
+    margin-bottom: 20px;
+}
+footer{
+    margin-top: 20px;
+}
+p{
+    margin: 0 0 20px 0;
+}
