@@ -76,7 +76,7 @@ header{
 }
 
 .triangle{
-    background-image: url("triangle-32.png");
+    background-image: url("images/triangle-32.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center top;
@@ -226,27 +226,27 @@ header{
   }
   
   .carousel__slide:nth-child(1) {
-    background-image: url("pngfind.com-cosmetics-products-png-1642881.png");
+    background-image: url("Images/pngfind.com-cosmetics-products-png-1642881.png");
     background-size: contain;
     background-position: 50% 50%;
     background-repeat: no-repeat;
   }
   .carousel__slide:nth-child(2) {
-    background-image: url("  SeekPng.com_shampoo-png_2343148.png");
+    background-image: url("Images/SeekPng.com_shampoo-png_2343148.png");
     background-size: contain;
     background-position: 50% 50%;
     background-repeat: no-repeat;
   }
 
   .carousel__slide:nth-child(3) {
-    background-image: url("—Pngtree—mega discount sale tag_4346264.png");
+    background-image: url("Images/—Pngtree—mega discount sale tag_4346264.png");
     background-size: contain;
     background-position: 50% 50%;
     background-repeat: no-repeat;
   }
   
   .carousel__slide:nth-child(4) {
-    background-image: url("PngItem_434027.png");
+    background-image: url("Images/PngItem_434027.png");
     background-size: contain;
     background-position: 50% 50%;
     background-repeat: no-repeat;
