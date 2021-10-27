@@ -1,3 +1,393 @@
 .container{
     font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    background: rgb(233,166,120);
+    background: linear-gradient(0deg, rgba(233,166,120,1) 0%, rgba(255,242,233,1) 100%);;
 }
+
+a{
+    color: #121212;
+    text-decoration: none;
+}
+
+a:hover{
+    opacity: .6;
+}
+
+header{
+    background: rgb(212,27,91);
+    background: linear-gradient(0deg, rgba(212,27,91,1) 0%, rgba(219,57,113,1) 40%, rgba(233,166,120,1) 100%);
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.logo{
+    width: 160px;
+    height: auto;
+    fill: white;
+}
+
+.logo-container{
+    display: flex;
+    justify-content: center;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+}
+.vl-container{
+    list-style: none;
+}
+.vl{
+    border-left: 1px solid #121212;
+    height: 15px;
+    margin-top: 5px;
+}
+.cart{
+    padding: 0 20px 0 20px;
+}
+.cart, .search-bar{
+    list-style: none;
+}
+
+.nav-item{
+    list-style: none;
+}
+
+
+.nav-item:nth-child(8){
+    border: none;
+}
+
+.navbar  .nav-item  .navbar{
+    display: block;
+    background-color: white;
+    border: 1px solid #121212;
+    padding: 0;
+    margin-top: -3px;
+    
+}
+.navbar  .nav-item  .sub-nav{
+    position: absolute;
+    display: none;
+    
+}
+
+.triangle{
+    background-image: url("triangle-32.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center top;
+    width: 100%;
+    height: 15px;
+    margin-top: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+
+.navbar  .nav-item:hover  .sub-nav{
+
+    display: block;
+}
+
+
+.navbar  .nav-item  .navbar .nav-item{
+    font-family: 'Gruppo', sans-serif; 
+    border: none;
+    padding: 0 10px 0 10px;
+}
+
+.fa-shopping-cart{
+    color: #121212;
+   font-size: 22px;
+}
+
+.search{
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: 18px 18px;
+    background-position: 95% center;
+    border: 2px solid #756B6A;
+    font-size: 19px;
+    padding: 5px 0 5px 0;
+}
+
+/* GALLERY */
+
+@keyframes tonext {
+    75% {
+      left: 0;
+    }
+    95% {
+      left: 100%;
+    }
+    98% {
+      left: 100%;
+    }
+    99% {
+      left: 0;
+    }
+  }
+  
+  @keyframes tostart {
+    75% {
+      left: 0;
+    }
+    95% {
+      left: -300%;
+    }
+    98% {
+      left: -300%;
+    }
+    99% {
+      left: 0;
+    }
+  }
+  
+  @keyframes snap {
+    96% {
+      scroll-snap-align: center;
+    }
+    97% {
+      scroll-snap-align: none;
+    }
+    99% {
+      scroll-snap-align: none;
+    }
+    100% {
+      scroll-snap-align: center;
+    }
+  }
+  
+  
+  * {
+    box-sizing: border-box;
+    scrollbar-color: transparent transparent;
+    scrollbar-width: 0px;
+  }
+  
+  *::-webkit-scrollbar {
+    width: 0;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background: transparent;
+    border: none;
+  }
+  
+  * {
+    -ms-overflow-style: none;
+  }
+  
+  #hero ol,#hero li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  #hero ol{
+    padding-top: 80px;
+  }
+  
+  .carousel {
+    position: relative;
+    padding-top: 75%;
+    filter: drop-shadow(0 0 10px #0003);
+    perspective: 100px;
+  }
+  
+  .carousel__viewport {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    overflow-x: scroll;
+    counter-reset: item;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    height: 400px;
+    
+  }
+  
+  .carousel__slide {
+    position: relative;
+    flex: 0 0 100%;
+    width: 100%;
+    counter-increment: item;
+    
+  }
+  
+  .carousel__slide:nth-child(1) {
+    background-image: url("pngfind.com-cosmetics-products-png-1642881.png");
+    background-size: contain;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+  .carousel__slide:nth-child(2) {
+    background-image: url("  SeekPng.com_shampoo-png_2343148.png");
+    background-size: contain;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+
+  .carousel__slide:nth-child(3) {
+    background-image: url("—Pngtree—mega discount sale tag_4346264.png");
+    background-size: contain;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+  
+  .carousel__slide:nth-child(4) {
+    background-image: url("PngItem_434027.png");
+    background-size: contain;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+
+
+  
+  .carousel__slide:before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%,-40%,70px);
+
+  }
+  
+  .carousel__snapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    scroll-snap-align: center;
+  }
+  
+  @media (hover: hover) {
+    .carousel__snapper {
+      animation-name: tonext, snap;
+      animation-timing-function: ease;
+      animation-duration: 4s;
+      animation-iteration-count: infinite;
+    }
+  
+    .carousel__slide:last-child .carousel__snapper {
+      animation-name: tostart, snap;
+    }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .carousel__snapper {
+      animation-name: none;
+    }
+  }
+  
+  .carousel:hover .carousel__snapper,
+  .carousel:focus-within .carousel__snapper {
+    animation-name: none;
+  }
+  
+  .carousel__navigation {
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    margin-top: -40px;
+  }
+  
+  .carousel__navigation-list,
+  .carousel__navigation-item {
+    display: inline-block;
+  }
+  
+  .carousel__navigation-button {
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: #333;
+    background-clip: content-box;
+    border: 0.25rem solid transparent;
+    border-radius: 50%;
+    font-size: 0;
+    transition: transform 0.1s;
+  }
+  
+  .carousel::before,
+  .carousel::after,
+  .carousel__prev,
+  .carousel__next {
+    position: absolute;
+    top: 0;
+    margin-top: 37.5%;
+    width: 4rem;
+    height: 4rem;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    font-size: 0;
+    outline: 0;
+  }
+  
+  .carousel::before,
+  .carousel__prev {
+    left: -1rem;
+  }
+  
+  .carousel::after,
+  .carousel__next {
+    right: -1rem;
+  }
+  
+  .carousel::before,
+  .carousel::after {
+    content: '';
+    z-index: 1;
+    background-color: #333;
+    background-size: 1.5rem 1.5rem;
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: #fff;
+    font-size: 2.5rem;
+    line-height: 4rem;
+    text-align: center;
+    pointer-events: none;
+  }
+  
+  .carousel::before {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,50 80,100 80,0' fill='%23fff'/%3E%3C/svg%3E");
+  }
+  
+  .carousel::after {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%23fff'/%3E%3C/svg%3E");
+  }
+
+  /* BOXES */
+
+  #products{
+    padding-top: 40px;
+  }
+  .products-container{
+    display: flex;
+    justify-content: space-around;
+  }
+  .box{
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px #888888;
+    padding: 20px;
+  }
+
+  .photo{
+    height: 200px;
+  }
+
+  footer{
+    display: flex;
+  }
