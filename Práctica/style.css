@@ -375,11 +375,15 @@ i[class="arrow"]{
     font-size: 1rem;
     text-transform: uppercase;
     border: none;
-    width: 30%;
+    width: 26%;
     padding: 5px;
     border: 1px solid #888888;
     color: white;
     margin-left: -5px;
+  }
+  .submit:hover{
+    opacity: 0.6;
+    cursor: pointer;
   }
 
   .footer-nav-container{
