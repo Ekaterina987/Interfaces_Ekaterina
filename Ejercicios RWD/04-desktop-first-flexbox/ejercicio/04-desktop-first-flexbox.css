@@ -57,6 +57,9 @@ div.container aside {
   div.container article {
     background-image: url(img/content-is-like-water-3.jpg);
   }
+  div.container article {
+    height: 24rem;
+  }
 }
 
 @media (max-width: 767px) {

@@ -56,7 +56,7 @@ div.container aside {
 @media (max-width: 1199px) and (min-width: 768px){
   div.container article {
     width: 70%;
-    height: 31.25rem;
+    height: 24rem;
   }
   div.container article {
     background-image: url(img/content-is-like-water-3.jpg);
