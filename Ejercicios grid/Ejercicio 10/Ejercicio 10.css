@@ -21,6 +21,8 @@
 	justify-content: space-between;
 	grid-template-columns: repeat(12, 1fr);
 	grid-template-rows: repeat(2, 1fr);
+	justify-content: space-between;
+	gap: 1rem;
 }
 .foot{
 	grid-area: foot;
@@ -39,7 +41,7 @@
 }
 
 .b {
-	grid-column: 8 / 12;
+	grid-column: 7 / 12;
 	grid-row-start: 1;
 }
 
@@ -49,11 +51,11 @@
 }
 
 .d {
-	grid-column: 5 / 8;
+	grid-column: 4 / 8;
 	grid-row-start: 2;
 }
 .e {
-	grid-column: 9 / 12;
+	grid-column: 8 / 12;
 	grid-row-start: 2;
 }
 
