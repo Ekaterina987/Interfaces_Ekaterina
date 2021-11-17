@@ -34,12 +34,12 @@
 }
 
 .a {
-	grid-column: 1 / 9;
+	grid-column: 1 / 7;
 	grid-row-start: 1;
 }
 
 .b {
-	grid-column: 10 / 12;
+	grid-column: 8 / 12;
 	grid-row-start: 1;
 }
 
