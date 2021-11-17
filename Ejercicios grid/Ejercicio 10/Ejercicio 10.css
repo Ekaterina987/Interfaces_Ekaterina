@@ -1,0 +1,60 @@
+.wrapper {
+	display: grid;
+	grid-gap: 10px;
+	color: #444;
+	grid-template-columns: repeat(12, 1fr);
+	font-family: 'Lobster', cursive;
+	grid-template-areas: "head head head head head head head head head head head head"
+						"aside aside main main main main main main main main main main"
+						"foot foot foot foot foot foot foot foot foot foot foot foot";
+}
+
+.head{
+	grid-area: head;
+}
+.aside{
+	grid-area: aside;
+}
+.main{
+	grid-area: main;
+	display: grid;
+	justify-content: space-between;
+	grid-template-columns: repeat(12, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+}
+.foot{
+	grid-area: foot;
+}
+
+.box {
+	border: 1px solid #444;
+	padding: 1em;
+	font-size: 150%;
+	border-radius: 1rem;	
+}
+
+.a {
+	grid-column: 1 / 7;
+	grid-row-start: 1;
+}
+
+.b {
+	grid-column: 8 / 12;
+	grid-row-start: 1;
+}
+
+.c {	
+	grid-column: 1 / 4;
+	grid-row-start: 2;
+}
+
+.d {
+	grid-column: 5 / 8;
+	grid-row-start: 2;
+}
+.e {
+	grid-column: 9 / 12;
+	grid-row-start: 2;
+}
+
+ 
