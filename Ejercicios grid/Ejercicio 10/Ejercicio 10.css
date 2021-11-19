@@ -1,3 +1,7 @@
+html{
+	font-size: 18px;
+}
+
 .wrapper {
 	display: grid;
 	grid-gap: 10px;
@@ -11,6 +15,7 @@
 
 .head{
 	grid-area: head;
+	text-align: center;
 }
 .aside{
 	grid-area: aside;
@@ -18,45 +23,69 @@
 .main{
 	grid-area: main;
 	display: grid;
-	justify-content: space-between;
-	grid-template-columns: repeat(12, 1fr);
-	grid-template-rows: repeat(2, 1fr);
-	justify-content: space-between;
-	gap: 1rem;
+	grid-template-columns: repeat(3, 30%);
+	grid-template-rows: 2fr 1.2fr;
+	justify-content:space-between;
+    align-items: center;
+	grid-template-areas:
+        "a a b"
+        "c d e";
 }
 .foot{
 	grid-area: foot;
+	text-align: center;
 }
 
 .box {
 	border: 1px solid #444;
-	padding: 1em;
-	font-size: 150%;
+	padding: 2rem;
+	font-size: 2em;
 	border-radius: 1rem;	
+	text-align: center;
+	height: 80%;
 }
 
 .a {
-	grid-column: 1 / 7;
-	grid-row-start: 1;
+	font-size: 1rem;
+	grid-area: a;
 }
 
 .b {
-	grid-column: 7 / 12;
-	grid-row-start: 1;
+	grid-area: b;
 }
 
 .c {	
-	grid-column: 1 / 4;
-	grid-row-start: 2;
+
+	grid-area: c;
+
 }
 
 .d {
-	grid-column: 4 / 8;
-	grid-row-start: 2;
+
+	grid-area: d;
+
 }
 .e {
-	grid-column: 8 / 12;
-	grid-row-start: 2;
+
+	grid-area: e;
+
 }
 
+
+.imagen{
+	width: 100%;
+	border-radius: 1rem;
+}
+
+.a .imagen{
+	width: 90%;
+	height: 20rem;
+}
+.b .imagen{
+	height: 17rem;
+}
+
+.c .imagen, .d .imagen, .e .imagen{
+	height: 11rem;
+}
  
