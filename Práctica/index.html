@@ -28,6 +28,107 @@
                 </a>
             </div>
             <div class="nav-container">
+                <div class="hamburger-container">
+                    <label for="toggle" class="toggle"><i class="fas fa-bars hamburger"></i></label>
+    
+                        <input type="checkbox" id="toggle" class="visually-hidden">
+                    <ul class="hamburger-navbar">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Top Brands</a>
+                            <label for="toggle-sub-nav" class="toggle"><i class="fas fa-chevron-right arrow"></i></label>
+                            <input type="checkbox" id="toggle-sub-nav" class="visually-hidden">
+                            <div class="sub-nav">
+                                <div class="triangle"></div>
+                                <ul class="sub-navbar">
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link">TRESemmé</a> 
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link">Schwarzkopf</a> 
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link">Moroccanoil</a> 
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link">Salerm 21</a> 
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link">Afro Love</a> 
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link">Eco Styling Gel</a> 
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link">Baé</a> 
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link">Garnier</a> 
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link">Professional</a> 
+                                        <label for="toggle-sub-nav-2" class="toggle"><i class="fas fa-chevron-right arrow"></i></label>
+                                        <input type="checkbox" id="toggle-sub-nav-2" class="visually-hidden">
+                                        <ul class="sub-navbar">
+                                            <li class="nav-item">
+                                                <a href="#" class="nav-link">Kenra</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#" class="nav-link">Mitch</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#" class="nav-link">Pureology</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#" class="nav-link">Redken</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#" class="nav-link">Matrix Biolage</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Discover</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Vegan</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Shampoo</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Conditioner</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Treatment</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Leave-in</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Styling</a>
+                        </li>
+                        <li class="cart">
+                            <a href="#">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        </li>
+                        <li class="search-bar">
+                            <form action="" class="search-form">
+                                    <input type="text" placeholder="Search" class="search" required>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
                 <ul class="navbar">
                     <li class="nav-item">
                         <a href="#" class="nav-link">Top Brands</a>
@@ -124,11 +225,11 @@
                     <li class="nav-item">
                         <a href="#" class="nav-link">Styling</a>
                     </li>
-                    <a href="#">
-                        <li class="cart">
+                    <li class="cart">
+                        <a href="#">
                             <i class="fas fa-shopping-cart"></i>
-                        </li>
-                    </a>
+                        </a>
+                    </li>
                     <li class="search-bar">
                         <form action="" class="search-form">
                                 <input type="text" placeholder="Search" class="search" required>
@@ -262,6 +363,20 @@
             <div class="vertical-bar">
                 
             </div>
+            
+        </div>
+            <div class="newsletter-container col-6">
+                <div class="newsletter">
+                    <h3 class="news-title">Subscribe to our newsletter</h3>
+                    <form action="" class="news-form">
+                        <label for="email" class="email">
+                            Email address
+                        </label>
+                        <input type="text" id="email" name="email">
+                        <input type="submit" class="submit" value="Subscribe">
+                    </form>
+                </div>
+            </div>
             <div class="social-container">
                 <ul class="social-icons">
                     <a href="#">
@@ -287,21 +402,7 @@
                         </li>
                     </a>
                 </ul>
-            </div>
-        </div>
-            <div class="newsletter-container col-6">
-                <div class="newsletter">
-                    <h3 class="news-title">Subscribe to our newsletter</h3>
-                    <form action="" class="news-form">
-                        <label for="email" class="email">
-                            Email address
-                        </label>
-                        <input type="text" id="email" name="email">
-                        <input type="submit" class="submit" value="Subscribe">
-                    </form>
-                </div>
-            </div>
-            
+            </div>    
         </footer>
     </div>
 </body>

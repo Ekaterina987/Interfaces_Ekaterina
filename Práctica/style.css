@@ -30,9 +30,9 @@ header{
     background: linear-gradient(0deg, rgba(212,27,91,1) 0%, rgba(219,57,113,1) 40%, rgba(233,166,120,1) 100%);
     border-radius: 0.3rem;
     padding: 1.1rem;
-    position: fixed;
+    position: sticky;
     top: 0.6rem;
-    width: calc(100% - 3.2rem);
+    width: calc(100% - 2rem);
     z-index: 2;
 }
 
@@ -46,10 +46,109 @@ header{
     justify-content: center;
 }
 
+.hamburger{
+  font-size: 2rem;
+  color: white;
+
+}
+.toggle{
+  cursor: pointer;
+}
+.hamburger-container{
+  display: none;
+}
+.hamburger-navbar{
+  display: none;
+  position: absolute;
+  background-color: rgb(233,166,120);
+  padding: 2rem 0 2rem 2rem;
+}
+.hamburger-navbar .nav-item,.hamburger-navbar .cart, .hamburger-navbar .search-bar{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-right: 2rem;
+}
+
+#toggle:checked + .hamburger-navbar {
+  display: block;
+}
+.visually-hidden {
+  visibility: hidden;
+}
+.hamburger-navbar .sub-nav{
+  display: none;
+  position: absolute;
+}
+
+.hamburger-navbar .search{
+  width: 8rem;
+}
+
+.hamburger-navbar .sub-nav .nav-item,.hamburger-navbar .sub-nav .cart, .hamburger-navbar  .sub-nav .search-bar{
+  padding: 1rem;
+}
+
+.hamburger-navbar li.nav-item .sub-nav{
+  margin-left: 9rem;
+  margin-top: -2.25rem;
+  width: 16rem;
+}
+
+#toggle-sub-nav:checked + .sub-nav {
+  display: flex;
+}
+
+.hamburger-navbar  .sub-nav .triangle{
+  width: 0.9rem;
+  transform: rotate(
+    -90deg);
+  margin-right: -2px;
+}
+
+
+.sub-navbar{
+  background-color: white;
+  padding: 1rem;
+  overflow-y: auto;
+  max-height: 32rem;
+}
+
+.sub-navbar .nav-item:nth-child(9) .nav-link{
+ display: inline;
+}
+.sub-navbar .nav-item:nth-child(9){
+  margin-right: 0;
+ }
+
+.sub-navbar .arrow{
+  margin-left: 0.5rem;
+  display: inline;
+  position: relative;
+}
+
+.sub-navbar .nav-item .sub-navbar{
+  display: none;
+  
+}
+
+.sub-navbar #toggle-sub-nav-2:checked + .sub-navbar{
+  display: block;
+}
+
+
+.sub-navbar .nav-item .sub-navbar .nav-item{
+  padding-left: 0;
+  padding-right: 0;
+}
+
+
+
 .navbar{
     display: flex;
     justify-content: space-between;
     margin: 0;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 .vl-container{
     list-style: none;
@@ -177,6 +276,20 @@ header{
   background-position: 0 100%;
 }
 
+.hamburger-navbar .nav-link{
+  overflow: hidden;
+  background: linear-gradient(to right, #fff9fa, #fff9fa 50%, #121212 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  transition: background-position 275ms ease;
+}
+.hamburger-navbar .nav-link:hover{
+  background-position: 0 100%;
+}
+
 .sub-nav .nav-link{
   overflow: hidden;
   background: linear-gradient(to right, rgba(212,27,91,1), rgba(212,27,91,1) 50%, #121212 50%);
@@ -211,10 +324,6 @@ i[class="arrow"]{
 
 /* GALLERY */
 
-
-#hero{
-  padding-top: 11.11rem;
-}
 
 #carousel{
   margin-top: 2.2rem;
@@ -276,6 +385,8 @@ i[class="arrow"]{
   .products-container{
     display: flex;
     justify-content: space-around;
+    gap: 2rem;
+    flex-wrap: wrap;
   }
   .box{
     background-color: white;
@@ -463,6 +574,7 @@ i[class="arrow"]{
     z-index: 2;
     left: 0;
     right: 0;
+    margin-top: -2rem;
   }
   .social-icon{
     list-style: none;
@@ -471,3 +583,84 @@ i[class="arrow"]{
     font-size: 1.5rem;
     color: #333;
   }
+
+  /* MEDIA QUERIES */
+
+
+/* LG */
+
+@media only screen  and (min-width : 992px) and (max-width : 1199px){
+  .footer-nav-container{
+    margin-top: 0;
+  }
+  .newsletter-container{
+    margin-top: 0;
+  }
+  .social-icons{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+  }
+  .vertical-bar{
+    height: 100%;
+  }
+
+}
+
+/* MD */
+
+@media only screen  and (min-width : 768px) and (max-width : 991px) {
+
+  .footer-nav-container{
+    margin-top: 0;
+  }
+  .newsletter-container{
+    margin-top: 0;
+  }
+  .social-icons{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+  }
+  .vertical-bar{
+    display: none;
+  }
+
+}
+
+
+/* SM */
+
+@media only screen  and (max-width : 767px){
+  .footer-nav-container{
+    width: 100%;
+  }
+  .newsletter-container{
+    width: 100%;
+    margin-top: 0;
+  }
+  .vertical-bar{
+    display: none;
+  }
+  .social-icons{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+  }
+
+  .navbar{
+    display: none;
+  }
+  .hamburger-container{
+    display: block;
+  }
+
+
+}
+
+
+
+
