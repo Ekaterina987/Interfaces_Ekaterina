@@ -33,7 +33,7 @@ header{
     position: sticky;
     top: 0.6rem;
     width: calc(100% - 2rem);
-    z-index: 2;
+    z-index: 3;
 }
 
 .logo{
