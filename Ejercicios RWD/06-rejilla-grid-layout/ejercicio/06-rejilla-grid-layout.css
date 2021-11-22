@@ -7,6 +7,8 @@ div {
     margin: 0.5em;
     text-align: center;   
     display: grid; 
+    grid-template-columns: 1fr;
+    gap: 1rem;
 }
 .element {
     border: 10px solid green;
@@ -21,4 +23,31 @@ div {
     border: 10px solid red;
     padding: 0.5em;
     margin: 0.5em;
+}
+
+@media (min-width: 241px) {
+    .row {
+        grid-template-columns: 1fr 1fr;
+    }
+    .element {
+        color: blue;
+    }
+
+}
+@media (min-width: 769px) {
+    .row {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .element {
+        color: green;
+    }
+
+}
+@media (min-width: 1025px) {
+    .row {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+    .element {
+        color: red;
+    }
 }
