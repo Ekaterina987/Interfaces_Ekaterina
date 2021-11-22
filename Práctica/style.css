@@ -12,6 +12,13 @@ body{
     background: rgb(233,166,120);
      background: linear-gradient(0deg, rgb(252, 214, 164) 0%, rgb(255, 248, 243) 100%);
      padding: 0.6rem;
+     display: grid;
+     grid-template-columns: repeat(12, 1fr);
+     grid-template-areas: 
+     "head head head head head head head head head head head head"
+     "main main main main main main main main main main main main"
+     "foot foot foot foot foot foot foot foot foot foot foot foot"
+     ;
 }
 
 a{
@@ -34,6 +41,7 @@ header{
     top: 0.6rem;
     width: calc(100% - 2rem);
     z-index: 3;
+    grid-area: head;
 }
 
 .logo{
@@ -112,7 +120,10 @@ header{
 }
 
 .sub-navbar{
-  padding: 1rem;
+  padding: 1rem 1rem 0 1rem;
+}
+.sub-navbar .nav-item:last-child{
+  padding-bottom: 0;
 }
 
 .sub-navbar .nav-item:nth-child(9) .nav-link{
@@ -325,6 +336,9 @@ i[class="arrow"]{
 
 
 /* GALLERY */
+.main{
+  grid-area: main;
+}
 
 
 #carousel{
@@ -444,6 +458,7 @@ i[class="arrow"]{
   footer{
     display: flex;
     flex-flow: wrap;
+    grid-area: foot;
   }
 
   .col-6{
