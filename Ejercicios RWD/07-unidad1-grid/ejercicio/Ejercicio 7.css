@@ -11,12 +11,16 @@
 .contenedor {
 	background:#ccc;
 	width:90%;
-	max-width:1000px;
+	max-width: 1000px;
 	margin:auto;
-
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	grid-template-areas: "head head head head head head head head head head head head"
+	"main main main main main main main main main aside aside aside"
+	"foot foot foot foot foot foot foot foot foot foot foot foot";
 	/* Flexbox */
-	display:flex;
-	flex-flow:row wrap;
+	/*display:flex;
+	flex-flow:row wrap;*/
 }
 
 body {
@@ -27,12 +31,20 @@ div.contenedor header {
 	background:#2c3e50;
 	width:100%;
 	padding:1em;
+	grid-area: head;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
 
 	/* Flexbox y alineación*/
-	display: flex;
+	/*display: flex;
 	justify-content:space-between;	
 	flex-direction:row;
-	flex-wrap:wrap;
+	flex-wrap:wrap;*/
+}
+
+div.contenedor .links{ 
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
 }
 
 /* Enlaces comunes de cabecera y pie de página */
@@ -43,7 +55,7 @@ div.contenedor .links a {
 	text-align: center;
 	text-decoration: none;
 	padding:0.7em;
-	flex-grow: 1;
+	/*flex-grow: 1;*/
 }
 
 div.contenedor .links a:hover {
@@ -63,62 +75,77 @@ div.contenedor header .logo a {
 }
 
 div.contenedor header .links {
-	display:flex;
-	align-items:center;	
+	/*display:flex;
+	align-items:center;	*/
 }
 
 /* Estilos de la sección principal */
 div.contenedor section.main {
 	background:#fff;
 	padding: calc(var(--espacio) * 2);
+	grid-area: main;
+	display: grid;
+	grid-gap: 2.5rem;
+	grid-template-columns: repeat(2, 1fr);
 
-	display: flex;	
+	/*display: flex;	
 	flex: 1 1 70%;
 	gap: calc(var(--espacio) * 2);
-	flex-wrap: wrap;
+	flex-wrap: wrap;*/
 }
 
 /* Borde inferior de la sección principal */
 div.contenedor section.main article {
 	border-bottom:1px solid #000;
 	padding-bottom: var(--espacio);
-	width: calc(50% - 1.5rem);
+	
 }
 
 /* Estilos de la barra lateral */
 div.contenedor aside {
 	background:#e67e22;
 	padding: var(--espacio);
+	grid-area: aside;
 	
+	display: grid;
+	grid-gap: 1rem;
+
 	/*FLEX*/
-	flex:1 1 30%;
+	/*flex:1 1 30%;
 	
 	display: flex;
 	flex-wrap:wrap;
 	flex-direction:column;
 	justify-content:flex-start;
-	gap: var(--espacio);
+	gap: var(--espacio);*/
 }
 
 /* Estilos de los contenedores con los cuadrados que simulan imágenes */
 div.contenedor aside .widget {
+	
 	background: #d35400;
 	height:9rem;
-	display: flex;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	/*display: flex;
 	align-items: flex-end;
-	flex-grow: 1;
+	flex-grow: 1;*/
 }
 
 /* Estilos de los cuadrados que simulan imágenes */
 div.contenedor aside .widget .imagen {
 	background: #8f1507;
 	color: #fff;
-	height:50%;
-	width:50%;
+	grid-row-start: 2;
+}
+div.contenedor aside .widget .derecha {
+	grid-column-start: 2;
 }
 
 div.contenedor aside .widget .arriba {
-	align-self: flex-start;
+	/*align-self: flex-start;*/
+	grid-row-start: 1;
 }
 
 /* Estilos del pie de página */
@@ -127,22 +154,36 @@ div.contenedor footer {
 	width: 100%;
 	padding: var(--espacio);
 
+	grid-area: foot;
+	display: inline-grid;
+  	grid-template-columns: auto auto;
+
 	/* Flexbox */
-	display: flex;
+	/*display: flex;
 	flex-wrap: wrap;
-	justify-content:space-between;
+	justify-content:space-between;*/
 }
 
 div.contenedor footer .links {
+	order: 1;
 	background:#c0392b;
-	display:flex;
-	order: 1; /* Para poner en práctica order, no se pide realmente */
+	width: fit-content;
+
+	/*display:flex;
+	order: 1;*/ /* Para poner en práctica order, no se pide realmente */
+}
+div.contenedor footer .links a{
+	width: fit-content;
 }
 
 div.contenedor footer .social {
 	background:#e67e22;
-	display: flex;	
 	order: 2;
+	width: fit-content;
+	justify-self: flex-end;
+
+	/*display: flex;	
+	order: 2;*/
 }
 
 div.contenedor footer .social a {
@@ -150,7 +191,8 @@ div.contenedor footer .social a {
 	text-decoration: none;
 	text-align: center;
 	padding: 0.7em;
-	flex-grow: 1;
+	width: fit-content;
+	/*flex-grow: 1;*/
 }
 
 
@@ -173,14 +215,14 @@ div.contenedor footer .social a {
 		width: 100%;
 	}
 	div.contenedor section.main{
-		flex-basis: 100%;
+		/*flex-basis: 100%;*/
 	}
 	div.contenedor aside{
-		flex-basis: 100%;
-		flex-direction: row;
+		/*flex-basis: 100%;
+		flex-direction: row;*/
 	}
 	div.contenedor footer{
-		justify-content: space-around;
+		/*justify-content: space-around;*/
 	}
 
   
@@ -189,7 +231,7 @@ div.contenedor footer .social a {
   @media (max-width: 600px) {
 	
 	div.contenedor aside{
-		flex-direction: column;
+		/*flex-direction: column;*/
 		
 	}
 	div.contenedor footer{
