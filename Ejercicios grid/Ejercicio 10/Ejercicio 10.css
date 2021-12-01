@@ -8,31 +8,20 @@ html{
 	color: #444;
 	grid-template-columns: repeat(12, 1fr);
 	font-family: 'Lobster', cursive;
-	grid-template-areas: "head head head head head head head head head head head head"
-						"aside aside main main main main main main main main main main"
-						"foot foot foot foot foot foot foot foot foot foot foot foot";
+	grid-template-columns: 10% repeat(auto-fill, minmax(30%, 1fr));
+	grid-template-rows: 15vh 60vh 45vh 15vh;
 }
 
 .head{
-	grid-area: head;
+
 	text-align: center;
+	grid-column: 1 / 5;
 }
 .aside{
-	grid-area: aside;
-}
-.main{
-	grid-area: main;
-	display: grid;
-	grid-template-columns: repeat(3, 30%);
-	grid-template-rows: 2fr 1.2fr;
-	justify-content:space-between;
-    align-items: center;
-	grid-template-areas:
-        "a a b"
-        "c d e";
+	grid-column: 1 / 2;
 }
 .foot{
-	grid-area: foot;
+	grid-column: 1 / 5;
 	text-align: center;
 }
 
@@ -43,31 +32,32 @@ html{
 	border-radius: 1rem;	
 	text-align: center;
 	height: 80%;
+	width: 90%;
 }
 
 .a {
 	font-size: 1rem;
-	grid-area: a;
+	grid-column: 2 / 4;
 }
 
 .b {
-	grid-area: b;
+	grid-column: 4 / 5;
 }
 
 .c {	
+	grid-column: 2 / 3;
 
-	grid-area: c;
 
 }
 
 .d {
+	grid-column: 3 / 4;
 
-	grid-area: d;
 
 }
 .e {
+	grid-column: 4 / 5;
 
-	grid-area: e;
 
 }
 
