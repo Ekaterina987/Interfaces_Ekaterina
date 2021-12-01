@@ -4,9 +4,8 @@ html{
 
 .wrapper {
 	display: grid;
-	grid-gap: 10px;
 	color: #444;
-	grid-template-columns: repeat(12, 1fr);
+
 	font-family: 'Lobster', cursive;
 	grid-template-columns: 10% repeat(auto-fill, minmax(30%, 1fr));
 	grid-template-rows: 15vh 60vh 45vh 15vh;
