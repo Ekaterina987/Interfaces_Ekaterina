@@ -1,3 +1,6 @@
+*{
+	box-sizing: border-box;
+}
 html{
 	font-size: 18px;
 }
@@ -5,14 +8,14 @@ html{
 .wrapper {
 	display: grid;
 	color: #444;
-
+	gap: 1rem 0;
 	font-family: 'Lobster', cursive;
-	grid-template-columns: 10% repeat(auto-fill, minmax(30%, 1fr));
+	grid-template-columns: 10% repeat(3, 30%);
 	grid-template-rows: 15vh 60vh 45vh 15vh;
 }
 
 .head{
-
+	border-bottom: 1px solid gray;
 	text-align: center;
 	grid-column: 1 / 5;
 }
@@ -22,6 +25,12 @@ html{
 .foot{
 	grid-column: 1 / 5;
 	text-align: center;
+	display: grid;
+	grid-template-columns: repeat(3, fit-content(30%));
+	justify-content: space-between;
+	border-top: 1px solid gray;
+	padding: 1rem;
+	text-align: left;
 }
 
 .box {
@@ -30,17 +39,26 @@ html{
 	font-size: 2em;
 	border-radius: 1rem;	
 	text-align: center;
-	height: 80%;
 	width: 90%;
+	justify-self: flex-end;
+}
+.nav-ul{
+	display: grid;
+	gap: 1rem;
+}
+.item{
+	list-style: none;
 }
 
 .a {
 	font-size: 1rem;
 	grid-column: 2 / 4;
+	justify-self: center;
 }
 
 .b {
 	grid-column: 4 / 5;
+	width: 100%;
 }
 
 .c {	
