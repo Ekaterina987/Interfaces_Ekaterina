@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<head>
+
+<!-- La presente animación aumenta y disminuye un contenedor de manera continua durante 6 segundos
+	 Con alternate, al ejecutarse la animación mientras el navegador sigue abierto,
+	 se consigue que cada vez se mueva en una dirección. 
+	 La animación también modifica el tamaño del texto del contenedor 
+-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<style>
+	#galeria{
+		display: flex;
+		gap: 2em;
+	}
+	#img1 {
+		width: 800px;
+		height: 480px;
+
+		animation-duration: 2s;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		animation-iteration-count: infinite;
+		animation-name: AnimacionImagen;
+		animation-direction: alternate;
+		background-image: url(https://cdn.pixabay.com/photo/2022/01/09/09/38/variegated-leaf-6925639_960_720.jpg);
+	}
+
+	@keyframes AnimacionImagen {
+		0% {
+			background-image: url(https://cdn.pixabay.com/photo/2022/01/09/09/38/variegated-leaf-6925639_960_720.jpg);
+		}
+		49%{
+			background-image: url(https://cdn.pixabay.com/photo/2022/01/09/09/38/variegated-leaf-6925639_960_720.jpg);
+		}
+		50% {background-image: url(https://cdn.pixabay.com/photo/2022/01/07/12/46/white-heron-6921847_960_720.jpg);		
+		}
+		100% {background-image: url(https://cdn.pixabay.com/photo/2022/01/07/12/46/white-heron-6921847_960_720.jpg);		
+		}
+	}
+	#img2 {
+		width: 800px;
+		height: 480px;
+
+		animation-duration: 2s;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		animation-iteration-count: infinite;
+		animation-name: AnimacionImagen2;
+		animation-direction: alternate;
+		background-image: url(https://cdn.pixabay.com/photo/2020/02/06/18/43/santorini-4825173_960_720.jpg);
+	}
+
+	@keyframes AnimacionImagen2 {
+		0% {
+			background-image: url(https://cdn.pixabay.com/photo/2020/02/06/18/43/santorini-4825173_960_720.jpg);
+		}
+		49%{
+			background-image: url(https://cdn.pixabay.com/photo/2020/02/06/18/43/santorini-4825173_960_720.jpg);
+		}
+		50% {background-image: url(https://cdn.pixabay.com/photo/2021/12/14/21/19/dragonfly-6871359_960_720.jpg);		
+		}
+		100% {background-image: url(https://cdn.pixabay.com/photo/2021/12/14/21/19/dragonfly-6871359_960_720.jpg);		
+		}
+	}
+	#img3 {
+		width: 800px;
+		height: 480px;
+
+		animation-duration: 2s;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		animation-iteration-count: infinite;
+		animation-name: AnimacionImagen3;
+		animation-direction: alternate;
+		background-image: url(https://cdn.pixabay.com/photo/2021/12/13/19/10/nature-6868923_960_720.jpg);
+	}
+
+	@keyframes AnimacionImagen3 {
+		0% {
+			background-image: url(https://cdn.pixabay.com/photo/2021/12/13/19/10/nature-6868923_960_720.jpg);
+		}
+		49%{
+			background-image: url(https://cdn.pixabay.com/photo/2021/12/13/19/10/nature-6868923_960_720.jpg);
+		}
+		50% {background-image: url(https://cdn.pixabay.com/photo/2021/09/08/17/58/poppy-6607526_960_720.jpg);		
+		}
+		100% {background-image: url(https://cdn.pixabay.com/photo/2021/09/08/17/58/poppy-6607526_960_720.jpg);		
+		}
+	}
+	#img4 {
+		width: 800px;
+		height: 480px;
+
+		animation-duration: 2s;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		animation-iteration-count: infinite;
+		animation-name: AnimacionImagen4;
+		animation-direction: alternate;
+		background-image: url(https://cdn.pixabay.com/photo/2021/10/14/15/11/cathedral-6709412_960_720.jpg);
+	}
+
+	@keyframes AnimacionImagen4 {
+		0% {
+			background-image: url(https://cdn.pixabay.com/photo/2021/10/14/15/11/cathedral-6709412_960_720.jpg);
+		}
+		49%{
+			background-image: url(https://cdn.pixabay.com/photo/2021/10/14/15/11/cathedral-6709412_960_720.jpg);
+		}
+		50% {background-image: url(https://cdn.pixabay.com/photo/2020/10/19/19/58/chrysanthemum-5668882_960_720.jpg);		
+		}
+		100% {background-image: url(https://cdn.pixabay.com/photo/2020/10/19/19/58/chrysanthemum-5668882_960_720.jpg);		
+		}
+	}
+	
+
+</style>
+
+</head>
+<body>
+
+<h1>Galería</h1>
+
+<div id="galeria">
+<div id="img1"></div>
+<div id="img2"></div>
+<div id="img3"></div>
+<div id="img4"></div>
+</div>
+
+</body>
+</html>
