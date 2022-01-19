@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Práctica</title>
+</head>
+<body>
+	<header>
+		<picture>
+			<source srcset="stock-logo-png-transparent.png" media="(min-width: 800px)" sizes="(min-width: 800px)50vw,65vw" srcset="logo1.png 1x,
+			logo2.png 2x">
+			<img src="stock-logo-png-transparent.png" alt="logo">
+		   </picture>
+
+		   <div> <!-- En este caso se prueba cómo varía la imagen en función de la resolución y dpi -->
+			<picture>	
+				<source
+					media="(min-width: 600px)"
+					sizes="(min-width: 800px)50vw,65vw"
+					srcset="images/opera-house-landscape-400.jpg 400w,
+							images/opera-house-landscape-800.jpg 800w,
+							images/opera-house-landscape-1200.jpg 1200w">
+				<img
+					src="opera-house-400.jpg" alt="The Oslo Opera House"
+					sizes="80vw"
+					srcset="images/opera-house-400.jpg 400w,
+							images/opera-house-800.jpg 800w,
+							images/opera-house-1200.jpg 1200w">
+			</picture>
+		</div>
+
+		<div> <!-- Si las unidades solo son fijas como en <img>, siempre va a coger la misma imagen. En la etiqueta <source> depende de la resolución
+			según lo especificado en sizes -->
+	<picture>	
+		<source
+			media="(min-width: 600px)"
+			sizes="(min-width: 800px)50vw,500px"
+			srcset="images/opera-house-landscape-400.jpg 400w,
+					images/opera-house-landscape-800.jpg 800w,
+					images/opera-house-landscape-1200.jpg 1200w">
+		<img
+			src="opera-house-400.jpg" alt="The Oslo Opera House"
+			sizes="300px"
+			srcset="images/opera-house-400.jpg 400w,
+					images/opera-house-800.jpg 800w,
+					images/opera-house-1200.jpg 1200w">
+	</picture>
+</div>
+
+<div>
+	<!-- El tamaño definido en el CSS sobreescribe al de sizes, pero coge la imagen según este atributo  -->	
+	<picture>  
+		<source
+			media="(min-width: 600px)"
+			sizes="50vw" 
+			srcset="images/opera-house-landscape-400.jpg 400w,
+					images/opera-house-landscape-800.jpg 800w,
+					images/opera-house-landscape-1200.jpg 1200w">
+		<img
+			src="opera-house-400.jpg" alt="The Oslo Opera House"
+			sizes="80vw"
+			srcset="images/opera-house-400.jpg 400w,
+					images/opera-house-800.jpg 800w,
+					images/opera-house-1200.jpg 1200w">
+	</picture>
+</div>
+
+	</header>
+	<h1 id="titulo">Práctica</h1>
+</body>
+</html>
