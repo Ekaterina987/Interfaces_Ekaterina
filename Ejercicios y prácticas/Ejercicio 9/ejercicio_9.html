@@ -10,16 +10,18 @@
 		position: absolute;
 		animation-duration: 6s;
 		animation-iteration-count: 1;
-		animation-timing-function: ease-in-out;	
-		animation-fill-mode: forwards; 			
+		animation-timing-function: linear;	
+		animation-fill-mode: forwards; 		
+		top: 50%;	
+		left: 0;
 	}
 				
 	@keyframes titulomove {
-		0% {left: 0;}				
-		33%{left: 0;transform: rotate(0deg);}
-		55%{left: 33%; transform: rotate(90deg);}
-		77%{left: 67%; transform: rotate(180deg);}
-		100% {left: 100%; transform: rotate(270deg);}
+		0% {left: calc(100% - 200px);}				
+		33%{left: calc(100% - 200px);transform: rotate(0deg);}
+		55%{left: calc(67% - 0); transform: rotate(90deg);}
+		77%{left: calc(33% - 0); transform: rotate(180deg);}
+		100% {left: 0; transform: rotate(270deg);}
 	}
 
 </style>
