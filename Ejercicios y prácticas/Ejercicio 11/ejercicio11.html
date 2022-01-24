@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+
+<!-- Esta animación simula una pelota rodando para mostrar que con pocas propiedades
+	 se pueden llevar a cabo efectos atractivos para el usuario.
+
+	 La imagen se desplaza y rota en los keyframes con la propiedad transform.
+	 
+	 Además, con animation-direction alternate se ejecuta cada vez en una dirección-->
+
+<style>
+	#contenedor {
+		border: 1px solid black;
+		width: 650px;
+		display: flex;
+		flex-direction: column;
+	}
+			
+	.caja {		
+		background-color: red;	
+		width: 100px;	
+		height: 100px;
+		margin: 5px;
+		transition: transform 4s ease-in-out 0.5s, color 4s ease-in-out 0.5s, font-size 4s ease-in-out 0.5s, background-color 4s ease-in-out 0.5s;
+	}
+
+	.caja:hover{
+		transform: rotate(270deg) scale(0.5, 0.5);;
+
+		background-color: blue;
+		color: yellow;
+		font-size: 1.5em;
+	}
+
+	.botones{
+		display: flex;
+	}
+	.botones button{
+		margin: 5px;
+	}
+
+</style>
+<script type="text/javascript">
+	function desplazar(){
+		let cajas = document.getElementsByClassName('caja');
+  		for(i = 0; i < cajas.length; i++) {
+    		cajas[i].style.transform = "translateX(100%)";
+  		}
+		document.getElementById("1").style.order = "2";
+		document.getElementById("2").style.order = "1";
+		document.getElementById("3").style.order = "4";
+		document.getElementById("4").style.order = "3";
+	}
+	function volver(){
+		let cajas = document.getElementsByClassName('caja');
+  		for(i = 0; i < cajas.length; i++) {
+    		cajas[i].style.transform = "translateX(0%)";
+  		}
+		document.getElementById("1").style.order = "1";
+		document.getElementById("2").style.order = "2";
+		document.getElementById("3").style.order = "3";
+		document.getElementById("4").style.order = "4";
+	}
+</script>
+</head>
+<body>
+<div id="contenedor">
+	<div id="1" class="caja">Caja 1</div>
+	<div id="2" class="caja">Caja 2</div>
+	<div id="3" class="caja">Caja 3</div>
+	<div id="4" class="caja">Caja 4</div>
+</div>
+<div class="botones">
+	<button onclick="desplazar()">Desplazar a la derecha e intercalar</button>
+	<button onclick="volver()">Volver a la posición inicial</button>
+</div>
+</body>
+</html>
