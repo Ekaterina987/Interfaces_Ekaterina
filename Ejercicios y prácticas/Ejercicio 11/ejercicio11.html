@@ -13,8 +13,6 @@
 	#contenedor {
 		border: 1px solid black;
 		width: 650px;
-		display: flex;
-		flex-direction: column;
 	}
 			
 	.caja {		
@@ -47,20 +45,20 @@
   		for(i = 0; i < cajas.length; i++) {
     		cajas[i].style.transform = "translateX(100%)";
   		}
-		document.getElementById("1").style.order = "2";
-		document.getElementById("2").style.order = "1";
-		document.getElementById("3").style.order = "4";
-		document.getElementById("4").style.order = "3";
+		document.getElementById("1").style.transform = "translateY(105px)";
+		document.getElementById("2").style.transform = "translateY(-105px)";
+		document.getElementById("3").style.transform = "translateY(105px)";
+		document.getElementById("4").style.transform = "translateY(-105px)";
 	}
 	function volver(){
 		let cajas = document.getElementsByClassName('caja');
   		for(i = 0; i < cajas.length; i++) {
-    		cajas[i].style.transform = "translateX(0%)";
+    		cajas[i].style.transform = "translateX(0)";
   		}
-		document.getElementById("1").style.order = "1";
-		document.getElementById("2").style.order = "2";
-		document.getElementById("3").style.order = "3";
-		document.getElementById("4").style.order = "4";
+		document.getElementById("1").style.transform = "translateY(0)";
+		document.getElementById("2").style.transform = "translateY(0)";
+		document.getElementById("3").style.transform = "translateY(0)";
+		document.getElementById("4").style.transform = "translateY(0)";
 	}
 </script>
 </head>
