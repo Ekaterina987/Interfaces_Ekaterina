@@ -13,6 +13,7 @@
 	#contenedor {
 		border: 1px solid black;
 		width: 650px;
+		height: 425px;
 	}
 			
 	.caja {		
@@ -20,7 +21,9 @@
 		width: 100px;	
 		height: 100px;
 		margin: 5px;
-		transition: transform 4s ease-in-out 0.5s, color 4s ease-in-out 0.5s, font-size 4s ease-in-out 0.5s, background-color 4s ease-in-out 0.5s;
+		position: absolute;
+		left: 10px;
+		transition: transform 4s ease-in-out 0.5s, color 4s ease-in-out 0.5s, font-size 4s ease-in-out 0.5s, background-color 4s ease-in-out 0.5s, left 4s ease-in-out 0.5s, top 4s ease-in-out 0.5s;
 	}
 
 	.caja:hover{
@@ -37,37 +40,49 @@
 	.botones button{
 		margin: 5px;
 	}
+	#c1{
+		top: 10px;
+	}
+	#c2{
+		top: 115px;
+	}
+	#c3{
+		top: 220px;
+	}
+	#c4{
+		top: 325px;
+	}
 
 </style>
 <script type="text/javascript">
 	function desplazar(){
 		let cajas = document.getElementsByClassName('caja');
   		for(i = 0; i < cajas.length; i++) {
-    		cajas[i].style.transform = "translateX(100%)";
+    		cajas[i].style.left = "550px";
   		}
-		document.getElementById("1").style.transform = "translateY(105px)";
-		document.getElementById("2").style.transform = "translateY(-105px)";
-		document.getElementById("3").style.transform = "translateY(105px)";
-		document.getElementById("4").style.transform = "translateY(-105px)";
+		document.getElementById("c1").style.top = "115px";
+		document.getElementById("c2").style.top = "10px";
+		document.getElementById("c3").style.top = "325px";
+		document.getElementById("c4").style.top = "220px";
 	}
 	function volver(){
 		let cajas = document.getElementsByClassName('caja');
   		for(i = 0; i < cajas.length; i++) {
-    		cajas[i].style.transform = "translateX(0)";
+    		cajas[i].style.left = "10px";
   		}
-		document.getElementById("1").style.transform = "translateY(0)";
-		document.getElementById("2").style.transform = "translateY(0)";
-		document.getElementById("3").style.transform = "translateY(0)";
-		document.getElementById("4").style.transform = "translateY(0)";
+		document.getElementById("c1").style.top = "10px";
+		document.getElementById("c2").style.top = "115px";
+		document.getElementById("c3").style.top = "220px";
+		document.getElementById("c4").style.top = "325px";
 	}
 </script>
 </head>
 <body>
 <div id="contenedor">
-	<div id="1" class="caja">Caja 1</div>
-	<div id="2" class="caja">Caja 2</div>
-	<div id="3" class="caja">Caja 3</div>
-	<div id="4" class="caja">Caja 4</div>
+	<div id="c1" class="caja">Caja 1</div>
+	<div id="c2" class="caja">Caja 2</div>
+	<div id="c3" class="caja">Caja 3</div>
+	<div id="c4" class="caja">Caja 4</div>
 </div>
 <div class="botones">
 	<button onclick="desplazar()">Desplazar a la derecha e intercalar</button>
