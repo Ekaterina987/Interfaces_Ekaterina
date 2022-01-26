@@ -10,10 +10,12 @@
 	 Además, con animation-direction alternate se ejecuta cada vez en una dirección-->
 
 <style>
+	:root {
+	--ancho_cont: 650px;
+	}
 	#contenedor {
 		border: 1px solid black;
-		width: 650px;
-		height: 425px;
+		width: var(--ancho_cont);
 	}
 			
 	.caja {		
@@ -21,8 +23,8 @@
 		width: 100px;	
 		height: 100px;
 		margin: 5px;
-		position: absolute;
-		left: 10px;
+		position: relative;
+		left: 0;
 		transition: transform 4s ease-in-out 0.5s, color 4s ease-in-out 0.5s, font-size 4s ease-in-out 0.5s, background-color 4s ease-in-out 0.5s, left 4s ease-in-out 0.5s, top 4s ease-in-out 0.5s;
 	}
 
@@ -41,16 +43,16 @@
 		margin: 5px;
 	}
 	#c1{
-		top: 10px;
+		top: 0;
 	}
 	#c2{
-		top: 115px;
+		top: 0;
 	}
 	#c3{
-		top: 220px;
+		top: 0;
 	}
 	#c4{
-		top: 325px;
+		top: 0;
 	}
 
 </style>
@@ -58,22 +60,22 @@
 	function desplazar(){
 		let cajas = document.getElementsByClassName('caja');
   		for(i = 0; i < cajas.length; i++) {
-    		cajas[i].style.left = "550px";
+    		cajas[i].style.left = "calc(var(--ancho_cont) - 110px)";
   		}
-		document.getElementById("c1").style.top = "115px";
-		document.getElementById("c2").style.top = "10px";
-		document.getElementById("c3").style.top = "325px";
-		document.getElementById("c4").style.top = "220px";
+		document.getElementById("c1").style.top = "105px";
+		document.getElementById("c2").style.top = "-105px";
+		document.getElementById("c3").style.top = "105px";
+		document.getElementById("c4").style.top = "-105px";
 	}
 	function volver(){
 		let cajas = document.getElementsByClassName('caja');
   		for(i = 0; i < cajas.length; i++) {
-    		cajas[i].style.left = "10px";
+    		cajas[i].style.left = "0";
   		}
-		document.getElementById("c1").style.top = "10px";
-		document.getElementById("c2").style.top = "115px";
-		document.getElementById("c3").style.top = "220px";
-		document.getElementById("c4").style.top = "325px";
+		document.getElementById("c1").style.top = "0";
+		document.getElementById("c2").style.top = "0";
+		document.getElementById("c3").style.top = "0";
+		document.getElementById("c4").style.top = "0";
 	}
 </script>
 </head>
