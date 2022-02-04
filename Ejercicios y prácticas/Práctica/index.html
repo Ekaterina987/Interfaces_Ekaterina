@@ -7,21 +7,31 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
 	<style>
+		.header{
+			background-color: #ff4c70;
+			padding: .5em;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
 		.contenedor {
 			min-height: 100vh;
+			background-color: #f1f1f1;
+			font-family: 'Libre Baskerville', serif;
 		}
-		.background{
-			pointer-events: none;
-			position: absolute;
+		.contenedor{
 			left: 0;
 			top: 0;
 			transition: 1s;
 			min-height: 100vh;
-			width: 100%;
 		}
-		.background:hover {
-			background: #212529;
+		.audio{
+			border: 2px solid #18191a;
+			border-radius: 2em;
 		}
 		.star {
 			position: relative;
@@ -31,7 +41,7 @@
 		.starh{
 			position: relative;
 			font-size: 42px;
-			color: white;
+			color: #f1f1f1;
 		}
 		.centrado{
 			text-align: center;
@@ -45,25 +55,32 @@
 		}
 		#transicion{
 			font-weight: bold;
-			font-size: 3.052em;
+			font-size: 1em;
 			transition: 1s;
-			color: #212529;
+			color: #f1f1f1;
 			pointer-events: auto;
 			width: fit-content;
-			margin-left: auto;
-			margin-right: auto;
 			position: relative;
+			margin: 0;
+			border-radius: 2em;
+			border: 2px solid #f1f1f1;
+			background-color: #18191a;
+			padding: .5em 1em .5em 1em;
 		}
 		#transicion:hover{
-			color: white;
+			color: #f1f1f1;
+		}
+		.rating{
+			color: #18191a;
+			transition: 1s;
 		}
 
 		#star1{
 			animation-name: starmove;
 			animation-duration: 6s;
 			animation-iteration-count: infinite;
-			animation-timing-function: ease-in;
-			color: orange;
+			animation-timing-function: ease-in-out;
+			color: #f3be1f;
 		}
 		#star2{
 			animation-name: starmove2;
@@ -105,58 +122,58 @@
 				transform: rotate(0); left: -100px}
 		}
 		@keyframes starmove2 {
-			0% {color: #212529;}
-			1%{ color: orange;}
+			0% {color: #18191a;}
+			1%{ color: #f3be1f;}
 			57%{
-				color: orange;
+				color: #f3be1f;
 			}
 			58%{
-				color: #212529;
+				color: #18191a;
 			}
-			100% {color: #212529;}
+			100% {color: #18191a;}
 		}
 		@keyframes starmove3 {
-			0% {color: #212529;}
-			1%{ color: orange;}
+			0% {color: #18191a;}
+			1%{ color: #f3be1f;}
 			51%{
-				color: orange;
+				color: #f3be1f;
 			}
 			52%{
-				color: #212529;
+				color: #18191a;
 			}
-			100% {color: #212529;}
+			100% {color: #18191a;}
 		}
 		@keyframes starmove4 {
-			0% {color: #212529;}
-			1%{ color: orange;}
+			0% {color: #18191a;}
+			1%{ color: #f3be1f;}
 			45%{
-				color: orange;
+				color: #f3be1f;
 			}
 			46%{
-				color: #212529;
+				color: #18191a;
 			}
-			100% {color: #212529;}
+			100% {color: #18191a;}
 		}
 		@keyframes starmove5 {
-			0% {color: #212529;transform: rotate(0); left: 0px}
-			1%{ color: orange;}
+			0% {color: #18191a;transform: rotate(0); left: 0px}
+			1%{ color: #f3be1f;}
 			20%{
-				color: orange;transform: rotate(1turn); left: 100px
+				color: #f3be1f;transform: rotate(1turn); left: 100px
 			}
 			39%{
-				color: orange;
+				color: #f3be1f;
 			}
 			40%{
-				color: #212529;transform: rotate(0); left: 0px
+				color: #18191a;transform: rotate(0); left: 0px
 			}
-			100% {color: #212529;transform: rotate(0); left: 0px}
+			100% {color: #18191a;transform: rotate(0); left: 0px}
 		}
 		#starh1{
 			animation-name: starmoveh;
 			animation-duration: 6s;
 			animation-iteration-count: infinite;
 			animation-timing-function: ease-in;
-			color: orange;
+			color: #f3be1f;
 		}
 		#starh2{
 			animation-name: starmoveh2;
@@ -198,51 +215,51 @@
 				transform: rotate(0); left: -100px}
 		}
 		@keyframes starmoveh2 {
-			0% {color: white;}
-			1%{ color: orange;}
+			0% {color: #f1f1f1;}
+			1%{ color: #f3be1f;}
 			57%{
-				color: orange;
+				color: #f3be1f;
 			}
 			58%{
-				color: white;
+				color: #f1f1f1;
 			}
-			100% {color: white;}
+			100% {color: #f1f1f1;}
 		}
 		@keyframes starmoveh3 {
-			0% {color: white;}
-			1%{ color: orange;}
+			0% {color: #f1f1f1;}
+			1%{ color: #f3be1f;}
 			51%{
-				color: orange;
+				color: #f3be1f;
 			}
 			52%{
-				color: white;
+				color: #f1f1f1;
 			}
-			100% {color: white;}
+			100% {color: #f1f1f1;}
 		}
 		@keyframes starmoveh4 {
-			0% {color: white;}
-			1%{ color: orange;}
+			0% {color: #f1f1f1;}
+			1%{ color: #f3be1f;}
 			45%{
-				color: orange;
+				color: #f3be1f;
 			}
 			46%{
-				color: white;
+				color: #f1f1f1;
 			}
-			100% {color: white;}
+			100% {color: #f1f1f1;}
 		}
 		@keyframes starmoveh5 {
-			0% {color: white;transform: rotate(0); left: 0px}
-			1%{ color: orange;}
+			0% {color: #f1f1f1;transform: rotate(0); left: 0px}
+			1%{ color: #f3be1f;}
 			20%{
-				color: orange;transform: rotate(1turn); left: 100px
+				color: #f3be1f;transform: rotate(1turn); left: 100px
 			}
 			39%{
-				color: orange;
+				color: #f3be1f;
 			}
 			40%{
-				color: white;transform: rotate(0); left: 0px
+				color: #f1f1f1;transform: rotate(0); left: 0px
 			}
-			100% {color: white;transform: rotate(0); left: 0px}
+			100% {color: #f1f1f1;transform: rotate(0); left: 0px}
 		}
 	</style>
 	<script>
@@ -251,34 +268,36 @@
 
 			let estrella = $(".star");
 			let oculto = $(".oculto");
+			let contenedor = $(".contenedor");
+			let rating = $(".rating");
 			$("#transicion").hover(function(){
 						estrella.css('opacity', '0');
 						oculto.css('opacity', '1');
+						contenedor.css('background-color', '#18191a');
+						rating.css('color', '#f1f1f1');
 					},
 					function () {
 						estrella.css('opacity', '1');
 						oculto.css('opacity', '0');
+						contenedor.css('background-color', '#f1f1f1');
+						rating.css('color', '#18191a');
 					});
 		});
 	</script>
 </head>
 <body>
 <div class="contenedor">
-	<div class="row background">
-		<div class="col-12">
-			<p id="transicion" class="centrado" data-text="Pincha aquí">Pincha aquí</p>
-		</div>
-	</div>
-	<header>
+	<header class="header">
 		<picture>
 			<source
 					media="(min-width: 1200px)"
-					srcset="images/logo_big.png">
+					srcset="images/logo_big1.png">
 			<source
 					sizes="(min-width: 800px)15vw, 18vw"
 					srcset="images/logo_small.png 100w, images/logo.png 200w">
 			<img src="images/logo.png" alt="logo">
 		</picture>
+		<button id="transicion" class="centrado">Modo oscuro</button>
 	</header>
 	<div class="container">
 		<div class="row">
@@ -303,7 +322,13 @@
 			</div>
 		</div>
 		<div class="row">
+			<div class="col-12">
+				<h2 class="centrado rating">Valóranos</h2>
+			</div>
+		</div>
+		<div class="row">
 			<div class="col-12 centrado">
+
 				<span class="fa fa-star star" id="star1"></span>
 				<span class="fa fa-star star" id="star2"></span>
 				<span class="fa fa-star star" id="star3"></span>
@@ -318,7 +343,6 @@
 				<span class="fa fa-star starh" id="starh5"></span>
 			</div>
 		</div>
-
 	</div>
 
 </div>
