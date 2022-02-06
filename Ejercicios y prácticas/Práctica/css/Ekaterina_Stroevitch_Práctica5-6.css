@@ -21,7 +21,7 @@ p{
 
 .header{
     background-color: #ff4c70;
-    padding: .5em;
+    padding: .5em 2em;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -75,6 +75,9 @@ p{
     gap: 2em;
     text-align: center;
     border: 2px solid #18191a;
+}
+.gap{
+    row-gap: 2em;
 }
 .nombre{
     font-size: 1.25em;
@@ -131,12 +134,12 @@ p{
 
 .star {
     position: relative;
-    font-size: 4em;
+    font-size: 2.5em;
     transition: opacity 1s;
 }
 .starh{
     position: relative;
-    font-size: 4em;
+    font-size: 2.5em;
     color: #f1f1f1;
 }
 .oculto{
@@ -266,14 +269,14 @@ p{
 
 @keyframes starmove {
     0% {
-        transform: rotate(0); left: -3em}
+        transform: rotate(0); left: -2.5em}
     20%{
         transform: rotate(1turn); left: 0;}
     80%{
         transform: rotate(1turn); left: 0;}
 
     100% {
-        transform: rotate(0); left: -3em}
+        transform: rotate(0); left: -2.5em}
 }
 @keyframes starmove2 {
     0% {color: #18191a;}
@@ -312,7 +315,7 @@ p{
     0% {color: #18191a;transform: rotate(0); left: 0px}
     1%{ color: #f3be1f;}
     20%{
-        color: #f3be1f;transform: rotate(1turn); left: 3em
+        color: #f3be1f;transform: rotate(1turn); left: 2.5em
     }
     39%{
         color: #f3be1f;
@@ -325,14 +328,14 @@ p{
 
 @keyframes starmoveh {
     0% {
-        transform: rotate(0); left: -3em}
+        transform: rotate(0); left: -2.5em}
     20%{
         transform: rotate(1turn); left: 0;}
     80%{
         transform: rotate(1turn); left: 0;}
 
     100% {
-        transform: rotate(0); left: -3em}
+        transform: rotate(0); left: -2.5em}
 }
 @keyframes starmoveh2 {
     0% {color: #f1f1f1;}
@@ -371,7 +374,7 @@ p{
     0% {color: #f1f1f1;transform: rotate(0); left: 0px}
     1%{ color: #f3be1f;}
     20%{
-        color: #f3be1f;transform: rotate(1turn); left: 3em
+        color: #f3be1f;transform: rotate(1turn); left: 2.5em
     }
     39%{
         color: #f3be1f;
@@ -411,3 +414,19 @@ p{
 .borde-claro{
     border: 2px solid #f1f1f1;
 }
+
+/* MEDIA QUERIES */
+
+
+/* MD */
+
+@media only screen  and (min-width : 768px) {
+    .star {
+        font-size: 4em;
+    }
+    .starh{
+        font-size: 4em;
+    }
+
+}
+

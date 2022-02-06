@@ -25,7 +25,7 @@
 						srcset="images/logo_big.png">
 				<source
 						sizes="(min-width: 800px)15vw, 18vw"
-						srcset="images/logo_small.png 100w, images/logo.png 200w">
+						srcset="images/logo_small.png 100w, images/logo-1.png 200w">
 				<img src="images/logo.png" alt="logo">
 			</picture>
 		</a>
@@ -42,8 +42,8 @@
 				</div>
 			</div>
 			<section id="audio">
-				<div class="row">
-					<div class="col-4">
+				<div class="row gap">
+					<div class="col-sm-12 col-md-6 col-lg-4">
 						<article class="box">
 							<img src="images/fish_640.jpg" alt="ilustracion persona pescando un pez dentro de un pez" class="imagen">
 							<p class="nombre">Relaxing</p>
@@ -55,11 +55,11 @@
 						</article>
 
 					</div>
-					<div class="col-4">
+					<div class="col-sm-12 col-md-6 col-lg-4">
 						<article class="box">
 							<img src="images/cat_640.jpg" alt="ilustracion gato con globo y regalo" class="imagen">
 							<p class="nombre">November</p>
-							<audio class="audio" controls="controls" autoplay="autoplay" muted="muted" preload="auto" id="music_player1">
+							<audio class="audio" controls="controls" preload="auto" id="music_player1">
 								<source src="audio/bensound-november.ogg" type="audio/ogg">
 								<source src="audio/bensound-november.mp3" type="audio/mpeg">
 							</audio>
@@ -67,11 +67,11 @@
 						</article>
 
 					</div>
-					<div class="col-4">
+					<div class="col-sm-12 col-md-6 col-lg-4">
 						<article class="box">
 							<img src="images/pattern_640.png" alt="ilustracion flores y hojas" class="imagen">
 							<p class="nombre">Ofelia's dream</p>
-							<audio class="audio" controls="controls" autoplay="autoplay" muted="muted" preload="auto" id="music_player2">
+							<audio class="audio" controls="controls" preload="auto" id="music_player2">
 								<source src="audio/bensound-ofeliasdream.ogg" type="audio/ogg">
 								<source src="audio/bensound-ofeliasdream.mp3" type="audio/mpeg">
 							</audio>
@@ -82,8 +82,8 @@
 				</div>
 			</section>
 			<section id="video">
-				<div class="row">
-					<div class="col-6 video-box">
+				<div class="row gap">
+					<div class="col-md-12 col-lg-6 video-box">
 						<video controls="controls" loop="loop" width="100%" height="auto" aria-label="rotacion mimbre">
 							<source src="video/textura.ogv" type="video/ogg; codecs='theora,  vorbis'">
 							<source src="video/textura.mp4" type="video/mp4">
@@ -92,7 +92,7 @@
 						<p class="nombre" aria-hidden="true">Rotación mimbre</p>
 						<a class="descarga" href="video/textura.mp4" download="textura" role="button" aria-label="descarga rotacion mimbre">Descarga</a>
 					</div>
-					<div class="col-6 video-box">
+					<div class="col-md-12 col-lg-6 video-box">
 						<iframe width="100%" height="300px" src="https://www.youtube.com/embed/?listType=playlist&playlist=6vhRUkMLj1s&mute=1&autoplay=1&loop=1&controls=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen aria-label="hielo cayendo sobre agua"></iframe>
 						<p class="nombre" aria-hidden="true">Hielo cayendo sobre agua</p>
 						<a class="descarga" href="video/ice.mp4" download="hielo" role="button" aria-label="descarga hielo cayendo sobre agua">Descarga</a>
@@ -146,7 +146,7 @@
 	</main>
 	<footer class="footer">
 		<div class="container">
-			<div class="row row-footer">
+			<div class="row row-footer gap">
 				<div class="col-lg-6 col-md-8 col-sm-12 nav-col">
 					<nav>
 						<ul class="navbar-nav">
