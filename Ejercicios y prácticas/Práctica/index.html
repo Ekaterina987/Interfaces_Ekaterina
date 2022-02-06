@@ -10,341 +10,74 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
-	<style>
-		.header{
-			background-color: #ff4c70;
-			padding: .5em;
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-		}
-		.contenedor {
-			min-height: 100vh;
-			background-color: #f1f1f1;
-			font-family: 'Libre Baskerville', serif;
-		}
-		.contenedor{
-			left: 0;
-			top: 0;
-			transition: 1s;
-			min-height: 100vh;
-		}
-		.audio{
-			border: 2px solid #18191a;
-			border-radius: 2em;
-		}
-		.star {
-			position: relative;
-			font-size: 42px;
-			transition: opacity 1s;
-		}
-		.starh{
-			position: relative;
-			font-size: 42px;
-			color: #f1f1f1;
-		}
-		.centrado{
-			text-align: center;
-		}
-		.oculto{
-			opacity: 0;
-			transition: opacity 1s;
-			position: absolute;
-			left: 0;
-
-		}
-		 #toggle{
-			font-weight: bold;
-			font-size: 1em;
-			transition: 1s;
-			color: #f1f1f1;
-			width: fit-content;
-			position: relative;
-			margin: 0;
-			border-radius: 2em;
-			border: 2px solid #f1f1f1;
-			background-color: #18191a;
-			padding: .5em 1em .5em 1em;
-		}
-		#transicion{
-			font-weight: bold;
-			font-size: 1em;
-			transition: 1s;
-			color: #18191a;
-			width: fit-content;
-			position: relative;
-			margin: 0;
-			border-radius: 2em;
-			border: 2px solid #18191a;
-			background-color: #f1f1f1;
-			padding: .5em 1em .5em 1em;
-		}
-		#toggle:hover, #transicion:hover{
-			background-color: #f1f1f1;
-			color: #18191a;
-			border: 2px solid #18191a;
-		}
-		.rating{
-			color: #18191a;
-			transition: 1s;
-		}
-
-		#star1{
-			animation-name: starmove;
-			animation-duration: 6s;
-			animation-iteration-count: infinite;
-			animation-timing-function: ease-in-out;
-			color: #f3be1f;
-		}
-		#star2{
-			animation-name: starmove2;
-			animation-delay: 1.2s;
-			animation-duration: 6s;
-			animation-iteration-count: infinite;
-			animation-timing-function: ease-in-out;
-		}
-		#star3{
-			animation-name: starmove3;
-			animation-delay: 1.4s;
-			animation-duration: 6s;
-			animation-iteration-count: infinite;
-			animation-timing-function: ease-in-out;
-		}
-		#star4{
-			animation-name: starmove4;
-			animation-delay: 1.6s;
-			animation-duration: 6s;
-			animation-iteration-count: infinite;
-			animation-timing-function: ease-in-out;
-		}
-		#star5{
-			animation-name: starmove5;
-			animation-delay: 1.8s;
-			animation-duration: 6s;
-			animation-iteration-count: infinite;
-			animation-timing-function: ease-in-out;
-		}
-		@keyframes starmove {
-			0% {
-				transform: rotate(0); left: -100px}
-			20%{
-				transform: rotate(1turn); left: 0;}
-			80%{
-				transform: rotate(1turn); left: 0;}
-
-			100% {
-				transform: rotate(0); left: -100px}
-		}
-		@keyframes starmove2 {
-			0% {color: #18191a;}
-			1%{ color: #f3be1f;}
-			57%{
-				color: #f3be1f;
-			}
-			58%{
-				color: #18191a;
-			}
-			100% {color: #18191a;}
-		}
-		@keyframes starmove3 {
-			0% {color: #18191a;}
-			1%{ color: #f3be1f;}
-			51%{
-				color: #f3be1f;
-			}
-			52%{
-				color: #18191a;
-			}
-			100% {color: #18191a;}
-		}
-		@keyframes starmove4 {
-			0% {color: #18191a;}
-			1%{ color: #f3be1f;}
-			45%{
-				color: #f3be1f;
-			}
-			46%{
-				color: #18191a;
-			}
-			100% {color: #18191a;}
-		}
-		@keyframes starmove5 {
-			0% {color: #18191a;transform: rotate(0); left: 0px}
-			1%{ color: #f3be1f;}
-			20%{
-				color: #f3be1f;transform: rotate(1turn); left: 100px
-			}
-			39%{
-				color: #f3be1f;
-			}
-			40%{
-				color: #18191a;transform: rotate(0); left: 0px
-			}
-			100% {color: #18191a;transform: rotate(0); left: 0px}
-		}
-		#starh1{
-			animation-name: starmoveh;
-			animation-duration: 6s;
-			animation-iteration-count: infinite;
-			animation-timing-function: ease-in;
-			color: #f3be1f;
-		}
-		#starh2{
-			animation-name: starmoveh2;
-			animation-delay: 1.2s;
-			animation-duration: 6s;
-			animation-iteration-count: infinite;
-			animation-timing-function: ease-in-out;
-		}
-		#starh3{
-			animation-name: starmoveh3;
-			animation-delay: 1.4s;
-			animation-duration: 6s;
-			animation-iteration-count: infinite;
-			animation-timing-function: ease-in-out;
-		}
-		#starh4{
-			animation-name: starmoveh4;
-			animation-delay: 1.6s;
-			animation-duration: 6s;
-			animation-iteration-count: infinite;
-			animation-timing-function: ease-in-out;
-		}
-		#starh5{
-			animation-name: starmoveh5;
-			animation-delay: 1.8s;
-			animation-duration: 6s;
-			animation-iteration-count: infinite;
-			animation-timing-function: ease-in-out;
-		}
-		@keyframes starmoveh {
-			0% {
-				transform: rotate(0); left: -100px}
-			20%{
-				transform: rotate(1turn); left: 0;}
-			80%{
-				transform: rotate(1turn); left: 0;}
-
-			100% {
-				transform: rotate(0); left: -100px}
-		}
-		@keyframes starmoveh2 {
-			0% {color: #f1f1f1;}
-			1%{ color: #f3be1f;}
-			57%{
-				color: #f3be1f;
-			}
-			58%{
-				color: #f1f1f1;
-			}
-			100% {color: #f1f1f1;}
-		}
-		@keyframes starmoveh3 {
-			0% {color: #f1f1f1;}
-			1%{ color: #f3be1f;}
-			51%{
-				color: #f3be1f;
-			}
-			52%{
-				color: #f1f1f1;
-			}
-			100% {color: #f1f1f1;}
-		}
-		@keyframes starmoveh4 {
-			0% {color: #f1f1f1;}
-			1%{ color: #f3be1f;}
-			45%{
-				color: #f3be1f;
-			}
-			46%{
-				color: #f1f1f1;
-			}
-			100% {color: #f1f1f1;}
-		}
-		@keyframes starmoveh5 {
-			0% {color: #f1f1f1;transform: rotate(0); left: 0px}
-			1%{ color: #f3be1f;}
-			20%{
-				color: #f3be1f;transform: rotate(1turn); left: 100px
-			}
-			39%{
-				color: #f3be1f;
-			}
-			40%{
-				color: #f1f1f1;transform: rotate(0); left: 0px
-			}
-			100% {color: #f1f1f1;transform: rotate(0); left: 0px}
-		}
-	</style>
-	<script>
-
-		$(document).ready(function(){
-
-			let estrella = $(".star");
-			let oculto = $(".oculto");
-			let contenedor = $(".contenedor");
-			let rating = $(".rating");
-			/*$("#transicion").hover(function(){
-						estrella.css('opacity', '0');
-						oculto.css('opacity', '1');
-						contenedor.css('background-color', '#18191a');
-						rating.css('color', '#f1f1f1');
-					},
-					function () {
-						estrella.css('opacity', '1');
-						oculto.css('opacity', '0');
-						contenedor.css('background-color', '#f1f1f1');
-						rating.css('color', '#18191a');
-					})*/
-			$("#toggle").on('click',function() {
-				if ($(this).attr('data-click-state') == 1) {
-					$(this).attr('data-click-state', 0);
-					estrella.css('opacity', '1');
-					oculto.css('opacity', '0');
-					contenedor.css('background-color', '#f1f1f1');
-					rating.css('color', '#18191a');
-					$(this).text('Cambia a modo oscuro');
-					$(this).css({'background-color' : '#18191a', 'color' : '#f1f1f1'});
-
-				} else {
-					$(this).attr('data-click-state', 1);
-					estrella.css('opacity', '0');
-					oculto.css('opacity', '1');
-					contenedor.css('background-color', '#18191a');
-					rating.css('color', '#f1f1f1');
-					$(this).text('Cambia a modo claro');
-					$(this).css({'background-color' : '#f1f1f1', 'color' : '#18191a'});
-
-				}
-			})
-		});
-	</script>
+	<link rel="stylesheet" href="css/Ekaterina_Stroevitch_Práctica5-6.css">
+	<script src="js/Ekaterina_Stroevitch_Práctica5-6.js" type="text/javascript"></script>
 </head>
 <body>
 <div class="contenedor">
 	<header class="header">
+		<a href="#" class="logo">
 		<picture>
+
 			<source
 					media="(min-width: 1200px)"
-					srcset="images/logo_big1.png">
+					srcset="images/logo_big.png">
 			<source
 					sizes="(min-width: 800px)15vw, 18vw"
 					srcset="images/logo_small.png 100w, images/logo.png 200w">
 			<img src="images/logo.png" alt="logo">
 		</picture>
+		</a>
 		<div class="botones">
-			<!--<button id="transicion" class="centrado">Visualiza modo oscuro</button>-->
 			<button id="toggle" class="centrado">Cambia a modo oscuro</button>
 		</div>
 
 	</header>
 	<div class="container">
 		<div class="row">
-			<div class="col-12">
-				<audio class="audio" controls="controls" autoplay="autoplay" muted="muted" preload="auto" id="music_player">
-					<source src="audio/bensound-relaxing.ogg" type="audio/ogg">
-					<source src="audio/bensound-relaxing.mp3" type="audio/mpeg">
-				</audio>
+			<div class="col-12 centrado">
+				<h1 id="titulo">El mejor stock de audio y vídeo</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-4">
+				<div class="box">
+					<a href="audio/bensound-relaxing.mp3" download="relaxing">
+					<img src="images/fish_640.jpg" alt="ilustracion persona pescando un pez dentro de un pez" class="imagen">
+					</a>
+					<audio class="audio" controls="controls" autoplay="autoplay" muted="muted" preload="auto" id="music_player">
+						<source src="audio/bensound-relaxing.ogg" type="audio/ogg">
+						<source src="audio/bensound-relaxing.mp3" type="audio/mpeg">
+					</audio>
+					<a class="descarga" href="audio/bensound-relaxing.mp3" download="relaxing">Descarga</a>
+				</div>
+
+			</div>
+			<div class="col-4">
+				<div class="box">
+					<a href="audio/bensound-november.mp3" download="relaxing">
+					<img src="images/cat_640.jpg" alt="ilustracion gato con globo y regalo" class="imagen">
+					</a>
+					<audio class="audio" controls="controls" autoplay="autoplay" muted="muted" preload="auto" id="music_player1">
+						<source src="audio/bensound-november.ogg" type="audio/ogg">
+						<source src="audio/bensound-november.mp3" type="audio/mpeg">
+					</audio>
+					<a class="descarga" href="audio/bensound-november.mp3" download="relaxing">Descarga</a>
+				</div>
+
+			</div>
+			<div class="col-4">
+				<div class="box">
+					<a href="audio/bensound-november.mp3" download="relaxing">
+					<img src="images/pattern_640.png" alt="ilustracion flores y hojas" class="imagen">
+					</a>
+					<audio class="audio" controls="controls" autoplay="autoplay" muted="muted" preload="auto" id="music_player2">
+						<source src="audio/bensound-ofeliasdream.ogg" type="audio/ogg">
+						<source src="audio/bensound-ofeliasdream.mp3" type="audio/mpeg">
+					</audio>
+					<a class="descarga" href="audio/bensound-ofeliasdream.mp3" download="relaxing">Descarga</a>
+				</div>
+
 			</div>
 		</div>
 		<div class="row">
@@ -383,7 +116,47 @@
 			</div>
 		</div>
 	</div>
-
+<footer class="footer">
+	<div class="container">
+	<div class="row row-footer">
+		<div class="col-lg-6 col-md-8 col-sm-12 nav-col">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link" href="/">Términos y condiciones</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Política de privacidad</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Grupo ME3</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">FAQ</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Sobre nosotros</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Contacto</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col-lg-6 col-md-4 col-sm-12 brand-col">
+			<a href="#" class="logo">
+			<picture>
+				<source
+						media="(min-width: 1200px)"
+						srcset="images/logo_big-white.png">
+				<source
+						sizes="(min-width: 800px)15vw, 18vw"
+						srcset="images/logo_small-white.png 100w, images/logo-white.png 200w">
+				<img src="images/logo-white.png" alt="logo">
+			</picture>
+			</a>
+		</div>
+	</div>
+	</div>
+</footer>
 </div>
 </body>
 </html>
