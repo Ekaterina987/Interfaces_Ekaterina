@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="es">
 <head>
 	<meta charset="UTF-8">
 	<title>Práctica</title>
@@ -12,151 +12,181 @@
 	<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/Ekaterina_Stroevitch_Práctica5-6.css">
 	<script src="js/Ekaterina_Stroevitch_Práctica5-6.js" type="text/javascript"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 <div class="contenedor">
 	<header class="header">
+		<a href="#main" class="skip">Ve al contenido principal</a>
 		<a href="#" class="logo">
-		<picture>
-
-			<source
-					media="(min-width: 1200px)"
-					srcset="images/logo_big.png">
-			<source
-					sizes="(min-width: 800px)15vw, 18vw"
-					srcset="images/logo_small.png 100w, images/logo.png 200w">
-			<img src="images/logo.png" alt="logo">
-		</picture>
+			<picture>
+				<source
+						media="(min-width: 1200px)"
+						srcset="images/logo_big.png">
+				<source
+						sizes="(min-width: 800px)15vw, 18vw"
+						srcset="images/logo_small.png 100w, images/logo.png 200w">
+				<img src="images/logo.png" alt="logo">
+			</picture>
 		</a>
-		<div class="botones">
+		<div class="botones" aria-hidden="true">
 			<button id="toggle" class="centrado">Cambia a modo oscuro</button>
 		</div>
 
 	</header>
-	<div class="container">
-		<div class="row">
-			<div class="col-12 centrado">
-				<h1 id="titulo">El mejor stock de audio y vídeo</h1>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-4">
-				<div class="box">
-					<a href="audio/bensound-relaxing.mp3" download="relaxing">
-					<img src="images/fish_640.jpg" alt="ilustracion persona pescando un pez dentro de un pez" class="imagen">
-					</a>
-					<audio class="audio" controls="controls" autoplay="autoplay" muted="muted" preload="auto" id="music_player">
-						<source src="audio/bensound-relaxing.ogg" type="audio/ogg">
-						<source src="audio/bensound-relaxing.mp3" type="audio/mpeg">
-					</audio>
-					<a class="descarga" href="audio/bensound-relaxing.mp3" download="relaxing">Descarga</a>
+	<main id="main">
+		<div class="container">
+			<div class="row">
+				<div class="col-12 centrado">
+					<h1 id="titulo">El mejor stock de audio y vídeo</h1>
 				</div>
-
 			</div>
-			<div class="col-4">
-				<div class="box">
-					<a href="audio/bensound-november.mp3" download="relaxing">
-					<img src="images/cat_640.jpg" alt="ilustracion gato con globo y regalo" class="imagen">
-					</a>
-					<audio class="audio" controls="controls" autoplay="autoplay" muted="muted" preload="auto" id="music_player1">
-						<source src="audio/bensound-november.ogg" type="audio/ogg">
-						<source src="audio/bensound-november.mp3" type="audio/mpeg">
-					</audio>
-					<a class="descarga" href="audio/bensound-november.mp3" download="relaxing">Descarga</a>
+			<section id="audio">
+				<div class="row">
+					<div class="col-4">
+						<article class="box">
+							<img src="images/fish_640.jpg" alt="ilustracion persona pescando un pez dentro de un pez" class="imagen">
+							<p class="nombre">Relaxing</p>
+							<audio class="audio" controls="controls" autoplay="autoplay" muted="muted" preload="auto" id="music_player">
+								<source src="audio/bensound-relaxing.ogg" type="audio/ogg">
+								<source src="audio/bensound-relaxing.mp3" type="audio/mpeg">
+							</audio>
+							<a class="descarga" href="audio/bensound-relaxing.mp3" download="relaxing" role="button" aria-label="descarga relaxing">Descarga</a>
+						</article>
+
+					</div>
+					<div class="col-4">
+						<article class="box">
+							<img src="images/cat_640.jpg" alt="ilustracion gato con globo y regalo" class="imagen">
+							<p class="nombre">November</p>
+							<audio class="audio" controls="controls" autoplay="autoplay" muted="muted" preload="auto" id="music_player1">
+								<source src="audio/bensound-november.ogg" type="audio/ogg">
+								<source src="audio/bensound-november.mp3" type="audio/mpeg">
+							</audio>
+							<a class="descarga" href="audio/bensound-november.mp3" download="november" role="button" aria-label="descarga november">Descarga</a>
+						</article>
+
+					</div>
+					<div class="col-4">
+						<article class="box">
+							<img src="images/pattern_640.png" alt="ilustracion flores y hojas" class="imagen">
+							<p class="nombre">Ofelia's dream</p>
+							<audio class="audio" controls="controls" autoplay="autoplay" muted="muted" preload="auto" id="music_player2">
+								<source src="audio/bensound-ofeliasdream.ogg" type="audio/ogg">
+								<source src="audio/bensound-ofeliasdream.mp3" type="audio/mpeg">
+							</audio>
+							<a class="descarga" href="audio/bensound-ofeliasdream.mp3" download="ofeliasdream" role="button" aria-label="descarga ofelias dream">Descarga</a>
+						</article>
+
+					</div>
 				</div>
-
-			</div>
-			<div class="col-4">
-				<div class="box">
-					<a href="audio/bensound-november.mp3" download="relaxing">
-					<img src="images/pattern_640.png" alt="ilustracion flores y hojas" class="imagen">
-					</a>
-					<audio class="audio" controls="controls" autoplay="autoplay" muted="muted" preload="auto" id="music_player2">
-						<source src="audio/bensound-ofeliasdream.ogg" type="audio/ogg">
-						<source src="audio/bensound-ofeliasdream.mp3" type="audio/mpeg">
-					</audio>
-					<a class="descarga" href="audio/bensound-ofeliasdream.mp3" download="relaxing">Descarga</a>
+			</section>
+			<section id="video">
+				<div class="row">
+					<div class="col-6 video-box">
+						<video controls="controls" loop="loop" width="100%" height="auto" aria-label="rotacion mimbre">
+							<source src="video/textura.ogv" type="video/ogg; codecs='theora,  vorbis'">
+							<source src="video/textura.mp4" type="video/mp4">
+							No está soportado el vídeo
+						</video>
+						<p class="nombre" aria-hidden="true">Rotación mimbre</p>
+						<a class="descarga" href="video/textura.mp4" download="textura" role="button" aria-label="descarga rotacion mimbre">Descarga</a>
+					</div>
+					<div class="col-6 video-box">
+						<iframe width="100%" height="300px" src="https://www.youtube.com/embed/?listType=playlist&playlist=6vhRUkMLj1s&mute=1&autoplay=1&loop=1&controls=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen aria-label="hielo cayendo sobre agua"></iframe>
+						<p class="nombre" aria-hidden="true">Hielo cayendo sobre agua</p>
+						<a class="descarga" href="video/ice.mp4" download="hielo" role="button" aria-label="descarga hielo cayendo sobre agua">Descarga</a>
+					</div>
 				</div>
-
+			</section>
+			<section id="valoracion">
+				<div class="row row-estrellas" aria-hidden="true">
+					<div class="col-12 centrado">
+						<span class="fa fa-star star" id="star1"></span>
+						<span class="fa fa-star star" id="star2"></span>
+						<span class="fa fa-star star" id="star3"></span>
+						<span class="fa fa-star star" id="star4"></span>
+						<span class="fa fa-star star" id="star5"></span>
+					</div>
+					<div class="col-12 centrado oculto">
+						<span class="fa fa-star starh" id="starh1"></span>
+						<span class="fa fa-star starh" id="starh2"></span>
+						<span class="fa fa-star starh" id="starh3"></span>
+						<span class="fa fa-star starh" id="starh4"></span>
+						<span class="fa fa-star starh" id="starh5"></span>
+					</div>
+				</div>
+				<div class="row row-titulo">
+					<div class="col-12">
+						<h2 class="centrado rating">Valóranos</h2>
+					</div>
+				</div>
+				<div class="row row-rating">
+					<div class="col-12 centrado">
+						<button class="button-rating" id="button1" aria-label="una estrella">
+							<i class="far fa-star star-rating" id="star-rating1"></i>
+						</button>
+						<button class="button-rating" id="button2" aria-label="dos estrellas">
+							<i class="far fa-star star-rating" id="star-rating2"></i>
+						</button>
+						<button class="button-rating" id="button3" aria-label="tres estrellas">
+							<i class="far fa-star star-rating" id="star-rating3"></i>
+						</button>
+						<button class="button-rating" id="button4" aria-label="cuatro estrellas">
+							<i class="far fa-star star-rating" id="star-rating4"></i>
+						</button>
+						<button class="button-rating" id="button5" aria-label="cinco estrellas">
+							<i class="far fa-star star-rating" id="star-rating5"></i>
+						</button>
+						<p class="gracias"></p>
+					</div>
+				</div>
+			</section>
+		</div>
+	</main>
+	<footer class="footer">
+		<div class="container">
+			<div class="row row-footer">
+				<div class="col-lg-6 col-md-8 col-sm-12 nav-col">
+					<nav>
+						<ul class="navbar-nav">
+							<li class="nav-item">
+								<a class="nav-link" href="/">Términos y condiciones</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">Política de privacidad</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">Stock SL</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">FAQ</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">Sobre nosotros</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">Contacto</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<div class="col-lg-6 col-md-4 col-sm-12 brand-col">
+					<a href="#" class="logo">
+						<picture>
+							<source
+									media="(min-width: 1200px)"
+									srcset="images/logo_big-white.png">
+							<source
+									sizes="(min-width: 800px)15vw, 18vw"
+									srcset="images/logo_small-white.png 100w, images/logo-white.png 200w">
+							<img src="images/logo-white.png" alt="logo">
+						</picture>
+					</a>
+				</div>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-6">
-				<video controls="controls" loop="loop" width="100%" height="auto">
-					<source src="video/textura.ogv" type="video/ogg; codecs='theora,  vorbis'">
-					<source src="video/textura.mp4" type="video/mp4">
-					No está soportado el vídeo
-				</video>
-
-			</div>
-			<div class="col-6">
-				<iframe width="100%" height="300px" src="https://www.youtube.com/embed/?listType=playlist&playlist=6vhRUkMLj1s&mute=1&autoplay=1&loop=1&controls=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-12">
-				<h2 class="centrado rating">Valóranos</h2>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-12 centrado">
-
-				<span class="fa fa-star star" id="star1"></span>
-				<span class="fa fa-star star" id="star2"></span>
-				<span class="fa fa-star star" id="star3"></span>
-				<span class="fa fa-star star" id="star4"></span>
-				<span class="fa fa-star star" id="star5"></span>
-			</div>
-			<div class="col-12 centrado oculto">
-				<span class="fa fa-star starh" id="starh1"></span>
-				<span class="fa fa-star starh" id="starh2"></span>
-				<span class="fa fa-star starh" id="starh3"></span>
-				<span class="fa fa-star starh" id="starh4"></span>
-				<span class="fa fa-star starh" id="starh5"></span>
-			</div>
-		</div>
-	</div>
-<footer class="footer">
-	<div class="container">
-	<div class="row row-footer">
-		<div class="col-lg-6 col-md-8 col-sm-12 nav-col">
-			<ul class="navbar-nav">
-				<li class="nav-item">
-					<a class="nav-link" href="/">Términos y condiciones</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">Política de privacidad</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">Grupo ME3</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">FAQ</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">Sobre nosotros</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">Contacto</a>
-				</li>
-			</ul>
-		</div>
-		<div class="col-lg-6 col-md-4 col-sm-12 brand-col">
-			<a href="#" class="logo">
-			<picture>
-				<source
-						media="(min-width: 1200px)"
-						srcset="images/logo_big-white.png">
-				<source
-						sizes="(min-width: 800px)15vw, 18vw"
-						srcset="images/logo_small-white.png 100w, images/logo-white.png 200w">
-				<img src="images/logo-white.png" alt="logo">
-			</picture>
-			</a>
-		</div>
-	</div>
-	</div>
-</footer>
+	</footer>
 </div>
 </body>
 </html>
