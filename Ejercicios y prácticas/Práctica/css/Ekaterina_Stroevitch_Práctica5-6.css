@@ -16,6 +16,10 @@ button:focus{
 p{
     margin-bottom: 0;
 }
+.titulo2{
+    color: #18191a;
+    transition: color 1s;
+}
 
 /* HEADER */
 
@@ -125,10 +129,7 @@ p{
 }
 
 /* ESTRELLAS */
-.rating{
-    color: #18191a;
-    transition: color 1s;
-}
+
 .row-titulo{
     padding-top: 0;
 }

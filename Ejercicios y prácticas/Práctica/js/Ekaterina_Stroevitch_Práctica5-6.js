@@ -3,13 +3,14 @@ $(document).ready(function(){
     let estrella = $(".star");
     let oculto = $(".oculto");
     let contenedor = $(".contenedor");
-    let rating = $(".rating");
+    let rating = $(".titulo2");
     let titulo = $("#titulo");
     let descarga = $(".descarga");
     let footer = $(".footer");
     let link = $(".footer .nav-link");
     let gracias = $(".gracias");
     let nombre = $(".nombre")
+    let caja = $(".box");
     $("#toggle").on('click',function() {
         if ($(this).attr('data-click-state') == 1) {
             $(this).attr('data-click-state', 0);
@@ -23,6 +24,7 @@ $(document).ready(function(){
             descarga.removeClass('borde-claro');
             gracias.removeClass("claro");
             nombre.removeClass("claro");
+            caja.removeClass("borde-claro");
             $(this).text('Cambia a modo oscuro');
             $(this).removeClass('fondo-claro').removeClass('oscuro');
 
@@ -38,6 +40,7 @@ $(document).ready(function(){
             descarga.addClass('borde-claro');
             gracias.addClass("claro");
             nombre.addClass("claro");
+            caja.addClass("borde-claro");
             $(this).text('Cambia a modo claro');
             $(this).addClass('fondo-claro').addClass('oscuro');
 
