@@ -1,4 +1,5 @@
 <!doctype html>
+<!-- Se especifica el lenguaje para que los lectores de pantalla sepan cuál es -->
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
@@ -12,13 +13,21 @@
 	<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/Ekaterina_Stroevitch_Práctica5-6.css">
 	<script src="js/Ekaterina_Stroevitch_Práctica5-6.js" type="text/javascript"></script>
+	<!-- Se añade este tag para que la página sea responsive y se vea bien al hacer zoom -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 <div class="contenedor">
+	<!-- Se estructura el sitio semánticamente mediante las etiquetas header, nav, main, section, article y footer -->
 	<header class="header">
+		<!-- Se añade un link interno para poder saltarse la navegación desde un lector de pantalla -->
 		<a href="#main" class="skip">Ve al contenido principal</a>
+
 		<a href="#" class="logo">
+			<!-- Se han hecho tres versiones del logo, una aparece sólo a partir de 1200px, otra en el resto de los casos y además ocupa un porcentaje
+			 del ancho de la pantalla dependiendo de si este es superior a 800px o no, y también cambia la imagen dependiendo del tamaño de la misma, por último
+			 se incluye un respaldo para navegadores que no soportan la etiqueta picture-->
+			<!-- Se incluye un texto alternativo en el logo, este se ha modificado para que sea más descriptivo-->
 			<picture>
 				<source
 						media="(min-width: 1200px)"
@@ -29,6 +38,7 @@
 				<img src="images/logo.png" alt="stock logo">
 			</picture>
 		</a>
+		<!-- se esconde el botón para lectores de pantalla porque solo afecta al aspecto del sitio -->
 		<div class="botones" aria-hidden="true">
 			<button id="toggle" class="centrado">Cambia a modo oscuro</button>
 		</div>
@@ -38,15 +48,24 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-12 centrado">
+					<!-- El encabezado proporciona información sobre el sitio -->
 					<h1 id="titulo">El mejor stock de audio y vídeo</h1>
 				</div>
 			</div>
 			<section id="audio">
 				<div class="row gap">
+					<div class="col-12 centrado">
+						<!-- Encabezado que describe sección, aunque no fuese un error al validar el sitio en validadores de accesibilidad, se ha añadido para
+						una mejor navegación-->
+						<h2>Audio</h2>
+					</div>
 					<div class="col-sm-12 col-md-6 col-lg-4">
 						<article class="box">
+							<!-- Las imágenes tienen texto alternativo -->
 							<img src="images/fish_640.jpg" alt="ilustracion persona pescando un pez dentro de un pez" class="imagen">
 							<p class="nombre">Relaxing</p>
+							<!-- El audio tiene los valores autoplay y muted para que se inicie al cargar la página, también tiene controles para que
+							 se pueda parar y reanudar, se han dado valores a estos parámetros para que sea más accesible-->
 							<audio class="audio" controls="controls" autoplay="autoplay" muted="muted" preload="auto" id="music_player">
 								<source src="audio/bensound-relaxing.ogg" type="audio/ogg">
 								<source src="audio/bensound-relaxing.mp3" type="audio/mpeg">
@@ -83,23 +102,35 @@
 			</section>
 			<section id="video">
 				<div class="row gap">
+					<div class="col-12 centrado">
+						<!-- Encabezado que describe sección, aunque no fuese un error al validar el sitio en validadores de accesibilidad, se ha añadido para
+						una mejor navegación-->
+						<h2>Vídeo</h2>
+					</div>
 					<div class="col-md-12 col-lg-6 video-box">
+						<!-- videos contienen un aria-label para que al seleccionarlos el lector de pantalla diga el titulo -->
+						<!-- el vídeo se reproduce en bucle con la propiedad loop, también se puede parar y reanudar -->
 						<video controls="controls" loop="loop" width="100%" height="auto" aria-label="rotacion mimbre">
 							<source src="video/textura.ogv" type="video/ogg; codecs='theora,  vorbis'">
 							<source src="video/textura.mp4" type="video/mp4">
 							No está soportado el vídeo
 						</video>
+						<!-- se oculta el titulo para lectores de pantalla porque ya se ha dicho al seleccionar el video -->
 						<p class="nombre" aria-hidden="true">Rotación mimbre</p>
+						<!-- para que el link de descarga se lea como un botón se le ha aplicado role="button" y se le ha dado un aria-label para que
+						 el lector de pantalla describa lo que hace el botón -->
 						<a class="descarga" href="video/textura.mp4" download="textura" role="button" aria-label="descarga rotacion mimbre">Descarga</a>
 					</div>
 					<div class="col-md-12 col-lg-6 video-box">
-						<iframe width="100%" height="300px" src="https://www.youtube.com/embed/?listType=playlist&playlist=6vhRUkMLj1s&mute=1&autoplay=1&loop=1&controls=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen aria-label="hielo cayendo sobre agua"></iframe>
+						<!-- video se ejecuta en bucle, automáticamente y en silencio, permite parar y reanudar -->
+						<iframe width="100%" height="300px" src="https://www.youtube.com/embed/?listType=playlist&playlist=6vhRUkMLj1s&mute=1&autoplay=1&loop=1&controls=1" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen aria-label="hielo cayendo sobre agua"></iframe>
 						<p class="nombre" aria-hidden="true">Hielo cayendo sobre agua</p>
 						<a class="descarga" href="video/ice.mp4" download="hielo" role="button" aria-label="descarga hielo cayendo sobre agua">Descarga</a>
 					</div>
 				</div>
 			</section>
 			<section id="valoracion">
+				<!-- estos elementos son puramente visuales por lo que se esconden para el lector de pantalla -->
 				<div class="row row-estrellas" aria-hidden="true">
 					<div class="col-12 centrado">
 						<span class="fa fa-star star" id="star1"></span>
@@ -118,11 +149,13 @@
 				</div>
 				<div class="row row-titulo">
 					<div class="col-12">
+						<!-- Encabezado que describe sección -->
 						<h2 class="centrado rating">Valóranos</h2>
 					</div>
 				</div>
 				<div class="row row-rating">
 					<div class="col-12 centrado">
+						<!-- Se añade un aria-label en los botones para que el lector de pantalla lea lo que hacen los botones -->
 						<button class="button-rating" id="button1" aria-label="una estrella">
 							<i class="far fa-star star-rating" id="star-rating1"></i>
 						</button>

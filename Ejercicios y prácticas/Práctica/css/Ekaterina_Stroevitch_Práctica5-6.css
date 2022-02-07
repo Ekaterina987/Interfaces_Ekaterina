@@ -94,6 +94,7 @@ p{
 .audio{
     border: 2px solid #18191a;
     border-radius: 2em;
+    width: 100%;
 }
 .descarga{
     color: #18191a;
@@ -148,6 +149,8 @@ p{
     position: absolute;
     left: 0;
 }
+
+/* Se dan los nombres de las animaciones asociadas y los parámetros que tienen */
 #star1{
     animation-name: starmove;
     animation-duration: 6s;
@@ -429,4 +432,3 @@ p{
     }
 
 }
-
