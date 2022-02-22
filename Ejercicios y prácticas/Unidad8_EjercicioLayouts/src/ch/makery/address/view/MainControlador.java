@@ -5,12 +5,18 @@ import java.util.List;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.Separator;
+import javafx.scene.control.TreeItem;
+import javafx.scene.control.TreeView;
 import javafx.scene.control.cell.ComboBoxListCell;
+import javafx.scene.control.cell.TextFieldTreeCell;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 
 public class MainControlador {
@@ -27,7 +33,11 @@ public class MainControlador {
     		FXCollections.observableArrayList();
 	@FXML
 	 private ComboBox<String> idiomaCombo;
+	
+	@FXML
+	 private TreeView<String> tree1;
 
+	private final Node rootIcon =  new ImageView(new Image(getClass().getResourceAsStream("folder-icon.png")));
 
     @FXML
     void initialize() {
@@ -50,6 +60,21 @@ public class MainControlador {
     	qualificationsListView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
     	
     	idiomaCombo.getItems().addAll("English", "Japanese", "Spanish");
+    	
+    	
+    	
+    	TreeItem<String> rootItem = new TreeItem<String>("Inbox", rootIcon);
+    	 // Ítem de primer nivel
+    	rootItem.getChildren().add(new TreeItem<String>("Sales"));
+    	 rootItem.getChildren().add(new TreeItem<String>("Marketing"));
+    	 rootItem.getChildren().add(new TreeItem<String>("Distribution"));
+    	 rootItem.getChildren().add(new TreeItem<String>("Costs"));
+    	 
+    	 tree1.setCellFactory(TextFieldTreeCell.forTreeView());
+    	 // Expadimos por defecto el ítem raíz
+    	 rootItem.setExpanded(true);
+    	 tree1.setRoot(rootItem); 
+
 
     }
 
