@@ -39,7 +39,7 @@ public class MainControlador {
     	//for (int i = 0; i < 10; i++) {
 		//			qualificationsListView.getItems().add("Indeterminate (pick a choice)");
 		//	    }
-    	final ListView qualificationsListView = new ListView(data);
+    	ListView qualificationsListView = new ListView(data);
     	java.addAll("Objects", "Classes", "Functions", "Variables", "Compiler", "Debugger", "Projects", "Beans", "Libraries", "Modules");
     	for (int i = 0; i < 10; i++) {
     		data.add("Indeterminate (pick a choice)");
