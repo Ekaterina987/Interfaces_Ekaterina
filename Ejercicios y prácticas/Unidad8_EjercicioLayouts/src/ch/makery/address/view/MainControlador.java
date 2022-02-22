@@ -44,7 +44,6 @@ public class MainControlador {
     @FXML
     void initialize() {
     	Separator sep = new Separator();
-        sep.setMaxWidth(80);
         //Adding separator to the choice box
         ObservableList list = locationBox.getItems();
     	list.addAll("New York", "Orlando", sep, "London", "Manchester"); 
