@@ -137,7 +137,7 @@
                </font></Label>
             <PasswordField text="123456789" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <DatePicker GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <ListView fx:id="qualificationsListView" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <ListView fx:id="qualificationsListView" editable="true" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
             <HBox alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="6">
                <children>
                   <ComboBox fx:id="idiomaCombo" prefWidth="150.0" promptText="Select a language" />
