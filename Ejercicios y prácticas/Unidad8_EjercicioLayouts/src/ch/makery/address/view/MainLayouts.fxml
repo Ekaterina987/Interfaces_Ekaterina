@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
@@ -135,7 +136,12 @@
             <PasswordField text="123456789" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <DatePicker GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <ListView fx:id="qualificationsListView" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <ChoiceBox fx:id="locationBox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <HBox alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <children>
+                  <ComboBox fx:id="idiomaCombo" prefWidth="150.0" promptText="Select a language" />
+                  <ChoiceBox fx:id="locationBox" prefWidth="150.0" value="Select a value..."/>
+               </children>
+            </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="100.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <children>
                   <RadioButton mnemonicParsing="false" text="Male">
