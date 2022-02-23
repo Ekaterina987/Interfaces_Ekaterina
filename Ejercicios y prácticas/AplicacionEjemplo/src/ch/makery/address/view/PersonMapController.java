@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.MapValueFactory;
 
 public class PersonMapController {
 	@FXML
@@ -34,8 +35,13 @@ public class PersonMapController {
 	@FXML
 	private TableView<Person> personTable;
 	
+	public static final String Column1MapKey = "A";
+    public static final String Column2MapKey = "B";
+	
 	@FXML
 	void initialize() {
-		
+		firstNameColumn.setCellValueFactory(new MapValueFactory(Column1MapKey));
+
+        lastNameColumn.setCellValueFactory(new MapValueFactory(Column2MapKey));
 	}
 }
