@@ -56,6 +56,9 @@ public class PersonController {
 	void initialize() {
 		firstNameColumn.setCellValueFactory(new PropertyValueFactory<Person,String>("firstName"));
         lastNameColumn.setCellValueFactory(new PropertyValueFactory<Person,String>("lastName"));
+        
+        // Se rellena la tabla con objetos de la clase Person
+        personTable.setItems(data); 
         personTable.setRowFactory(tv -> {
             TableRow<Person> row = new TableRow<>();
             row.setOnMouseClicked(event -> {
@@ -69,8 +72,6 @@ public class PersonController {
             });
             return row ;
         });
-        // Se rellena la tabla con objetos de la clase Person
-        personTable.setItems(data); 
 	}
 	
 	private void generarValores(Person persona) {
