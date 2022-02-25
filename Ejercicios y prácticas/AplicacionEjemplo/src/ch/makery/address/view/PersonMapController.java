@@ -46,10 +46,6 @@ public class PersonMapController {
 	
 	public static final String Column1MapKey = "Name";
     public static final String Column2MapKey = "Last Name";
-    public static final String Column3MapKey = "Street";
-    public static final String Column4MapKey = "City";
-    public static final String Column5MapKey = "Postal Code";
-    public static final String Column6MapKey = "Birthday";
     
     private ObservableList<Map> data = FXCollections.observableArrayList();
     Person hans = new Person("Hans", "Muster", "Elm", "Bremen", 342146, "21/08/1956");
