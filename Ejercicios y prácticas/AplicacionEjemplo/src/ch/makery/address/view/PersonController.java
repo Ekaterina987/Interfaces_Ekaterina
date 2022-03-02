@@ -59,6 +59,7 @@ public class PersonController {
         
         // Se rellena la tabla con objetos de la clase Person
         personTable.setItems(data); 
+        
         personTable.setRowFactory(tv -> {
             TableRow<Person> row = new TableRow<>();
             row.setOnMouseClicked(event -> {

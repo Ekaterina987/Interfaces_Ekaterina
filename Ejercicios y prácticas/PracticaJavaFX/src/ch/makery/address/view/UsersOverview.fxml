@@ -16,9 +16,11 @@
         <columns>
           <TableColumn prefWidth="75.0" text="Nombre" />
           <TableColumn prefWidth="75.0" text="Apellidos" />
+            <TableColumn prefWidth="75.0" text="Departamento" />
             <TableColumn prefWidth="75.0" text="Correo" />
-            <TableColumn prefWidth="75.0" text="Rol" />
-            <TableColumn prefWidth="75.0" text="Premium" />
+            <TableColumn prefWidth="75.0" text="Posición" />
+            <TableColumn prefWidth="75.0" text="Responsabilidades" />
+            <TableColumn prefWidth="75.0" text="Ciudad" />
         </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
