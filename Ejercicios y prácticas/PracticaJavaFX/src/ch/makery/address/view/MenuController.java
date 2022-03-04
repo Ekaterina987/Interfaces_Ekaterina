@@ -19,7 +19,7 @@ public class MenuController {
 				// Cargamos el archivo Controles Dinámicos
 				FXMLLoader loader = new FXMLLoader();
 				loader.setLocation(MenuController.class.getResource("UserCreate.fxml"));
-				AnchorPane listadoControles = (AnchorPane) loader.load();
+				GridPane listadoControles = (GridPane) loader.load();
 
 				// Se sitúa en el centro del diseño principal
 				rootLayout.setCenter(listadoControles);
