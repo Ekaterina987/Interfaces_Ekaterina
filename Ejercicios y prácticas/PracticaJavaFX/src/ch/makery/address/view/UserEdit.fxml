@@ -10,7 +10,6 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -21,7 +20,7 @@
 <?import javafx.scene.layout.TilePane?>
 <?import javafx.scene.text.Font?>
 
-<GridPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.view.UserCreateController">
+<GridPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
    </columnConstraints>
@@ -75,48 +74,45 @@
                   <Font name="Noto Sans Regular" size="12.0" />
                </font>
             </Label>
-            <TextField promptText="Nombre..." GridPane.columnIndex="1">
+            <TextField GridPane.columnIndex="1">
                <font>
                   <Font name="Noto Sans Regular" size="12.0" />
                </font>
             </TextField>
-            <TextField promptText="Apellidos..." GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="1">
                <font>
                   <Font name="Noto Sans Regular" size="12.0" />
                </font>
             </TextField>
-            <TextField promptText="Correo electrónico..." GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="2">
                <font>
                   <Font name="Noto Sans Regular" size="12.0" />
                </font>
             </TextField>
-            <PasswordField promptText="Contraseña..." GridPane.columnIndex="3" />
-            <ChoiceBox fx:id="choiceDepartamento" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <PasswordField GridPane.columnIndex="3" />
+            <ChoiceBox prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
             <Label text="Responsabilidades" GridPane.rowIndex="3" />
             <Label text="Ciudad" GridPane.columnIndex="2" GridPane.rowIndex="3" />
             <HBox alignment="CENTER_LEFT" spacing="10.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
                <children>
-                  <RadioButton mnemonicParsing="false" text="Empleado">
-                     <toggleGroup>
-                        <ToggleGroup fx:id="posicion" />
-                     </toggleGroup></RadioButton>
-                  <RadioButton mnemonicParsing="false" text="Encargado" toggleGroup="$posicion" />
-                  <RadioButton mnemonicParsing="false" text="Gerente" toggleGroup="$posicion" />
+                  <RadioButton mnemonicParsing="false" text="Empleado" />
+                  <RadioButton mnemonicParsing="false" text="Encargado" />
+                  <RadioButton mnemonicParsing="false" text="Gerente" />
                </children>
             </HBox>
-            <ListView fx:id="listResponsabilidades" editable="true" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <ComboBox fx:id="comboCiudad" prefWidth="150.0" promptText="Elige ciudad..." GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <ListView prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <ComboBox prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
          </children>
       </GridPane>
-      <Label text="Nuevo empleado">
+      <Label text="Modificar empleado">
          <font>
             <Font name="Noto Sans Regular" size="36.0" />
          </font>
       </Label>
       <TilePane GridPane.rowIndex="1">
          <children>
-            <Button defaultButton="true" mnemonicParsing="false" prefHeight="25.0" prefWidth="65.0" text="Crear" />
-            <Button cancelButton="true" mnemonicParsing="false" prefHeight="25.0" prefWidth="91.0" text="Descartar" />
+            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="65.0" text="Guardar" />
+            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="91.0" text="Descartar" />
             <Button mnemonicParsing="false" prefHeight="82.0" prefWidth="93.0" style="-fx-background-color: transparent;">
                <font>
                   <Font name="Noto Sans Regular" size="36.0" />
