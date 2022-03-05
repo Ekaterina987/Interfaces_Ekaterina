@@ -5,11 +5,13 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -20,14 +22,14 @@
 <?import javafx.scene.layout.TilePane?>
 <?import javafx.scene.text.Font?>
 
-<GridPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane prefHeight="445.0" prefWidth="763.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.view.UserCreateController">
    <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
    </columnConstraints>
    <rowConstraints>
       <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="133.0" minHeight="10.0" prefHeight="83.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="255.0" minHeight="10.0" prefHeight="255.0" vgrow="SOMETIMES" />
    </rowConstraints>
    <children>
       <GridPane hgap="20.0" prefHeight="156.0" prefWidth="723.0" GridPane.rowIndex="2">
@@ -38,6 +40,7 @@
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="285.0" minWidth="10.0" prefWidth="241.0" />
          </columnConstraints>
          <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -74,34 +77,41 @@
                   <Font name="Noto Sans Regular" size="12.0" />
                </font>
             </Label>
-            <TextField GridPane.columnIndex="1">
+            <TextField promptText="Nombre..." GridPane.columnIndex="1">
                <font>
                   <Font name="Noto Sans Regular" size="12.0" />
                </font>
             </TextField>
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <TextField promptText="Apellidos..." GridPane.columnIndex="1" GridPane.rowIndex="1">
                <font>
                   <Font name="Noto Sans Regular" size="12.0" />
                </font>
             </TextField>
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <TextField promptText="Correo electrónico..." GridPane.columnIndex="1" GridPane.rowIndex="2">
                <font>
                   <Font name="Noto Sans Regular" size="12.0" />
                </font>
             </TextField>
-            <PasswordField GridPane.columnIndex="3" />
-            <ChoiceBox prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-            <Label text="Responsabilidades" GridPane.rowIndex="3" />
-            <Label text="Ciudad" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <PasswordField promptText="Contraseña..." GridPane.columnIndex="3" />
+            <ChoiceBox fx:id="choiceDepartamento" prefWidth="150.0" value="Selecciona un departamento..." GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Label text="Responsabilidades" GridPane.rowIndex="4" />
+            <Label text="Ciudad" GridPane.columnIndex="2" GridPane.rowIndex="4" />
             <HBox alignment="CENTER_LEFT" spacing="10.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
                <children>
-                  <RadioButton mnemonicParsing="false" text="Empleado" />
-                  <RadioButton mnemonicParsing="false" text="Encargado" />
-                  <RadioButton mnemonicParsing="false" text="Gerente" />
+                  <RadioButton mnemonicParsing="false" text="Empleado">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="posicion" />
+                     </toggleGroup></RadioButton>
+                  <RadioButton mnemonicParsing="false" text="Administrador" toggleGroup="$posicion" />
+                  <RadioButton mnemonicParsing="false" text="Jefe" toggleGroup="$posicion" />
                </children>
             </HBox>
-            <ListView prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <ComboBox prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <ListView fx:id="listResponsabilidades" editable="true" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <ComboBox fx:id="comboCiudad" prefWidth="150.0" promptText="Elige ciudad..." GridPane.columnIndex="3" GridPane.rowIndex="4" />
+            <Label text="Puesto" GridPane.rowIndex="3" />
+            <Label text="Fecha contratación" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <TextField promptText="Puesto..." GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <DatePicker promptText="Elige una fecha" GridPane.columnIndex="3" GridPane.rowIndex="3" />
          </children>
       </GridPane>
       <Label text="Modificar empleado">
@@ -109,10 +119,10 @@
             <Font name="Noto Sans Regular" size="36.0" />
          </font>
       </Label>
-      <TilePane GridPane.rowIndex="1">
+      <TilePane prefHeight="108.0" prefWidth="723.0" GridPane.rowIndex="1">
          <children>
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="65.0" text="Guardar" />
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="91.0" text="Descartar" />
+            <Button defaultButton="true" mnemonicParsing="false" prefHeight="25.0" prefWidth="65.0" text="Guardar" />
+            <Button cancelButton="true" mnemonicParsing="false" prefHeight="25.0" prefWidth="91.0" text="Descartar" />
             <Button mnemonicParsing="false" prefHeight="82.0" prefWidth="93.0" style="-fx-background-color: transparent;">
                <font>
                   <Font name="Noto Sans Regular" size="36.0" />

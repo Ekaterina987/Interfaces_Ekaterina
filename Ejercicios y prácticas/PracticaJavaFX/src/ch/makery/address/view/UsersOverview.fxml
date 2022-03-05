@@ -16,9 +16,9 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<SplitPane dividerPositions="0.21836228287841192" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<SplitPane dividerPositions="0.21836228287841192" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.view.UsersOverviewController">
    <items>
-      <TreeView prefHeight="200.0" prefWidth="200.0" />
+      <TreeView fx:id="treeDepartamentos" prefHeight="200.0" prefWidth="200.0" />
       <GridPane>
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
@@ -32,9 +32,11 @@
               <columns>
                 <TableColumn fx:id="colNombre" prefWidth="75.0" text="Nombre" />
                 <TableColumn fx:id="colApellidos" prefWidth="75.0" text="Apellidos" />
-                  <TableColumn fx:id="colDepartamento" prefWidth="75.0" text="Departamento" />
                   <TableColumn fx:id="colCorreo" prefWidth="75.0" text="Correo" />
+                  <TableColumn fx:id="colPuesto" prefWidth="75.0" text="Puesto" />
+                  <TableColumn prefWidth="75.0" text="Departamento" />
                   <TableColumn fx:id="colPosicion" prefWidth="75.0" text="Posición" />
+                  <TableColumn fx:id="colFecha" prefWidth="75.0" text="Fecha de contratación" />
                   <TableColumn fx:id="colResponsabilidades" prefWidth="75.0" text="Responsabilidades" />
                   <TableColumn fx:id="colCiudad" prefWidth="75.0" text="Ciudad" />
               </columns>

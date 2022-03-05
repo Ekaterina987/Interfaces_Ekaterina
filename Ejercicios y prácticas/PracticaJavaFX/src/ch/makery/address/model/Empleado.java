@@ -13,9 +13,11 @@ public class Empleado {
 	private SimpleStringProperty departamento;
 	private SimpleStringProperty posicion;
 	private SimpleStringProperty ciudad;
+	private SimpleStringProperty puesto;
+	private SimpleStringProperty fechaInicio;
 
 	
-	public Empleado(String nombre, String apellidos, String correo, ArrayList<String> responsabilidades, String contrasenia, String posicion, String ciudad) {
+	public Empleado(String nombre, String apellidos, String correo, ArrayList<String> responsabilidades, String contrasenia, String posicion, String ciudad, String puesto, String fechaInicio) {
 		this.nombre = new SimpleStringProperty(nombre);
 		this.apellidos = new SimpleStringProperty(apellidos);
 		this.correo = new SimpleStringProperty(correo);
@@ -25,6 +27,8 @@ public class Empleado {
 		this.contrasenia = new SimpleStringProperty(contrasenia);
 		this.posicion = new SimpleStringProperty(posicion);
 		this.ciudad = new SimpleStringProperty(ciudad);
+		this.puesto = new SimpleStringProperty(puesto);
+		this.fechaInicio = new SimpleStringProperty(fechaInicio);
 	}
 
 
@@ -130,6 +134,28 @@ public class Empleado {
 		this.ciudad.set(ciudad);
 	}
 	
+	public String getPuesto() {
+		return puesto.get();
+	}
+
+
+
+	public void setPuesto(String puesto) {
+		this.puesto.set(puesto);
+	}
+
+
+
+	public String getFechaInicio() {
+		return fechaInicio.get();
+	}
+
+
+
+	public void setFechaInicio(String fechaInicio) {
+		this.fechaInicio.set(fechaInicio);
+	}
+	
 	
 	public SimpleStringProperty getNombreSimple() {
 		return nombre;
@@ -208,6 +234,30 @@ public class Empleado {
 
 	public void setCiudad(SimpleStringProperty ciudad) {
 		this.ciudad = ciudad;
+	}
+
+
+
+	public SimpleStringProperty getPuestoSimple() {
+		return puesto;
+	}
+
+
+
+	public void setPuesto(SimpleStringProperty puesto) {
+		this.puesto = puesto;
+	}
+
+
+
+	public SimpleStringProperty getFechaInicioSimple() {
+		return fechaInicio;
+	}
+
+
+
+	public void setFechaInicio(SimpleStringProperty fechaInicio) {
+		this.fechaInicio = fechaInicio;
 	}
 
 	
