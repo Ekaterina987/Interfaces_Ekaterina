@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javafx.beans.property.SimpleStringProperty;
+import javafx.scene.control.ListView;
 
 public class Empleado {
 	private SimpleStringProperty nombre;
@@ -69,7 +70,7 @@ public class Empleado {
 		this.correo.set(correo);
 	}
 
-	public String getResponsabilidades() {
+	public String getResponsabilidadesString() {
 		
 		List<String> list = new ArrayList<>();
 		for (SimpleStringProperty responsabilidad : responsabilidades) {
@@ -77,9 +78,21 @@ public class Empleado {
 		}
 		String result = String.join(", ", list);
 		return result;
+
 	}
+	
+	public ListView<String> getResponsabilidades() {
+		
+		ListView<String> listView = new ListView<String>();
+		for (SimpleStringProperty responsabilidad : responsabilidades) {
+			listView.getItems().add(responsabilidad.get());
+		}
+		listView.setPrefHeight(100);
+		
+		return listView;
+		
 
-
+	}
 
 	public void setResponsabilidades(String responsabilidades) {
 		this.responsabilidades.clear();

@@ -14,6 +14,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
@@ -55,7 +56,7 @@ public class UsersOverviewController {
 
 
 	@FXML
-	private TableColumn<Empleado, String> colResponsabilidades;
+	private TableColumn<Empleado, ListView<String>> colResponsabilidades;
 
 	@FXML
 	private TableView<Empleado> tablaEmpleados;
@@ -105,13 +106,15 @@ public class UsersOverviewController {
 		rootItem.setExpanded(true);
 		treeDepartamentos.setRoot(rootItem);
 		
+		
+		
 		colNombre.setCellValueFactory(new PropertyValueFactory<Empleado,String>("nombre"));
         colApellidos.setCellValueFactory(new PropertyValueFactory<Empleado,String>("apellidos"));
         colCorreo.setCellValueFactory(new PropertyValueFactory<Empleado,String>("correo"));
         colDepartamento.setCellValueFactory(new PropertyValueFactory<Empleado,String>("departamento"));
         colPuesto.setCellValueFactory(new PropertyValueFactory<Empleado,String>("puesto"));
         colPosicion.setCellValueFactory(new PropertyValueFactory<Empleado,String>("posicion"));
-        colResponsabilidades.setCellValueFactory(new PropertyValueFactory<Empleado,String>("responsabilidades"));
+        colResponsabilidades.setCellValueFactory(new PropertyValueFactory<Empleado,ListView<String>>("responsabilidades"));
         colFecha.setCellValueFactory(new PropertyValueFactory<Empleado,String>("fechaInicio"));
         colCiudad.setCellValueFactory(new PropertyValueFactory<Empleado,String>("ciudad"));
         
