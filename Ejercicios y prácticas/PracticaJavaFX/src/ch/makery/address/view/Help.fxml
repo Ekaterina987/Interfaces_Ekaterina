@@ -3,19 +3,26 @@
 <?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="600.0" prefWidth="920.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Accordion layoutX="185.0" layoutY="106.0" prefHeight="315.0" prefWidth="552.0">
+      <Accordion layoutX="112.0" layoutY="103.0" prefHeight="394.0" prefWidth="697.0">
         <panes>
           <TitledPane animated="false" text="Como navegar">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="550.0">
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="550.0" style="-fx-background-color: white;">
                      <children>
-                        <Text layoutX="28.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum non dui quis leo bibendum pharetra. Phasellus in metus viverra, malesuada dolor ut, sodales ante. Ut pulvinar nibh sed orci tempor, quis suscipit lacus ullamcorper. Nullam maximus odio magna, id aliquet nunc sollicitudin non. Etiam dolor est, pharetra eu tortor quis, laoreet molestie nunc. Ut elit lacus, laoreet ac risus ut, luctus imperdiet orci. Morbi et porttitor nulla. Aenean placerat sagittis mauris id dapibus." wrappingWidth="493.13671875" />
+                        <Text layoutX="34.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Para navegar por el sitio hay que utilizar los botones que se encuentran en el menú posicionado en la parte superior de la ventana. Desde Archivo se puede cerrar el panel abierto. Desde Editar se pueden crear, editar y borrar empleados. En Ver se puede ver el listado de empleados. En Ayuda se puede acceder al tutorial de la aplicación." wrappingWidth="626.13671875" />
+                        <ImageView fitHeight="127.0" fitWidth="641.0" layoutX="27.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../images/menu.png" />
+                           </image>
+                        </ImageView>
                      </children></AnchorPane>
             </content>
                <font>
@@ -24,7 +31,7 @@
           </TitledPane>
           <TitledPane animated="false" text="Ver empleados">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
                      <children>
                         <Text layoutX="28.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum non dui quis leo bibendum pharetra. Phasellus in metus viverra, malesuada dolor ut, sodales ante. Ut pulvinar nibh sed orci tempor, quis suscipit lacus ullamcorper. Nullam maximus odio magna, id aliquet nunc sollicitudin non. Etiam dolor est, pharetra eu tortor quis, laoreet molestie nunc. Ut elit lacus, laoreet ac risus ut, luctus imperdiet orci. Morbi et porttitor nulla. Aenean placerat sagittis mauris id dapibus." wrappingWidth="493.13671875" />
                      </children></AnchorPane>
@@ -35,7 +42,7 @@
           </TitledPane>
           <TitledPane animated="false" text="Crear empleados">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
                      <children>
                         <Text layoutX="28.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum non dui quis leo bibendum pharetra. Phasellus in metus viverra, malesuada dolor ut, sodales ante. Ut pulvinar nibh sed orci tempor, quis suscipit lacus ullamcorper. Nullam maximus odio magna, id aliquet nunc sollicitudin non. Etiam dolor est, pharetra eu tortor quis, laoreet molestie nunc. Ut elit lacus, laoreet ac risus ut, luctus imperdiet orci. Morbi et porttitor nulla. Aenean placerat sagittis mauris id dapibus." wrappingWidth="493.13671875" />
                      </children></AnchorPane>
@@ -46,7 +53,7 @@
           </TitledPane>
             <TitledPane animated="false" text="Editar empleados">
               <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
                      <children>
                         <Text layoutX="28.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum non dui quis leo bibendum pharetra. Phasellus in metus viverra, malesuada dolor ut, sodales ante. Ut pulvinar nibh sed orci tempor, quis suscipit lacus ullamcorper. Nullam maximus odio magna, id aliquet nunc sollicitudin non. Etiam dolor est, pharetra eu tortor quis, laoreet molestie nunc. Ut elit lacus, laoreet ac risus ut, luctus imperdiet orci. Morbi et porttitor nulla. Aenean placerat sagittis mauris id dapibus." wrappingWidth="493.13671875" />
                      </children></AnchorPane>
@@ -57,7 +64,7 @@
             </TitledPane>
             <TitledPane animated="false" text="Borrar empleados">
               <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
                      <children>
                         <Text layoutX="28.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum non dui quis leo bibendum pharetra. Phasellus in metus viverra, malesuada dolor ut, sodales ante. Ut pulvinar nibh sed orci tempor, quis suscipit lacus ullamcorper. Nullam maximus odio magna, id aliquet nunc sollicitudin non. Etiam dolor est, pharetra eu tortor quis, laoreet molestie nunc. Ut elit lacus, laoreet ac risus ut, luctus imperdiet orci. Morbi et porttitor nulla. Aenean placerat sagittis mauris id dapibus." wrappingWidth="493.13671875" />
                      </children></AnchorPane>
