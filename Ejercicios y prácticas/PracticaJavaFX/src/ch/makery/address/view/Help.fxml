@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="920.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Accordion layoutX="185.0" layoutY="106.0" prefHeight="315.0" prefWidth="552.0">
+        <panes>
+          <TitledPane animated="false" text="Como navegar">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="550.0">
+                     <children>
+                        <Text layoutX="28.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum non dui quis leo bibendum pharetra. Phasellus in metus viverra, malesuada dolor ut, sodales ante. Ut pulvinar nibh sed orci tempor, quis suscipit lacus ullamcorper. Nullam maximus odio magna, id aliquet nunc sollicitudin non. Etiam dolor est, pharetra eu tortor quis, laoreet molestie nunc. Ut elit lacus, laoreet ac risus ut, luctus imperdiet orci. Morbi et porttitor nulla. Aenean placerat sagittis mauris id dapibus." wrappingWidth="493.13671875" />
+                     </children></AnchorPane>
+            </content>
+               <font>
+                  <Font name="Noto Sans Regular" size="12.0" />
+               </font>
+          </TitledPane>
+          <TitledPane animated="false" text="Ver empleados">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Text layoutX="28.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum non dui quis leo bibendum pharetra. Phasellus in metus viverra, malesuada dolor ut, sodales ante. Ut pulvinar nibh sed orci tempor, quis suscipit lacus ullamcorper. Nullam maximus odio magna, id aliquet nunc sollicitudin non. Etiam dolor est, pharetra eu tortor quis, laoreet molestie nunc. Ut elit lacus, laoreet ac risus ut, luctus imperdiet orci. Morbi et porttitor nulla. Aenean placerat sagittis mauris id dapibus." wrappingWidth="493.13671875" />
+                     </children></AnchorPane>
+            </content>
+               <font>
+                  <Font name="Noto Sans Regular" size="12.0" />
+               </font>
+          </TitledPane>
+          <TitledPane animated="false" text="Crear empleados">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Text layoutX="28.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum non dui quis leo bibendum pharetra. Phasellus in metus viverra, malesuada dolor ut, sodales ante. Ut pulvinar nibh sed orci tempor, quis suscipit lacus ullamcorper. Nullam maximus odio magna, id aliquet nunc sollicitudin non. Etiam dolor est, pharetra eu tortor quis, laoreet molestie nunc. Ut elit lacus, laoreet ac risus ut, luctus imperdiet orci. Morbi et porttitor nulla. Aenean placerat sagittis mauris id dapibus." wrappingWidth="493.13671875" />
+                     </children></AnchorPane>
+            </content>
+               <font>
+                  <Font name="Noto Sans Regular" size="12.0" />
+               </font>
+          </TitledPane>
+            <TitledPane animated="false" text="Editar empleados">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Text layoutX="28.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum non dui quis leo bibendum pharetra. Phasellus in metus viverra, malesuada dolor ut, sodales ante. Ut pulvinar nibh sed orci tempor, quis suscipit lacus ullamcorper. Nullam maximus odio magna, id aliquet nunc sollicitudin non. Etiam dolor est, pharetra eu tortor quis, laoreet molestie nunc. Ut elit lacus, laoreet ac risus ut, luctus imperdiet orci. Morbi et porttitor nulla. Aenean placerat sagittis mauris id dapibus." wrappingWidth="493.13671875" />
+                     </children></AnchorPane>
+              </content>
+               <font>
+                  <Font name="Noto Sans Regular" size="12.0" />
+               </font>
+            </TitledPane>
+            <TitledPane animated="false" text="Borrar empleados">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Text layoutX="28.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum non dui quis leo bibendum pharetra. Phasellus in metus viverra, malesuada dolor ut, sodales ante. Ut pulvinar nibh sed orci tempor, quis suscipit lacus ullamcorper. Nullam maximus odio magna, id aliquet nunc sollicitudin non. Etiam dolor est, pharetra eu tortor quis, laoreet molestie nunc. Ut elit lacus, laoreet ac risus ut, luctus imperdiet orci. Morbi et porttitor nulla. Aenean placerat sagittis mauris id dapibus." wrappingWidth="493.13671875" />
+                     </children></AnchorPane>
+              </content>
+               <font>
+                  <Font name="Noto Sans Regular" size="12.0" />
+               </font>
+            </TitledPane>
+        </panes>
+      </Accordion>
+      <Label alignment="CENTER" layoutX="395.0" layoutY="40.0" text="Tutorial">
+         <font>
+            <Font name="Noto Sans Regular" size="36.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -11,7 +11,7 @@
         <menus>
           <Menu mnemonicParsing="false" text="Archivo">
             <items>
-              <MenuItem mnemonicParsing="false" text="Cerrar" />
+              <MenuItem mnemonicParsing="false" onAction="#cerrarListado" text="Cerrar" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Editar">
@@ -28,7 +28,7 @@
             </Menu>
           <Menu mnemonicParsing="false" text="Ayuda">
             <items>
-              <MenuItem mnemonicParsing="false" text="Tutorial" />
+              <MenuItem mnemonicParsing="false" onAction="#abrirTutorial" text="Tutorial" />
             </items>
           </Menu>
         </menus>
