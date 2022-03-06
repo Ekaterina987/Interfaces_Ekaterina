@@ -1,4 +1,4 @@
-package ch.makery.address.view;
+package ch.makery.address.view.employee.create;
 
 
 
@@ -16,7 +16,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.cell.ComboBoxListCell;
 
-public class UserCreateController {
+public class EmployeeCreateController {
 
 
     @FXML

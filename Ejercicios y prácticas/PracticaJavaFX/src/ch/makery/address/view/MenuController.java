@@ -2,10 +2,10 @@ package ch.makery.address.view;
 
 import java.io.IOException;
 
+import ch.makery.address.view.employee.create.EmployeeCreateController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.control.SplitPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
@@ -20,7 +20,7 @@ public class MenuController {
 	    	try {
 				// Cargamos el archivo Controles Dinámicos
 				FXMLLoader loader = new FXMLLoader();
-				loader.setLocation(MenuController.class.getResource("UserCreate.fxml"));
+				loader.setLocation(MenuController.class.getResource("employee/create/EmployeeCreate.fxml"));
 				GridPane listadoControles = (GridPane) loader.load();
 
 				// Se sitúa en el centro del diseño principal
@@ -35,10 +35,10 @@ public class MenuController {
 	    	try {
 				// Cargamos el archivo Controles Dinámicos
 				FXMLLoader loader = new FXMLLoader();
-				loader.setLocation(MenuController.class.getResource("UserCreate.fxml"));
+				loader.setLocation(MenuController.class.getResource("employee/create/EmployeeCreate.fxml"));
 				GridPane listadoControles = (GridPane) loader.load();
 
-				UserCreateController uc= loader.getController();
+				EmployeeCreateController uc= loader.getController();
 				
 				uc.cambiarLabel("Modificar empleado", "Guardar");
 				// Se sitúa en el centro del diseño principal
@@ -52,7 +52,7 @@ public class MenuController {
 	    	try {
 				// Cargamos el archivo Controles Dinámicos
 				FXMLLoader loader = new FXMLLoader();
-				loader.setLocation(MenuController.class.getResource("UsersOverview.fxml"));
+				loader.setLocation(MenuController.class.getResource("employees/overview/EmployeesOverview.fxml"));
 				SplitPane listadoControles = (SplitPane) loader.load();
 
 				// Se sitúa en el centro del diseño principal
@@ -66,7 +66,7 @@ public class MenuController {
 	    	try {
 				// Cargamos el archivo Controles Dinámicos
 				FXMLLoader loader = new FXMLLoader();
-				loader.setLocation(MenuController.class.getResource("Help.fxml"));
+				loader.setLocation(MenuController.class.getResource("help/Help.fxml"));
 				AnchorPane listadoControles = (AnchorPane) loader.load();
 
 				// Se sitúa en el centro del diseño principal
