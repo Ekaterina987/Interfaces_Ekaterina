@@ -34,9 +34,12 @@ public class MenuController {
 	    	try {
 				// Cargamos el archivo Controles Dinámicos
 				FXMLLoader loader = new FXMLLoader();
-				loader.setLocation(MenuController.class.getResource("UserEdit.fxml"));
+				loader.setLocation(MenuController.class.getResource("UserCreate.fxml"));
 				GridPane listadoControles = (GridPane) loader.load();
 
+				UserCreateController uc= loader.getController();
+				
+				uc.cambiarLabel("Modificar empleado", "Guardar");
 				// Se sitúa en el centro del diseño principal
 				rootLayout.setCenter(listadoControles);
 			} catch (IOException e) {

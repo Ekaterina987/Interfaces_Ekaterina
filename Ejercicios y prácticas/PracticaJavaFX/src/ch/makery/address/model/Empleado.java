@@ -1,6 +1,7 @@
 package ch.makery.address.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javafx.beans.property.SimpleStringProperty;
 
@@ -8,7 +9,7 @@ public class Empleado {
 	private SimpleStringProperty nombre;
 	private SimpleStringProperty apellidos;
 	private SimpleStringProperty correo;
-	private ArrayList<SimpleStringProperty> responsabilidades;
+	private ArrayList<SimpleStringProperty> responsabilidades = new ArrayList<>();
 	private SimpleStringProperty contrasenia;
 	private SimpleStringProperty departamento;
 	private SimpleStringProperty posicion;
@@ -17,18 +18,19 @@ public class Empleado {
 	private SimpleStringProperty fechaInicio;
 
 	
-	public Empleado(String nombre, String apellidos, String correo, ArrayList<String> responsabilidades, String contrasenia, String posicion, String ciudad, String puesto, String fechaInicio) {
+	public Empleado(String nombre, String apellidos, String correo, String contrasenia, String departamento, String posicion, String puesto, ArrayList<String> responsabilidades, String fechaInicio, String ciudad) {
 		this.nombre = new SimpleStringProperty(nombre);
 		this.apellidos = new SimpleStringProperty(apellidos);
 		this.correo = new SimpleStringProperty(correo);
+		this.contrasenia = new SimpleStringProperty(contrasenia);
+		this.departamento = new SimpleStringProperty(departamento);
+		this.posicion = new SimpleStringProperty(posicion);
+		this.puesto = new SimpleStringProperty(puesto);
 		for (String responsabilidad : responsabilidades) {
 			this.responsabilidades.add(new SimpleStringProperty(responsabilidad));
 		}
-		this.contrasenia = new SimpleStringProperty(contrasenia);
-		this.posicion = new SimpleStringProperty(posicion);
-		this.ciudad = new SimpleStringProperty(ciudad);
-		this.puesto = new SimpleStringProperty(puesto);
 		this.fechaInicio = new SimpleStringProperty(fechaInicio);
+		this.ciudad = new SimpleStringProperty(ciudad);
 	}
 
 
@@ -67,9 +69,27 @@ public class Empleado {
 		this.correo.set(correo);
 	}
 
+	public String getResponsabilidades() {
+		
+		List<String> list = new ArrayList<>();
+		for (SimpleStringProperty responsabilidad : responsabilidades) {
+			list.add(responsabilidad.get());
+		}
+		String result = String.join(", ", list);
+		return result;
+	}
 
 
-	public ArrayList<String> getResponsabilidades() {
+
+	public void setResponsabilidades(String responsabilidades) {
+		this.responsabilidades.clear();
+		String[] resp = responsabilidades.split(";");
+		for (String responsabilidad : resp) {
+			this.responsabilidades.add(new SimpleStringProperty(responsabilidad));
+		}
+	}
+
+	public ArrayList<String> getResponsabilidadesArray() {
 		ArrayList<String> resp = new ArrayList<>();
 		for (SimpleStringProperty responsabilidad : responsabilidades) {
 			resp.add(responsabilidad.get());
@@ -79,7 +99,7 @@ public class Empleado {
 
 
 
-	public void setResponsabilidades(ArrayList<String> responsabilidades) {
+	public void setResponsabilidadesArray(ArrayList<String> responsabilidades) {
 		this.responsabilidades.clear();
 		for (String responsabilidad : responsabilidades) {
 			this.responsabilidades.add(new SimpleStringProperty(responsabilidad));
