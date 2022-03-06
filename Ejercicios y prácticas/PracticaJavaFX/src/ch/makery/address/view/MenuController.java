@@ -9,11 +9,15 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.SplitPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
 
 public class MenuController {
 	// Pantalla principal en la que se añade o quita contenido
 		private BorderPane rootLayout;
+		
+		 @FXML
+		 private FlowPane inicio;
 		
 		@FXML
 	    private void crear(ActionEvent event) {    	
@@ -78,7 +82,7 @@ public class MenuController {
 	    @FXML
 	    private void cerrarListado(ActionEvent event) {    	
 	    	// Se elimina el contenido del nodo central
-	    	rootLayout.setCenter(null);	
+	    	rootLayout.setCenter(inicio);	
 	    }
 
 		public BorderPane getRootLayout() {
