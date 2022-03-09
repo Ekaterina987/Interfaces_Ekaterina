@@ -2,14 +2,17 @@ package ch.makery.address;
 	
 import ch.makery.address.view.*;
 import javafx.application.Application;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
 
 
 public class Main extends Application {
 private BorderPane rootLayout;	
+
 	
 	@Override
 	public void start(Stage primaryStage) {

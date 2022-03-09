@@ -1,15 +1,26 @@
 package ch.makery.address.view;
 
+import java.io.IOException;
+
+import ch.makery.address.Main;
 import ch.makery.address.model.Person;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseButton;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 public class PersonController {
 
@@ -39,6 +50,8 @@ public class PersonController {
     
 	@FXML
 	private TableView<Person> personTable;
+	
+	private Main main;
 
 	// Lista auxiliar para TableView
 	private ObservableList<Person> data = FXCollections.observableArrayList(
@@ -82,6 +95,34 @@ public class PersonController {
 		labelCity.setText(persona.getCity());
 		labelPC.setText(Integer.toString(persona.getPC()));
 		labelBirthday.setText(persona.getBirthday());
+	}
+	
+	@FXML
+    private void crearPersona(ActionEvent event) {   
+		try {
+    		// Cargamos el diseño del diálogo desde un XML
+    		 FXMLLoader loader = new FXMLLoader();
+
+    		loader.setLocation(getClass().getResource("DialogoPersona.fxml"));
+
+    		 AnchorPane page = (AnchorPane) loader.load();
+    		 // Se crea un nuevo Stage para mostrar el diálogo
+    		 Stage dialogStage = new Stage();
+    		 dialogStage.setTitle("Crear persona");
+    		 // Se bloquean los eventos de la pantalla principal
+    		 dialogStage.initModality(Modality.WINDOW_MODAL);
+    		 dialogStage.initOwner(main.getPrimaryStage());
+
+    		 Scene scene = new Scene(page);
+    		 dialogStage.setScene(scene);
+    		 dialogStage.showAndWait();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+    }
+	
+	public void setMain(Main main) {
+		this.main = main;
 	}
 
 }

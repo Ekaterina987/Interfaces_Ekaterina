@@ -2,12 +2,19 @@ package ch.makery.address.view.employees.overview;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import ch.makery.address.model.Empleado;
+import ch.makery.address.view.MenuController;
+import ch.makery.address.view.employee.create.EmployeeCreateController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -17,6 +24,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTreeCell;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
 
 public class EmployeesOverviewController {
 
@@ -43,6 +52,9 @@ public class EmployeesOverviewController {
 	
 	@FXML
 	private TableColumn<Empleado, String> colDepartamento;
+	
+	@FXML
+    private Button crearButton;
 
 
 	@FXML
@@ -53,6 +65,8 @@ public class EmployeesOverviewController {
 
 	@FXML
 	private TreeView<String> treeDepartamentos;
+	
+	private BorderPane rootLayout;
 	
 	//responsabilidades.addAll("Programación", "Diseño", "Gestión bases de datos", "Actualizaciones", "Mantenimiento aplicación", "Captación y mantenimiento de sponsors", "Relación con usuarios", "Mantenimiento redes sociales", "Administración de empresa", "RRHH", "Contabilidad", "Contacto colaboradores");
 	ArrayList<String> resp = new ArrayList<>(Arrays.asList("Administración de empresa", "RRHH", "Contabilidad", "Contacto colaboradores"));
@@ -112,6 +126,32 @@ public class EmployeesOverviewController {
         tablaEmpleados.setItems(data); 
         
 
+
 	}
+	@FXML
+    private void crearEmpleado(ActionEvent event) {    	
+    	try {
+			// Cargamos el archivo Controles Dinámicos
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(getClass().getResource("/ch/makery/address/view/RootLayout.fxml"));
+			BorderPane listadoControles = (BorderPane) loader.load();
+
+			MenuController mc= loader.getController();
+			
+			mc.setRootLayout(this.rootLayout);
+			FXMLLoader loader1 = new FXMLLoader();
+			loader1.setLocation(MenuController.class.getResource("/ch/makery/address/view/employee/create/EmployeeCreate.fxml"));
+			GridPane listadoControles1 = (GridPane) loader1.load();
+
+			// Se sitúa en el centro del diseño principal
+			mc.getRootLayout().setCenter(listadoControles1);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+    }
+	
+	public void setRoot(BorderPane rootLayout) {
+    	this.rootLayout = rootLayout;
+    }
 
 }

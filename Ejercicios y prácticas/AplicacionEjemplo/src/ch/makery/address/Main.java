@@ -1,6 +1,7 @@
 package ch.makery.address;
 import java.io.IOException;
 
+import ch.makery.address.view.PersonController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -43,6 +44,9 @@ public class Main extends Application {
 	 FXMLLoader loader = new FXMLLoader();
 	 loader.setLocation(Main.class.getResource("view/PersonOverview.fxml"));
 	 AnchorPane personOverview = (AnchorPane) loader.load();
+	 
+	 PersonController controller = loader.getController();
+	 controller.setMain(this);
 	 // Se sitúa en el centro del diseño principal
 	 rootLayout.setCenter(personOverview);
 	} catch (IOException e) {

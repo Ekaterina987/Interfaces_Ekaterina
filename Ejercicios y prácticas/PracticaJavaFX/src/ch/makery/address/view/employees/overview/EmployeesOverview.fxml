@@ -52,11 +52,11 @@
                         <Font name="Noto Sans Regular" size="12.0" />
                      </font>
                   </MenuButton>
-                  <Button mnemonicParsing="false" text="Crear">
+                  <Button fx:id="crearButton" mnemonicParsing="false" onAction="#crearEmpleado" text="Crear">
                      <graphic>
                         <ImageView fitHeight="19.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../../images/create.png" />
+                              <Image url="@../../../../../../../images/create.png" />
                            </image>
                         </ImageView>
                      </graphic>

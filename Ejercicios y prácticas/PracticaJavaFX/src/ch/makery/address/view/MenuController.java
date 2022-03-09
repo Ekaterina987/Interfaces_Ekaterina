@@ -3,6 +3,7 @@ package ch.makery.address.view;
 import java.io.IOException;
 
 import ch.makery.address.view.employee.create.EmployeeCreateController;
+import ch.makery.address.view.employees.overview.EmployeesOverviewController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -58,6 +59,10 @@ public class MenuController {
 				FXMLLoader loader = new FXMLLoader();
 				loader.setLocation(MenuController.class.getResource("employees/overview/EmployeesOverview.fxml"));
 				SplitPane listadoControles = (SplitPane) loader.load();
+				
+				EmployeesOverviewController eoc= loader.getController();
+				
+				eoc.setRoot(getRootLayout());
 
 				// Se sitúa en el centro del diseño principal
 				rootLayout.setCenter(listadoControles);
