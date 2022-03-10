@@ -106,6 +106,8 @@ public class PersonController {
     		loader.setLocation(getClass().getResource("DialogoPersona.fxml"));
 
     		 AnchorPane page = (AnchorPane) loader.load();
+    		 DialogoController dc= loader.getController();
+    		 dc.setMain(main);
     		 // Se crea un nuevo Stage para mostrar el diálogo
     		 Stage dialogStage = new Stage();
     		 dialogStage.setTitle("Crear persona");

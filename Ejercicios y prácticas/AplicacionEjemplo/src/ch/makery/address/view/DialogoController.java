@@ -6,6 +6,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import ch.makery.address.Main;
 import ch.makery.address.model.DateUtil;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -40,6 +41,9 @@ public class DialogoController {
     private List<String> errores = new ArrayList<>();
     
     Alert errorAlert = new Alert(AlertType.ERROR);
+    Alert infoAlert = new Alert(AlertType.NONE);
+    
+    private Main main;
     
 
     @FXML
@@ -83,7 +87,12 @@ public class DialogoController {
 	    	errorAlert.showAndWait();
 	    	errores.clear();
     	}else {
-    		
+    		infoAlert.setTitle("Éxito");
+	    	infoAlert.setHeaderText("Se ha creado la persona");
+
+	    	infoAlert.showAndWait();
+	    	
+	    	
     	}
     }
 
@@ -97,5 +106,9 @@ public class DialogoController {
     	fields.put("birthday", birthday);
 
     }
+    
+    public void setMain(Main main) {
+		this.main = main;
+	}
 
 }
