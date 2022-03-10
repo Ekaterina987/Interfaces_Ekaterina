@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import ch.makery.address.Main;
 import ch.makery.address.model.DateUtil;
@@ -12,7 +13,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
+import javafx.stage.Window;
 
 public class DialogoController {
 
@@ -41,7 +44,7 @@ public class DialogoController {
     private List<String> errores = new ArrayList<>();
     
     Alert errorAlert = new Alert(AlertType.ERROR);
-    Alert infoAlert = new Alert(AlertType.NONE);
+    Alert infoAlert = new Alert(AlertType.INFORMATION);
     
     private Main main;
     
@@ -91,7 +94,7 @@ public class DialogoController {
 	    	infoAlert.setHeaderText("Se ha creado la persona");
 
 	    	infoAlert.showAndWait();
-	    	
+
 	    	
     	}
     }
