@@ -9,6 +9,8 @@ import java.util.Map;
 import ch.makery.address.model.DateUtil;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.TextField;
 
 public class DialogoController {
@@ -37,6 +39,8 @@ public class DialogoController {
     
     private List<String> errores = new ArrayList<>();
     
+    Alert errorAlert = new Alert(AlertType.ERROR);
+    
 
     @FXML
     void cancelAction(ActionEvent event) {
@@ -63,14 +67,24 @@ public class DialogoController {
     	    		errores.add(error);
     	    	}
     	    } else if(clave.equals("birthday")) {
-    	    	if (DateUtil.parse(valor.getText()).equals(null)) {
-    	    		error = "El campo " + valor + " no es válido. Usa el formato dd/mm/yyyy";
+    	    	if (DateUtil.parse(valor.getText()) == null) {
+    	    		error = "El campo " + clave + " no es válido. Usa el formato dd/mm/yyyy";
     	    		errores.add(error);
     	    	}
     	    }
     	    
     	}
-
+    	if(errores.size()>0) {
+	    	errorAlert.setTitle("Hay campos incorrectos");
+	    	errorAlert.setHeaderText("Por favor, rellena correctamente los campos");
+	    	errorAlert.setContentText(String.join("\n", errores));
+	    	
+	
+	    	errorAlert.showAndWait();
+	    	errores.clear();
+    	}else {
+    		
+    	}
     }
 
     @FXML
@@ -81,6 +95,7 @@ public class DialogoController {
     	fields.put("city", city);
     	fields.put("postal code", pc);
     	fields.put("birthday", birthday);
+
     }
 
 }
