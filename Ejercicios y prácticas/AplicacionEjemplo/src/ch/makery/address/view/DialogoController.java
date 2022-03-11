@@ -9,6 +9,7 @@ import java.util.Optional;
 
 import ch.makery.address.Main;
 import ch.makery.address.model.DateUtil;
+import ch.makery.address.model.Person;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -47,6 +48,8 @@ public class DialogoController {
     Alert infoAlert = new Alert(AlertType.INFORMATION);
     
     private Main main;
+    
+    private PersonController peC;
     
 
     @FXML
@@ -94,8 +97,8 @@ public class DialogoController {
 	    	infoAlert.setHeaderText("Se ha creado la persona");
 
 	    	infoAlert.showAndWait();
-
-	    	
+	    	Person persona = new Person(firstName.getText(), lastName.getText(), street.getText(), city.getText(), Integer.parseInt(pc.getText()), birthday.getText());
+	    	peC.aniadirPersona(persona);
     	}
     }
 
@@ -113,5 +116,8 @@ public class DialogoController {
     public void setMain(Main main) {
 		this.main = main;
 	}
+    public void setPersonController(PersonController peC) {
+    	this.peC = peC;
+    }
 
 }

@@ -1,6 +1,7 @@
 package ch.makery.address;
 import java.io.IOException;
 
+import ch.makery.address.model.Person;
 import ch.makery.address.view.PersonController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
