@@ -98,7 +98,7 @@ public class DialogoController {
 
 	    	infoAlert.showAndWait();
 	    	Person persona = new Person(firstName.getText(), lastName.getText(), street.getText(), city.getText(), Integer.parseInt(pc.getText()), birthday.getText());
-	    	peC.aniadirPersona(persona);
+	    	main.aniadirPersona(persona);
     	}
     }
 
@@ -116,8 +116,5 @@ public class DialogoController {
     public void setMain(Main main) {
 		this.main = main;
 	}
-    public void setPersonController(PersonController peC) {
-    	this.peC = peC;
-    }
 
 }

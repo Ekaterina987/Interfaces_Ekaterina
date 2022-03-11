@@ -14,6 +14,8 @@ public class Main extends Application {
 
 	private Stage primaryStage;
 	 private BorderPane rootLayout;
+	 
+	 private PersonController peC;
 	 @Override
 	 public void start(Stage primaryStage) {
 	 this.primaryStage = primaryStage;
@@ -46,13 +48,16 @@ public class Main extends Application {
 	 loader.setLocation(Main.class.getResource("view/PersonOverview.fxml"));
 	 AnchorPane personOverview = (AnchorPane) loader.load();
 	 
-	 PersonController controller = loader.getController();
-	 controller.setMain(this);
+	 peC = loader.getController();
+	 peC.setMain(this);
 	 // Se sitúa en el centro del diseño principal
 	 rootLayout.setCenter(personOverview);
 	} catch (IOException e) {
 	 e.printStackTrace();
 	}
+	 }
+	 public void aniadirPersona(Person persona) {
+		 peC.aniadirPersona(persona);
 	 }
 	 /** Returns the main stage. */
 	 public Stage getPrimaryStage() {
