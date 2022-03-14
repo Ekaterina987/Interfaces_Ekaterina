@@ -4,6 +4,7 @@ import java.io.IOException;
 import ch.makery.address.model.Person;
 import ch.makery.address.view.PersonController;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
@@ -14,6 +15,7 @@ public class Main extends Application {
 
 	private Stage primaryStage;
 	 private BorderPane rootLayout;
+	 
 	 
 	 private PersonController peC;
 	 @Override
@@ -58,6 +60,9 @@ public class Main extends Application {
 	 }
 	 public void aniadirPersona(Person persona) {
 		 peC.aniadirPersona(persona);
+	 }
+	 public void mostrarElemento(ActionEvent event) {
+		 
 	 }
 	 /** Returns the main stage. */
 	 public Stage getPrimaryStage() {
