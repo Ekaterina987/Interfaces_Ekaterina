@@ -3,7 +3,12 @@ package ch.makery.address;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
+import ch.makery.address.model.DateUtil;
 import ch.makery.address.model.Empleado;
 import ch.makery.address.view.*;
 import ch.makery.address.view.employee.create.EmployeeCreateController;
@@ -14,8 +19,10 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.SplitPane;
 import javafx.scene.control.TableView;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
@@ -26,6 +33,9 @@ private BorderPane rootLayout;
 private MenuController menuController;
 private EmployeeCreateController createController;
 private EmployeesOverviewController overviewController;
+private Map<String, String> fields = new HashMap<>();
+private List<String> errores = new ArrayList<>();
+private Empleado empleado;
 
 
 private TableView<Empleado> tablaEmpleados;
@@ -129,6 +139,64 @@ ArrayList<String> resp2 = new ArrayList<>(Arrays.asList("Programación", "Diseño"
 	
 	public void guardarEmpleado(Empleado empleado) {
 		data.add(empleado);
+		dialogoExitoCrear();
+		verEmpleados();
+	}
+	
+	public void dialogoExitoCrear() {
+		Alert infoAlert = new Alert(AlertType.INFORMATION);
+		infoAlert.setTitle("Éxito");
+    	infoAlert.setHeaderText("Se ha creado el empleado");
+
+    	infoAlert.showAndWait();
+	}
+	public void dialogoErrorCrear() {
+		Alert errorAlert = new Alert(AlertType.ERROR);
+		errorAlert.setTitle("Hay campos incorrectos");
+    	errorAlert.setHeaderText("Por favor, rellena correctamente los campos");
+    	errorAlert.setContentText(String.join("\n", errores));
+    	
+
+    	errorAlert.showAndWait();
+    	errores.clear();
+	}
+	
+	
+	public void validarDatos(String nombre, String apellidos, String correo, String contrasenia, String departamento, String posicion, String puesto, String responsabilidades, String fechaInicio, String ciudad) {
+		fields.put("nombre", nombre);
+    	fields.put("apellidos", apellidos);
+    	fields.put("correo", correo);
+    	fields.put("contrasenia", contrasenia);
+    	fields.put("departamento", departamento);
+    	fields.put("posicion", posicion);
+    	fields.put("puesto", puesto);
+    	fields.put("responsabilidades", responsabilidades);
+    	fields.put("fecha de inicio", fechaInicio);
+    	fields.put("ciudad", ciudad);
+		Iterator<String> it = fields.keySet().iterator();
+   	 
+    	while(it.hasNext()){
+    	    String clave = it.next();
+    	    String valor = fields.get(clave);
+    	    String error = "";
+    	    if (valor.equals("")) {
+    	    	error = "El campo " + clave + " está vacío";
+    	    	errores.add(error);
+    	    }
+    	   else if(clave.equals("fecha de inicio")) {
+    	    	if (DateUtil.parse(valor) == null) {
+    	    		error = "El campo " + clave + " no es válido. Usa el formato dd/mm/yyyy";
+    	    		errores.add(error);
+    	    	}
+    	    }
+    	    
+    	}
+    	if(errores.size()>0) {
+	    	dialogoErrorCrear();
+    	}else {
+    		this.empleado = new Empleado(nombre, apellidos, correo, contrasenia, departamento, posicion, puesto, responsabilidades, fechaInicio, ciudad);
+    		guardarEmpleado(empleado);
+    	}
 	}
 	
 	

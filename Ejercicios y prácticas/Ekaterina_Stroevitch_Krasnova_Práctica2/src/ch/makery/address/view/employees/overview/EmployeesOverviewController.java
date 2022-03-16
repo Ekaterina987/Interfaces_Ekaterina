@@ -2,13 +2,11 @@ package ch.makery.address.view.employees.overview;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.Arrays;
+
 
 import ch.makery.address.Main;
 import ch.makery.address.model.Empleado;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;

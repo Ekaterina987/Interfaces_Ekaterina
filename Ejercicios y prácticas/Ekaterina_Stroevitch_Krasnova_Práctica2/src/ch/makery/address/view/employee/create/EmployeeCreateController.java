@@ -4,7 +4,6 @@ package ch.makery.address.view.employee.create;
 
 
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.stream.Collectors;
 
 import ch.makery.address.Main;
@@ -83,6 +82,7 @@ public class EmployeeCreateController {
 	
 	private RadioButton posicionSeleccionada;
 	
+	
     @FXML
     void initialize() {
         choiceDepartamento.getItems().addAll("Sistemas y desarrollo", "Comercial y publicidad", "Servicios compartidos"); 
@@ -128,15 +128,31 @@ public class EmployeeCreateController {
     	posicion.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
             @Override
             public void changed(ObservableValue<? extends Toggle> ov, Toggle t, Toggle t1) {
-            	RadioButton posicionSelec = (RadioButton)t1.getToggleGroup().getSelectedToggle(); // Cast object to radio button
+            	RadioButton posicionSelec = (RadioButton)t1.getToggleGroup().getSelectedToggle();
             	setPosicionSeleccionada(posicionSelec);
             }
         });
-    	this.empleado = new Empleado(inputNombre.getText(), inputApellidos.getText(), inputCorreo.getText(), 
-    			inputContrasenia.getText(), choiceDepartamento.getValue(), posicionSeleccionada.getText(), 
-    			inputPuesto.getText(), listResponsabilidades.getItems().stream().map(Object::toString).collect(Collectors.joining(", ")), inputFecha.getValue().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")), comboCiudad.getValue());
-
-    	main.guardarEmpleado(empleado);
+    	String fecha = "";
+    	try {
+    		 fecha = inputFecha.getValue().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+    	}catch(Exception e){
+    		
+    	}
+    	String resp = "";
+    	if (listResponsabilidades.getItems().stream().map(Object::toString).collect(Collectors.joining(", ")) != null) {
+    		resp = listResponsabilidades.getItems().stream().map(Object::toString).collect(Collectors.joining(", "));
+    	}
+    	String dept = "";
+    	if (choiceDepartamento.getValue() != null) {
+    		dept = choiceDepartamento.getValue();
+    	}
+    	String ciudad = "";
+    	if (comboCiudad.getValue() != null) {
+    		ciudad = comboCiudad.getValue();
+    	}
+    	main.validarDatos(inputNombre.getText(), inputApellidos.getText(), inputCorreo.getText(), 
+    			inputContrasenia.getText(), dept, posicionSeleccionada.getText(), 
+    			inputPuesto.getText(), resp, fecha, ciudad);
     }
     
     private void setPosicionSeleccionada(RadioButton posicionSeleccionada) {
