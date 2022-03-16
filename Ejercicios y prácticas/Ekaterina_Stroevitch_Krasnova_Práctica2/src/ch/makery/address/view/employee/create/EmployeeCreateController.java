@@ -140,7 +140,9 @@ public class EmployeeCreateController {
     	}
     	String resp = "";
     	if (listResponsabilidades.getItems().stream().map(Object::toString).collect(Collectors.joining(", ")) != null) {
-    		resp = listResponsabilidades.getItems().stream().map(Object::toString).collect(Collectors.joining(", "));
+    		ObservableList<String> ol = FXCollections.observableArrayList(listResponsabilidades.getItems());
+    		ol.remove(listResponsabilidades.getItems().size() - 1);
+    		resp = ol.stream().map(Object::toString).collect(Collectors.joining(", "));
     	}
     	String dept = "";
     	if (choiceDepartamento.getValue() != null) {
