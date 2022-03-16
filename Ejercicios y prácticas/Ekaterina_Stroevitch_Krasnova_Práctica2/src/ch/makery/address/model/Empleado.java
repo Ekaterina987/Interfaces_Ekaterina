@@ -1,6 +1,7 @@
 package ch.makery.address.model;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import javafx.beans.property.SimpleStringProperty;
@@ -32,6 +33,28 @@ public class Empleado {
 		}
 		this.fechaInicio = new SimpleStringProperty(fechaInicio);
 		this.ciudad = new SimpleStringProperty(ciudad);
+	}
+	public Empleado(String nombre, String apellidos, String correo, String contrasenia, String departamento, String posicion, String puesto, String responsabilidades, String fechaInicio, String ciudad) {
+		this.nombre = new SimpleStringProperty(nombre);
+		this.apellidos = new SimpleStringProperty(apellidos);
+		this.correo = new SimpleStringProperty(correo);
+		this.contrasenia = new SimpleStringProperty(contrasenia);
+		this.departamento = new SimpleStringProperty(departamento);
+		this.posicion = new SimpleStringProperty(posicion);
+		this.puesto = new SimpleStringProperty(puesto);
+		String[] resps = responsabilidades.split(", ");
+		List<String> resp = Arrays.asList(resps);
+		for (String responsabilidad : resp) {
+			this.responsabilidades.add(new SimpleStringProperty(responsabilidad));
+		}
+		this.fechaInicio = new SimpleStringProperty(fechaInicio);
+		this.ciudad = new SimpleStringProperty(ciudad);
+	}
+
+
+
+	public Empleado() {
+		// TODO Auto-generated constructor stub
 	}
 
 

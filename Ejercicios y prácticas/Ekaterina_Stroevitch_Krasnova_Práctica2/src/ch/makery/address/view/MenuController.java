@@ -2,6 +2,7 @@ package ch.makery.address.view;
 
 
 import ch.makery.address.Main;
+import ch.makery.address.model.Empleado;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.layout.FlowPane;
@@ -20,7 +21,7 @@ public class MenuController {
 
 		@FXML
 	    private void editar(ActionEvent event) {    	
-	    	main.editar();
+	    	main.editar(new Empleado());
 	    }
 		@FXML
 	    private void verUsuarios(ActionEvent event) {    	

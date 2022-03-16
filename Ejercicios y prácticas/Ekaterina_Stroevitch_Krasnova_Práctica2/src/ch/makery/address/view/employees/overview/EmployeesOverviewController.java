@@ -14,6 +14,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
@@ -21,6 +22,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTreeCell;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseButton;
 
 public class EmployeesOverviewController {
 
@@ -64,17 +66,26 @@ public class EmployeesOverviewController {
 	
 	private Main main;
 	
-	ArrayList<String> resp = new ArrayList<>(Arrays.asList("Administración de empresa", "RRHH", "Contabilidad", "Contacto colaboradores"));
-	ArrayList<String> resp1 = new ArrayList<>(Arrays.asList("Captación y mantenimiento de sponsors", "Relación con usuarios", "Mantenimiento redes sociales"));
-	ArrayList<String> resp2 = new ArrayList<>(Arrays.asList("Programación", "Diseño", "Gestión bases de datos", "Actualizaciones", "Mantenimiento aplicación"));
-
-		private ObservableList<Empleado> data = FXCollections.observableArrayList(
-				new Empleado("Tony", "Ávila", "tonyavila@demtr.com", "c0ntra5eniA", "Servicios compartidos", "Director", "Jefe", resp,"06/03/2022", "Madrid" ),
-				new Empleado("Diego", "Jaular", "diegojaular@demtr.com", "c0ntra5eniA", "Comercial y publicidad", "Director", "Jefe",resp1, "06/03/2022", "Madrid" ),
-				new Empleado("Ekaterina", "Stroevitch", "ekaterinastroevitch@demtr.com", "c0ntra5eniA", "Sistemas y desarrollo", "Director", "Jefe",resp2, "06/03/2022", "Madrid" ));
-
+	private Empleado actual;
+	
 	@FXML
 	void initialize() {
+		
+		crearTree();
+ 
+	}
+	@FXML
+    private void crearEmpleado(ActionEvent event) {    	
+    	main.crear();
+    }
+	@FXML
+    private void editarEmpleado(ActionEvent event) { 
+		if (actual != null) {
+			main.editar(actual);
+		}
+    }
+	
+	public void crearTree() {
 		FileInputStream fis = null;
 		FileInputStream fis1 = null;
     	try {
@@ -104,9 +115,10 @@ public class EmployeesOverviewController {
 
 		rootItem.setExpanded(true);
 		treeDepartamentos.setRoot(rootItem);
-		
-		
-		
+	}
+	
+	public void setDatos(TableView<Empleado> tablaEmpleados) {
+		this.tablaEmpleados = tablaEmpleados;
 		colNombre.setCellValueFactory(new PropertyValueFactory<Empleado,String>("nombre"));
         colApellidos.setCellValueFactory(new PropertyValueFactory<Empleado,String>("apellidos"));
         colCorreo.setCellValueFactory(new PropertyValueFactory<Empleado,String>("correo"));
@@ -116,21 +128,24 @@ public class EmployeesOverviewController {
         colResponsabilidades.setCellValueFactory(new PropertyValueFactory<Empleado,ListView<String>>("responsabilidades"));
         colFecha.setCellValueFactory(new PropertyValueFactory<Empleado,String>("fechaInicio"));
         colCiudad.setCellValueFactory(new PropertyValueFactory<Empleado,String>("ciudad"));
-        
 
-        tablaEmpleados.setItems(data); 
-        
+		tablaEmpleados.setRowFactory(tv -> {
+            TableRow<Empleado> row = new TableRow<>();
+            row.setOnMouseClicked(event -> {
+                if (! row.isEmpty() && event.getButton()==MouseButton.PRIMARY 
+                     && event.getClickCount() == 1) {
 
-
+                    actual = row.getItem();
+                    
+                }
+            });
+            return row ;
+        });
 	}
-	@FXML
-    private void crearEmpleado(ActionEvent event) {    	
-    	main.crear();
-    }
-	@FXML
-    private void editarEmpleado(ActionEvent event) {    	
-    	main.editar();
-    }
+	
+	public TableView<Empleado> getTablaEmpleados(){
+		return tablaEmpleados;
+	}
 	
 	public void setMain(Main main) {
 		this.main = main;
