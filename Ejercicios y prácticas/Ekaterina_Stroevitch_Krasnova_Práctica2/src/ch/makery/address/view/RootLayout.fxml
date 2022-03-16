@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane fx:id="rootLayout" prefHeight="700.0" prefWidth="920.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.view.MenuController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Archivo">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#cerrarListado" text="Cerrar" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Editar">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#crear" text="Crear">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="C" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#editar" text="Editar">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="U" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+              <MenuItem disable="true" mnemonicParsing="false" text="Borrar">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="D" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Ver">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#verUsuarios" text="Empleados">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="R" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+              </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="Ayuda">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#abrirTutorial" text="Tutorial" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <FlowPane fx:id="inicio" alignment="CENTER" columnHalignment="CENTER" orientation="VERTICAL" prefWrapLength="600.0" vgap="40.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Bienvenido al sistema">
+               <font>
+                  <Font name="Noto Sans Regular" size="36.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="200.0" fitWidth="158.0">
+               <image>
+                  <Image url="@../../../../../images/logo1.png" />
+               </image>
+            </ImageView>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Para empezar a usar la aplicación puedes navegar por el menú situado en la parte superior de la ventana." textAlignment="CENTER" wrappingWidth="474.6796875">
+               <font>
+                  <Font name="Noto Sans Regular" size="18.0" />
+               </font>
+            </Text>
+         </children>
+      </FlowPane>
+   </center>
+</BorderPane>

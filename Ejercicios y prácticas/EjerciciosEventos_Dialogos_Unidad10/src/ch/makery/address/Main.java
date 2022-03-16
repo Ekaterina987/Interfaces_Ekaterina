@@ -19,6 +19,10 @@ public class Main extends Application {
 	private Stage primaryStage;
 	private AnchorPane rootLayout;
 	private TextInputDialog textDialog;
+	private TextField textInput;
+	private Scene rootScene;
+	private EventosController eventController;
+	
 	EventHandler<KeyEvent> manejo = (KeyEvent event) -> {
 		if (event.getCode() == KeyCode.ESCAPE || event.getCode() == KeyCode.ENTER) {
 			event.consume();
@@ -49,23 +53,23 @@ public class Main extends Application {
 
 			loader.setLocation(Main.class.getResource("view/eventosValidar/Eventos.fxml"));
 			rootLayout = (AnchorPane) loader.load();
-			EventosController eventController = loader.getController();
+			eventController = loader.getController();
 			eventController.setMain(this);
+			textInput = eventController.getTextInput();
+			
+			
 			// Se añade el diseño principal a la escena
-			Scene scene = new Scene(rootLayout);
-			scene.addEventFilter(KeyEvent.KEY_TYPED, e -> {
+			rootScene = new Scene(rootLayout);
+			rootScene.addEventFilter(KeyEvent.KEY_TYPED, e -> {
 
-				if (Character.isLowerCase(e.getCharacter().charAt(0)) || e.getCode() == KeyCode.ESCAPE
-						|| e.getCode() == KeyCode.ENTER) {
-					e.consume();
-				}
+			if (Character.isLowerCase(e.getCharacter().charAt(0))) {
+				e.consume();
+			}
 
 			});
 			
-			scene.addEventFilter(KeyEvent.KEY_PRESSED, manejo);
-			
-
-			primaryStage.setScene(scene);
+			rootScene.addEventFilter(KeyEvent.KEY_PRESSED, manejo);
+			primaryStage.setScene(rootScene);
 			primaryStage.show();
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -74,12 +78,14 @@ public class Main extends Application {
 
 	public void mostrarDialogo(TextField label) {
 		textDialog = new TextInputDialog("Pon un texto...");
+		textDialog.getDialogPane().addEventFilter(KeyEvent.KEY_PRESSED, manejo);
 		textDialog.setTitle("Ejemplo de diálogo");
 		textDialog.setHeaderText("Diálogo para introducir un texto");
+		textDialog.setOnCloseRequest(event -> textInput.requestFocus());
 		textDialog.showAndWait().ifPresent(response -> {
 			label.setText(response);
 		});
-		textDialog.getDialogPane().addEventFilter(KeyEvent.KEY_PRESSED, manejo);
+		
 	}
 
 	public static void main(String[] args) {
