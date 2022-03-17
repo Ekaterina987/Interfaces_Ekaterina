@@ -1,4 +1,4 @@
-module Ekaterina_Stroevitch_Krasnova_Práctica2 {
+module Ekaterina_Stroevitch_Krasnova_Practica2 {
 	requires javafx.controls;
 	requires javafx.fxml;
 	requires javafx.graphics;

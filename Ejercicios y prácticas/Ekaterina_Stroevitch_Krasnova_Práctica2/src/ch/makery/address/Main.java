@@ -41,12 +41,12 @@ private Empleado empleado;
 private TableView<Empleado> tablaEmpleados;
 
 
-ArrayList<String> resp = new ArrayList<>(Arrays.asList("AdministraciÛn de empresa", "RRHH", "Contabilidad", "Contacto colaboradores"));
-ArrayList<String> resp1 = new ArrayList<>(Arrays.asList("CaptaciÛn y mantenimiento de sponsors", "RelaciÛn con usuarios", "Mantenimiento redes sociales"));
-ArrayList<String> resp2 = new ArrayList<>(Arrays.asList("ProgramaciÛn", "DiseÒo", "GestiÛn bases de datos", "Actualizaciones", "Mantenimiento aplicaciÛn"));
+ArrayList<String> resp = new ArrayList<>(Arrays.asList("Administraci√≥n de empresa", "RRHH", "Contabilidad", "Contacto colaboradores"));
+ArrayList<String> resp1 = new ArrayList<>(Arrays.asList("Captaci√≥n y mantenimiento de sponsors", "Relaci√≥n con usuarios", "Mantenimiento redes sociales"));
+ArrayList<String> resp2 = new ArrayList<>(Arrays.asList("Programaci√≥n", "Dise√±o", "Gesti√≥n bases de datos", "Actualizaciones", "Mantenimiento aplicaci√≥n"));
 
 	private ObservableList<Empleado> data = FXCollections.observableArrayList(
-			new Empleado("Tony", "¡vila", "tonyavila@demtr.com", "c0ntra5eniA", "Servicios compartidos", "Director", "Jefe", resp,"06/03/2022", "Madrid" ),
+			new Empleado("Tony", "√Åvila", "tonyavila@demtr.com", "c0ntra5eniA", "Servicios compartidos", "Director", "Jefe", resp,"06/03/2022", "Madrid" ),
 			new Empleado("Diego", "Jaular", "diegojaular@demtr.com", "c0ntra5eniA", "Comercial y publicidad", "Director", "Jefe",resp1, "06/03/2022", "Madrid" ),
 			new Empleado("Ekaterina", "Stroevitch", "ekaterinastroevitch@demtr.com", "c0ntra5eniA", "Sistemas y desarrollo", "Director", "Jefe",resp2, "06/03/2022", "Madrid" ));
 
@@ -67,7 +67,7 @@ ArrayList<String> resp2 = new ArrayList<>(Arrays.asList("ProgramaciÛn", "DiseÒo"
 
 			Scene scene = new Scene(rootLayout);
 			primaryStage.setScene(scene);
-			primaryStage.setTitle("Pr·ctica 2");
+			primaryStage.setTitle("Pr√°ctica 2");
 			primaryStage.show();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -145,7 +145,7 @@ ArrayList<String> resp2 = new ArrayList<>(Arrays.asList("ProgramaciÛn", "DiseÒo"
 	
 	public void dialogoExitoCrear() {
 		Alert infoAlert = new Alert(AlertType.INFORMATION);
-		infoAlert.setTitle("…xito");
+		infoAlert.setTitle("√âxito");
     	infoAlert.setHeaderText("Se ha creado el empleado");
 
     	infoAlert.showAndWait();
@@ -180,12 +180,12 @@ ArrayList<String> resp2 = new ArrayList<>(Arrays.asList("ProgramaciÛn", "DiseÒo"
     	    String valor = fields.get(clave);
     	    String error = "";
     	    if (valor.equals("")) {
-    	    	error = "El campo " + clave + " est· vacÌo";
+    	    	error = "El campo " + clave + " est√° vac√≠o";
     	    	errores.add(error);
     	    }
     	   else if(clave.equals("fecha de inicio")) {
     	    	if (DateUtil.parse(valor) == null) {
-    	    		error = "El campo " + clave + " no es v·lido. Usa el formato dd/mm/yyyy";
+    	    		error = "El campo " + clave + " no es v√°lido. Usa el formato dd/mm/yyyy";
     	    		errores.add(error);
     	    	}
     	    }

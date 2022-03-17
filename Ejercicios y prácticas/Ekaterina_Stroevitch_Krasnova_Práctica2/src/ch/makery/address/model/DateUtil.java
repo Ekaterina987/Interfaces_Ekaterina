@@ -9,13 +9,13 @@ import java.time.format.DateTimeParseException;
  *
  */
 public class DateUtil {
-	/** Patrón empleado para convertir fechas */
+	/** PatrÃ³n empleado para convertir fechas */
 	private static final String DATE_PATTERN = "dd/MM/yyyy";
 	/** Objeto para formatear fechas */
 	private static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern(DATE_PATTERN);
 
 	/**
-	 * Devuelve la fecha que llega como parámetro como un string
+	 * Devuelve la fecha que llega como parÃ¡metro como un string
 	 *
 	 * @param date es el objeto con la fecha
 	 * @return String formateado
@@ -29,7 +29,7 @@ public class DateUtil {
 
 	/**
 	 * Convierte un String con un formato de fecha en un objeto LocalDate Devuelve
-	 * null si el formato es incorrecto y no se puede realizar la conversión
+	 * null si el formato es incorrecto y no se puede realizar la conversiÃ³n
 	 *
 	 * @param dateString la cadena de texto con la fecha
 	 * @return devuelve el objeto LocalDate o null en caso de error
@@ -43,10 +43,10 @@ public class DateUtil {
 	}
 
 	/**
-	 * Comprueba si un String es una fecha válida
+	 * Comprueba si un String es una fecha vÃ¡lida
 	 *
 	 * @param dateString
-	 * @return true si la fecha es válida o false en caso contrario
+	 * @return true si la fecha es vÃ¡lida o false en caso contrario
 	 */
 	public static boolean validDate(String dateString) {
 		// Try to parse the String.

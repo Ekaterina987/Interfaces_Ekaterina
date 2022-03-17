@@ -61,7 +61,7 @@
                   <Font name="Noto Sans Regular" size="36.0" />
                </font>
             </Label>
-            <ImageView fitHeight="200.0" fitWidth="158.0">
+            <ImageView fx:id="logoDemtr" fitHeight="200.0" fitWidth="158.0">
                <image>
                   <Image url="@../../../../../images/logo1.png" />
                </image>

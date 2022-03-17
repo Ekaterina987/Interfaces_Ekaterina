@@ -151,7 +151,7 @@
                <graphic>
                   <StackPane>
                      <children>
-                        <ImageView fitHeight="84.0" fitWidth="86.0" opacity="0.49" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="noImagen" fitHeight="84.0" fitWidth="86.0" opacity="0.49" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../../../../../images/no-image.png" />
                            </image>

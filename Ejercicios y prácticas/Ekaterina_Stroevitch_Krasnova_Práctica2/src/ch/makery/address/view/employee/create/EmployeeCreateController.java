@@ -3,6 +3,8 @@ package ch.makery.address.view.employee.create;
 
 
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.time.format.DateTimeFormatter;
 import java.util.stream.Collectors;
 
@@ -27,6 +29,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.cell.ComboBoxListCell;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 public class EmployeeCreateController {
 
@@ -75,6 +79,9 @@ public class EmployeeCreateController {
 
     @FXML
     private ToggleGroup posicion;
+
+	@FXML
+	private ImageView noImagen;
 	
 	private Main main;
 	
@@ -85,9 +92,20 @@ public class EmployeeCreateController {
 	
     @FXML
     void initialize() {
+		FileInputStream fis = null;
+		try {
+			fis = new FileInputStream("images/no-image.png");
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+
+		noImagen.setImage(new Image(fis));
+		noImagen.setPreserveRatio(true);
+
+
         choiceDepartamento.getItems().addAll("Sistemas y desarrollo", "Comercial y publicidad", "Servicios compartidos"); 
     	
-        responsabilidades.addAll("Programaci髇", "Dise駉", "Gesti髇 bases de datos", "Actualizaciones", "Mantenimiento aplicaci髇", "Captaci髇 y mantenimiento de sponsors", "Relaci髇 con usuarios", "Mantenimiento redes sociales", "Administraci髇 de empresa", "RRHH", "Contabilidad", "Contacto colaboradores");
+        responsabilidades.addAll("Programaci贸n", "Dise帽o", "Gesti贸n bases de datos", "Actualizaciones", "Mantenimiento aplicaci贸n", "Captaci贸n y mantenimiento de sponsors", "Relaci贸n con usuarios", "Mantenimiento redes sociales", "Administraci贸n de empresa", "RRHH", "Contabilidad", "Contacto colaboradores");
 
         if (eleccion.isEmpty()) {
         	eleccion.add("Elige una responsabilidad");
@@ -106,7 +124,7 @@ public class EmployeeCreateController {
     	
     	listResponsabilidades.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
     	
-    	comboCiudad.getItems().addAll("Madrid", "Santiago de Compostela", "Granada", "Le髇");
+    	comboCiudad.getItems().addAll("Madrid", "Santiago de Compostela", "Granada", "Le贸n");
     	
     }
     
