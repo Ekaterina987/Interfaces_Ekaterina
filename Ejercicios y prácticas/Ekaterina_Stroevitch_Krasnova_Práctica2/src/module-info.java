@@ -8,4 +8,5 @@ module Ekaterina_Stroevitch_Krasnova_Practica2 {
 	opens ch.makery.address.model to javafx.graphics, javafx.fxml, javafx.base;
 	opens ch.makery.address.view.employee.create to javafx.graphics, javafx.fxml, javafx.base;
 	opens ch.makery.address.view.employees.overview to javafx.graphics, javafx.fxml, javafx.base;
+	opens ch.makery.address.view.help to javafx.graphics, javafx.fxml, javafx.base;
 }

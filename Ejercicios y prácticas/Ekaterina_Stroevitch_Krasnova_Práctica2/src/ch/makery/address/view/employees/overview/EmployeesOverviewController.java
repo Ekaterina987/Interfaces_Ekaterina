@@ -51,6 +51,9 @@ public class EmployeesOverviewController {
 	@FXML
     private Button crearButton;
 
+	@FXML
+	private ImageView plusIcon;
+
 
 	@FXML
 	private TableColumn<Empleado, ListView<String>> colResponsabilidades;
@@ -86,9 +89,11 @@ public class EmployeesOverviewController {
 	public void crearTree() {
 		FileInputStream fis = null;
 		FileInputStream fis1 = null;
+		FileInputStream fis2 = null;
     	try {
 			fis = new FileInputStream("images/empleados.png");
 			fis1 = new FileInputStream("images/departamento.png");
+			fis2 = new FileInputStream("images/create.png");
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
@@ -100,6 +105,10 @@ public class EmployeesOverviewController {
     	ImageView imageView1 = new ImageView(new Image(fis1)); 
     	imageView1.setPreserveRatio(true);
     	imageView1.setFitHeight(40);
+
+		plusIcon.setImage(new Image(fis2));
+
+
     	
 		TreeItem<String> rootItem = new TreeItem<String>("Todos", imageView);
 		TreeItem<String> departamentosItem = new TreeItem<String>("Departamentos", imageView1);
