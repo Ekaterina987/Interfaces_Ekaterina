@@ -139,6 +139,13 @@ public class EmployeeCreateController {
 		inputApellidos.setText(empleado.getApellidos());
 		inputCorreo.setText(empleado.getCorreo());
 		inputContrasenia.setText(empleado.getContrasenia());
+		ObservableList<String> resps =
+				FXCollections.observableArrayList();
+		for(String respons : empleado.getResponsabilidadesArray()){
+			resps.add(respons);
+		}
+		resps.add("Elige una responsabilidad");
+		listResponsabilidades.setItems(resps);
 		inputFecha.setValue(DateUtil.parse(empleado.getFechaInicio()));
 		choiceDepartamento.setValue(empleado.getDepartamento());
 		inputPuesto.setText(empleado.getPuesto());
