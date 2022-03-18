@@ -55,6 +55,16 @@ public class Empleado {
 
 	public Empleado() {
 		// TODO Auto-generated constructor stub
+		this.nombre = new SimpleStringProperty();
+		this.apellidos = new SimpleStringProperty();
+		this.correo = new SimpleStringProperty();
+		this.contrasenia = new SimpleStringProperty();
+		this.departamento = new SimpleStringProperty();
+		this.posicion = new SimpleStringProperty();
+		this.puesto = new SimpleStringProperty();
+		this.responsabilidades = new ArrayList<>();
+		this.fechaInicio = new SimpleStringProperty();
+		this.ciudad = new SimpleStringProperty();
 	}
 
 

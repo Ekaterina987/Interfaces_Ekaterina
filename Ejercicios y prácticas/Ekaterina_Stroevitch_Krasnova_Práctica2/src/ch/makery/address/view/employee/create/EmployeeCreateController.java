@@ -15,6 +15,7 @@ import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
@@ -84,8 +85,7 @@ public class EmployeeCreateController {
 	private ImageView noImagen;
 	
 	private Main main;
-	
-	private Empleado empleado;
+
 
 	
 	
@@ -127,44 +127,54 @@ public class EmployeeCreateController {
     	
     }
     
-    public void cambiarLabel(String label, String button) {
-    	empleadoLabel.setText(label);
-    	mainButton.setText(button);
+    public void editarEmpleado(Empleado empleado) {
+    	empleadoLabel.setText("Modificar empleado");
+		mainButton = new Button("Guardar");
+    	//mainButton.setText(button);
+		EventHandler<ActionEvent> event = new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent actionEvent) {
+				handleEmpleado(actionEvent, empleado);
+			}
+		};
+		mainButton.setOnAction(event);
     }
     
     public void setMain(Main main) {
     	this.main = main;
     }
-    
-    public void setEmpleado(Empleado empleado) {
-    	this.empleado = empleado;
-    }
+	
     @FXML
     private void guardarEmpleado(ActionEvent event) {
-		RadioButton posicionSeleccionada = (RadioButton) posicion.getSelectedToggle();
-    	String fecha = "";
-    	try {
-    		 fecha = inputFecha.getValue().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-    	}catch(Exception e){
-    		
-    	}
-    	String resp = "";
-    	if (listResponsabilidades.getItems().stream().map(Object::toString).collect(Collectors.joining(", ")) != null) {
-    		ObservableList<String> ol = FXCollections.observableArrayList(listResponsabilidades.getItems());
-    		ol.remove(listResponsabilidades.getItems().size() - 1);
-    		resp = ol.stream().map(Object::toString).collect(Collectors.joining(", "));
-    	}
-    	String dept = "";
-    	if (choiceDepartamento.getValue() != null) {
-    		dept = choiceDepartamento.getValue();
-    	}
-    	String ciudad = "";
-    	if (comboCiudad.getValue() != null) {
-    		ciudad = comboCiudad.getValue();
-    	}
-    	main.validarDatos(inputNombre.getText(), inputApellidos.getText(), inputCorreo.getText(), 
-    			inputContrasenia.getText(), dept, posicionSeleccionada.getText(),
-    			inputPuesto.getText(), resp, fecha, ciudad);
+		handleEmpleado(event, new Empleado());
     }
+
+	public void handleEmpleado(ActionEvent event, Empleado empleado)
+	{
+		RadioButton posicionSeleccionada = (RadioButton) posicion.getSelectedToggle();
+		String fecha = "";
+		try {
+			fecha = inputFecha.getValue().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+		}catch(Exception e){
+
+		}
+		String resp = "";
+		listResponsabilidades.getItems().stream().map(Object::toString).collect(Collectors.joining(", "));
+		ObservableList<String> ol = FXCollections.observableArrayList(listResponsabilidades.getItems());
+		ol.remove(listResponsabilidades.getItems().size() - 1);
+		resp = ol.stream().map(Object::toString).collect(Collectors.joining(", "));
+		String dept = "";
+		if (choiceDepartamento.getValue() != null) {
+			dept = choiceDepartamento.getValue();
+		}
+		String ciudad = "";
+		if (comboCiudad.getValue() != null) {
+			ciudad = comboCiudad.getValue();
+		}
+		main.validarDatos(empleado, inputNombre.getText(), inputApellidos.getText(), inputCorreo.getText(),
+				inputContrasenia.getText(), dept, posicionSeleccionada.getText(),
+				inputPuesto.getText(), resp, fecha, ciudad);
+
+	}
 
 }

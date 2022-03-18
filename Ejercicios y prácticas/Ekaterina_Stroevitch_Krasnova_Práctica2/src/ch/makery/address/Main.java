@@ -95,9 +95,8 @@ ArrayList<String> resp2 = new ArrayList<>(Arrays.asList("Programación", "Diseñ
 
 			createController = loader.getController();
 			createController.setMain(this);
-			createController.setEmpleado(empleado);
 			
-			createController.cambiarLabel("Modificar empleado", "Guardar");
+			createController.editarEmpleado(empleado);
 
 			rootLayout.setCenter(ventanaEditar);
 		} catch (IOException e) {
@@ -137,8 +136,12 @@ ArrayList<String> resp2 = new ArrayList<>(Arrays.asList("Programación", "Diseñ
     	rootLayout.setCenter(menuController.getInicio());	
     }
 	
-	public void guardarEmpleado(Empleado empleado) {
-		data.add(empleado);
+	public void guardarEmpleado(int i, Empleado empleado) {
+		if (i != -1){
+			data.set(i, empleado);
+		}else{
+			data.add(empleado);
+		}
 		dialogoExitoCrear();
 		verEmpleados();
 	}
@@ -162,7 +165,7 @@ ArrayList<String> resp2 = new ArrayList<>(Arrays.asList("Programación", "Diseñ
 	}
 	
 	
-	public void validarDatos(String nombre, String apellidos, String correo, String contrasenia, String departamento, String posicion, String puesto, String responsabilidades, String fechaInicio, String ciudad) {
+	public void validarDatos(Empleado e, String nombre, String apellidos, String correo, String contrasenia, String departamento, String posicion, String puesto, String responsabilidades, String fechaInicio, String ciudad) {
 		fields.put("nombre", nombre);
     	fields.put("apellidos", apellidos);
     	fields.put("correo", correo);
@@ -194,9 +197,24 @@ ArrayList<String> resp2 = new ArrayList<>(Arrays.asList("Programación", "Diseñ
     	if(errores.size()>0) {
 	    	dialogoErrorCrear();
     	}else {
-    		this.empleado = new Empleado(nombre, apellidos, correo, contrasenia, departamento, posicion, puesto, responsabilidades, fechaInicio, ciudad);
-    		guardarEmpleado(empleado);
+			int index = data.indexOf(e);
+			e.setNombre(nombre);
+			e.setApellidos(apellidos);
+			e.setCorreo(correo);
+			e.setContrasenia(contrasenia);
+			e.setDepartamento(departamento);
+			e.setPosicion(posicion);
+			e.setPuesto(puesto);
+			e.setResponsabilidades(responsabilidades);
+			e.setFechaInicio(fechaInicio);
+			e.setCiudad(ciudad);
+    		//this.empleado = new Empleado(nombre, apellidos, correo, contrasenia, departamento, posicion, puesto, responsabilidades, fechaInicio, ciudad);
+    		guardarEmpleado(index, e);
     	}
+	}
+
+	public ObservableList<Empleado> getEmpleados(){
+		return data;
 	}
 	
 	
