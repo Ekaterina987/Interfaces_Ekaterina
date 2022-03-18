@@ -86,8 +86,7 @@ public class EmployeeCreateController {
 	private Main main;
 	
 	private Empleado empleado;
-	
-	private RadioButton posicionSeleccionada;
+
 	
 	
     @FXML
@@ -142,15 +141,7 @@ public class EmployeeCreateController {
     }
     @FXML
     private void guardarEmpleado(ActionEvent event) {
-		posicionSeleccionada = (RadioButton) posicion.getSelectedToggle();
-    	/*this.posicionSeleccionada = new RadioButton();
-    	posicion.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
-            @Override
-            public void changed(ObservableValue<? extends Toggle> ov, Toggle t, Toggle t1) {
-            	RadioButton posicionSelec = (RadioButton)t1.getToggleGroup().getSelectedToggle();
-            	setPosicionSeleccionada(posicionSelec);
-            }
-        });*/
+		RadioButton posicionSeleccionada = (RadioButton) posicion.getSelectedToggle();
     	String fecha = "";
     	try {
     		 fecha = inputFecha.getValue().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
@@ -174,10 +165,6 @@ public class EmployeeCreateController {
     	main.validarDatos(inputNombre.getText(), inputApellidos.getText(), inputCorreo.getText(), 
     			inputContrasenia.getText(), dept, posicionSeleccionada.getText(),
     			inputPuesto.getText(), resp, fecha, ciudad);
-    }
-    
-    private void setPosicionSeleccionada(RadioButton posicionSeleccionada) {
-    	this.posicionSeleccionada = posicionSeleccionada;
     }
 
 }
