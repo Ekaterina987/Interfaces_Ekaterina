@@ -9,6 +9,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.stream.Collectors;
 
 import ch.makery.address.Main;
+import ch.makery.address.model.DateUtil;
 import ch.makery.address.model.Empleado;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -126,13 +127,22 @@ public class EmployeeCreateController {
     	comboCiudad.getItems().addAll("Madrid", "Santiago de Compostela", "Granada", "León");
 
 		empleado = new Empleado();
-    	
+
     }
     
     public void editarEmpleado(Empleado empleado) {
 		this.empleado = empleado;
     	empleadoLabel.setText("Modificar empleado");
     	mainButton.setText("Guardar");
+
+		inputNombre.setText(empleado.getNombre());
+		inputApellidos.setText(empleado.getApellidos());
+		inputCorreo.setText(empleado.getCorreo());
+		inputContrasenia.setText(empleado.getContrasenia());
+		inputFecha.setValue(DateUtil.parse(empleado.getFechaInicio()));
+		choiceDepartamento.setValue(empleado.getDepartamento());
+		inputPuesto.setText(empleado.getPuesto());
+		comboCiudad.setValue(empleado.getCiudad());
     }
     
     public void setMain(Main main) {
@@ -166,8 +176,13 @@ public class EmployeeCreateController {
 		if (comboCiudad.getValue() != null) {
 			ciudad = comboCiudad.getValue();
 		}
+		String pos = "";
+		if(posicionSeleccionada != null){
+			pos = posicionSeleccionada.getText();
+		}
+
 		main.validarDatos(empleado, inputNombre.getText(), inputApellidos.getText(), inputCorreo.getText(),
-				inputContrasenia.getText(), dept, posicionSeleccionada.getText(),
+				inputContrasenia.getText(), dept, pos,
 				inputPuesto.getText(), resp, fecha, ciudad);
 
 	}
