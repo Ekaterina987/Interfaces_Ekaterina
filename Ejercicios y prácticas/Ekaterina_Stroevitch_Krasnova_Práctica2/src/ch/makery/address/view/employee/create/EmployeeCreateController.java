@@ -85,7 +85,7 @@ public class EmployeeCreateController {
 	private ImageView noImagen;
 	
 	private Main main;
-
+	private Empleado empleado;
 
 	
 	
@@ -124,29 +124,24 @@ public class EmployeeCreateController {
     	listResponsabilidades.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
     	
     	comboCiudad.getItems().addAll("Madrid", "Santiago de Compostela", "Granada", "León");
+
+		empleado = new Empleado();
     	
     }
     
     public void editarEmpleado(Empleado empleado) {
+		this.empleado = empleado;
     	empleadoLabel.setText("Modificar empleado");
-		mainButton = new Button("Guardar");
-    	//mainButton.setText(button);
-		EventHandler<ActionEvent> event = new EventHandler<ActionEvent>() {
-			@Override
-			public void handle(ActionEvent actionEvent) {
-				handleEmpleado(actionEvent, empleado);
-			}
-		};
-		mainButton.setOnAction(event);
+    	mainButton.setText("Guardar");
     }
     
     public void setMain(Main main) {
     	this.main = main;
     }
-	
+
     @FXML
     private void guardarEmpleado(ActionEvent event) {
-		handleEmpleado(event, new Empleado());
+		handleEmpleado(event, empleado);
     }
 
 	public void handleEmpleado(ActionEvent event, Empleado empleado)
