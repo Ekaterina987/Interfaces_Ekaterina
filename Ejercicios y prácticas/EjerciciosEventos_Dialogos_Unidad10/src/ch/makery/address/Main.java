@@ -31,12 +31,12 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		this.primaryStage = primaryStage;
-		this.primaryStage.setTitle("Diálogos");
+		this.primaryStage.setTitle("DiÃ¡logos");
 		initRootLayout();
 
 	}
 
-	/** Inicializa el diseño de la pantalla principal. */
+	/** Inicializa el diseÃ±o de la pantalla principal. */
 	public void initRootLayout() {
 		showEventos();
 	}
@@ -48,7 +48,7 @@ public class Main extends Application {
 
 	private void showEventos() {
 		try {
-			// Carga el XML con el diseño principal
+			// Carga el XML con el diseÃ±o principal
 			FXMLLoader loader = new FXMLLoader();
 
 			loader.setLocation(Main.class.getResource("view/eventosValidar/Eventos.fxml"));
@@ -58,7 +58,7 @@ public class Main extends Application {
 			textInput = eventController.getTextInput();
 			
 			
-			// Se añade el diseño principal a la escena
+			// Se aÃ±ade el diseÃ±o principal a la escena
 			rootScene = new Scene(rootLayout);
 			
 			
@@ -80,8 +80,8 @@ public class Main extends Application {
 
 			});
 		textDialog.getDialogPane().addEventFilter(KeyEvent.KEY_PRESSED, manejo);
-		textDialog.setTitle("Ejemplo de diálogo");
-		textDialog.setHeaderText("Diálogo para introducir un texto");
+		textDialog.setTitle("Ejemplo de diÃ¡logo");
+		textDialog.setHeaderText("DiÃ¡logo para introducir un texto");
 		textDialog.setOnCloseRequest(event -> textInput.requestFocus());
 		textDialog.showAndWait().ifPresent(response -> {
 			label.setText(response);
