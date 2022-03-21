@@ -1,0 +1,59 @@
+package ch.makery.address.view;
+
+import java.io.IOException;
+
+import ch.makery.address.Main;
+import ch.makery.address.view.employee.create.EmployeeCreateController;
+import ch.makery.address.view.employees.overview.EmployeesOverviewController;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.control.SplitPane;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.GridPane;
+
+public class MenuController {
+	// Pantalla principal en la que se añade o quita contenido
+		private BorderPane rootLayout;
+		private Main main;
+		
+		 @FXML
+		 private FlowPane inicio;
+		
+		@FXML
+	    private void crear(ActionEvent event) {    	
+	    	main.crear();
+	    }
+
+		@FXML
+	    private void editar(ActionEvent event) {    	
+	    	main.editar();
+	    }
+		@FXML
+	    private void verUsuarios(ActionEvent event) {    	
+	    	main.verUsuarios();
+	    }
+		@FXML
+	    private void abrirTutorial(ActionEvent event) {    	
+	    	main.abrirTutorial();
+	    }
+	    @FXML
+	    private void cerrarListado(ActionEvent event) {    	
+	    	rootLayout.setCenter(inicio);	
+	    }
+
+		public BorderPane getRootLayout() {
+			return rootLayout;
+		}
+
+		public void setRootLayout(BorderPane rootLayout) {
+			this.rootLayout = rootLayout;
+		}	
+
+		
+		public void setMain(Main main) {
+			this.main = main;
+		}
+
+}

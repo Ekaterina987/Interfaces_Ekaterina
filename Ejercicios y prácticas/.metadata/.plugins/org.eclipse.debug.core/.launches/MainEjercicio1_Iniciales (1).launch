@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+    <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+        <listEntry value="/Examen_Unidades7-8_Ekaterina_Stroevitch/src/ejercicio1_Iniciales/MainEjercicio1_Iniciales.java"/>
+    </listAttribute>
+    <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+        <listEntry value="1"/>
+    </listAttribute>
+    <booleanAttribute key="org.eclipse.jdt.launching.ATTR_EXCLUDE_TEST_CODE" value="true"/>
+    <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="ejercicio1_Iniciales.MainEjercicio1_Iniciales"/>
+    <stringAttribute key="org.eclipse.jdt.launching.MODULE_NAME" value="Examen_Unidades78_Ekaterina_Stroevitch"/>
+    <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="Examen_Unidades7-8_Ekaterina_Stroevitch"/>
+</launchConfiguration>

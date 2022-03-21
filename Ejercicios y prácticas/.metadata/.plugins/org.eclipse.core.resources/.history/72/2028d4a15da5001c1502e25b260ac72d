@@ -1,0 +1,5 @@
+module Ekaterina_Stroevitch_Krasnova_Práctica2 {
+	requires javafx.controls;
+	
+	opens ch.makery.address to javafx.graphics, javafx.fxml;
+}

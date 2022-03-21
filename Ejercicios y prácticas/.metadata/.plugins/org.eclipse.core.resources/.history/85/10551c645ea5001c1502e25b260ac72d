@@ -1,0 +1,60 @@
+package ch.makery.address;
+
+import java.io.IOException;
+
+import ch.makery.address.view.RootController;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
+
+public class Main extends Application {
+
+	private Stage primaryStage;
+	private BorderPane rootLayout;
+	private RootController rootController;
+	private Scene rootScene;
+
+	@Override
+	public void start(Stage primaryStage) {
+		this.primaryStage = primaryStage;
+		this.primaryStage.setTitle("Práctica 2");
+		initRootLayout();
+
+	}
+
+	/** Inicializa el diseño de la pantalla principal. */
+	public void initRootLayout() {
+		showRootLayout();
+	}
+
+	/** Returns the main stage. */
+	public Stage getPrimaryStage() {
+		return primaryStage;
+	}
+
+	private void showRootLayout() {
+		try {
+			// Carga el XML con el diseño principal
+			FXMLLoader loader = new FXMLLoader();
+
+			loader.setLocation(Main.class.getResource("view/RootLayout.fxml"));
+			rootLayout = (BorderPane) loader.load();
+			rootController = loader.getController();
+			rootController.setMain(this);
+
+			// Se añade el diseño principal a la escena
+			rootScene = new Scene(rootLayout);
+			primaryStage.setScene(rootScene);
+			primaryStage.show();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void main(String[] args) {
+		launch(args);
+	}
+
+}

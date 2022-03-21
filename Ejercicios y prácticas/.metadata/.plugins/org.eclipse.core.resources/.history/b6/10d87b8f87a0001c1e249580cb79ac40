@@ -1,0 +1,54 @@
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.TextField;
+
+public class PleaseProvideControllerClassName {
+
+    @FXML
+    private ResourceBundle resources;
+
+    @FXML
+    private URL location;
+
+    @FXML
+    private TextField birthday;
+
+    @FXML
+    private TextField city;
+
+    @FXML
+    private TextField firstName;
+
+    @FXML
+    private TextField lastName;
+
+    @FXML
+    private TextField pc;
+
+    @FXML
+    private TextField street;
+
+    @FXML
+    void cancelAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void okAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void initialize() {
+        assert birthday != null : "fx:id=\"birthday\" was not injected: check your FXML file 'DialogoPersona.fxml'.";
+        assert city != null : "fx:id=\"city\" was not injected: check your FXML file 'DialogoPersona.fxml'.";
+        assert firstName != null : "fx:id=\"firstName\" was not injected: check your FXML file 'DialogoPersona.fxml'.";
+        assert lastName != null : "fx:id=\"lastName\" was not injected: check your FXML file 'DialogoPersona.fxml'.";
+        assert pc != null : "fx:id=\"pc\" was not injected: check your FXML file 'DialogoPersona.fxml'.";
+        assert street != null : "fx:id=\"street\" was not injected: check your FXML file 'DialogoPersona.fxml'.";
+
+    }
+
+}

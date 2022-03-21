@@ -1,0 +1,26 @@
+package ch.makery.address.view.eventosValidar;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.TextField;
+
+public class EventosController {
+
+
+    @FXML
+    private TextField label;
+
+    @FXML
+    void mostrarDialogo(ActionEvent event) {
+
+    }
+
+    @FXML
+    void initialize() {
+
+
+    }
+
+}

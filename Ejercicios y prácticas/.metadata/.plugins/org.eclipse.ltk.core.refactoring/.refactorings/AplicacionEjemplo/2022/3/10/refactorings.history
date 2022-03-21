@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;AplicacionEjemplo/src/ch/makery/address/view/DialogoEmpleado.fxml&apos; to &apos;DialogoPersona.fxml&apos;" description="Rename resource &apos;DialogoEmpleado.fxml&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/ch/makery/address/view/DialogoEmpleado.fxml" name="DialogoPersona.fxml" stamp="1646855035498" updateReferences="true"/>
+</session>

@@ -1,0 +1,31 @@
+package ch.makery.address.view.eventosValidar;
+
+
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.TextField;
+import javafx.scene.control.TextInputDialog;
+
+public class EventosController {
+
+
+    @FXML
+    private TextField label;
+
+    @FXML
+    void mostrarDialogo(ActionEvent event) {
+    	TextInputDialog textDialog = new TextInputDialog("Ejemplo de diálogo");
+    	textDialog.setTitle("Ejemplo de diálogo");
+    	textDialog.setHeaderText("Diálogo para introducir un texto");
+    	textDialog.showAndWait().ifPresent(response -> {
+        	
+        });
+    }
+
+    @FXML
+    void initialize() {
+
+
+    }
+
+}

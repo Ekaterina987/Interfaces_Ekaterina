@@ -1,0 +1,42 @@
+package ch.makery.address.view.eventosValidar;
+
+
+import ch.makery.address.Main;
+import javafx.event.ActionEvent;
+import javafx.event.Event;
+import javafx.event.EventHandler;
+import javafx.fxml.FXML;
+import javafx.scene.Cursor;
+import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
+
+public class EventosController {
+	private Main main;
+
+    @FXML
+    private TextField label;
+
+    @FXML
+    void mostrarDialogo(ActionEvent event) {
+    	main.mostrarDialogo(label);
+    }
+    public void setMain(Main main) {
+    	this.main = main;
+    }
+
+    @FXML
+    void initialize() {
+		label.setOnMouseEntered(new EventHandler() {
+			@Override
+			public void handle(Event me) {
+				main.setCursorHand();
+			}
+
+		});
+
+    }
+    public TextField getTextInput() {
+    	return label;
+    }
+
+}

@@ -1,0 +1,61 @@
+package ch.makery.address.view;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.TextField;
+
+public class DialogoController {
+
+	
+    @FXML
+    private TextField birthday;
+
+    @FXML
+    private TextField city;
+
+    @FXML
+    private TextField firstName;
+
+    @FXML
+    private TextField lastName;
+
+    @FXML
+    private TextField pc;
+
+    @FXML
+    private TextField street;
+    
+    //private TextField[] fields;
+    private Map<String, TextField> fields = new HashMap<>();
+    
+
+    @FXML
+    void cancelAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void okAction(ActionEvent event) {
+    	for(TextField t : fields) {
+    		String error = "";
+    		if (t.getText().equals("")) {
+    			error = "El campo " + 
+    		}
+    	}
+
+    }
+
+    @FXML
+    void initialize() {
+    	fields.put("first name", firstName);
+    	fields.put("last name", lastName);
+    	fields.put("street", street);
+    	fields.put("city", city);
+    	fields.put("postal code", pc);
+    	fields.put("birthday", birthday);
+    }
+
+}

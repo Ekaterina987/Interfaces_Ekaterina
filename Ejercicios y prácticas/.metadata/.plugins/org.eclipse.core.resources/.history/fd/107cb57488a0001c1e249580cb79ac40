@@ -1,0 +1,46 @@
+package ch.makery.address.view;
+
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.TextField;
+
+public class DialogoController {
+
+	
+    @FXML
+    private TextField birthday;
+
+    @FXML
+    private TextField city;
+
+    @FXML
+    private TextField firstName;
+
+    @FXML
+    private TextField lastName;
+
+    @FXML
+    private TextField pc;
+
+    @FXML
+    private TextField street;
+    
+    private TextField[] fields = new TextField[6];
+
+    @FXML
+    void cancelAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void okAction(ActionEvent event) {
+    	
+
+    }
+
+    @FXML
+    void initialize() {
+    	fields = {birthday, city, firstName, lastName, pc, street};
+    }
+
+}
