@@ -3104,3 +3104,18 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 !MESSAGE The project description file (.project) for 'Examen_Unidades7-8_Ekaterina_Stroevitch' was missing.  This file contains important information about the project.  A new project description file has been created, but some information about the project may have been lost.
 !SUBENTRY 1 org.eclipse.core.resources 2 234 2022-03-21 19:43:28.024
 !MESSAGE The project description file (.project) for 'PracticaJavaFX' was missing.  This file contains important information about the project.  A new project description file has been created, but some information about the project may have been lost.
+
+!ENTRY org.eclipse.ui.ide 2 4 2022-03-21 19:45:38.239
+!MESSAGE Problems occurred closing the selected resources.
+!SUBENTRY 1 org.eclipse.core.resources 2 234 2022-03-21 19:45:38.239
+!MESSAGE The project description file (.project) for 'Examen_Unidades7-8_Ekaterina_Stroevitch' was missing.  This file contains important information about the project.  A new project description file has been created, but some information about the project may have been lost.
+
+!ENTRY org.eclipse.ui.ide 2 4 2022-03-21 19:45:40.629
+!MESSAGE Problems occurred closing the selected resources.
+!SUBENTRY 1 org.eclipse.core.resources 2 234 2022-03-21 19:45:40.629
+!MESSAGE The project description file (.project) for 'PracticaJavaFX' was missing.  This file contains important information about the project.  A new project description file has been created, but some information about the project may have been lost.
+
+!ENTRY org.eclipse.ui.ide 2 4 2022-03-21 19:45:45.503
+!MESSAGE Problems occurred closing the selected resources.
+!SUBENTRY 1 org.eclipse.core.resources 2 234 2022-03-21 19:45:45.503
+!MESSAGE The project description file (.project) for 'AplicacionEjemplo' was missing.  This file contains important information about the project.  A new project description file has been created, but some information about the project may have been lost.
