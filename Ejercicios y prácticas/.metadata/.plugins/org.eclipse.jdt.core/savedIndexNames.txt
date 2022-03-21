@@ -1,8 +1,6 @@
 INDEX VERSION 1.131+C:\Users\Vespertino\Documents\GitHub\Interfaces_Ekaterina\Ejercicios y prácticas\.metadata\.plugins\org.eclipse.jdt.core
-2688526930.index
-181223236.index
-693728972.index
 3198449654.index
+1345478009.index
 1865797976.index
 1938080607.index
 2328531074.index

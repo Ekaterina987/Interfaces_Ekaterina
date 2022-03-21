@@ -60,7 +60,13 @@ public class Main extends Application {
 			
 			// Se añade el diseño principal a la escena
 			rootScene = new Scene(rootLayout);
-			
+			rootScene.addEventFilter(KeyEvent.KEY_TYPED, e -> {
+
+			if (Character.isLowerCase(e.getCharacter().charAt(0))) {
+				e.consume();
+			}
+
+			});
 			
 			rootScene.addEventFilter(KeyEvent.KEY_PRESSED, manejo);
 			primaryStage.setScene(rootScene);
@@ -72,13 +78,6 @@ public class Main extends Application {
 
 	public void mostrarDialogo(TextField label) {
 		textDialog = new TextInputDialog("Pon un texto...");
-		textDialog.getDialogPane().addEventFilter(KeyEvent.KEY_TYPED, e -> {
-
-			if (Character.isLowerCase(e.getCharacter().charAt(0))) {
-				e.consume();
-			}
-
-			});
 		textDialog.getDialogPane().addEventFilter(KeyEvent.KEY_PRESSED, manejo);
 		textDialog.setTitle("Ejemplo de diálogo");
 		textDialog.setHeaderText("Diálogo para introducir un texto");
