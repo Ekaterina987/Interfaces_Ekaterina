@@ -31,8 +31,6 @@ import javafx.scene.layout.GridPane;
 public class Main extends Application {
 private static BorderPane rootLayout;
 private static MenuController menuController;
-private static EmployeeCreateController createController;
-private static EmployeesOverviewController overviewController;
 private static Map<String, String> fields = new HashMap<>();
 private static List<String> errores = new ArrayList<>();
 private static Empleado empleado;
@@ -75,9 +73,8 @@ private static ArrayList<String> resp2 = new ArrayList<>(Arrays.asList("Programa
 	public static void crear() {
     	try {
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(MenuController.class.getResource("/ch/makery/address/view/employee/create/EmployeeCreate.fxml"));
+			loader.setLocation(MenuController.class.getResource("/ch/makery/address/view/EmployeeCreate.fxml"));
 			GridPane ventanaCrear = (GridPane) loader.load();
-			createController = loader.getController();
 
 			rootLayout.setCenter(ventanaCrear);
 		} catch (IOException e) {
@@ -88,12 +85,10 @@ private static ArrayList<String> resp2 = new ArrayList<>(Arrays.asList("Programa
     	try {
 
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(MenuController.class.getResource("/ch/makery/address/view/employee/create/EmployeeCreate.fxml"));
+			loader.setLocation(MenuController.class.getResource("/ch/makery/address/view/EmployeeCreate.fxml"));
 			GridPane ventanaEditar = (GridPane) loader.load();
 
-			createController = loader.getController();
-			
-			createController.editarEmpleado(empleado);
+			menuController.editarEmpleado(empleado);
 
 			rootLayout.setCenter(ventanaEditar);
 		} catch (IOException e) {
@@ -103,13 +98,12 @@ private static ArrayList<String> resp2 = new ArrayList<>(Arrays.asList("Programa
     public static void verEmpleados() {
     	try {
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(MenuController.class.getResource("/ch/makery/address/view/employees/overview/EmployeesOverview.fxml"));
+			loader.setLocation(MenuController.class.getResource("/ch/makery/address/view/EmployeesOverview.fxml"));
 			SplitPane ventanaEmpleados = (SplitPane) loader.load();
-			
-			overviewController = loader.getController();
-			tablaEmpleados = overviewController.getTablaEmpleados();
+
+			tablaEmpleados = menuController.getTablaEmpleados();
 			tablaEmpleados.setItems(data); 
-	        overviewController.setDatos(tablaEmpleados);
+	        menuController.setDatos(tablaEmpleados);
 
 			rootLayout.setCenter(ventanaEmpleados);
 		} catch (IOException e) {
@@ -120,7 +114,7 @@ private static ArrayList<String> resp2 = new ArrayList<>(Arrays.asList("Programa
     	try {
 
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(MenuController.class.getResource("/ch/makery/address/view/help/Help.fxml"));
+			loader.setLocation(MenuController.class.getResource("/ch/makery/address/view/Help.fxml"));
 			AnchorPane tutorial = (AnchorPane) loader.load();
 			
 			rootLayout.setCenter(tutorial);

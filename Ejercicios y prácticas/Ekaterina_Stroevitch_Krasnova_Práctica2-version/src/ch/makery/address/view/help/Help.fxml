@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="691.0" prefWidth="920.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.view.help.HelpController">
+   <children>
+      <Accordion layoutX="112.0" layoutY="103.0" prefHeight="549.0" prefWidth="697.0">
+        <panes>
+          <TitledPane text="Como navegar">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="550.0" style="-fx-background-color: white;">
+                     <children>
+                        <Text layoutX="34.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Para navegar por el sitio hay que utilizar los botones que se encuentran en el menú posicionado en la parte superior de la ventana. Desde Archivo se puede cerrar el panel abierto. Desde Editar se pueden crear, editar y borrar empleados. En Ver se puede ver el listado de empleados. En Ayuda se puede acceder al tutorial de la aplicación." wrappingWidth="626.13671875" />
+                        <ImageView fx:id="navegar" fitHeight="52.0" fitWidth="613.0" layoutX="41.0" layoutY="245.0">
+                           <image>
+                              <Image url="@../../../../../../images/menu.png" />
+                           </image>
+                        </ImageView>
+                     </children></AnchorPane>
+            </content>
+               <font>
+                  <Font name="Noto Sans Regular" size="12.0" />
+               </font>
+          </TitledPane>
+          <TitledPane text="Ver empleados">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
+                     <children>
+                        <Text layoutX="32.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Para ver los empleados se debe acceder desde Ver → Empleados. En la pantalla de empleados se pueden ver todos los empleados y sus datos a excepción de la contraseña que es privada. A la izquierda se pueden filtrar los empleados por departamentos. También se pueden crear nuevos empleados o modificar un empleado seleccionándolo y haciendo click en el botón Acciones → Editar. También se puede eliminar un empleado seleccionándolo y haciendo click en Acciones → Borrar." wrappingWidth="630.13671875" />
+                        <ImageView fx:id="verEmpleados" fitHeight="123.0" fitWidth="586.0" layoutX="54.0" layoutY="212.0">
+                           <image>
+                              <Image url="@../../../../../../images/verEmpleados.png" />
+                           </image>
+                        </ImageView>
+                     </children></AnchorPane>
+            </content>
+               <font>
+                  <Font name="Noto Sans Regular" size="12.0" />
+               </font>
+          </TitledPane>
+          <TitledPane text="Crear empleados">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
+                     <children>
+                        <Text layoutX="28.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Para crear empleados se debe acceder desde el menú a Editar → Crear. En la pantalla se podrá rellenar un formulario con los datos del empleado. Se puede añadir una imagen al empleado en la parte superior, pulsando en el icono de la cámara. También se puede rellenar su nombre, apellidos, correo electrónico, puesto, contraseña y se pueden seleccionar cada una de sus responsabilidades, su departamento, posición, fecha de contratación y la ciudad en la que trabaja." wrappingWidth="637.13671875" />
+                        <ImageView fx:id="crearEmpleados" fitHeight="293.0" fitWidth="469.0" layoutX="113.0" layoutY="116.0">
+                           <image>
+                              <Image url="@../../../../../../images/crearEmpleados.png" />
+                           </image>
+                        </ImageView>
+                     </children></AnchorPane>
+            </content>
+               <font>
+                  <Font name="Noto Sans Regular" size="12.0" />
+               </font>
+          </TitledPane>
+            <TitledPane text="Editar empleados">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
+                     <children>
+                        <Text layoutX="28.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Para editar empleados se debe seleccionar el empleado desde Ver → Empleados y  acceder desde el menú a Editar → Editar. En la pantalla se podrá rellenar un formulario con los datos del empleado que se desean modificar. Se puede añadir o cambial la imagen del empleado en la parte superior, pulsando en el icono de la cámara. También se puede modificar su nombre, apellidos, correo electrónico, puesto, contraseña, responsabilidades, su departamento, posición, fecha de contratación y la ciudad en la que trabaja." wrappingWidth="643.13671875" />
+                        <ImageView fx:id="editarEmpleados" fitHeight="286.0" fitWidth="458.0" layoutX="121.0" layoutY="123.0">
+                           <image>
+                              <Image url="@../../../../../../images/modificarEmpleado.png" />
+                           </image>
+                        </ImageView>
+                     </children></AnchorPane>
+              </content>
+               <font>
+                  <Font name="Noto Sans Regular" size="12.0" />
+               </font>
+            </TitledPane>
+            <TitledPane text="Borrar empleados">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
+                     <children>
+                        <Text layoutX="32.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="También se puede borrar un empleado desde el menú Editar → Borrar. Para ello se debe tener seleccionado el empleado que se desea borrar en Ver → Empleados.." wrappingWidth="632.13671875" />
+                        <ImageView fx:id="borrarEmpleados" fitHeight="133.0" fitWidth="634.0" layoutX="31.0" layoutY="169.0">
+                           <image>
+                              <Image url="@../../../../../../images/borrarEmpleado.png" />
+                           </image>
+                        </ImageView>
+                     </children></AnchorPane>
+              </content>
+               <font>
+                  <Font name="Noto Sans Regular" size="12.0" />
+               </font>
+            </TitledPane>
+        </panes>
+      </Accordion>
+      <Label alignment="CENTER" layoutX="395.0" layoutY="40.0" text="Tutorial">
+         <font>
+            <Font name="Noto Sans Regular" size="36.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

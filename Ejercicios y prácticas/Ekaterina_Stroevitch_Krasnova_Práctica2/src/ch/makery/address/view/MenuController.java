@@ -11,10 +11,11 @@ import javafx.scene.layout.FlowPane;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 
 public class MenuController {
-	private Main main;
 	@FXML
 	private ImageView logoDemtr;
 
@@ -38,30 +39,27 @@ public class MenuController {
 
 	@FXML
 	private void crear(ActionEvent event) {
-		main.crear();
+		Main.crear();
 	}
 
 	@FXML
 	private void editar(ActionEvent event) {
-		main.editar(new Empleado());
+		ArrayList<String> resp = new ArrayList<>(Arrays.asList("Administración de empresa", "RRHH", "Contabilidad", "Contacto colaboradores"));
+		Main.editar(new Empleado("Tony", "Ávila", "tonyavila@demtr.com", "c0ntra5eniA", "Servicios compartidos", "Director", "Jefe", resp,"06/03/2022", "Madrid"));
 	}
 	@FXML
 	private void verUsuarios(ActionEvent event) {
-		main.verEmpleados();
+		Main.verEmpleados();
 	}
 	@FXML
 	private void abrirTutorial(ActionEvent event) {
-		main.abrirTutorial();
+		Main.abrirTutorial();
 	}
 	@FXML
 	private void cerrarListado(ActionEvent event) {
-		main.cerrarListado();
+		Main.cerrarListado();
 	}
 
-
-	public void setMain(Main main) {
-		this.main = main;
-	}
 
 	public FlowPane getInicio() {
 		return inicio;
