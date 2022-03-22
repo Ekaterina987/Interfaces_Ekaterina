@@ -1,6 +1,7 @@
 package ch.makery.address.view.draggableFiles;
 import ch.makery.address.Main;
 import javafx.fxml.FXML;
+import javafx.scene.Cursor;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -41,6 +42,7 @@ public class DraggableViewController {
         ClipboardContent cb = new ClipboardContent();
         cb.putString(source.getText());
         db.setContent(cb);
+
         event.consume();
     }
     @FXML
@@ -64,7 +66,10 @@ public class DraggableViewController {
 
     @FXML
     void initialize() {
-
+        source.addEventHandler(MouseEvent.MOUSE_PRESSED, ev -> {
+            source.setCursor(Cursor.MOVE);
+        });
+        source.addEventHandler(MouseEvent.MOUSE_RELEASED, ev -> source.setCursor(Cursor.DEFAULT));
     }
 
 }
