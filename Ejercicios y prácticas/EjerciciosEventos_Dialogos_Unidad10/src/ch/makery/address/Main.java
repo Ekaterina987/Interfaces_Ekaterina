@@ -2,6 +2,7 @@ package ch.makery.address;
 
 import java.io.IOException;
 
+import ch.makery.address.view.draggableFiles.DraggableViewController;
 import ch.makery.address.view.eventosValidar.EventosController;
 import javafx.application.Application;
 import javafx.event.EventHandler;
@@ -22,6 +23,7 @@ public class Main extends Application {
 	private TextField textInput;
 	private Scene rootScene;
 	private EventosController eventController;
+	private DraggableViewController draggableController;
 	
 	EventHandler<KeyEvent> manejo = (KeyEvent event) -> {
 		if (event.getCode() == KeyCode.ESCAPE || event.getCode() == KeyCode.ENTER) {
@@ -38,7 +40,8 @@ public class Main extends Application {
 
 	/** Inicializa el diseño de la pantalla principal. */
 	public void initRootLayout() {
-		showEventos();
+		//showEventos();
+		showDraggable();
 	}
 
 	/** Returns the main stage. */
@@ -63,6 +66,25 @@ public class Main extends Application {
 			
 			
 			rootScene.addEventFilter(KeyEvent.KEY_PRESSED, manejo);
+			primaryStage.setScene(rootScene);
+			primaryStage.show();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	private void showDraggable(){
+		try {
+			// Carga el XML con el diseño principal
+			FXMLLoader loader = new FXMLLoader();
+
+			loader.setLocation(Main.class.getResource("view/draggableFiles/DraggableView.fxml"));
+			rootLayout = (AnchorPane) loader.load();
+			draggableController = loader.getController();
+			draggableController.setMain(this);
+
+			// Se añade el diseño principal a la escena
+			rootScene = new Scene(rootLayout);
+
 			primaryStage.setScene(rootScene);
 			primaryStage.show();
 		} catch (IOException e) {

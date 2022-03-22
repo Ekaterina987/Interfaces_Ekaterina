@@ -92,7 +92,6 @@ public class EmployeeCreateController {
 	
     @FXML
     void initialize() {
-		posicion.se
 		FileInputStream fis = null;
 		try {
 			fis = new FileInputStream("images/no-image.png");
