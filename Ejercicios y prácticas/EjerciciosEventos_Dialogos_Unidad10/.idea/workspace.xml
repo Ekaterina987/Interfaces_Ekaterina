@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be7fd83b-f674-472a-a1c8-80b0eb4fb6b8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ch/makery/address/view/draggableFiles/DraggableViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ch/makery/address/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch/makery/address/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EjerciciosEventos_Dialogos_Unidad10/ch/makery/address/view/draggableFiles/DraggableView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EjerciciosEventos_Dialogos_Unidad10/ch/makery/address/view/draggableFiles/DraggableView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EjerciciosEventos_Dialogos_Unidad10/ch/makery/address/view/draggableFiles/DraggableViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EjerciciosEventos_Dialogos_Unidad10/ch/makery/address/view/draggableFiles/DraggableViewController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ch/makery/address/view/draggableFiles/DraggableView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch/makery/address/view/draggableFiles/DraggableView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Ekaterina_Stroevitch_Krasnova_Práctica2/src/ch/makery/address/view/employee/create/EmployeeCreateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Ekaterina_Stroevitch_Krasnova_Práctica2/src/ch/makery/address/view/employee/create/EmployeeCreateController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ch/makery/address/view/draggableFiles/DraggableViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch/makery/address/view/draggableFiles/DraggableViewController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +59,7 @@
       <option name="presentableId" value="Default" />
       <updated>1647952290165</updated>
       <workItem from="1647952291278" duration="16000" />
-      <workItem from="1647952400833" duration="1645000" />
+      <workItem from="1647952400833" duration="2325000" />
     </task>
     <servers />
   </component>
