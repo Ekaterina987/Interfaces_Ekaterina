@@ -23,6 +23,17 @@ public class ChoiceController {
     @FXML
     void showDialogo(ActionEvent event) {
 
+        ObservableList<String> elementos = lista.getSelectionModel().getSelectedItems();
+
+        ChoiceDialog<String> choiceDialog = new ChoiceDialog<String>(elementos.get(0), elementos);
+        choiceDialog.setTitle("Ejemplo...");
+        choiceDialog.setHeaderText("Seleccione un valor...");
+
+
+        choiceDialog.showAndWait().ifPresent(response -> {
+            lista.getSelectionModel().clearSelection();
+            lista.getSelectionModel().select(response);
+        });
     }
 
     @FXML
@@ -37,23 +48,26 @@ public class ChoiceController {
         lista.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
 
         boton.disableProperty().bind(Bindings.isEmpty(lista.getSelectionModel().getSelectedItems()));
+        EventHandler<MouseEvent> hover = new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent me) {
+                Alert alerta = new Alert(Alert.AlertType.INFORMATION);
 
-        if (boton.isDisabled()) {
-            lista.setOnMouseExited(new EventHandler<MouseEvent>() {
-                @Override
-                public void handle(MouseEvent me) {
-                    Alert alerta = new Alert(Alert.AlertType.INFORMATION);
+                alerta.setTitle("Aviso sobre listado");
+                alerta.setHeaderText("Sin items seleccionados");
+                alerta.setContentText("No se puede mostrar el diálogo hasta que se seleccione un ítem como mínimo");
 
-                    alerta.setTitle("Aviso sobre listado");
-                    alerta.setHeaderText("Sin items seleccionados");
-                    alerta.setContentText("No se puede mostrar el diálogo hasta que se seleccione un ítem como mínimo");
+                alerta.showAndWait();
 
-                    alerta.showAndWait();
+            }
+        };
+        lista.addEventHandler(MouseEvent.MOUSE_EXITED,hover);
 
-                }
+        lista.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
 
-            });
-        }
+            lista.removeEventHandler(MouseEvent.MOUSE_EXITED, hover);
+
+        });
 
     }
 }
