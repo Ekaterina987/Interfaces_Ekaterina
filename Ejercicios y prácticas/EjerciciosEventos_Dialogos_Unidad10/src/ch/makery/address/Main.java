@@ -2,6 +2,7 @@ package ch.makery.address;
 
 import java.io.IOException;
 
+import ch.makery.address.view.choiceEjercicio.ChoiceController;
 import ch.makery.address.view.draggableFiles.DraggableViewController;
 import ch.makery.address.view.eventosValidar.EventosController;
 import javafx.application.Application;
@@ -24,6 +25,7 @@ public class Main extends Application {
 	private Scene rootScene;
 	private EventosController eventController;
 	private DraggableViewController draggableController;
+	private ChoiceController choiceController;
 	
 	EventHandler<KeyEvent> manejo = (KeyEvent event) -> {
 		if (event.getCode() == KeyCode.ESCAPE || event.getCode() == KeyCode.ENTER) {
@@ -41,7 +43,8 @@ public class Main extends Application {
 	/** Inicializa el diseño de la pantalla principal. */
 	public void initRootLayout() {
 		//showEventos();
-		showDraggable();
+		//showDraggable();
+		showChoice();
 	}
 
 	/** Returns the main stage. */
@@ -81,6 +84,24 @@ public class Main extends Application {
 			rootLayout = (AnchorPane) loader.load();
 			draggableController = loader.getController();
 			draggableController.setMain(this);
+
+			// Se añade el diseño principal a la escena
+			rootScene = new Scene(rootLayout);
+
+			primaryStage.setScene(rootScene);
+			primaryStage.show();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	private void showChoice(){
+		try {
+			// Carga el XML con el diseño principal
+			FXMLLoader loader = new FXMLLoader();
+
+			loader.setLocation(Main.class.getResource("view/choiceEjercicio/ChoiceView.fxml"));
+			rootLayout = (AnchorPane) loader.load();
+			choiceController = loader.getController();
 
 			// Se añade el diseño principal a la escena
 			rootScene = new Scene(rootLayout);
