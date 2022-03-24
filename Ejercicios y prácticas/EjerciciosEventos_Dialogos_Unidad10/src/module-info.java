@@ -8,4 +8,5 @@ module EjerciciosEventos_Dialogos_Unidad10 {
 	opens ch.makery.address.view.eventosValidar to javafx.graphics, javafx.fxml;
 	opens ch.makery.address.view.draggableFiles to javafx.graphics, javafx.fxml;
 	opens ch.makery.address.view.choiceEjercicio to javafx.graphics, javafx.fxml;
+	opens ch.makery.address.view.pagination to javafx.graphics, javafx.fxml;
 }
