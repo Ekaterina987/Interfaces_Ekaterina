@@ -55,8 +55,7 @@ public class DialogoController {
 
     @FXML
     void okAction(ActionEvent event) {
-        System.out.println(firstName.getText());
-		Main.validar(persona, fields, firstName.getText(), lastName.getText(), street.getText(), city.getText(), pc.getText(), birthday.getText());
+		Main.validar(persona, fields);
     }
 
     @FXML
@@ -75,7 +74,6 @@ public class DialogoController {
     }
 
 	public  void editar(Person persona){
-		if (persona!= null){
 			this.persona = persona;
 			firstName.setText(persona.getFirstName());
 			lastName.setText(persona.getLastName());
@@ -83,7 +81,6 @@ public class DialogoController {
 			city.setText(persona.getCity());
 			pc.setText(Integer.toString(persona.getPC()));
 			birthday.setText(persona.getBirthday());
-		}
 	}
 
 

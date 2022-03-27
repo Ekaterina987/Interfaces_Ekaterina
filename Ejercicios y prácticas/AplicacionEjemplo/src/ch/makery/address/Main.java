@@ -106,30 +106,35 @@ public class Main extends Application {
 		}
 	}
 	public static void editarPersona(Person persona){
-		try {
-			// Cargamos el diseño del diálogo desde un XML
-			FXMLLoader loader = new FXMLLoader();
+		if (persona!= null){
+			try {
+				// Cargamos el diseño del diálogo desde un XML
+				FXMLLoader loader = new FXMLLoader();
 
-			loader.setLocation(Main.class.getResource("/ch/makery/address/view/DialogoPersona.fxml"));
-			AnchorPane page = (AnchorPane) loader.load();
-			dc= loader.getController();
-			dc.editar(persona);
+				loader.setLocation(Main.class.getResource("/ch/makery/address/view/DialogoPersona.fxml"));
+				AnchorPane page = (AnchorPane) loader.load();
+				dc= loader.getController();
+				dc.editar(persona);
 
-			// Se crea un nuevo Stage para mostrar el diálogo
-			Stage dialogStage = new Stage();
-			dialogStage.setTitle("Crear o editar persona");
-			// Se bloquean los eventos de la pantalla principal
-			dialogStage.initModality(Modality.WINDOW_MODAL);
-			dialogStage.initOwner(Main.getPrimaryStage());
+				// Se crea un nuevo Stage para mostrar el diálogo
+				Stage dialogStage = new Stage();
+				dialogStage.setTitle("Crear o editar persona");
+				// Se bloquean los eventos de la pantalla principal
+				dialogStage.initModality(Modality.WINDOW_MODAL);
+				dialogStage.initOwner(Main.getPrimaryStage());
 
-			Scene scene = new Scene(page);
-			dialogStage.setScene(scene);
-			dialogStage.showAndWait();
-		} catch (IOException e) {
-			e.printStackTrace();
+				Scene scene = new Scene(page);
+				dialogStage.setScene(scene);
+				dialogStage.showAndWait();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}else{
+			Main.dialogoEditarVacio();
 		}
+
 	}
-	public static void validar(Person persona, Map<String, TextField> fields, String firstName, String lastName, String street, String city, String pc, String birthday){
+	public static void validar(Person persona, Map<String, TextField> fields){
 		Iterator<String> it = fields.keySet().iterator();
 
 		while(it.hasNext()){
@@ -159,12 +164,12 @@ public class Main extends Application {
 			dialogoError();
 		}else {
 			int index = data.indexOf(persona);
-			persona.setFirstName(firstName);
-			persona.setLastName(lastName);
-			persona.setStreet(street);
-			persona.setCity(city);
-			persona.setPC(Integer.parseInt(pc));
-			persona.setBirthday(birthday);
+			persona.setFirstName(fields.get("first name").getText());
+			persona.setLastName(fields.get("last name").getText());
+			persona.setStreet(fields.get("street").getText());
+			persona.setCity(fields.get("city").getText());
+			persona.setPC(Integer.parseInt(fields.get("postal code").getText()));
+			persona.setBirthday(fields.get("birthday").getText());
 			aniadirPersona(index, persona);
 		}
 	}
@@ -182,6 +187,8 @@ public class Main extends Application {
 	public static void borrarPersona(Person persona){
 		if (data.contains(persona)){
 			dialogoConfirmacion( persona);
+		}else{
+			dialogoBorrarVacio();
 		}
 	}
 	public static void dialogoExitoCrear(){
@@ -207,6 +214,20 @@ public class Main extends Application {
 
 		errorAlert.showAndWait();
 		errores.clear();
+	}
+	public static void dialogoEditarVacio(){
+		Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+		errorAlert.setTitle("Error al editar persona");
+		errorAlert.setHeaderText("No se ha seleccionado ninguna fila");
+		errorAlert.setContentText("Por favor, selecciona una persona en la tabla");
+		errorAlert.showAndWait();
+	}
+	public static void dialogoBorrarVacio(){
+		Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+		errorAlert.setTitle("Error al eliminar");
+		errorAlert.setHeaderText("Se ha producido un error");
+		errorAlert.setContentText("No se puede eliminar porque no se ha seleccionado una fila o la tabla está vacía");
+		errorAlert.showAndWait();
 	}
 	public static void dialogoConfirmacion(Person persona){
 		Alert confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);

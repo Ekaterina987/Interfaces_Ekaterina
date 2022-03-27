@@ -24,7 +24,12 @@ public class Person {
 		this.lastName = new SimpleStringProperty(lName);
 	}
 	public Person(){
-
+		this.firstName = new SimpleStringProperty();
+		this.lastName = new SimpleStringProperty();
+		this.street = new SimpleStringProperty();
+		this.city = new SimpleStringProperty();
+		this.pc = new SimpleIntegerProperty();
+		this.birthday = new SimpleStringProperty();
 	}
 	public String getFirstName() {
         return firstName.get();

@@ -2,6 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8178c42-294c-4820-bec3-95e971c47b26" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AplicacionEjemplo/ch/makery/address/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AplicacionEjemplo/ch/makery/address/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AplicacionEjemplo/ch/makery/address/model/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AplicacionEjemplo/ch/makery/address/model/Person.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AplicacionEjemplo/ch/makery/address/view/DialogoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AplicacionEjemplo/ch/makery/address/view/DialogoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ch/makery/address/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch/makery/address/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ch/makery/address/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch/makery/address/model/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ch/makery/address/view/DialogoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch/makery/address/view/DialogoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../EjerciciosEventos_Dialogos_Unidad10/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../EjerciciosEventos_Dialogos_Unidad10/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +54,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1648404641184</updated>
-      <workItem from="1648404642291" duration="6436000" />
+      <workItem from="1648404642291" duration="7206000" />
     </task>
     <servers />
   </component>
