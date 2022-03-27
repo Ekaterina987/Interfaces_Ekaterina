@@ -5,6 +5,7 @@ import java.io.IOException;
 import ch.makery.address.view.choiceEjercicio.ChoiceController;
 import ch.makery.address.view.draggableFiles.DraggableViewController;
 import ch.makery.address.view.eventosValidar.EventosController;
+import ch.makery.address.view.pagination.FXMLDocumentController;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -25,6 +26,7 @@ public class Main extends Application {
 	private Scene rootScene;
 	private EventosController eventController;
 	private DraggableViewController draggableController;
+	private FXMLDocumentController fxmlDocumentController;
 	private ChoiceController choiceController;
 	
 	EventHandler<KeyEvent> manejo = (KeyEvent event) -> {
@@ -44,7 +46,8 @@ public class Main extends Application {
 	public void initRootLayout() {
 		//showEventos();
 		//showDraggable();
-		showChoice();
+		//showChoice();
+		showPagination();
 	}
 
 	/** Returns the main stage. */
@@ -107,6 +110,24 @@ public class Main extends Application {
 			rootScene = new Scene(rootLayout);
 
 			primaryStage.setScene(rootScene);
+			primaryStage.show();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	private void showPagination(){
+		try {
+			// Carga el XML con el diseño principal
+			FXMLLoader loader = new FXMLLoader();
+
+			loader.setLocation(Main.class.getResource("view/pagination/FXMLDocument.fxml"));
+			rootLayout = (AnchorPane) loader.load();
+			fxmlDocumentController = loader.getController();
+
+			// Se añade el diseño principal a la escena
+			rootScene = new Scene(rootLayout);
+			primaryStage.setScene(rootScene);
+
 			primaryStage.show();
 		} catch (IOException e) {
 			e.printStackTrace();
