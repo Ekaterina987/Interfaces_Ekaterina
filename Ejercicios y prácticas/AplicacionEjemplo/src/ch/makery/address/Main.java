@@ -9,7 +9,6 @@ import ch.makery.address.view.PersonController;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -28,24 +27,26 @@ public class Main extends Application {
 
 	private static PersonController peC;
 	private static DialogoController dc;
-	private static List<String> errores = new ArrayList<>();
+	private static List<String> errores;
 	// Lista auxiliar para TableView
-	private static ObservableList<Person> data = FXCollections.observableArrayList(
-			new Person("Hans", "Muster", "Elm", "Bremen", 342146, "21/08/1956"),
-			new Person("Ruth", "Mueller", "Birch", "Munich", 379523, "12/05/1972"),
-			new Person("Heinz", "Kurz", "Pine", "Berlin", 876532, "03/12/1995"),
-			new Person("Cornelia", "Meier", "Willow", "Hamburgo", 534234, "19/04/1967"),
-			new Person("Werner", "Meyer", "Oak", "Colonia", 543245, "07/07/2003"),
-			new Person("Lydia", "Kunz", "Elder", "Dusseldorf", 146217, "16/11/1984"),
-			new Person("Anna", "Best", "Maple", "Dresde", 852542, "05/06/1997"),
-			new Person("Stefan", "Meier", "Walnut", "Nuremberg", 557217, "31/10/2006"),
-			new Person("Martin", "Mueller", "Spruce", "Leipzig", 956424, "11/01/1934"));
+	private static ObservableList<Person> data;
 
 
 	@Override
 	public void start(Stage primaryStage) {
-		this.primaryStage = primaryStage;
-		this.primaryStage.setTitle("AddressApp");
+		Main.primaryStage = primaryStage;
+		Main.primaryStage.setTitle("AddressApp");
+		errores = new ArrayList<>();
+		data = FXCollections.observableArrayList(
+				new Person("Hans", "Muster", "Elm", "Bremen", 342146, "21/08/1956"),
+				new Person("Ruth", "Mueller", "Birch", "Munich", 379523, "12/05/1972"),
+				new Person("Heinz", "Kurz", "Pine", "Berlin", 876532, "03/12/1995"),
+				new Person("Cornelia", "Meier", "Willow", "Hamburgo", 534234, "19/04/1967"),
+				new Person("Werner", "Meyer", "Oak", "Colonia", 543245, "07/07/2003"),
+				new Person("Lydia", "Kunz", "Elder", "Dusseldorf", 146217, "16/11/1984"),
+				new Person("Anna", "Best", "Maple", "Dresde", 852542, "05/06/1997"),
+				new Person("Stefan", "Meier", "Walnut", "Nuremberg", 557217, "31/10/2006"),
+				new Person("Martin", "Mueller", "Spruce", "Leipzig", 956424, "11/01/1934"));
 		initRootLayout();
 		showPersonOverview();
 	}
@@ -135,24 +136,22 @@ public class Main extends Application {
 
 	}
 	public static void validar(Person persona, Map<String, TextField> fields){
-		Iterator<String> it = fields.keySet().iterator();
 
-		while(it.hasNext()){
-			String clave = it.next();
+		for (String clave : fields.keySet()) {
 			TextField valor = fields.get(clave);
 			String error = "";
 			if (valor.getText().equals("")) {
 				error = "El campo " + clave + " está vacío";
 				errores.add(error);
 			}
-			if(clave.equals("postal code")) {
+			if (clave.equals("postal code")) {
 				try {
-					int pcInt = Integer.parseInt(valor.getText());
-				}catch(Exception e) {
+					Integer.parseInt(valor.getText());
+				} catch (Exception e) {
 					error = "Postal code no válido. Debe ser un número entero";
 					errores.add(error);
 				}
-			} else if(clave.equals("birthday")) {
+			} else if (clave.equals("birthday")) {
 				if (DateUtil.parse(valor.getText()) == null) {
 					error = "El campo " + clave + " no es válido. Usa el formato dd/mm/yyyy";
 					errores.add(error);
@@ -186,7 +185,7 @@ public class Main extends Application {
 	}
 	public static void borrarPersona(Person persona){
 		if (data.contains(persona)){
-			dialogoConfirmacion( persona);
+			dialogoConfirmacion(persona);
 		}else{
 			dialogoBorrarVacio();
 		}
@@ -236,7 +235,8 @@ public class Main extends Application {
 
 		Optional<ButtonType> result = confirmAlert.showAndWait();
 		if (result.isPresent() && result.get() == ButtonType.OK) {
-			data.remove(data.indexOf(persona));
+			data.remove(persona);
+			peC.resetValores();
 			dialogoExitoBorrar();
 		}
 

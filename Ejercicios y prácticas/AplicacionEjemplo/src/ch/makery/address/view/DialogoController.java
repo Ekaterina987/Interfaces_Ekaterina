@@ -1,22 +1,14 @@
 package ch.makery.address.view;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
 
+import java.util.HashMap;
+import java.util.Map;
 import ch.makery.address.Main;
-import ch.makery.address.model.DateUtil;
 import ch.makery.address.model.Person;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
-import javafx.stage.Window;
+
 
 public class DialogoController {
 
@@ -41,11 +33,7 @@ public class DialogoController {
 
 	private Person persona;
 
-    private Map<String, TextField> fields = new HashMap<>();
-
-    private Main main;
-    
-    private PersonController peC;
+    private Map<String, TextField> fields;
 
 
 	@FXML
@@ -61,7 +49,7 @@ public class DialogoController {
     @FXML
     void initialize() {
 
-
+        fields = new HashMap<>();
     	fields.put("first name", firstName);
     	fields.put("last name", lastName);
     	fields.put("street", street);
