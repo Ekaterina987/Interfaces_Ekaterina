@@ -2,7 +2,10 @@
 
 <?import java.lang.String?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.text.TextFlow?>
@@ -78,11 +81,22 @@
       </VBox>
    </center>
    <top>
-      <HBox id="lila" BorderPane.alignment="CENTER">
+      <GridPane id="lila" BorderPane.alignment="CENTER">
+         <columnConstraints>
+            <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
+            <ColumnConstraints hgrow="NEVER" minWidth="10.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+         </rowConstraints>
          <children>
             <Text id="appHeader" strokeType="OUTSIDE" strokeWidth="0.0" text="Application Header" />
-            <Text id="account" strokeType="OUTSIDE" strokeWidth="0.0" text="Account" />
+            <TextFlow id="accountBg" GridPane.columnIndex="1">
+               <children>
+                  <Text id="account" strokeType="OUTSIDE" strokeWidth="0.0" text="Account" />
+               </children>
+            </TextFlow>
          </children>
-      </HBox>
+      </GridPane>
    </top>
 </BorderPane>
