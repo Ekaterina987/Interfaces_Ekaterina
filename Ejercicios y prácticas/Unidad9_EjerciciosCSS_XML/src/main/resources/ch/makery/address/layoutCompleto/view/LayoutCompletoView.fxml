@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+
+<BorderPane id="borderPane" stylesheets="@layout-style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <bottom>
+      <HBox id="copyBox" BorderPane.alignment="CENTER">
+         <children>
+            <Text id="copyright" strokeType="OUTSIDE" strokeWidth="0.0" text="Copyright 2017 CalliCoder" />
+         </children>
+         <styleClass>
+            <String fx:value="box" />
+            <String fx:value="padBox" />
+         </styleClass>
+      </HBox>
+   </bottom>
+   <left>
+      <VBox id="lateral" prefHeight="200.0" prefWidth="100.0" styleClass="box" BorderPane.alignment="CENTER">
+         <children>
+            <HBox>
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="sItem" text="Sidebar Item 1" />
+               </children>
+               <styleClass>
+                  <String fx:value="box" />
+                  <String fx:value="padBox" />
+               </styleClass>
+            </HBox>
+            <HBox>
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="sItem" text="Sidebar Item 2" />
+               </children>
+               <styleClass>
+                  <String fx:value="box" />
+                  <String fx:value="padBox" />
+               </styleClass>
+            </HBox>
+            <HBox>
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="sItem" text="Sidebar Item 3" />
+               </children>
+               <styleClass>
+                  <String fx:value="box" />
+                  <String fx:value="padBox" />
+               </styleClass>
+            </HBox>
+            <HBox>
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="sItem" text="Sidebar Item 4" />
+               </children>
+               <styleClass>
+                  <String fx:value="box" />
+                  <String fx:value="padBox" />
+               </styleClass>
+            </HBox>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <VBox id="contentBox" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text id="cHeader" strokeType="OUTSIDE" strokeWidth="0.0" text="Content header" />
+            <TextFlow id="loremIpsum" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempus urna nunc. In hac habitasse platea dictumst. Nunc consectetur odio sed ligula dignissim venenatis. Aenean lobortis elit vitae dignissim mattis. Duis suscipit velit imperdiet euismod dictum. Ut quam urna, interdum in ligula at, suscipit consectetur leo. Donec risus quam, venenatis non lorem id, molestie faucibus justo. Donec pretium arcu rutrum gravida sollicitudin. Ut cursus rhoncus eros sit amet vestibulum. Praesent metus dolor, accumsan non magna at, facilisis bibendum justo. Vivamus magna lorem, ornare quis aliquet et, scelerisque sagittis lectus. Nam eu urna euismod quam sagittis ultrices. In nisi enim, tincidunt vitae vehicula auctor, semper non dui." />
+               </children>
+            </TextFlow>
+         </children>
+         <styleClass>
+            <String fx:value="box" />
+            <String fx:value="padBox" />
+         </styleClass>
+      </VBox>
+   </center>
+   <top>
+      <HBox id="lila" BorderPane.alignment="CENTER">
+         <children>
+            <Text id="appHeader" strokeType="OUTSIDE" strokeWidth="0.0" text="Application Header" />
+            <Text id="account" strokeType="OUTSIDE" strokeWidth="0.0" text="Account" />
+         </children>
+      </HBox>
+   </top>
+</BorderPane>

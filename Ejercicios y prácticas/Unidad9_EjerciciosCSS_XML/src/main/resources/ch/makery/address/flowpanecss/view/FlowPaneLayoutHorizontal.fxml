@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.FlowPane?>
+
+<FlowPane id="flowPane" alignment="CENTER" columnHalignment="RIGHT" nodeOrientation="LEFT_TO_RIGHT" orientation="VERTICAL" prefWrapLength="200.0" rowValignment="TOP" stylesheets="@flowpane-horizontal.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button id="btn1" mnemonicParsing="false" text="Button 1">
+         <FlowPane.margin>
+            <Insets />
+         </FlowPane.margin></Button>
+      <Button id="btn2" mnemonicParsing="false" text="Button 2">
+         <FlowPane.margin>
+            <Insets />
+         </FlowPane.margin></Button>
+      <Button mnemonicParsing="false" text="Button 3" />
+      <Button mnemonicParsing="false" text="Button 4" />
+      <Button mnemonicParsing="false" text="Button 5" />
+   </children>
+</FlowPane>

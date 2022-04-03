@@ -1,0 +1,17 @@
+#btn1{
+    -fx-pref-width: 100;
+    -fx-pref-height: 60;
+}
+#btn2{
+    -fx-background-color: linear-gradient( to top, #dadada 0%, #eeeeee 100%);
+    -fx-padding: 0;
+}
+#flowPane{
+    -fx-vgap: 20;
+    -fx-hgap: 20;
+    -fx-pref-width: 272;
+    -fx-pref-height: 200;
+}
+
+
+
