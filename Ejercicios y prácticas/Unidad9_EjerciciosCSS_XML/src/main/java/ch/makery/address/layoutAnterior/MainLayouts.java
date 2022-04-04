@@ -20,6 +20,7 @@ public class MainLayouts extends Application {
 
 			 // Mostramos la escena del BorderPane de la variable rootLayot
 			 Scene scene = new Scene(rootLayout);
+			 scene.getStylesheets().add(MainLayouts.class.getResource("view/css/layout-anterior-style.css").toExternalForm());
 			 primaryStage.setScene(scene);
 			 primaryStage.show();
 			 } catch(Exception e) {
