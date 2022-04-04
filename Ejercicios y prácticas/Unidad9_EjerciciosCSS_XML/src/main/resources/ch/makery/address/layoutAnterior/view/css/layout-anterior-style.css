@@ -1,0 +1,44 @@
+#borderPane{
+    -fx-background-color: #a8ba9e;
+}
+#header{
+    -fx-background-color:  #336699;
+}
+#grid{
+    -fx-background-color: #b7d4f8;
+    -fx-background-radius: 10;
+}
+#footer{
+    -fx-background-color: linear-gradient( to right, #d21626 40%, #54d92f 100%);
+}
+#cuadrado{
+    -fx-fill: #70ace4;
+}
+.data{
+    -fx-text-fill: #d21626;
+}
+#lIzquierdo{
+    -fx-background-image: url("../imagenes/arrow_t_up_right.png");
+    -fx-background-position: center top;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 60%;
+}
+#imagen1{
+    -fx-image: url("../imagenes/Img1.PNG");
+}
+#imagen2{
+    -fx-image: url("../imagenes/Img2.PNG");
+}
+#imagen3{
+    -fx-image: url("../imagenes/Img3.PNG");
+}
+#imagen4{
+    -fx-image: url("../imagenes/Img4.PNG");
+}
+.img{
+    -fx-rotate: 30deg;
+    -fx-scale-x: 120%;
+    -fx-scale-y: 120%;
+    -fx-translate-x: 10;
+    -fx-translate-y: 10;
+}
