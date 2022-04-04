@@ -39,7 +39,7 @@
 #accountBg{
     -fx-padding: 0 0 0 30;
     -fx-background-image: url("imagenes/javafx_account_example.jpg");
-    -fx-background-position: center left;
+    -fx-background-position: left center;
     -fx-background-repeat: no-repeat;
     -fx-background-size: contain;
 }
