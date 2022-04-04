@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c8178c42-294c-4820-bec3-95e971c47b26" name="Changes" comment="" />
+    <list default="true" id="c8178c42-294c-4820-bec3-95e971c47b26" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EjerciciosEventos_Dialogos_Unidad10/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EjerciciosEventos_Dialogos_Unidad10/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../EjerciciosEventos_Dialogos_Unidad10/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EjerciciosEventos_Dialogos_Unidad10/out/production/EjerciciosEventos_Dialogos_Unidad10/ch/makery/address/view/pagination/FXMLDocumentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EjerciciosEventos_Dialogos_Unidad10/out/production/EjerciciosEventos_Dialogos_Unidad10/ch/makery/address/view/pagination/FXMLDocumentController.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,7 +28,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../../../Program Files/javafx-sdk-17.0.2/lib" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -47,6 +52,7 @@
       <updated>1648404641184</updated>
       <workItem from="1648404642291" duration="7320000" />
       <workItem from="1648453978784" duration="922000" />
+      <workItem from="1649093932891" duration="595000" />
     </task>
     <servers />
   </component>

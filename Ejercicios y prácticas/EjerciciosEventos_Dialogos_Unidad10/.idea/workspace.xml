@@ -1,22 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="be7fd83b-f674-472a-a1c8-80b0eb4fb6b8" name="Changes" comment="">
+    <list default="true" id="8196011e-6a92-4dc4-ac13-cad06004d631" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../AplicacionEjemplo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../AplicacionEjemplo/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EjerciciosEventos_Dialogos_Unidad10/ch/makery/address/view/pagination/FXMLDocumentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EjerciciosEventos_Dialogos_Unidad10/ch/makery/address/view/pagination/FXMLDocumentController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="FxmlFile" />
-        <option value="Class" />
-        <option value="CSS File" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
@@ -24,7 +18,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="26k0Tx9Qp3TOpP5MEsxd5OCoCFr" />
+  <component name="ProjectId" id="27LJ14JOZlOqXaWH96k5VERHdzv" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -35,13 +29,12 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../AplicacionEjemplo" />
-    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RunManager">
-    <configuration name="Eventos_dialogos" type="Application" factoryName="Application">
+    <configuration name="Pagination" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="ch.makery.address.Main" />
       <module name="EjerciciosEventos_Dialogos_Unidad10" />
       <method v="2">
@@ -52,42 +45,16 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="be7fd83b-f674-472a-a1c8-80b0eb4fb6b8" name="Changes" comment="" />
-      <created>1647952290165</created>
+      <changelist id="8196011e-6a92-4dc4-ac13-cad06004d631" name="Changes" comment="" />
+      <created>1649093217312</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1647952290165</updated>
-      <workItem from="1647952291278" duration="16000" />
-      <workItem from="1647952400833" duration="2724000" />
-      <workItem from="1647958736396" duration="873000" />
-      <workItem from="1647962859658" duration="632000" />
-      <workItem from="1647964515597" duration="88000" />
-      <workItem from="1648059665664" duration="5000" />
-      <workItem from="1648060202682" duration="4169000" />
-      <workItem from="1648069335536" duration="8000" />
-      <workItem from="1648069427494" duration="4275000" />
-      <workItem from="1648125145178" duration="1502000" />
-      <workItem from="1648199074938" duration="2593000" />
-      <workItem from="1648243870654" duration="2127000" />
-      <workItem from="1648293162112" duration="931000" />
-      <workItem from="1648372541174" duration="3783000" />
-      <workItem from="1648404474984" duration="906000" />
-      <workItem from="1648802609861" duration="103000" />
+      <updated>1649093217312</updated>
+      <workItem from="1649093218703" duration="1297000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
 </project>
