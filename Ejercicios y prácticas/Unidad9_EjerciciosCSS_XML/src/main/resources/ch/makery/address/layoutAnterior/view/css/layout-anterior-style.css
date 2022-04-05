@@ -7,7 +7,7 @@
 #grid{
     -fx-background-color: #b7d4f8;
     -fx-background-radius: 10;
-    -fx-background-insets: 5;
+    -fx-background-insets: 10 10 10 0;
     -fx-padding: 0 15 0 15;
 }
 #footer{
@@ -29,7 +29,7 @@
     -fx-border-width: 2;
     -fx-border-style: solid;
     -fx-border-color: #29800c, #d21626;
-    -fx-border-insets: 5, 10;
+    -fx-border-insets: 10, 15;
 }
 #imagen1{
     -fx-image: url("../imagenes/Img1.PNG");
@@ -53,5 +53,5 @@
 
 #accordion{
     -fx-pref-width: 125;
-    -fx-padding: 5 5 5 0;
+    -fx-padding: 10 10 10 0;
 }
