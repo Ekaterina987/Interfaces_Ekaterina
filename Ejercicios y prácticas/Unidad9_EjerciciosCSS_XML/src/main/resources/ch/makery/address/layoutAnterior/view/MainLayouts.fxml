@@ -94,8 +94,8 @@
    <center>
       <GridPane id="grid" BorderPane.alignment="CENTER">
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="285.0" minWidth="10.0" prefWidth="184.0" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="396.0" minWidth="10.0" prefWidth="396.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="285.0" minWidth="10.0" prefWidth="116.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="396.0" minWidth="10.0" prefWidth="284.0" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -182,9 +182,9 @@
       </AnchorPane>
    </bottom>
    <right>
-      <AnchorPane BorderPane.alignment="CENTER">
+      <AnchorPane id="lDerecho" BorderPane.alignment="CENTER">
          <children>
-            <Accordion prefWidth="202.0">
+            <Accordion id="accordion" prefWidth="202.0">
               <panes>
                 <TitledPane id="tPane" animated="false" text="Image 1">
                   <content>
