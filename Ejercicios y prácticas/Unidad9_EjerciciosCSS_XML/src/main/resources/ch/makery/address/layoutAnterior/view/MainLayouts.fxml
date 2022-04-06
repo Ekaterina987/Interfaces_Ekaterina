@@ -17,7 +17,6 @@
 <?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.control.TreeView?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -87,7 +86,7 @@
                   <Insets left="8.0" />
                </VBox.margin>
             </Hyperlink>
-            <TreeView fx:id="tree1" prefHeight="200.0" prefWidth="200.0" />
+            <TreeView id="treeView" fx:id="tree1" prefHeight="200.0" prefWidth="200.0" />
          </children>
       </VBox>
    </left>
@@ -98,13 +97,13 @@
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="396.0" minWidth="10.0" prefWidth="284.0" />
         </columnConstraints>
         <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
             <Label text="Name">
@@ -137,26 +136,26 @@
                </font></Label>
             <PasswordField text="123456789" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <DatePicker GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <ListView fx:id="qualificationsListView" editable="true" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <ListView id="listView" fx:id="qualificationsListView" editable="true" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
             <HBox alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="6">
                <children>
                   <ComboBox fx:id="idiomaCombo" prefWidth="150.0" promptText="Select a language" />
                   <ChoiceBox fx:id="locationBox" prefWidth="150.0" value="Select a value..." />
                </children>
             </HBox>
-            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="100.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <HBox alignment="CENTER_LEFT" prefWidth="200.0" styleClass="hbox" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <children>
-                  <RadioButton mnemonicParsing="false" text="Male">
+                  <RadioButton mnemonicParsing="false" styleClass="seleccionable" text="Male">
                      <toggleGroup>
                         <ToggleGroup fx:id="gender" />
                      </toggleGroup></RadioButton>
-                  <RadioButton mnemonicParsing="false" text="Female" toggleGroup="$gender" />
+                  <RadioButton mnemonicParsing="false" styleClass="seleccionable" text="Female" toggleGroup="$gender" />
                </children>
             </HBox>
-            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="100.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <HBox alignment="CENTER_LEFT" prefWidth="200.0" styleClass="hbox" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <children>
-                  <CheckBox allowIndeterminate="true" mnemonicParsing="false" selected="true" text="Java" />
-                  <CheckBox allowIndeterminate="true" indeterminate="true" mnemonicParsing="false" text="Electron" />
+                  <CheckBox allowIndeterminate="true" mnemonicParsing="false" selected="true" styleClass="seleccionable" text="Java" />
+                  <CheckBox allowIndeterminate="true" indeterminate="true" mnemonicParsing="false" styleClass="seleccionable" text="Electron" />
                </children>
             </HBox>
             <TextField promptText="(Name and surname)" GridPane.columnIndex="1" />
@@ -164,9 +163,6 @@
          <BorderPane.margin>
             <Insets />
          </BorderPane.margin>
-         <padding>
-            <Insets left="20.0" />
-         </padding>
       </GridPane>
    </center>
    <bottom>
@@ -186,40 +182,24 @@
          <children>
             <Accordion id="accordion" prefWidth="202.0">
               <panes>
-                <TitledPane id="tPane" animated="false" text="Image 1">
+                <TitledPane animated="false" styleClass="tPane" text="Image 1">
                   <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="200.0">
-                           <children>
-                              <ImageView id="imagen1" fitHeight="71.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true" styleClass="img" />
-                           </children>
-                        </AnchorPane>
+                    <AnchorPane id="backImage1" minHeight="0.0" minWidth="0.0" prefWidth="200.0" styleClass="backImage" />
                   </content>
                 </TitledPane>
-                <TitledPane animated="false" text="Image 2">
+                <TitledPane animated="false" styleClass="tPane" text="Image 2">
                   <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="200.0">
-                           <children>
-                              <ImageView id="imagen2" fitHeight="71.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true" styleClass="img" />
-                           </children>
-                        </AnchorPane>
+                    <AnchorPane id="backImage2" minHeight="0.0" minWidth="0.0" prefWidth="200.0" styleClass="backImage" />
                   </content>
                 </TitledPane>
-                <TitledPane animated="false" text="Image 3">
+                <TitledPane animated="false" styleClass="tPane" text="Image 3">
                   <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="200.0">
-                           <children>
-                              <ImageView id="imagen3" fitHeight="71.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true" styleClass="img" />
-                           </children>
-                        </AnchorPane>
+                    <AnchorPane id="backImage3" minHeight="0.0" minWidth="0.0" prefWidth="200.0" styleClass="backImage" />
                   </content>
                 </TitledPane>
-                  <TitledPane animated="false" layoutX="10.0" layoutY="60.0" text="Image 4">
+                  <TitledPane animated="false" layoutX="10.0" layoutY="60.0" styleClass="tPane" text="Image 4">
                      <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="200.0">
-                           <children>
-                              <ImageView id="imagen4" fitHeight="71.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true" styleClass="img" />
-                           </children>
-                        </AnchorPane>
+                        <AnchorPane id="backImage4" minHeight="0.0" minWidth="0.0" prefWidth="200.0" styleClass="backImage" />
                      </content>
                   </TitledPane>
               </panes>
