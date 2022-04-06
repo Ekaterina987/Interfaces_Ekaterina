@@ -14,6 +14,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
@@ -60,6 +61,8 @@ public class Main extends Application {
 			rootLayout = (BorderPane) loader.load();
 			// Se añade el diseño principal a la escena
 			Scene scene = new Scene(rootLayout);
+			scene.getStylesheets().add(Main.class.getResource("view/css/style.css").toExternalForm());
+			primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("images/address-book.png")));
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch (IOException e) {
