@@ -55,6 +55,10 @@ public class MenuController {
 		Main.editarEmpleado();
 	}
 	@FXML
+	void borrar(ActionEvent event) {
+		Main.borrarEmpleado();
+	}
+	@FXML
 	private void verUsuarios(ActionEvent event) {
 		Main.verEmpleados();
 	}

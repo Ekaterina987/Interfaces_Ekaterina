@@ -47,9 +47,9 @@ public class EmployeesOverviewController {
 	@FXML
     private Button crearButton;
 	@FXML
-	private MenuItem editarButton;
+	private Button editarButton;
 	@FXML
-	private MenuItem borrarButton;
+	private Button borrarButton;
 
 	@FXML
 	private ImageView plusIcon;
@@ -83,6 +83,10 @@ public class EmployeesOverviewController {
     private void editarEmpleado(ActionEvent event) {
 		editarEmpleado();
     }
+	@FXML
+	private void borrarEmpleado(ActionEvent event) {
+		borrarEmpleado();
+	}
 	public void inhabilitarBotones(){
 		editarButton.setDisable(true);
 		borrarButton.setDisable(true);
@@ -94,6 +98,11 @@ public class EmployeesOverviewController {
 	public void editarEmpleado(){
 		if (actual != null) {
 			Main.editar(actual);
+		}
+	}
+	public void borrarEmpleado(){
+		if (actual != null) {
+			Main.dialogoConfirmacionBorrar(actual);
 		}
 	}
 	

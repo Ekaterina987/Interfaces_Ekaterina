@@ -129,6 +129,9 @@ private static ArrayList<String> resp2 = new ArrayList<>(Arrays.asList("Programa
 	public static void editarEmpleado(){
 		overviewController.editarEmpleado();
 	}
+	public static void borrarEmpleado(){
+		overviewController.borrarEmpleado();
+	}
 	public static void cerrarListado() {
     	rootLayout.setCenter(menuController.getInicio());	
     }
@@ -173,6 +176,18 @@ private static ArrayList<String> resp2 = new ArrayList<>(Arrays.asList("Programa
 			data.set(i, empleado);
 			dialogoExitoCrearMod("Se ha modificado el empleado");
 			verEmpleados();
+		}
+
+	}
+	public static void dialogoConfirmacionBorrar(Empleado empleado){
+		Alert confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
+		confirmAlert.setTitle("Confirmar borrado empleado");
+		confirmAlert.setHeaderText("¿Estás seguro de que quieres borrar a " + empleado.getNombre() + " " + empleado.getApellidos() + "?");
+
+		Optional<ButtonType> result = confirmAlert.showAndWait();
+		if (result.isPresent() && result.get() == ButtonType.OK) {
+			data.remove(empleado);
+			dialogoExitoCrearMod("Se ha eliminado a " + empleado.getNombre() + " " + empleado.getApellidos());
 		}
 
 	}

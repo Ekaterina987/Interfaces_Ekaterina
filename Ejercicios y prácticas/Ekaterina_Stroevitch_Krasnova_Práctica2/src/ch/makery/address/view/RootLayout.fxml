@@ -31,7 +31,7 @@
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="U" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator></MenuItem>
-              <MenuItem fx:id="menuBorrar" disable="true" mnemonicParsing="false" text="Borrar">
+              <MenuItem fx:id="menuBorrar" disable="true" mnemonicParsing="false" onAction="#borrar" text="Borrar">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="D" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator></MenuItem>
