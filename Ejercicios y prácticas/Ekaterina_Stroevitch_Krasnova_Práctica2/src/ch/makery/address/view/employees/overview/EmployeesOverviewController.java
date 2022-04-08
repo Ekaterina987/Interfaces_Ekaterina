@@ -9,6 +9,9 @@ import ch.makery.address.model.Empleado;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -66,10 +69,26 @@ public class EmployeesOverviewController {
 
 	
 	private Empleado actual;
-	
+
+	public TreeView<String> getTreeDepartamentos() {
+		return treeDepartamentos;
+	}
+
+	public void setTreeDepartamentos(TreeView<String> treeDepartamentos) {
+		this.treeDepartamentos = treeDepartamentos;
+	}
+
 	@FXML
 	void initialize() {
-		
+		colNombre.setCellValueFactory(new PropertyValueFactory<Empleado,String>("nombre"));
+		colApellidos.setCellValueFactory(new PropertyValueFactory<Empleado,String>("apellidos"));
+		colCorreo.setCellValueFactory(new PropertyValueFactory<Empleado,String>("correo"));
+		colDepartamento.setCellValueFactory(new PropertyValueFactory<Empleado,String>("departamento"));
+		colPuesto.setCellValueFactory(new PropertyValueFactory<Empleado,String>("puesto"));
+		colPosicion.setCellValueFactory(new PropertyValueFactory<Empleado,String>("posicion"));
+		colResponsabilidades.setCellValueFactory(new PropertyValueFactory<Empleado,ListView<String>>("responsabilidades"));
+		colFecha.setCellValueFactory(new PropertyValueFactory<Empleado,String>("fechaInicio"));
+		colCiudad.setCellValueFactory(new PropertyValueFactory<Empleado,String>("ciudad"));
 		crearTree();
 		inhabilitarBotones();
 		Main.inhabilitarMenu();
@@ -136,7 +155,7 @@ public class EmployeesOverviewController {
 		rootItem.getChildren().add(departamentosItem);
 		departamentosItem.getChildren().add(new TreeItem<String>("Sistemas y desarrollo"));
 		departamentosItem.getChildren().add(new TreeItem<String>("Comercial y publicidad"));
-		departamentosItem.getChildren().add(new TreeItem<String>("Servicios Compartidos"));
+		departamentosItem.getChildren().add(new TreeItem<String>("Servicios compartidos"));
 
 		treeDepartamentos.setCellFactory(TextFieldTreeCell.forTreeView());
 
@@ -144,17 +163,34 @@ public class EmployeesOverviewController {
 		treeDepartamentos.setRoot(rootItem);
 	}
 	
-	public void setDatos(TableView<Empleado> tablaEmpleados) {
-		this.tablaEmpleados = tablaEmpleados;
-		colNombre.setCellValueFactory(new PropertyValueFactory<Empleado,String>("nombre"));
-        colApellidos.setCellValueFactory(new PropertyValueFactory<Empleado,String>("apellidos"));
-        colCorreo.setCellValueFactory(new PropertyValueFactory<Empleado,String>("correo"));
-        colDepartamento.setCellValueFactory(new PropertyValueFactory<Empleado,String>("departamento"));
-        colPuesto.setCellValueFactory(new PropertyValueFactory<Empleado,String>("puesto"));
-        colPosicion.setCellValueFactory(new PropertyValueFactory<Empleado,String>("posicion"));
-        colResponsabilidades.setCellValueFactory(new PropertyValueFactory<Empleado,ListView<String>>("responsabilidades"));
-        colFecha.setCellValueFactory(new PropertyValueFactory<Empleado,String>("fechaInicio"));
-        colCiudad.setCellValueFactory(new PropertyValueFactory<Empleado,String>("ciudad"));
+	public void setDatos(ObservableList<Empleado> data) {
+
+
+
+		FilteredList<Empleado> filteredData = new FilteredList<>(data, p -> true);
+		treeDepartamentos.getSelectionModel().selectedItemProperty().addListener((v, oldValue, newValue) -> {
+			filteredData.setPredicate(empleado -> {
+
+				if (newValue == null) {
+					return true;
+				}
+				if (empleado.getDepartamento().equals(newValue.getValue())) {
+					return true;
+				}else if(newValue.getValue().equals("Departamentos") || newValue.getValue().equals("Todos") ){
+					return true;
+				}
+				return false; // Does not match.
+			});
+
+		});
+
+		// 3. Wrap the FilteredList in a SortedList.
+		SortedList<Empleado> sortedData = new SortedList<>(filteredData);
+
+		// 4. Bind the SortedList comparator to the TableView comparator.
+		sortedData.comparatorProperty().bind(tablaEmpleados.comparatorProperty());
+		tablaEmpleados.setItems(sortedData);
+
 
 		tablaEmpleados.setRowFactory(tv -> {
             TableRow<Empleado> row = new TableRow<>();
