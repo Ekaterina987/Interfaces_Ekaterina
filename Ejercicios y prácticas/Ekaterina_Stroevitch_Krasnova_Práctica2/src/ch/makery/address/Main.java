@@ -1,12 +1,7 @@
 package ch.makery.address;
 	
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import ch.makery.address.model.DateUtil;
 import ch.makery.address.model.Empleado;
@@ -17,6 +12,7 @@ import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.ButtonType;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -100,6 +96,7 @@ private static ArrayList<String> resp2 = new ArrayList<>(Arrays.asList("Programa
 			e.printStackTrace();
 		}
     }
+
     public static void verEmpleados() {
     	try {
 			FXMLLoader loader = new FXMLLoader();
@@ -116,6 +113,7 @@ private static ArrayList<String> resp2 = new ArrayList<>(Arrays.asList("Programa
 			e.printStackTrace();
 		}
     }
+
 	public static void abrirTutorial() {
     	try {
 
@@ -128,28 +126,34 @@ private static ArrayList<String> resp2 = new ArrayList<>(Arrays.asList("Programa
 			e.printStackTrace();
 		}
     }
+	public static void editarEmpleado(){
+		overviewController.editarEmpleado();
+	}
 	public static void cerrarListado() {
     	rootLayout.setCenter(menuController.getInicio());	
     }
 	
 	public static void guardarEmpleado(int i, Empleado empleado) {
 		if (i != -1){
-			data.set(i, empleado);
+			dialogoConfirmacionEditar(i, empleado);
+
 		}else{
 			data.add(empleado);
+			dialogoExitoCrearMod("Se ha creado el empleado");
+			verEmpleados();
 		}
-		dialogoExitoCrear();
-		verEmpleados();
+
 	}
 	
-	public static void dialogoExitoCrear() {
+	public static void dialogoExitoCrearMod(String accion) {
+
 		Alert infoAlert = new Alert(AlertType.INFORMATION);
 		infoAlert.setTitle("Éxito");
-    	infoAlert.setHeaderText("Se ha creado el empleado");
+    	infoAlert.setHeaderText(accion);
 
     	infoAlert.showAndWait();
 	}
-	public static void dialogoErrorCrear() {
+	public static void dialogoErrorCrearMod() {
 		Alert errorAlert = new Alert(AlertType.ERROR);
 		errorAlert.setTitle("Hay campos incorrectos");
     	errorAlert.setHeaderText("Por favor, rellena correctamente los campos");
@@ -158,6 +162,19 @@ private static ArrayList<String> resp2 = new ArrayList<>(Arrays.asList("Programa
 
     	errorAlert.showAndWait();
     	errores.clear();
+	}
+	public static void dialogoConfirmacionEditar(int i, Empleado empleado){
+		Alert confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
+		confirmAlert.setTitle("Confirmar modificación empleado");
+		confirmAlert.setHeaderText("¿Estás seguro de que quieres modificar los datos de " + empleado.getNombre() + " " + empleado.getApellidos() + "?");
+
+		Optional<ButtonType> result = confirmAlert.showAndWait();
+		if (result.isPresent() && result.get() == ButtonType.OK) {
+			data.set(i, empleado);
+			dialogoExitoCrearMod("Se ha modificado el empleado");
+			verEmpleados();
+		}
+
 	}
 	
 	
@@ -191,7 +208,7 @@ private static ArrayList<String> resp2 = new ArrayList<>(Arrays.asList("Programa
     	    
     	}
     	if(errores.size()>0) {
-	    	dialogoErrorCrear();
+	    	dialogoErrorCrearMod();
     	}else {
 			int index = data.indexOf(e);
 			e.setNombre(nombre);
@@ -207,6 +224,13 @@ private static ArrayList<String> resp2 = new ArrayList<>(Arrays.asList("Programa
     		//this.empleado = new Empleado(nombre, apellidos, correo, contrasenia, departamento, posicion, puesto, responsabilidades, fechaInicio, ciudad);
     		guardarEmpleado(index, e);
     	}
+	}
+
+	public static void inhabilitarMenu(){
+		menuController.inhabilitarMenu();
+	}
+	public static void habilitarMenu(){
+		menuController.habilitarMenu();
 	}
 
 	public static ObservableList<Empleado> getEmpleados(){

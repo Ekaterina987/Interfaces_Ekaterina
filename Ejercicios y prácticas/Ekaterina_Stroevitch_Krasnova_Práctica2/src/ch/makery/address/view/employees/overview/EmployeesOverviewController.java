@@ -7,15 +7,11 @@ import java.io.FileNotFoundException;
 import ch.makery.address.Main;
 import ch.makery.address.model.Empleado;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableRow;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TreeItem;
-import javafx.scene.control.TreeView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTreeCell;
 import javafx.scene.image.Image;
@@ -50,6 +46,10 @@ public class EmployeesOverviewController {
 	
 	@FXML
     private Button crearButton;
+	@FXML
+	private MenuItem editarButton;
+	@FXML
+	private MenuItem borrarButton;
 
 	@FXML
 	private ImageView plusIcon;
@@ -71,6 +71,8 @@ public class EmployeesOverviewController {
 	void initialize() {
 		
 		crearTree();
+		inhabilitarBotones();
+		Main.inhabilitarMenu();
  
 	}
 	@FXML
@@ -79,10 +81,21 @@ public class EmployeesOverviewController {
     }
 	@FXML
     private void editarEmpleado(ActionEvent event) {
+		editarEmpleado();
+    }
+	public void inhabilitarBotones(){
+		editarButton.setDisable(true);
+		borrarButton.setDisable(true);
+	}
+	public void habilitarBotones(){
+		editarButton.setDisable(false);
+		borrarButton.setDisable(false);
+	}
+	public void editarEmpleado(){
 		if (actual != null) {
 			Main.editar(actual);
 		}
-    }
+	}
 	
 	public void crearTree() {
 		FileInputStream fis = null;
@@ -141,7 +154,8 @@ public class EmployeesOverviewController {
                      && event.getClickCount() == 1) {
 
                     actual = row.getItem();
-                    
+					habilitarBotones();
+					Main.habilitarMenu();
                 }
             });
             return row ;

@@ -27,11 +27,11 @@
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="C" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator></MenuItem>
-                  <MenuItem mnemonicParsing="false" onAction="#editar" text="Editar">
+                  <MenuItem fx:id="menuEditar" mnemonicParsing="false" onAction="#editar" text="Editar">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="U" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator></MenuItem>
-              <MenuItem disable="true" mnemonicParsing="false" text="Borrar">
+              <MenuItem fx:id="menuBorrar" disable="true" mnemonicParsing="false" text="Borrar">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="D" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator></MenuItem>

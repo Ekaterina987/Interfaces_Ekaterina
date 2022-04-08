@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8178c42-294c-4820-bec3-95e971c47b26" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EjerciciosEventos_Dialogos_Unidad10/.idea/uiDesigner.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../EjerciciosEventos_Dialogos_Unidad10/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../EjerciciosEventos_Dialogos_Unidad10/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EjerciciosEventos_Dialogos_Unidad10/out/production/EjerciciosEventos_Dialogos_Unidad10/ch/makery/address/view/pagination/FXMLDocumentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EjerciciosEventos_Dialogos_Unidad10/out/production/EjerciciosEventos_Dialogos_Unidad10/ch/makery/address/view/pagination/FXMLDocumentController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ekaterina_Stroevitch_Krasnova_Práctica2/src/ch/makery/address/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Ekaterina_Stroevitch_Krasnova_Práctica2/src/ch/makery/address/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ekaterina_Stroevitch_Krasnova_Práctica2/src/ch/makery/address/view/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Ekaterina_Stroevitch_Krasnova_Práctica2/src/ch/makery/address/view/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ekaterina_Stroevitch_Krasnova_Práctica2/src/ch/makery/address/view/RootLayout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../Ekaterina_Stroevitch_Krasnova_Práctica2/src/ch/makery/address/view/RootLayout.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ekaterina_Stroevitch_Krasnova_Práctica2/src/ch/makery/address/view/employee/create/EmployeeCreate.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../Ekaterina_Stroevitch_Krasnova_Práctica2/src/ch/makery/address/view/employee/create/EmployeeCreate.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ekaterina_Stroevitch_Krasnova_Práctica2/src/ch/makery/address/view/employee/create/EmployeeCreateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Ekaterina_Stroevitch_Krasnova_Práctica2/src/ch/makery/address/view/employee/create/EmployeeCreateController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ekaterina_Stroevitch_Krasnova_Práctica2/src/ch/makery/address/view/employees/overview/EmployeesOverview.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../Ekaterina_Stroevitch_Krasnova_Práctica2/src/ch/makery/address/view/employees/overview/EmployeesOverview.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ekaterina_Stroevitch_Krasnova_Práctica2/src/ch/makery/address/view/employees/overview/EmployeesOverviewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Ekaterina_Stroevitch_Krasnova_Práctica2/src/ch/makery/address/view/employees/overview/EmployeesOverviewController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +57,7 @@
       <workItem from="1648404642291" duration="7320000" />
       <workItem from="1648453978784" duration="922000" />
       <workItem from="1649093932891" duration="595000" />
+      <workItem from="1649426835543" duration="822000" />
     </task>
     <servers />
   </component>

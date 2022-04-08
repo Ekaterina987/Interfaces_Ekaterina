@@ -45,8 +45,8 @@
                <buttons>
                   <MenuButton mnemonicParsing="false" text="Acciones">
                     <items>
-                      <MenuItem mnemonicParsing="false" onAction="#editarEmpleado" text="Editar" />
-                      <MenuItem mnemonicParsing="false" text="Borrar" />
+                      <MenuItem fx:id="editarButton" mnemonicParsing="false" onAction="#editarEmpleado" text="Editar" />
+                      <MenuItem fx:id="borrarButton" mnemonicParsing="false" text="Borrar" />
                     </items>
                      <font>
                         <Font name="Noto Sans Regular" size="12.0" />

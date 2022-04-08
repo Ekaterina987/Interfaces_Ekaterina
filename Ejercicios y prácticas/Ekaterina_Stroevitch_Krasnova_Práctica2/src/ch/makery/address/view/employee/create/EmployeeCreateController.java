@@ -6,6 +6,7 @@ package ch.makery.address.view.employee.create;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.time.format.DateTimeFormatter;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import ch.makery.address.Main;
@@ -18,18 +19,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.SelectionMode;
-import javafx.scene.control.TextField;
-import javafx.scene.control.Toggle;
-import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.ComboBoxListCell;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -60,6 +50,7 @@ public class EmployeeCreateController {
 	@FXML
     private Button mainButton;
 
+
     @FXML
     private TextField inputApellidos;
 
@@ -85,6 +76,15 @@ public class EmployeeCreateController {
 	@FXML
 	private ImageView noImagen;
 
+	@FXML
+	private RadioButton rEmpleado;
+
+	@FXML
+	private RadioButton rAdministrador;
+
+	@FXML
+	private RadioButton rDirector;
+
 	private Empleado empleado;
 
 	
@@ -100,6 +100,8 @@ public class EmployeeCreateController {
 
 		noImagen.setImage(new Image(fis));
 		noImagen.setPreserveRatio(true);
+
+		Main.inhabilitarMenu();
 
 
         choiceDepartamento.getItems().addAll("Sistemas y desarrollo", "Comercial y publicidad", "Servicios compartidos"); 
@@ -149,16 +151,22 @@ public class EmployeeCreateController {
 		choiceDepartamento.setValue(empleado.getDepartamento());
 		inputPuesto.setText(empleado.getPuesto());
 		comboCiudad.setValue(empleado.getCiudad());
+		switch (empleado.getPosicion()){
+			case "Empleado":
+				rEmpleado.setSelected(true);
+				break;
+			case "Administrador":
+				rAdministrador.setSelected(true);
+				break;
+			case "Director":
+				rDirector.setSelected(true);
+				break;
+		}
     }
 
 
     @FXML
     private void guardarEmpleado(ActionEvent event) {
-		handleEmpleado(event, empleado);
-    }
-
-	public void handleEmpleado(ActionEvent event, Empleado empleado)
-	{
 		RadioButton posicionSeleccionada = (RadioButton) posicion.getSelectedToggle();
 		String fecha = "";
 		try {
@@ -187,6 +195,18 @@ public class EmployeeCreateController {
 		Main.validarDatos(empleado, inputNombre.getText(), inputApellidos.getText(), inputCorreo.getText(),
 				inputContrasenia.getText(), dept, pos,
 				inputPuesto.getText(), resp, fecha, ciudad);
+    }
+
+	@FXML
+	void descartar(ActionEvent event) {
+		Alert confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
+		confirmAlert.setTitle("Confirmar descarte empleado");
+		confirmAlert.setHeaderText("¿Estás seguro de que quieres descartar los cambios?");
+
+		Optional<ButtonType> result = confirmAlert.showAndWait();
+		if (result.isPresent() && result.get() == ButtonType.OK) {
+			Main.verEmpleados();
+		}
 
 	}
 
