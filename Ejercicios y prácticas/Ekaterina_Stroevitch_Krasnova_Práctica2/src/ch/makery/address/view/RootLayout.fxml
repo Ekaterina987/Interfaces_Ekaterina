@@ -23,7 +23,7 @@
           </Menu>
           <Menu mnemonicParsing="false" text="Editar">
             <items>
-                  <MenuItem mnemonicParsing="false" onAction="#crear" text="Crear">
+                  <MenuItem fx:id="menuCrear" mnemonicParsing="false" onAction="#crear" text="Crear">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="C" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator></MenuItem>
@@ -39,7 +39,7 @@
           </Menu>
             <Menu mnemonicParsing="false" text="Ver">
               <items>
-                <MenuItem mnemonicParsing="false" onAction="#verUsuarios" text="Empleados">
+                <MenuItem fx:id="menuVer" mnemonicParsing="false" onAction="#verUsuarios" text="Empleados">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="R" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator></MenuItem>

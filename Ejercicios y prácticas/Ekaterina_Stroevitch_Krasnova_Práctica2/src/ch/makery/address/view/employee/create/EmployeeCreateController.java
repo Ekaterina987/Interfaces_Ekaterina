@@ -3,9 +3,11 @@ package ch.makery.address.view.employee.create;
 
 
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -23,6 +25,9 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.ComboBoxListCell;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.DragEvent;
+import javafx.scene.input.TransferMode;
+import javafx.stage.FileChooser;
 
 public class EmployeeCreateController {
 
@@ -84,6 +89,8 @@ public class EmployeeCreateController {
 
 	@FXML
 	private RadioButton rDirector;
+	@FXML
+	private Label plus;
 
 	private Empleado empleado;
 
@@ -207,6 +214,31 @@ public class EmployeeCreateController {
 		if (result.isPresent() && result.get() == ButtonType.OK) {
 			Main.verEmpleados();
 		}
+
+	}
+	@FXML
+	void handleDragOver(DragEvent event) {
+		if (event.getDragboard().hasFiles()) {
+			event.acceptTransferModes(TransferMode.ANY);
+		}
+	}
+
+	@FXML
+	void handleDrop(DragEvent event) throws FileNotFoundException {
+		List<File> files = event.getDragboard().getFiles();
+		Image img = new Image(new FileInputStream(files.get(0)));
+		noImagen.setImage(img);
+	}
+	@FXML
+	void aniadirImagen(ActionEvent event) throws FileNotFoundException {
+		FileChooser fileChooser = new FileChooser();
+		fileChooser.setTitle("Selecciona una imagen");
+		File imagen = fileChooser.showOpenDialog(Main.getStage());
+
+		Image img = new Image(new FileInputStream(imagen));
+		noImagen.setImage(img);
+		noImagen.setOpacity(1);
+		plus.setOpacity(0);
 
 	}
 

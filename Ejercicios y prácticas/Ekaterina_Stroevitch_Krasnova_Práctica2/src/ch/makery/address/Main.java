@@ -30,8 +30,15 @@ public class Main extends Application {
 	private static EmployeesOverviewController overviewController;
 	private static Map<String, String> fields;
 	private static List<String> errores;
-	private static Empleado empleado;
+	private static Stage stage;
 
+	public static Stage getStage() {
+		return stage;
+	}
+
+	public static void setStage(Stage stage) {
+		Main.stage = stage;
+	}
 
 	private static ObservableList<Empleado> data;
 
@@ -60,6 +67,7 @@ public class Main extends Application {
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("Práctica 2");
 			primaryStage.show();
+			Main.setStage(primaryStage);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

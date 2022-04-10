@@ -3,9 +3,8 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Pagination?>
 <?import javafx.scene.control.SplitPane?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TreeView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -19,6 +18,7 @@
       <TreeView fx:id="treeDepartamentos" prefHeight="200.0" prefWidth="200.0" />
       <GridPane>
          <columnConstraints>
+            <ColumnConstraints />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
          </columnConstraints>
          <rowConstraints>
@@ -26,20 +26,7 @@
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <TableView fx:id="tablaEmpleados" prefHeight="306.0" prefWidth="600.0" GridPane.rowIndex="1">
-              <columns>
-                <TableColumn fx:id="colNombre" prefWidth="53.0" text="Nombre" />
-                <TableColumn fx:id="colApellidos" prefWidth="63.0" text="Apellidos" />
-                  <TableColumn fx:id="colCorreo" prefWidth="99.0" text="Correo" />
-                  <TableColumn fx:id="colDepartamento" prefWidth="89.0" text="Departamento" />
-                  <TableColumn fx:id="colPuesto" prefWidth="49.0" text="Puesto" />
-                  <TableColumn fx:id="colPosicion" prefWidth="58.0" text="Posición" />
-                  <TableColumn fx:id="colResponsabilidades" prefWidth="126.0" text="Responsabilidades" />
-                  <TableColumn fx:id="colFecha" prefWidth="89.0" text="Fecha de contratación" />
-                  <TableColumn fx:id="colCiudad" prefWidth="49.0" text="Ciudad" />
-              </columns>
-            </TableView>
-            <ButtonBar nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="200.0">
+            <ButtonBar nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="200.0" GridPane.columnIndex="1">
                <buttons>
                   <Button fx:id="borrarButton" mnemonicParsing="false" onAction="#borrarEmpleado" text="Borrar" />
                   <Button fx:id="editarButton" mnemonicParsing="false" onAction="#editarEmpleado" text="Editar" />
@@ -60,6 +47,7 @@
                   <Insets bottom="20.0" />
                </padding>
             </ButtonBar>
+            <Pagination fx:id="pagination" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
          </children>
          <padding>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

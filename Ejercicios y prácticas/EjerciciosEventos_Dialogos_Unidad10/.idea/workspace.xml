@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8196011e-6a92-4dc4-ac13-cad06004d631" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../AplicacionEjemplo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../AplicacionEjemplo/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Ekaterina_Stroevitch_Krasnova_Práctica2/src/ch/makery/address/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Ekaterina_Stroevitch_Krasnova_Práctica2/src/ch/makery/address/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Ekaterina_Stroevitch_Krasnova_Práctica2/src/ch/makery/address/view/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Ekaterina_Stroevitch_Krasnova_Práctica2/src/ch/makery/address/view/MenuController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Ekaterina_Stroevitch_Krasnova_Práctica2/src/ch/makery/address/view/RootLayout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../Ekaterina_Stroevitch_Krasnova_Práctica2/src/ch/makery/address/view/RootLayout.fxml" afterDir="false" />
@@ -55,6 +57,7 @@
       <updated>1649093217312</updated>
       <workItem from="1649093218703" duration="1297000" />
       <workItem from="1649426818129" duration="15000" />
+      <workItem from="1649616114275" duration="3100000" />
     </task>
     <servers />
   </component>
