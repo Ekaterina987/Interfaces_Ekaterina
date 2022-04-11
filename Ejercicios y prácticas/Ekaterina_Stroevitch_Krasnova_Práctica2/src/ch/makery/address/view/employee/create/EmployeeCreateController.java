@@ -26,6 +26,7 @@ import javafx.scene.control.cell.ComboBoxListCell;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.DragEvent;
+import javafx.scene.input.MouseButton;
 import javafx.scene.input.TransferMode;
 import javafx.stage.FileChooser;
 
@@ -46,8 +47,7 @@ public class EmployeeCreateController {
 	        FXCollections.observableArrayList();
 	
 	@FXML
-	public static final ObservableList<String> eleccion = 
-    		FXCollections.observableArrayList();
+	public static ObservableList<String> eleccion;
 	
 	@FXML
     private Label empleadoLabel;
@@ -114,7 +114,7 @@ public class EmployeeCreateController {
         choiceDepartamento.getItems().addAll("Sistemas y desarrollo", "Comercial y publicidad", "Servicios compartidos"); 
     	
         responsabilidades.addAll("Programación", "Diseño", "Gestión bases de datos", "Actualizaciones", "Mantenimiento aplicación", "Captación y mantenimiento de sponsors", "Relación con usuarios", "Mantenimiento redes sociales", "Administración de empresa", "RRHH", "Contabilidad", "Contacto colaboradores");
-
+		eleccion = FXCollections.observableArrayList();
         if (eleccion.isEmpty()) {
         	eleccion.add("Elige una responsabilidad");
         }
@@ -128,8 +128,35 @@ public class EmployeeCreateController {
     	    }
     	});
     	listResponsabilidades.setItems(eleccion);
-    	listResponsabilidades.setCellFactory(ComboBoxListCell.forListView(responsabilidades));
-    	
+    	//listResponsabilidades.setCellFactory(ComboBoxListCell.forListView(responsabilidades));
+
+		listResponsabilidades.setCellFactory(lv -> {
+			ListCell<String> cell = new ComboBoxListCell<String>(responsabilidades);
+
+			ContextMenu contextMenu = new ContextMenu();
+
+			MenuItem eliminar = new MenuItem("Eliminar");
+			eliminar.setOnAction(e->confirmacionEliminar(cell.getItem()));
+
+			contextMenu.getItems().add(eliminar);
+			cell.emptyProperty().addListener((obs, wasEmpty, isNowEmpty) -> {
+				if (isNowEmpty) {
+					cell.setContextMenu(null);
+				} else {
+					cell.itemProperty().addListener((observableValue, oldValue, newValue) ->{
+						if (newValue!= null && newValue.equals("Elige una responsabilidad")) {
+							cell.setContextMenu(null);
+						} else {
+							cell.setContextMenu(contextMenu);
+						}
+					});
+				}
+			});
+
+
+			return cell;
+		});
+
     	listResponsabilidades.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
     	
     	comboCiudad.getItems().addAll("Madrid", "Santiago de Compostela", "Granada", "León");
@@ -239,5 +266,19 @@ public class EmployeeCreateController {
 				break;
 		}
     }
+	private void confirmacionEliminar(String item){
+		Alert confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
+		confirmAlert.setTitle("Confirmar borrar responsabilidad");
+		confirmAlert.setHeaderText("¿Estás seguro de que quieres borrar la responsabilidad?");
+
+		Optional<ButtonType> result = confirmAlert.showAndWait();
+		if (result.isPresent() && result.get() == ButtonType.OK) {
+			if(listResponsabilidades.getItems().size() == 1){
+				listResponsabilidades.getItems().add("Elige una responsabilidad");
+			}
+			listResponsabilidades.getItems().remove(item);
+
+		}
+	}
 
 }
