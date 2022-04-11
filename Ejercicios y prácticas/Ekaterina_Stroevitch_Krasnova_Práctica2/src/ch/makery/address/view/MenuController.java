@@ -42,17 +42,7 @@ public class MenuController {
 
 	@FXML
 	void initialize() {
-
-		FileInputStream fis = null;
-		try {
-			fis = new FileInputStream("images/logo1.png");
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-
-		logoDemtr.setImage(new Image(fis));
-		logoDemtr.setPreserveRatio(true);
-
+		inicializarImagenes();
 		inhabilitarMenu();
 	}
 
@@ -89,6 +79,17 @@ public class MenuController {
 	public void habilitarMenu(){
 		menuEditar.setDisable(false);
 		menuBorrar.setDisable(false);
+	}
+	private void inicializarImagenes(){
+		FileInputStream fis = null;
+		try {
+			fis = new FileInputStream("images/logo1.png");
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+
+		logoDemtr.setImage(new Image(fis));
+		logoDemtr.setPreserveRatio(true);
 	}
 
 }

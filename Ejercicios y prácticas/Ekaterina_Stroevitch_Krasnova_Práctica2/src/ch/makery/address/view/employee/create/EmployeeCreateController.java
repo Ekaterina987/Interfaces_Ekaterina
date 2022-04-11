@@ -103,82 +103,17 @@ public class EmployeeCreateController {
 	
     @FXML
     void initialize() {
-		FileInputStream fis = null;
-		try {
-			fis = new FileInputStream("images/no-image.png");
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
 
-		noImagen.setImage(new Image(fis));
-		noImagen.setPreserveRatio(true);
-
+		urlImagenes();
 		Main.inhabilitarMenu();
-
+		inicializarResponsabilidades();
+		inicializarTootlip();
 
         choiceDepartamento.getItems().addAll("Sistemas y desarrollo", "Comercial y publicidad", "Servicios compartidos"); 
-    	
-        responsabilidades.addAll("Programación", "Diseño", "Gestión bases de datos", "Actualizaciones", "Mantenimiento aplicación", "Captación y mantenimiento de sponsors", "Relación con usuarios", "Mantenimiento redes sociales", "Administración de empresa", "RRHH", "Contabilidad", "Contacto colaboradores");
-		eleccion = FXCollections.observableArrayList();
-        if (eleccion.isEmpty()) {
-        	eleccion.add("Elige una responsabilidad");
-        }
 
-    	listResponsabilidades.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
-    	    @Override
-    	    public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-    	        if(!(eleccion.get(eleccion.size() - 1).equals("Elige una responsabilidad"))) {
-    	        	eleccion.add("Elige una responsabilidad");
-    	        }
-				responsabilidades.remove(newValue);
-    	    }
-    	});
-    	listResponsabilidades.setItems(eleccion);
-    	//listResponsabilidades.setCellFactory(ComboBoxListCell.forListView(responsabilidades));
-
-		listResponsabilidades.setCellFactory(lv -> {
-			ListCell<String> cell = new ComboBoxListCell<String>(responsabilidades);
-
-			ContextMenu contextMenu = new ContextMenu();
-
-			MenuItem eliminar = new MenuItem("Eliminar");
-			eliminar.setOnAction(e->confirmacionEliminar(cell.getItem()));
-
-			contextMenu.getItems().add(eliminar);
-			cell.emptyProperty().addListener((obs, wasEmpty, isNowEmpty) -> {
-				if (isNowEmpty) {
-					cell.setContextMenu(null);
-				} else {
-					cell.itemProperty().addListener((observableValue, oldValue, newValue) ->{
-						if (newValue!= null && newValue.equals("Elige una responsabilidad")) {
-							cell.setContextMenu(null);
-						} else {
-							cell.setContextMenu(contextMenu);
-						}
-					});
-				}
-			});
-
-
-			return cell;
-		});
-
-    	listResponsabilidades.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
-    	
     	comboCiudad.getItems().addAll("Madrid", "Santiago de Compostela", "Granada", "León");
 
 		empleado = new Empleado();
-
-		tooltip.setOnMouseEntered(new EventHandler<MouseEvent>() {
-			@Override
-			public void handle(MouseEvent me) {
-				Point2D point = tooltip.localToScene(0.0,  0.0);
-				Main.mostrarPopup(point);
-			}
-
-		});
-		tooltip.setOnMouseExited(
-				e->Main.ocultarPopup());
 
     }
 	@FXML
@@ -243,12 +178,86 @@ public class EmployeeCreateController {
 		FileChooser fileChooser = new FileChooser();
 		fileChooser.setTitle("Selecciona una imagen");
 		File imagen = fileChooser.showOpenDialog(Main.getStage());
+		if(imagen!=null) {
+			Image img = new Image(new FileInputStream(imagen));
+			noImagen.setImage(img);
+			noImagen.setOpacity(1);
+			plus.setOpacity(0);
+		}
 
-		Image img = new Image(new FileInputStream(imagen));
-		noImagen.setImage(img);
-		noImagen.setOpacity(1);
-		plus.setOpacity(0);
+	}
+	private void urlImagenes(){
+		FileInputStream fis = null;
+		try {
+			fis = new FileInputStream("images/no-image.png");
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
 
+		noImagen.setImage(new Image(fis));
+		noImagen.setPreserveRatio(true);
+	}
+	private void inicializarResponsabilidades(){
+		responsabilidades.addAll("Programación", "Diseño", "Gestión bases de datos", "Actualizaciones", "Mantenimiento aplicación", "Captación y mantenimiento de sponsors", "Relación con usuarios", "Mantenimiento redes sociales", "Administración de empresa", "RRHH", "Contabilidad", "Contacto colaboradores");
+		eleccion = FXCollections.observableArrayList();
+		if (eleccion.isEmpty()) {
+			eleccion.add("Elige una responsabilidad");
+		}
+
+		listResponsabilidades.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+			@Override
+			public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+				if(!(eleccion.get(eleccion.size() - 1).equals("Elige una responsabilidad"))) {
+					eleccion.add("Elige una responsabilidad");
+				}
+				responsabilidades.remove(newValue);
+			}
+		});
+		listResponsabilidades.setItems(eleccion);
+
+		listResponsabilidades.setCellFactory(lv -> {
+			ListCell<String> cell = new ComboBoxListCell<>(responsabilidades);
+
+			ContextMenu contextMenu = new ContextMenu();
+
+			MenuItem eliminar = new MenuItem("Eliminar");
+			eliminar.setOnAction(e->confirmacionEliminar(cell.getItem()));
+
+			contextMenu.getItems().add(eliminar);
+			cell.emptyProperty().addListener((obs, wasEmpty, isNowEmpty) -> {
+				if (isNowEmpty) {
+					cell.setContextMenu(null);
+				} else {
+					cell.itemProperty().addListener((observableValue, oldValue, newValue) ->{
+						if (newValue!= null && newValue.equals("Elige una responsabilidad")) {
+							cell.setContextMenu(null);
+						} else if(newValue== null) {
+							cell.setContextMenu(null);
+						}
+						else{
+							cell.setContextMenu(contextMenu);
+						}
+					});
+				}
+			});
+
+
+			return cell;
+		});
+
+		listResponsabilidades.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+	}
+	private void inicializarTootlip(){
+		tooltip.setOnMouseEntered(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent me) {
+				Point2D point = tooltip.localToScene(0.0,  0.0);
+				Main.mostrarPopup(point);
+			}
+
+		});
+		tooltip.setOnMouseExited(
+				e->Main.ocultarPopup());
 	}
     
     public void editarEmpleado(Empleado empleado) {

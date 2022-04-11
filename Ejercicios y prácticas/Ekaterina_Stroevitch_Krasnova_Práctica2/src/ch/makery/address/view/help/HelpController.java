@@ -39,6 +39,11 @@ public class HelpController {
 
     @FXML
     void initialize() {
+        inicializarImagenes();
+        progresoAcordeon();
+
+    }
+    private void inicializarImagenes(){
         FileInputStream fis = null;
         FileInputStream fis1 = null;
         FileInputStream fis2 = null;
@@ -59,7 +64,8 @@ public class HelpController {
         crearEmpleados.setImage(new Image(fis2));
         editarEmpleados.setImage(new Image(fis3));
         borrarEmpleados.setImage(new Image(fis4));
-
+    }
+    private void progresoAcordeon(){
         barraProgreso.setProgress(0);
         acordeon.expandedPaneProperty().addListener((observable, oldValue, newValue) -> {
             int valor = 0;
@@ -74,7 +80,6 @@ public class HelpController {
             barraProgreso.setProgress((valorFinal));
 
         });
-
     }
 
 

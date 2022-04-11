@@ -280,9 +280,7 @@ public class Main extends Application {
 	public static void ocultarPopup(){
 		popup.hide();
 	}
-
-
-	public static void main(String[] args) {
+	private static void inicializarValores(){
 		ArrayList<String> resp = new ArrayList<>(Arrays.asList("Administración de empresa", "RRHH", "Contabilidad", "Contacto colaboradores"));
 		ArrayList<String> resp1 = new ArrayList<>(Arrays.asList("Captación y mantenimiento de sponsors", "Relación con usuarios", "Mantenimiento redes sociales"));
 		ArrayList<String> resp2 = new ArrayList<>(Arrays.asList("Programación", "Diseño", "Gestión bases de datos", "Actualizaciones", "Mantenimiento aplicación"));
@@ -297,7 +295,12 @@ public class Main extends Application {
 
 		errores = new ArrayList<>();
 		fields = new HashMap<>();
+	}
 
+
+	public static void main(String[] args) {
+
+		inicializarValores();
 
 		launch(args);
 	}

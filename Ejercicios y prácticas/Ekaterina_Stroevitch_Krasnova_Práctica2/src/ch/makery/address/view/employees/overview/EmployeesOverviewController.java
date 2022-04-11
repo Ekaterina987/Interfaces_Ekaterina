@@ -48,38 +48,13 @@ public class EmployeesOverviewController {
 
 	@FXML
 	void initialize() {
-		tablaEmpleados = new TableView<>();
-		tablaEmpleados.setTableMenuButtonVisible(true);
-		TableColumn<Empleado, String> colNombre = new TableColumn<>("Nombre");
-		TableColumn<Empleado, String> colApellidos = new TableColumn<>("Apellidos");
-		TableColumn<Empleado, String> colCorreo = new TableColumn<>("Correo");
-		TableColumn<Empleado, String> colDepartamento = new TableColumn<>("Departamento");
-		TableColumn<Empleado, String> colPuesto = new TableColumn<>("Puesto");
-		TableColumn<Empleado, String> colPosicion = new TableColumn<>("Posicion");
-		TableColumn<Empleado, ListView<String>> colResponsabilidades = new TableColumn<>("Responsabilidades");
-		TableColumn<Empleado, String> colFecha = new TableColumn<>("Fecha");
-		TableColumn<Empleado, String> colCiudad = new TableColumn<>("Ciudad");
-		colNombre.setCellValueFactory(new PropertyValueFactory<Empleado,String>("nombre"));
-		colApellidos.setCellValueFactory(new PropertyValueFactory<Empleado,String>("apellidos"));
-		colCorreo.setCellValueFactory(new PropertyValueFactory<Empleado,String>("correo"));
-		colDepartamento.setCellValueFactory(new PropertyValueFactory<Empleado,String>("departamento"));
-		colPuesto.setCellValueFactory(new PropertyValueFactory<Empleado,String>("puesto"));
-		colPosicion.setCellValueFactory(new PropertyValueFactory<Empleado,String>("posicion"));
-		colResponsabilidades.setCellValueFactory(new PropertyValueFactory<Empleado,ListView<String>>("responsabilidades"));
-		colFecha.setCellValueFactory(new PropertyValueFactory<Empleado,String>("fechaInicio"));
-		colCiudad.setCellValueFactory(new PropertyValueFactory<Empleado,String>("ciudad"));
-		tablaEmpleados.getColumns().addAll(colNombre, colApellidos, colCorreo, colDepartamento, colPuesto, colPosicion, colResponsabilidades, colFecha, colCiudad);
+
 		crearTree();
 		inhabilitarBotones();
 		Main.inhabilitarMenu();
-		pagination.setPageCount((Main.getData().size() % 3) == 0 ?  Main.getData().size() / 3 : (Main.getData().size() / 3) + 1);
-		pagination.setPageFactory(new Callback<Integer, Node>() {
-			@Override
-			public Node call(Integer pageIndex) {
-				return crearPagina(pageIndex, Main.getData());
-			}
-		});
- 
+		inicializarTabla();
+		inicializarPaginacion();
+
 	}
 	@FXML
     private void crearEmpleado(ActionEvent event) {    	
@@ -112,7 +87,7 @@ public class EmployeesOverviewController {
 		}
 	}
 	
-	public void crearTree() {
+	private void crearTree() {
 		FileInputStream fis = null;
 		FileInputStream fis1 = null;
 		FileInputStream fis2 = null;
@@ -149,11 +124,40 @@ public class EmployeesOverviewController {
 		rootItem.setExpanded(true);
 		treeDepartamentos.setRoot(rootItem);
 	}
+	private void inicializarTabla(){
+		tablaEmpleados = new TableView<>();
+		tablaEmpleados.setTableMenuButtonVisible(true);
+		TableColumn<Empleado, String> colNombre = new TableColumn<>("Nombre");
+		TableColumn<Empleado, String> colApellidos = new TableColumn<>("Apellidos");
+		TableColumn<Empleado, String> colCorreo = new TableColumn<>("Correo");
+		TableColumn<Empleado, String> colDepartamento = new TableColumn<>("Departamento");
+		TableColumn<Empleado, String> colPuesto = new TableColumn<>("Puesto");
+		TableColumn<Empleado, String> colPosicion = new TableColumn<>("Posicion");
+		TableColumn<Empleado, ListView<String>> colResponsabilidades = new TableColumn<>("Responsabilidades");
+		TableColumn<Empleado, String> colFecha = new TableColumn<>("Fecha");
+		TableColumn<Empleado, String> colCiudad = new TableColumn<>("Ciudad");
+		colNombre.setCellValueFactory(new PropertyValueFactory<Empleado,String>("nombre"));
+		colApellidos.setCellValueFactory(new PropertyValueFactory<Empleado,String>("apellidos"));
+		colCorreo.setCellValueFactory(new PropertyValueFactory<Empleado,String>("correo"));
+		colDepartamento.setCellValueFactory(new PropertyValueFactory<Empleado,String>("departamento"));
+		colPuesto.setCellValueFactory(new PropertyValueFactory<Empleado,String>("puesto"));
+		colPosicion.setCellValueFactory(new PropertyValueFactory<Empleado,String>("posicion"));
+		colResponsabilidades.setCellValueFactory(new PropertyValueFactory<Empleado,ListView<String>>("responsabilidades"));
+		colFecha.setCellValueFactory(new PropertyValueFactory<Empleado,String>("fechaInicio"));
+		colCiudad.setCellValueFactory(new PropertyValueFactory<Empleado,String>("ciudad"));
+		tablaEmpleados.getColumns().addAll(colNombre, colApellidos, colCorreo, colDepartamento, colPuesto, colPosicion, colResponsabilidades, colFecha, colCiudad);
+	}
+	private void inicializarPaginacion(){
+		pagination.setPageCount((Main.getData().size() % 3) == 0 ?  Main.getData().size() / 3 : (Main.getData().size() / 3) + 1);
+		pagination.setPageFactory(new Callback<Integer, Node>() {
+			@Override
+			public Node call(Integer pageIndex) {
+				return crearPagina(pageIndex, Main.getData());
+			}
+		});
+	}
 	
 	public void setDatos(ObservableList<Empleado> data) {
-
-
-
 		filteredData = new FilteredList<>(data, p -> true);
 		treeDepartamentos.getSelectionModel().selectedItemProperty().addListener((v, oldValue, newValue) -> {
 
