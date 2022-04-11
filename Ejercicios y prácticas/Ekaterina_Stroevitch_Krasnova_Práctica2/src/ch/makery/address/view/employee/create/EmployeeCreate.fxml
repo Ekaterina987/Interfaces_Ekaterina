@@ -20,7 +20,9 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <GridPane prefHeight="567.0" prefWidth="763.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.view.employee.create.EmployeeCreateController">
    <columnConstraints>
@@ -35,7 +37,7 @@
       <GridPane hgap="20.0" prefHeight="312.0" prefWidth="723.0" GridPane.rowIndex="2">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="120.0" minWidth="10.0" prefWidth="104.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="210.0" minWidth="10.0" prefWidth="210.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="275.0" minWidth="10.0" prefWidth="275.0" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="169.0" minWidth="10.0" prefWidth="106.0" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="285.0" minWidth="10.0" prefWidth="241.0" />
          </columnConstraints>
@@ -58,11 +60,6 @@
                </font>
             </Label>
             <Label text="Correo" GridPane.rowIndex="2">
-               <font>
-                  <Font name="Noto Sans Regular" size="12.0" />
-               </font>
-            </Label>
-            <Label text="Contraseña" GridPane.columnIndex="2">
                <font>
                   <Font name="Noto Sans Regular" size="12.0" />
                </font>
@@ -127,6 +124,21 @@
                   <Font name="Noto Sans Regular" size="12.0" />
                </font></TextField>
             <DatePicker fx:id="inputFecha" promptText="Elige una fecha" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <HBox alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="2">
+               <children>
+                  <StackPane fx:id="tooltip">
+                     <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="20.0" stroke="BLACK" strokeType="INSIDE" width="20.0" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="?" />
+                     </children>
+                  </StackPane>
+                  <Label text="Contraseña">
+                     <font>
+                        <Font name="Noto Sans Regular" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
          </children>
       </GridPane>
       <Label fx:id="empleadoLabel" text="Nuevo empleado">

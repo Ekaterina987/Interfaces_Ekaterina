@@ -10,6 +10,7 @@ package ch.makery.address.view.help;
         import javafx.scene.control.TitledPane;
         import javafx.scene.image.Image;
         import javafx.scene.image.ImageView;
+        import javafx.scene.layout.StackPane;
 
 public class HelpController {
 
@@ -34,6 +35,7 @@ public class HelpController {
 
     @FXML
     private Accordion acordeon;
+
 
     @FXML
     void initialize() {
@@ -74,5 +76,6 @@ public class HelpController {
         });
 
     }
+
 
 }

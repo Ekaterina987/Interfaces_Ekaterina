@@ -14,7 +14,13 @@ import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Point2D;
 import javafx.scene.control.*;
+import javafx.scene.layout.StackPane;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextFlow;
+import javafx.stage.Popup;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert.AlertType;
@@ -32,6 +38,7 @@ public class Main extends Application {
 	private static List<String> errores;
 	private static Stage stage;
 	private static ObservableList<Empleado> data;
+	private static Popup popup;
 
 	public static ObservableList<Empleado> getData() {
 		return data;
@@ -47,6 +54,9 @@ public class Main extends Application {
 
 	public static void setStage(Stage stage) {
 		Main.stage = stage;
+	}
+	public static ObservableList<Empleado> getEmpleados(){
+		return data;
 	}
 
 	@Override
@@ -251,8 +261,24 @@ public class Main extends Application {
 		menuController.habilitarMenu();
 	}
 
-	public static ObservableList<Empleado> getEmpleados(){
-		return data;
+
+	public static void mostrarPopup(Point2D point){
+		TextFlow tf = new TextFlow(new Text("La contraseña debe tener un largo entre 6 y 12 caracteres y contener al menos una letra mayúscula, una minúscula y un número"));
+		popup = new Popup();
+		tf.setStyle("-fx-background-color: white; -fx-padding: 15");
+
+		popup.getContent().add(tf);
+
+
+		popup.setX(stage.getX() );
+		popup.setY(stage.getY());
+		popup.show(stage);
+		popup.setX(stage.getX() + point.getX() + 25);
+		popup.setY(stage.getY() + point.getY() + 5);
+
+	}
+	public static void ocultarPopup(){
+		popup.hide();
 	}
 
 

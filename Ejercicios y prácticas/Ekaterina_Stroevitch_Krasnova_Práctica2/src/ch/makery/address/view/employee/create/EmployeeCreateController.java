@@ -21,13 +21,16 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.geometry.Point2D;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.ComboBoxListCell;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.DragEvent;
 import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TransferMode;
+import javafx.scene.layout.StackPane;
 import javafx.stage.FileChooser;
 
 public class EmployeeCreateController {
@@ -91,6 +94,8 @@ public class EmployeeCreateController {
 	private RadioButton rDirector;
 	@FXML
 	private Label plus;
+	@FXML
+	private StackPane tooltip;
 
 	private Empleado empleado;
 
@@ -162,6 +167,17 @@ public class EmployeeCreateController {
     	comboCiudad.getItems().addAll("Madrid", "Santiago de Compostela", "Granada", "León");
 
 		empleado = new Empleado();
+
+		tooltip.setOnMouseEntered(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent me) {
+				Point2D point = tooltip.localToScene(0.0,  0.0);
+				Main.mostrarPopup(point);
+			}
+
+		});
+		tooltip.setOnMouseExited(
+				e->Main.ocultarPopup());
 
     }
 	@FXML
