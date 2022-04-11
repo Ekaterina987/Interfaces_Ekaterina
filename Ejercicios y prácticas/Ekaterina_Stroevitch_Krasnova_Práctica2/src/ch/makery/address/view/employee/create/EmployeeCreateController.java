@@ -130,6 +130,7 @@ public class EmployeeCreateController {
     	        if(!(eleccion.get(eleccion.size() - 1).equals("Elige una responsabilidad"))) {
     	        	eleccion.add("Elige una responsabilidad");
     	        }
+				responsabilidades.remove(newValue);
     	    }
     	});
     	listResponsabilidades.setItems(eleccion);
@@ -292,6 +293,7 @@ public class EmployeeCreateController {
 			if(listResponsabilidades.getItems().size() == 1){
 				listResponsabilidades.getItems().add("Elige una responsabilidad");
 			}
+			responsabilidades.add(item);
 			listResponsabilidades.getItems().remove(item);
 
 		}
