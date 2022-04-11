@@ -269,6 +269,7 @@ public class Main extends Application {
 						"Comercial y publicidad", "Director", "Jefe", resp1, "06/03/2022", "Madrid" ),
 				new Empleado("Ekaterina", "Stroevitch", "ekaterinastroevitch@demtr.com", "c0ntra5eniA",
 						"Sistemas y desarrollo", "Director", "Jefe", resp2, "06/03/2022", "Madrid" ));
+
 		errores = new ArrayList<>();
 		fields = new HashMap<>();
 

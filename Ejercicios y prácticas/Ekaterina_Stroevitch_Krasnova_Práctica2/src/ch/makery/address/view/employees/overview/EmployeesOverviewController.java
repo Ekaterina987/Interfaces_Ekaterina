@@ -63,6 +63,8 @@ public class EmployeesOverviewController {
 	@FXML
 	private Pagination pagination;
 
+	FilteredList<Empleado> filteredData;
+
 	
 	private Empleado actual;
 
@@ -181,10 +183,10 @@ public class EmployeesOverviewController {
 
 
 
-		FilteredList<Empleado> filteredData = new FilteredList<>(data, p -> true);
+		filteredData = new FilteredList<>(data, p -> true);
 		treeDepartamentos.getSelectionModel().selectedItemProperty().addListener((v, oldValue, newValue) -> {
-			filteredData.setPredicate(empleado -> {
 
+			filteredData.setPredicate(empleado -> {
 				if (newValue == null) {
 					return true;
 				}
@@ -195,8 +197,16 @@ public class EmployeesOverviewController {
 				}
 				return false;
 			});
+			pagination.setPageCount((filteredData.size() % 3) == 0 ?  filteredData.size() / 3 : (filteredData.size() / 3) + 1);
+			pagination.setPageFactory(new Callback<Integer, Node>() {
+				@Override
+				public Node call(Integer pageIndex) {
+					return crearPagina(pageIndex, filteredData);
+				}
+			});
 
 		});
+
 
 		SortedList<Empleado> sortedData = new SortedList<>(filteredData);
 
