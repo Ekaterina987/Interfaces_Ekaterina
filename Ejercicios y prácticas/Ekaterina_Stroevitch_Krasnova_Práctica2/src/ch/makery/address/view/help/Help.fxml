@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -11,7 +12,7 @@
 
 <AnchorPane prefHeight="691.0" prefWidth="920.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.view.help.HelpController">
    <children>
-      <Accordion layoutX="112.0" layoutY="103.0" prefHeight="549.0" prefWidth="697.0">
+      <Accordion fx:id="acordeon" layoutX="112.0" layoutY="71.0" prefHeight="549.0" prefWidth="697.0">
         <panes>
           <TitledPane text="Como navegar">
             <content>
@@ -95,10 +96,11 @@
             </TitledPane>
         </panes>
       </Accordion>
-      <Label alignment="CENTER" layoutX="395.0" layoutY="40.0" text="Tutorial">
+      <Label alignment="CENTER" layoutX="395.0" layoutY="19.0" text="Tutorial">
          <font>
             <Font name="Noto Sans Regular" size="36.0" />
          </font>
       </Label>
+      <ProgressBar fx:id="barraProgreso" layoutX="112.0" layoutY="620.0" prefHeight="18.0" prefWidth="697.0" progress="0.0" />
    </children>
 </AnchorPane>
