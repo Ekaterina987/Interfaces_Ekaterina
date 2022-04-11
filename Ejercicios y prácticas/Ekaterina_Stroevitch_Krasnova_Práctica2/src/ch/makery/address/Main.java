@@ -31,15 +31,6 @@ public class Main extends Application {
 	private static Map<String, String> fields;
 	private static List<String> errores;
 	private static Stage stage;
-
-	public static Stage getStage() {
-		return stage;
-	}
-
-	public static void setStage(Stage stage) {
-		Main.stage = stage;
-	}
-
 	private static ObservableList<Empleado> data;
 
 	public static ObservableList<Empleado> getData() {
@@ -48,6 +39,14 @@ public class Main extends Application {
 
 	public static void setData(ObservableList<Empleado> data) {
 		Main.data = data;
+	}
+
+	public static Stage getStage() {
+		return stage;
+	}
+
+	public static void setStage(Stage stage) {
+		Main.stage = stage;
 	}
 
 	@Override

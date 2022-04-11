@@ -137,43 +137,8 @@ public class EmployeeCreateController {
 		empleado = new Empleado();
 
     }
-    
-    public void editarEmpleado(Empleado empleado) {
-		this.empleado = empleado;
-    	empleadoLabel.setText("Modificar empleado");
-    	mainButton.setText("Guardar");
-
-		inputNombre.setText(empleado.getNombre());
-		inputApellidos.setText(empleado.getApellidos());
-		inputCorreo.setText(empleado.getCorreo());
-		inputContrasenia.setText(empleado.getContrasenia());
-		ObservableList<String> resps =
-				FXCollections.observableArrayList();
-		for(String respons : empleado.getResponsabilidadesArray()){
-			resps.add(respons);
-		}
-		resps.add("Elige una responsabilidad");
-		listResponsabilidades.setItems(resps);
-		inputFecha.setValue(DateUtil.parse(empleado.getFechaInicio()));
-		choiceDepartamento.setValue(empleado.getDepartamento());
-		inputPuesto.setText(empleado.getPuesto());
-		comboCiudad.setValue(empleado.getCiudad());
-		switch (empleado.getPosicion()){
-			case "Empleado":
-				rEmpleado.setSelected(true);
-				break;
-			case "Administrador":
-				rAdministrador.setSelected(true);
-				break;
-			case "Director":
-				rDirector.setSelected(true);
-				break;
-		}
-    }
-
-
-    @FXML
-    private void guardarEmpleado(ActionEvent event) {
+	@FXML
+	private void guardarEmpleado(ActionEvent event) {
 		RadioButton posicionSeleccionada = (RadioButton) posicion.getSelectedToggle();
 		String fecha = "";
 		try {
@@ -202,7 +167,7 @@ public class EmployeeCreateController {
 		Main.validarDatos(empleado, inputNombre.getText(), inputApellidos.getText(), inputCorreo.getText(),
 				inputContrasenia.getText(), dept, pos,
 				inputPuesto.getText(), resp, fecha, ciudad);
-    }
+	}
 
 	@FXML
 	void descartar(ActionEvent event) {
@@ -241,5 +206,38 @@ public class EmployeeCreateController {
 		plus.setOpacity(0);
 
 	}
+    
+    public void editarEmpleado(Empleado empleado) {
+		this.empleado = empleado;
+    	empleadoLabel.setText("Modificar empleado");
+    	mainButton.setText("Guardar");
+
+		inputNombre.setText(empleado.getNombre());
+		inputApellidos.setText(empleado.getApellidos());
+		inputCorreo.setText(empleado.getCorreo());
+		inputContrasenia.setText(empleado.getContrasenia());
+		ObservableList<String> resps =
+				FXCollections.observableArrayList();
+		for(String respons : empleado.getResponsabilidadesArray()){
+			resps.add(respons);
+		}
+		resps.add("Elige una responsabilidad");
+		listResponsabilidades.setItems(resps);
+		inputFecha.setValue(DateUtil.parse(empleado.getFechaInicio()));
+		choiceDepartamento.setValue(empleado.getDepartamento());
+		inputPuesto.setText(empleado.getPuesto());
+		comboCiudad.setValue(empleado.getCiudad());
+		switch (empleado.getPosicion()){
+			case "Empleado":
+				rEmpleado.setSelected(true);
+				break;
+			case "Administrador":
+				rAdministrador.setSelected(true);
+				break;
+			case "Director":
+				rDirector.setSelected(true);
+				break;
+		}
+    }
 
 }

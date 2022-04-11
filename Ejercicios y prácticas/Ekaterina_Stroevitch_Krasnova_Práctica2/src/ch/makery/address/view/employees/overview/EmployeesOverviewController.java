@@ -26,68 +26,39 @@ import javafx.scene.layout.Pane;
 import javafx.util.Callback;
 
 public class EmployeesOverviewController {
-
-	private TableColumn<Empleado, String> colApellidos;
-
-	private TableColumn<Empleado, String> colCiudad;
-
-	private TableColumn<Empleado, String> colCorreo;
-
-	private TableColumn<Empleado, String> colFecha;
-
-	private TableColumn<Empleado, String> colNombre;
-
-	private TableColumn<Empleado, String> colPosicion;
-
-	private TableColumn<Empleado, String> colPuesto;
-
-	private TableColumn<Empleado, String> colDepartamento;
-	
 	@FXML
-    private Button crearButton;
+	private Button crearButton;
 	@FXML
 	private Button editarButton;
 	@FXML
 	private Button borrarButton;
-
-	@FXML
-	private ImageView plusIcon;
-
-
-	private TableColumn<Empleado, ListView<String>> colResponsabilidades;
-
-	private TableView<Empleado> tablaEmpleados;
-
 	@FXML
 	private TreeView<String> treeDepartamentos;
 	@FXML
 	private Pagination pagination;
+	@FXML
+	private ImageView plusIcon;
 
-	FilteredList<Empleado> filteredData;
+	private TableView<Empleado> tablaEmpleados;
 
-	
+	private FilteredList<Empleado> filteredData;
+
 	private Empleado actual;
 
-	public TreeView<String> getTreeDepartamentos() {
-		return treeDepartamentos;
-	}
-
-	public void setTreeDepartamentos(TreeView<String> treeDepartamentos) {
-		this.treeDepartamentos = treeDepartamentos;
-	}
 
 	@FXML
 	void initialize() {
 		tablaEmpleados = new TableView<>();
-		colNombre = new TableColumn<>("Nombre");
-		colApellidos = new TableColumn<>("Apellidos");
-		colCorreo = new TableColumn<>("Correo");
-		colDepartamento = new TableColumn<>("Departamento");
-		colPuesto = new TableColumn<>("Puesto");
-		colPosicion = new TableColumn<>("Posicion");
-		colResponsabilidades = new TableColumn<>("Responsabilidades");
-		colFecha = new TableColumn<>("Fecha");
-		colCiudad = new TableColumn<>("Ciudad");
+		tablaEmpleados.setTableMenuButtonVisible(true);
+		TableColumn<Empleado, String> colNombre = new TableColumn<>("Nombre");
+		TableColumn<Empleado, String> colApellidos = new TableColumn<>("Apellidos");
+		TableColumn<Empleado, String> colCorreo = new TableColumn<>("Correo");
+		TableColumn<Empleado, String> colDepartamento = new TableColumn<>("Departamento");
+		TableColumn<Empleado, String> colPuesto = new TableColumn<>("Puesto");
+		TableColumn<Empleado, String> colPosicion = new TableColumn<>("Posicion");
+		TableColumn<Empleado, ListView<String>> colResponsabilidades = new TableColumn<>("Responsabilidades");
+		TableColumn<Empleado, String> colFecha = new TableColumn<>("Fecha");
+		TableColumn<Empleado, String> colCiudad = new TableColumn<>("Ciudad");
 		colNombre.setCellValueFactory(new PropertyValueFactory<Empleado,String>("nombre"));
 		colApellidos.setCellValueFactory(new PropertyValueFactory<Empleado,String>("apellidos"));
 		colCorreo.setCellValueFactory(new PropertyValueFactory<Empleado,String>("correo"));
@@ -236,11 +207,5 @@ public class EmployeesOverviewController {
 		contenedor.getChildren().add(tablaEmpleados);
 		return contenedor;
 	}
-
-
-	public TableView<Empleado> getTablaEmpleados(){
-		return tablaEmpleados;
-	}
-
 
 }

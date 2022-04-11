@@ -29,9 +29,6 @@ public class MenuController {
 	@FXML
 	private MenuItem menuBorrar;
 	@FXML
-	private BorderPane rootLayout;
-
-	@FXML
 	private MenuItem menuEditar;
 
 	@FXML
