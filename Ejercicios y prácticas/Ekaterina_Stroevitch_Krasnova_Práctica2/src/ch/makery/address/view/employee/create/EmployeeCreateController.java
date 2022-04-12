@@ -26,10 +26,8 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.ComboBoxListCell;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.DragEvent;
-import javafx.scene.input.MouseButton;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.input.TransferMode;
+import javafx.scene.input.*;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.FileChooser;
 
@@ -96,6 +94,8 @@ public class EmployeeCreateController {
 	private Label plus;
 	@FXML
 	private StackPane tooltip;
+	@FXML
+	private GridPane gridPane;
 
 	private Empleado empleado;
 
@@ -108,6 +108,10 @@ public class EmployeeCreateController {
 		Main.inhabilitarMenu();
 		inicializarResponsabilidades();
 		inicializarTootlip();
+		inputCorreo.setTextFormatter(new TextFormatter<>((change) -> {
+			change.setText(change.getText().toLowerCase());
+			return change;
+		}));
 
         choiceDepartamento.getItems().addAll("Sistemas y desarrollo", "Comercial y publicidad", "Servicios compartidos"); 
 
@@ -151,6 +155,7 @@ public class EmployeeCreateController {
 	@FXML
 	void descartar(ActionEvent event) {
 		Alert confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
+		confirmAlert.getDialogPane().addEventFilter(KeyEvent.KEY_PRESSED, Main.getManejo());
 		confirmAlert.setTitle("Confirmar descarte empleado");
 		confirmAlert.setHeaderText("¿Estás seguro de que quieres descartar los cambios?");
 
@@ -294,6 +299,7 @@ public class EmployeeCreateController {
     }
 	private void confirmacionEliminar(String item){
 		Alert confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
+		confirmAlert.getDialogPane().addEventFilter(KeyEvent.KEY_PRESSED, Main.getManejo());
 		confirmAlert.setTitle("Confirmar borrar responsabilidad");
 		confirmAlert.setHeaderText("¿Estás seguro de que quieres borrar la responsabilidad?");
 

@@ -13,9 +13,12 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Point2D;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
@@ -39,6 +42,7 @@ public class Main extends Application {
 	private static Stage stage;
 	private static ObservableList<Empleado> data;
 	private static Popup popup;
+	private static EventHandler<KeyEvent> manejo;
 
 	public static ObservableList<Empleado> getData() {
 		return data;
@@ -57,6 +61,14 @@ public class Main extends Application {
 	}
 	public static ObservableList<Empleado> getEmpleados(){
 		return data;
+	}
+
+	public static EventHandler<KeyEvent> getManejo() {
+		return manejo;
+	}
+
+	public static void setManejo(EventHandler<KeyEvent> manejo) {
+		Main.manejo = manejo;
 	}
 
 	@Override
@@ -162,6 +174,7 @@ public class Main extends Application {
 	public static void dialogoExitoCrearMod(String accion) {
 
 		Alert infoAlert = new Alert(AlertType.INFORMATION);
+		infoAlert.getDialogPane().addEventFilter(KeyEvent.KEY_PRESSED, manejo);
 		infoAlert.setTitle("Éxito");
 		infoAlert.setHeaderText(accion);
 
@@ -169,6 +182,7 @@ public class Main extends Application {
 	}
 	public static void dialogoErrorCrearMod() {
 		Alert errorAlert = new Alert(AlertType.ERROR);
+		errorAlert.getDialogPane().addEventFilter(KeyEvent.KEY_PRESSED, manejo);
 		errorAlert.setTitle("Hay campos incorrectos");
 		errorAlert.setHeaderText("Por favor, rellena correctamente los campos");
 		errorAlert.setContentText(String.join("\n", errores));
@@ -179,6 +193,7 @@ public class Main extends Application {
 	}
 	public static void dialogoConfirmacionEditar(int i, Empleado empleado,String nombre,String apellidos){
 		Alert confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
+		confirmAlert.getDialogPane().addEventFilter(KeyEvent.KEY_PRESSED, manejo);
 		confirmAlert.setTitle("Confirmar modificación empleado");
 		confirmAlert.setHeaderText("¿Estás seguro de que quieres modificar los datos de " + nombre + " " + apellidos + "?");
 
@@ -192,6 +207,7 @@ public class Main extends Application {
 	}
 	public static void dialogoConfirmacionBorrar(Empleado empleado){
 		Alert confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
+		confirmAlert.getDialogPane().addEventFilter(KeyEvent.KEY_PRESSED, manejo);
 		confirmAlert.setTitle("Confirmar borrado empleado");
 		confirmAlert.setHeaderText("¿Estás seguro de que quieres borrar a " + empleado.getNombre() + " " + empleado.getApellidos() + "?");
 
@@ -221,9 +237,22 @@ public class Main extends Application {
 			String clave = it.next();
 			String valor = fields.get(clave);
 			String error = "";
+
 			if (valor.equals("")) {
 				error = "El campo " + clave + " está vacío";
 				errores.add(error);
+			}else if(clave.equals("contrasenia")){
+				String patron = "^(?=.{6,12}$)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*$";
+				if (!valor.matches(patron)){
+					error = "La contraseña no es válida";
+					errores.add(error);
+				}
+			}else if(clave.equals("correo")){
+				String patron = "[a-z]+@[a-z]+\\.[a-z]+";
+				if (!valor.matches(patron)){
+					error = "El correo no es válido";
+					errores.add(error);
+				}
 			}
 			else if(clave.equals("fecha de inicio")) {
 				if (DateUtil.parse(valor) == null) {
@@ -301,6 +330,11 @@ public class Main extends Application {
 	public static void main(String[] args) {
 
 		inicializarValores();
+		 manejo = (KeyEvent event) -> {
+			if (event.getCode() == KeyCode.ESCAPE || event.getCode() == KeyCode.ENTER) {
+				event.consume();
+			}
+		};
 
 		launch(args);
 	}
