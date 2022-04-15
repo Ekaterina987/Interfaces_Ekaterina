@@ -91,11 +91,11 @@ public class HelpController {
         FileInputStream fis3 = null;
         FileInputStream fis4 = null;
         try {
-            fis = new FileInputStream("images/menu.png");
-            fis1 = new FileInputStream("images/verEmpleados.png");
-            fis2 = new FileInputStream("images/crearEmpleados.png");
-            fis3 = new FileInputStream("images/modificarEmpleado.png");
-            fis4 = new FileInputStream("images/borrarEmpleado.png");
+            fis = new FileInputStream("resources/images/menu.png");
+            fis1 = new FileInputStream("resources/images/verEmpleados.png");
+            fis2 = new FileInputStream("resources/images/crearEmpleados.png");
+            fis3 = new FileInputStream("resources/images/modificarEmpleado.png");
+            fis4 = new FileInputStream("resources/images/borrarEmpleado.png");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

@@ -214,7 +214,7 @@ public class EmployeeCreateController {
 	private void urlImagenes(){
 		FileInputStream fis = null;
 		try {
-			fis = new FileInputStream("images/no-image.png");
+			fis = new FileInputStream("resources/images/no-image.png");
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}

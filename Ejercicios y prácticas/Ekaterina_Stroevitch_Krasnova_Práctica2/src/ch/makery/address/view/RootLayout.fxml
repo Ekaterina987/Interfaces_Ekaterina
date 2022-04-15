@@ -13,42 +13,42 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane fx:id="rootLayout" prefHeight="700.0" prefWidth="920.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.view.MenuController">
+<BorderPane id="root-layout" fx:id="rootLayout" prefHeight="700.0" prefWidth="920.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.view.MenuController">
    <top>
-      <MenuBar BorderPane.alignment="CENTER">
+      <MenuBar id="menu-bar" BorderPane.alignment="CENTER">
         <menus>
-          <Menu mnemonicParsing="false" text="Archivo">
+          <Menu mnemonicParsing="false" styleClass="menu" text="Archivo">
             <items>
-              <MenuItem mnemonicParsing="false" onAction="#cerrarListado" text="Cerrar" />
+              <MenuItem mnemonicParsing="false" onAction="#cerrarListado" styleClass="menu-item" text="Cerrar" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Editar">
+          <Menu mnemonicParsing="false" styleClass="menu" text="Editar">
             <items>
-                  <MenuItem fx:id="menuCrear" mnemonicParsing="false" onAction="#crear" text="Crear">
+                  <MenuItem fx:id="menuCrear" mnemonicParsing="false" onAction="#crear" styleClass="menu-item" text="Crear">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="C" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator></MenuItem>
-                  <MenuItem fx:id="menuEditar" mnemonicParsing="false" onAction="#editar" text="Editar">
+                  <MenuItem fx:id="menuEditar" mnemonicParsing="false" onAction="#editar" styleClass="menu-item" text="Editar">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="U" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator></MenuItem>
-              <MenuItem fx:id="menuBorrar" disable="true" mnemonicParsing="false" onAction="#borrar" text="Borrar">
+              <MenuItem fx:id="menuBorrar" disable="true" mnemonicParsing="false" onAction="#borrar" styleClass="menu-item" text="Borrar">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="D" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator></MenuItem>
             </items>
           </Menu>
-            <Menu mnemonicParsing="false" text="Ver">
+            <Menu mnemonicParsing="false" styleClass="menu" text="Ver">
               <items>
-                <MenuItem fx:id="menuVer" mnemonicParsing="false" onAction="#verUsuarios" text="Empleados">
+                <MenuItem fx:id="menuVer" mnemonicParsing="false" onAction="#verUsuarios" styleClass="menu-item" text="Empleados">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="R" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator></MenuItem>
               </items>
             </Menu>
-          <Menu mnemonicParsing="false" text="Ayuda">
+          <Menu mnemonicParsing="false" styleClass="menu" text="Ayuda">
             <items>
-              <MenuItem mnemonicParsing="false" onAction="#abrirTutorial" text="Tutorial" />
+              <MenuItem mnemonicParsing="false" onAction="#abrirTutorial" styleClass="menu-item" text="Tutorial" />
             </items>
           </Menu>
         </menus>
@@ -57,14 +57,14 @@
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="285.0" layoutY="123.0" text="Bienvenido al sistema">
+            <Label layoutX="285.0" layoutY="123.0" styleClass="h1" text="Bienvenido al sistema">
                <font>
                   <Font name="Noto Sans Regular" size="36.0" />
                </font>
             </Label>
-            <ImageView fx:id="logoDemtr" fitHeight="200.0" fitWidth="158.0" layoutX="390.0" layoutY="217.0">
+            <ImageView id="logo" fx:id="logoDemtr" fitHeight="200.0" fitWidth="158.0" layoutX="390.0" layoutY="217.0">
                <image>
-                  <Image url="@../../../../../images/logo1.png" />
+                  <Image url="@../../../../../resources/images/logo1.png" />
                </image>
             </ImageView>
             <Text layoutX="232.0" layoutY="473.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Para empezar a usar la aplicación puedes navegar por el menú situado en la parte superior de la ventana." textAlignment="CENTER" wrappingWidth="474.6796875">
@@ -72,7 +72,7 @@
                   <Font name="Noto Sans Regular" size="18.0" />
                </font>
             </Text>
-            <Hyperlink layoutX="798.0" layoutY="40.0" onAction="#irAyuda" text="Ayuda" />
+            <Hyperlink layoutX="798.0" layoutY="40.0" onAction="#irAyuda" styleClass="ayuda" text="Ayuda" />
          </children>
       </AnchorPane>
    </center>

@@ -87,7 +87,7 @@ public class MenuController {
 	private void inicializarImagenes(){
 		FileInputStream fis = null;
 		try {
-			fis = new FileInputStream("images/logo1.png");
+			fis = new FileInputStream("resources/images/logo1.png");
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
