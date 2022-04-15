@@ -1,0 +1,3 @@
+.ayuda, .texto, .h1, .h3, #plus, .label, .field, .menu-item, .titled-pane, .btn, .radio, .choice-box, .combo-box, .date, .list-view, .tree-view, .table-view{
+    -fx-font-family: "Noto Sans";
+}

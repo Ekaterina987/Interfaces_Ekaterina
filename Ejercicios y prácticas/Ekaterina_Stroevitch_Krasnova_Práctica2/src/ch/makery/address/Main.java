@@ -79,11 +79,10 @@ public class Main extends Application {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(Main.class.getResource("view/RootLayout.fxml"));
 			rootLayout = (BorderPane) loader.load();
-
 			menuController = loader.getController();
 
-
 			Scene scene = new Scene(rootLayout);
+			scene.getStylesheets().add(Main.class.getResource("css/global.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("Práctica 2");
 			primaryStage.show();

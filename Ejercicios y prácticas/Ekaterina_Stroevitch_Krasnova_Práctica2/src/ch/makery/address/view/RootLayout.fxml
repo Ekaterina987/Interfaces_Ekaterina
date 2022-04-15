@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane id="root-layout" fx:id="rootLayout" prefHeight="700.0" prefWidth="920.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.view.MenuController">
+<BorderPane id="root-layout" fx:id="rootLayout" prefHeight="700.0" prefWidth="920.0" stylesheets="@../css/global.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.view.MenuController">
    <top>
       <MenuBar id="menu-bar" BorderPane.alignment="CENTER">
         <menus>
@@ -67,7 +67,7 @@
                   <Image url="@../../../../../resources/images/logo1.png" />
                </image>
             </ImageView>
-            <Text layoutX="232.0" layoutY="473.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Para empezar a usar la aplicación puedes navegar por el menú situado en la parte superior de la ventana." textAlignment="CENTER" wrappingWidth="474.6796875">
+            <Text layoutX="232.0" layoutY="473.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" text="Para empezar a usar la aplicación puedes navegar por el menú situado en la parte superior de la ventana." textAlignment="CENTER" wrappingWidth="474.6796875">
                <font>
                   <Font name="Noto Sans Regular" size="18.0" />
                </font>

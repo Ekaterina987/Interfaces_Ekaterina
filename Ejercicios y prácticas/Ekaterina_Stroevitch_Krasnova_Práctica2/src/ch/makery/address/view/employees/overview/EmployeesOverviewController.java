@@ -130,6 +130,7 @@ public class EmployeesOverviewController {
 	}
 	private void inicializarTabla(){
 		tablaEmpleados = new TableView<>();
+		tablaEmpleados.getStyleClass().add("table-view");
 		tablaEmpleados.setTableMenuButtonVisible(true);
 		TableColumn<Empleado, String> colNombre = new TableColumn<>("Nombre");
 		TableColumn<Empleado, String> colApellidos = new TableColumn<>("Apellidos");
