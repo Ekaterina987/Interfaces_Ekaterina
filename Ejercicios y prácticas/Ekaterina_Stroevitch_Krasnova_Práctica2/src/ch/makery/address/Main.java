@@ -8,19 +8,16 @@ import ch.makery.address.model.Empleado;
 import ch.makery.address.view.*;
 import ch.makery.address.view.employee.create.EmployeeCreateController;
 import ch.makery.address.view.employees.overview.EmployeesOverviewController;
+import ch.makery.address.view.help.HelpController;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.collections.transformation.FilteredList;
-import javafx.collections.transformation.SortedList;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Point2D;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.StackPane;
-import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import javafx.stage.Popup;
@@ -37,6 +34,7 @@ public class Main extends Application {
 	private static MenuController menuController;
 	private static EmployeeCreateController createController;
 	private static EmployeesOverviewController overviewController;
+	private static HelpController helpController;
 	private static Map<String, String> fields;
 	private static List<String> errores;
 	private static Stage stage;
@@ -84,6 +82,7 @@ public class Main extends Application {
 
 			menuController = loader.getController();
 
+
 			Scene scene = new Scene(rootLayout);
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("Práctica 2");
@@ -98,7 +97,9 @@ public class Main extends Application {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(MenuController.class.getResource("/ch/makery/address/view/employee/create/EmployeeCreate.fxml"));
 			GridPane ventanaCrear = (GridPane) loader.load();
+
 			createController = loader.getController();
+			createController.setEditar(false);
 
 			rootLayout.setCenter(ventanaCrear);
 		} catch (IOException e) {
@@ -112,8 +113,10 @@ public class Main extends Application {
 			loader.setLocation(MenuController.class.getResource("/ch/makery/address/view/employee/create/EmployeeCreate.fxml"));
 			GridPane ventanaEditar = (GridPane) loader.load();
 
+
 			createController = loader.getController();
 
+			createController.setEditar(true);
 			createController.editarEmpleado(empleado);
 
 			rootLayout.setCenter(ventanaEditar);
@@ -143,6 +146,8 @@ public class Main extends Application {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(MenuController.class.getResource("/ch/makery/address/view/help/Help.fxml"));
 			AnchorPane tutorial = (AnchorPane) loader.load();
+
+			helpController = loader.getController();
 
 			rootLayout.setCenter(tutorial);
 		} catch (IOException e) {
@@ -324,18 +329,94 @@ public class Main extends Application {
 
 		errores = new ArrayList<>();
 		fields = new HashMap<>();
+		manejo = (KeyEvent event) -> {
+			if (event.getCode() == KeyCode.ESCAPE || event.getCode() == KeyCode.ENTER) {
+				event.consume();
+			}
+		};
+	}
+
+
+	public static void ayudaNavegar(){
+		try {
+
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(MenuController.class.getResource("/ch/makery/address/view/help/Help.fxml"));
+			AnchorPane tutorial = (AnchorPane) loader.load();
+
+			helpController = loader.getController();
+
+			helpController.getAcordeon().setExpandedPane(helpController.getPaneNavegar());
+			rootLayout.setCenter(tutorial);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	public static void ayudaVer(){
+		try {
+
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(MenuController.class.getResource("/ch/makery/address/view/help/Help.fxml"));
+			AnchorPane tutorial = (AnchorPane) loader.load();
+
+			helpController = loader.getController();
+
+			helpController.getAcordeon().setExpandedPane(helpController.getPaneVer());
+			rootLayout.setCenter(tutorial);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	public static void ayudaCrear(){
+		try {
+
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(MenuController.class.getResource("/ch/makery/address/view/help/Help.fxml"));
+			AnchorPane tutorial = (AnchorPane) loader.load();
+
+			helpController = loader.getController();
+
+			helpController.getAcordeon().setExpandedPane(helpController.getPaneCrear());
+			rootLayout.setCenter(tutorial);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	public static void ayudaEditar(){
+		try {
+
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(MenuController.class.getResource("/ch/makery/address/view/help/Help.fxml"));
+			AnchorPane tutorial = (AnchorPane) loader.load();
+
+			helpController = loader.getController();
+
+			helpController.getAcordeon().setExpandedPane(helpController.getPaneEditar());
+			rootLayout.setCenter(tutorial);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	public static void ayudaBorrar(){
+		try {
+
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(MenuController.class.getResource("/ch/makery/address/view/help/Help.fxml"));
+			AnchorPane tutorial = (AnchorPane) loader.load();
+
+			helpController = loader.getController();
+
+			helpController.getAcordeon().setExpandedPane(helpController.getPaneBorrar());
+			rootLayout.setCenter(tutorial);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 
 	public static void main(String[] args) {
 
 		inicializarValores();
-		 manejo = (KeyEvent event) -> {
-			if (event.getCode() == KeyCode.ESCAPE || event.getCode() == KeyCode.ENTER) {
-				event.consume();
-			}
-		};
-
 		launch(args);
 	}
 

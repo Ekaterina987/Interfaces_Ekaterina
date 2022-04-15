@@ -28,6 +28,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.*;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
 import javafx.scene.layout.StackPane;
 import javafx.stage.FileChooser;
 
@@ -55,7 +57,8 @@ public class EmployeeCreateController {
 	
 	@FXML
     private Button mainButton;
-
+	@FXML
+	private Label ayuda;
 
     @FXML
     private TextField inputApellidos;
@@ -99,9 +102,17 @@ public class EmployeeCreateController {
 
 	private Empleado empleado;
 
-	
-	
-    @FXML
+	private boolean editar;
+
+	public boolean isEditar() {
+		return editar;
+	}
+
+	public void setEditar(boolean editar) {
+		this.editar = editar;
+	}
+
+	@FXML
     void initialize() {
 
 		urlImagenes();
@@ -188,6 +199,15 @@ public class EmployeeCreateController {
 			noImagen.setImage(img);
 			noImagen.setOpacity(1);
 			plus.setOpacity(0);
+		}
+
+	}
+	@FXML
+	void irAyuda(ActionEvent event) {
+		if(editar){
+			Main.ayudaEditar();
+		}else{
+			Main.ayudaCrear();
 		}
 
 	}

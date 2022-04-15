@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
@@ -71,6 +72,7 @@
                   <Font name="Noto Sans Regular" size="18.0" />
                </font>
             </Text>
+            <Hyperlink layoutX="798.0" layoutY="40.0" onAction="#irAyuda" text="Ayuda" />
          </children>
       </AnchorPane>
    </center>

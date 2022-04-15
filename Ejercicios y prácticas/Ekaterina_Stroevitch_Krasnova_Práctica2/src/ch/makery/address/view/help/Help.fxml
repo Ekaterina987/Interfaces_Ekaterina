@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.TitledPane?>
@@ -14,7 +15,7 @@
    <children>
       <Accordion fx:id="acordeon" layoutX="112.0" layoutY="71.0" prefHeight="549.0" prefWidth="697.0">
         <panes>
-          <TitledPane text="Como navegar">
+          <TitledPane fx:id="paneNavegar" text="Como navegar">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="550.0" style="-fx-background-color: white;">
                      <children>
@@ -30,7 +31,7 @@
                   <Font name="Noto Sans Regular" size="12.0" />
                </font>
           </TitledPane>
-          <TitledPane text="Ver empleados">
+          <TitledPane fx:id="paneVer" text="Ver empleados">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
                      <children>
@@ -40,13 +41,14 @@
                               <Image url="@../../../../../../images/verEmpleados.png" />
                            </image>
                         </ImageView>
+                        <Hyperlink layoutX="134.0" layoutY="154.0" onAction="#ayudaBorrar" text="Ayuda" />
                      </children></AnchorPane>
             </content>
                <font>
                   <Font name="Noto Sans Regular" size="12.0" />
                </font>
           </TitledPane>
-          <TitledPane text="Crear empleados">
+          <TitledPane fx:id="paneCrear" text="Crear empleados">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
                      <children>
@@ -62,7 +64,7 @@
                   <Font name="Noto Sans Regular" size="12.0" />
                </font>
           </TitledPane>
-            <TitledPane text="Editar empleados">
+            <TitledPane fx:id="paneEditar" text="Editar empleados">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
                      <children>
@@ -78,7 +80,7 @@
                   <Font name="Noto Sans Regular" size="12.0" />
                </font>
             </TitledPane>
-            <TitledPane text="Borrar empleados">
+            <TitledPane fx:id="paneBorrar" text="Borrar empleados">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
                      <children>

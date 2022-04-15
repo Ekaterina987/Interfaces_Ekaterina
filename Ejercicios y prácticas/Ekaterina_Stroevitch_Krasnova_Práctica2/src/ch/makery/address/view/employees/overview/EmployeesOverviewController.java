@@ -68,6 +68,10 @@ public class EmployeesOverviewController {
 	private void borrarEmpleado(ActionEvent event) {
 		borrarEmpleado();
 	}
+	@FXML
+	void irAyuda(ActionEvent event) {
+		Main.ayudaVer();
+	}
 	public void inhabilitarBotones(){
 		editarButton.setDisable(true);
 		borrarButton.setDisable(true);

@@ -71,6 +71,10 @@ public class MenuController {
 	private void cerrarListado(ActionEvent event) {
 		Main.cerrarListado();
 	}
+	@FXML
+	void irAyuda(ActionEvent event) {
+		Main.ayudaNavegar();
+	}
 
 	public void inhabilitarMenu(){
 		menuEditar.setDisable(true);

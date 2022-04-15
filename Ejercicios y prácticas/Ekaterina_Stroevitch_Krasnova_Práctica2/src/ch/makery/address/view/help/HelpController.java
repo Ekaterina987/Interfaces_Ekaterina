@@ -4,6 +4,9 @@ package ch.makery.address.view.help;
         import java.io.FileNotFoundException;
         import java.net.URL;
         import java.util.ResourceBundle;
+
+        import ch.makery.address.Main;
+        import javafx.event.ActionEvent;
         import javafx.fxml.FXML;
         import javafx.scene.control.Accordion;
         import javafx.scene.control.ProgressBar;
@@ -36,6 +39,44 @@ public class HelpController {
     @FXML
     private Accordion acordeon;
 
+    @FXML
+    private TitledPane paneBorrar;
+
+    @FXML
+    private TitledPane paneCrear;
+
+    @FXML
+    private TitledPane paneEditar;
+
+    @FXML
+    private TitledPane paneNavegar;
+
+    @FXML
+    private TitledPane paneVer;
+
+    public TitledPane getPaneBorrar() {
+        return paneBorrar;
+    }
+
+    public TitledPane getPaneCrear() {
+        return paneCrear;
+    }
+
+    public TitledPane getPaneEditar() {
+        return paneEditar;
+    }
+
+    public TitledPane getPaneNavegar() {
+        return paneNavegar;
+    }
+
+    public TitledPane getPaneVer() {
+        return paneVer;
+    }
+
+    public Accordion getAcordeon() {
+        return acordeon;
+    }
 
     @FXML
     void initialize() {
@@ -68,7 +109,7 @@ public class HelpController {
     private void progresoAcordeon(){
         barraProgreso.setProgress(0);
         acordeon.expandedPaneProperty().addListener((observable, oldValue, newValue) -> {
-            int valor = 0;
+            int valor = -1;
             for(int i = 0; i < acordeon.getPanes().size(); i++){
                 TitledPane tp = acordeon.getPanes().get(i);
                 if(tp == newValue){
@@ -80,6 +121,10 @@ public class HelpController {
             barraProgreso.setProgress((valorFinal));
 
         });
+    }
+    @FXML
+    void ayudaBorrar(ActionEvent event) {
+        acordeon.setExpandedPane(paneBorrar);
     }
 
 

@@ -6,6 +6,7 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.PasswordField?>
@@ -141,11 +142,23 @@
             </HBox>
          </children>
       </GridPane>
-      <Label fx:id="empleadoLabel" text="Nuevo empleado">
-         <font>
-            <Font name="Noto Sans Regular" size="36.0" />
-         </font>
-      </Label>
+      <GridPane>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+            <ColumnConstraints hgrow="NEVER" minWidth="10.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label fx:id="empleadoLabel" text="Nuevo empleado">
+               <font>
+                  <Font name="Noto Sans Regular" size="36.0" />
+               </font>
+            </Label>
+            <Hyperlink onAction="#irAyuda" text="Ayuda" GridPane.columnIndex="1" />
+         </children>
+      </GridPane>
       <TilePane alignment="CENTER_LEFT" prefColumns="3" prefRows="1" prefTileHeight="20.0" GridPane.rowIndex="1">
          <children>
             <Button fx:id="mainButton" defaultButton="true" mnemonicParsing="false" onAction="#guardarEmpleado" prefHeight="25.0" prefWidth="65.0" text="Crear">
