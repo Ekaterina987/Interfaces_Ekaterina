@@ -13,6 +13,7 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.*;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.StackPane;
@@ -30,12 +31,12 @@ public class MenuController {
 	private ImageView logoDemtr;
 
 	@FXML
-	private FlowPane inicio;
+	private AnchorPane inicio;
 	@FXML
 	private MenuItem menuBorrar;
 	@FXML
 	private MenuItem menuEditar;
-	public FlowPane getInicio() {
+	public AnchorPane getInicio() {
 		return inicio;
 	}
 
@@ -68,8 +69,8 @@ public class MenuController {
 		Main.abrirTutorial();
 	}
 	@FXML
-	private void cerrarListado(ActionEvent event) {
-		Main.cerrarListado();
+	private void volverInicio(ActionEvent event) {
+		Main.volverInicio();
 	}
 	@FXML
 	void irAyuda(ActionEvent event) {

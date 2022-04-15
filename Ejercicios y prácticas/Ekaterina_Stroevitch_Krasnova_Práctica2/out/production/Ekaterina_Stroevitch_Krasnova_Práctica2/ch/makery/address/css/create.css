@@ -1,0 +1,10 @@
+#btn-imagen:hover{
+    -fx-opacity: 0.6;
+}
+
+#rectangle{
+    -fx-fill: #3C976F;
+}
+.field{
+    -fx-highlight-fill: #3C976F;
+}

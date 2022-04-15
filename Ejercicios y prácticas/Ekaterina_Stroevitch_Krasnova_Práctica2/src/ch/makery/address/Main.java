@@ -96,7 +96,6 @@ public class Main extends Application {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(MenuController.class.getResource("/ch/makery/address/view/employee/create/EmployeeCreate.fxml"));
 			GridPane ventanaCrear = (GridPane) loader.load();
-
 			createController = loader.getController();
 			createController.setEditar(false);
 
@@ -159,7 +158,7 @@ public class Main extends Application {
 	public static void borrarEmpleado(){
 		overviewController.borrarEmpleado();
 	}
-	public static void cerrarListado() {
+	public static void volverInicio() {
 		rootLayout.setCenter(menuController.getInicio());
 	}
 

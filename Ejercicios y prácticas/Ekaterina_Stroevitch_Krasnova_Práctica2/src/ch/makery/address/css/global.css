@@ -1,3 +1,53 @@
+#root-layout{
+    -fx-background-color: #faf9f8;
+}
 .ayuda, .texto, .h1, .h3, #plus, .label, .field, .menu-item, .titled-pane, .btn, .radio, .choice-box, .combo-box, .date, .list-view, .tree-view, .table-view{
     -fx-font-family: "Noto Sans";
 }
+#menu-bar{
+    -fx-background-color: #3C976F;
+}
+.menu .label{
+    -fx-text-fill: #faf9f8;
+}
+.menu .context-menu{
+    -fx-background-color: #e3e3e3;
+    -fx-border-style: none;
+    -fx-effect: none;
+}
+.menu:hover, .menu:showing{
+    -fx-background-color: #1b5e47;
+}
+.menu-item .label{
+    -fx-text-fill: #181c1b;
+}
+.menu-item:hover, .menu-item:showing{
+    -fx-background-color: #a9abab;
+}
+.menu{
+    -fx-selection-bar: #a9abab;
+}
+.ayuda{
+    -fx-text-fill: #3C976F;
+    -fx-border-color: transparent;
+    -fx-underline: true;
+}
+.ayuda:hover{
+    -fx-text-fill: #2b675f;
+    -fx-border-color: #2b675f;
+    -fx-border-width: 1;
+    -fx-border-style: dashed;
+    -fx-underline: false;
+}
+
+.btn{
+    -fx-background-color: #67b995;
+    -fx-cursor: hand;
+    -fx-background-radius: 0;
+}
+.btn:hover{
+    -fx-background-color: #2b675f;
+    -fx-text-fill: white;
+}
+
+
