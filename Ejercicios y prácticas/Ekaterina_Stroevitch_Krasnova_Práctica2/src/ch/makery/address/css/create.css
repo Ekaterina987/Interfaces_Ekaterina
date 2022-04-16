@@ -1,10 +1,47 @@
 #btn-imagen:hover{
     -fx-opacity: 0.6;
 }
+#btn-descartar{
+    -fx-background-color: #a29d9d;
+}
+#btn-descartar:hover{
+    -fx-background-color: #575454;
+}
 
 #rectangle{
     -fx-fill: #3C976F;
 }
-.field{
-    -fx-highlight-fill: #3C976F;
+
+.field, .list-view, .date{
+    -fx-background-radius: 0;
+    -fx-background-color: white;
+    -fx-border-width: 1px;
+    -fx-border-color: #181c1b;
+    -fx-border-style: solid;
+}
+.list-view .list-cell{
+    -fx-border-color: transparent;
+    -fx-border-width: 1;
+}
+.list-view:focused .list-cell:focused{
+    -fx-border-color: #d7d0d0;
+    -fx-background-color: white;
+    -fx-border-width: 1;
+}
+.date .cell:hover, .date .cell:focused, .list-view .cell:selected, .list-view .cell .list-cell:hover{
+    -fx-background-color: #a29d9d;
+}
+.combo-box, .choice-box{
+    -fx-background-color: #d7d0d0;
+    -fx-background-radius: 0;
+    -fx-pref-width: 600;
+}
+.combo-box:hover, .choice-box:hover{
+    -fx-background-color:#a29d9d;
+}
+.choice-box .context-menu{
+    -fx-background-color: white;
+}
+.choice-box .menu-item:focused{
+    -fx-background-color:  #d7d0d0;
 }

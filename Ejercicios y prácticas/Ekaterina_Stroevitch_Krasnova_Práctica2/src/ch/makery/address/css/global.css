@@ -11,7 +11,7 @@
     -fx-text-fill: #faf9f8;
 }
 .menu .context-menu{
-    -fx-background-color: #e3e3e3;
+    -fx-background-color: #d7d0d0;
     -fx-border-style: none;
     -fx-effect: none;
 }
@@ -22,10 +22,10 @@
     -fx-text-fill: #181c1b;
 }
 .menu-item:hover, .menu-item:showing{
-    -fx-background-color: #a9abab;
+    -fx-background-color: #a29d9d;
 }
 .menu{
-    -fx-selection-bar: #a9abab;
+    -fx-selection-bar: #a29d9d;
 }
 .ayuda{
     -fx-text-fill: #3C976F;
