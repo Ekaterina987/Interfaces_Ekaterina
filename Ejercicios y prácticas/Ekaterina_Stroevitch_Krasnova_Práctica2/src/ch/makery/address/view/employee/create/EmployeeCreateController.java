@@ -186,8 +186,13 @@ public class EmployeeCreateController {
 	@FXML
 	void handleDrop(DragEvent event) throws FileNotFoundException {
 		List<File> files = event.getDragboard().getFiles();
-		Image img = new Image(new FileInputStream(files.get(0)));
-		noImagen.setImage(img);
+		Image imagen = new Image(new FileInputStream(files.get(0)));
+		if(imagen!=null) {
+			noImagen.setImage(imagen);
+			noImagen.setOpacity(1);
+			plus.setOpacity(0);
+		}
+
 	}
 	@FXML
 	void aniadirImagen(ActionEvent event) throws FileNotFoundException {
@@ -249,6 +254,18 @@ public class EmployeeCreateController {
 			eliminar.setOnAction(e->confirmacionEliminar(cell.getItem()));
 
 			contextMenu.getItems().add(eliminar);
+			cell.itemProperty().addListener((observableValue, oldValue, newValue) ->{
+				if(newValue!= null && newValue.equals("Elige una responsabilidad")){
+					cell.setStyle("-fx-background-color: -fx-gris-medio; -fx-text-fill: -fx-blanco");
+				}else{
+					if(cell.getIndex() % 2 == 0){
+						cell.setStyle("-fx-background-color: white; -fx-text-fill: -fx-negro");
+					}else{
+						cell.setStyle("-fx-background-color: -fx-blanco; -fx-text-fill: -fx-negro");
+					}
+
+				}
+			});
 			cell.emptyProperty().addListener((obs, wasEmpty, isNowEmpty) -> {
 				if (isNowEmpty) {
 					cell.setContextMenu(null);

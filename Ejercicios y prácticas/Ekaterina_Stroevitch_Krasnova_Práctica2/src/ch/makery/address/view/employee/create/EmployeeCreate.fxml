@@ -98,7 +98,7 @@
             </Label>
             <TextField fx:id="inputPuesto" promptText="Puesto..." styleClass="field" GridPane.columnIndex="1" GridPane.rowIndex="3">
             </TextField>
-            <DatePicker fx:id="inputFecha" promptText="Elige una fecha" styleClass="date" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <DatePicker fx:id="inputFecha" promptText="Elige una fecha" GridPane.columnIndex="3" GridPane.rowIndex="3" />
             <HBox alignment="CENTER_LEFT" spacing="5.0" styleClass="box-contrasenia" GridPane.columnIndex="2">
                <children>
                   <StackPane id="tooltip" fx:id="tooltip">

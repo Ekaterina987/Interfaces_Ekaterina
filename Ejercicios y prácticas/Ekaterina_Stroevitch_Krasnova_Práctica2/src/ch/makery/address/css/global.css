@@ -1,53 +1,71 @@
+* {
+    -fx-primario: #3C976F;
+    -fx-secundario: #1b5e47;
+    -fx-verde-claro: #67b995;
+    -fx-gris-claro: #d7d0d0;
+    -fx-gris-medio: #a29d9d;
+    -fx-gris-oscuro: #575454;
+    -fx-blanco: #faf9f8;
+    -fx-negro:  #181c1b;
+}
+
 #root-layout{
-    -fx-background-color: #faf9f8;
+    -fx-background-color: -fx-blanco;
 }
 .ayuda, .texto, .h1, .h3, #plus, .label, .field, .menu-item, .titled-pane, .btn, .radio, .choice-box, .combo-box, .date, .list-view, .tree-view, .table-view{
     -fx-font-family: "Noto Sans";
+    -fx-text-fill: -fx-negro;
 }
 #menu-bar{
-    -fx-background-color: #3C976F;
+    -fx-background-color: -fx-primario;
 }
 .menu .label{
-    -fx-text-fill: #faf9f8;
+    -fx-text-fill: -fx-blanco;
 }
 .menu .context-menu{
-    -fx-background-color: #d7d0d0;
+    -fx-background-color: -fx-gris-claro;
     -fx-border-style: none;
     -fx-effect: none;
 }
 .menu:hover, .menu:showing{
-    -fx-background-color: #1b5e47;
+    -fx-background-color: -fx-secundario;
 }
 .menu-item .label{
-    -fx-text-fill: #181c1b;
+    -fx-text-fill: -fx-negro;
 }
 .menu-item:hover, .menu-item:showing{
-    -fx-background-color: #a29d9d;
+    -fx-background-color: -fx-gris-medio;
 }
 .menu{
-    -fx-selection-bar: #a29d9d;
+    -fx-selection-bar: -fx-gris-medio;
 }
 .ayuda{
-    -fx-text-fill: #3C976F;
+    -fx-text-fill: -fx-primario;
     -fx-border-color: transparent;
     -fx-underline: true;
 }
 .ayuda:hover{
-    -fx-text-fill: #2b675f;
-    -fx-border-color: #2b675f;
+    -fx-text-fill: -fx-secundario;
+    -fx-border-color: -fx-secundario;
     -fx-border-width: 1;
     -fx-border-style: dashed;
     -fx-underline: false;
 }
 
 .btn{
-    -fx-background-color: #67b995;
+    -fx-background-color: -fx-verde-claro;
     -fx-cursor: hand;
     -fx-background-radius: 0;
 }
 .btn:hover{
-    -fx-background-color: #2b675f;
-    -fx-text-fill: white;
+    -fx-background-color: -fx-secundario;
+    -fx-text-fill: -fx-blanco;
 }
 
+.context-menu .menu-item:focused{
+    -fx-background-color: -fx-gris-claro;
+}
+.context-menu .menu-item:hover{
+    -fx-background-color: -fx-gris-medio;
+}
 
