@@ -128,6 +128,20 @@
                                     </AnchorPane>
                                 </content>
                               </Tab>
+                              <Tab text="Eliminar responsabilidad">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Text layoutX="30.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="texto" text="Para eliminar una responsabilidad añadida basta con pinchar con el botón derecho en dicha responsabilidad y seleccionar eliminar. Aparecerá una ventana pidiendo confirmación del borrado de la responsabilidad. Pulsar en una fila vacía o en Elige una responsabilidad con el botón derecho del ratón no desencadenará ninguna acción." wrappingWidth="637.13671875" />
+                                          <ImageView fx:id="eliminarResp" fitHeight="174.0" fitWidth="419.0" layoutX="139.0" layoutY="140.0">
+                                             <image>
+                                                <Image url="@../../../../../../resources/images/responsabilidad.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </Tab>
                           </tabs>
                         </TabPane>
                      </children></AnchorPane>

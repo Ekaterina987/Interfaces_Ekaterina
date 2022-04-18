@@ -63,6 +63,9 @@ public class HelpController {
     @FXML
     private ImageView filtrarEmpleados;
 
+    @FXML
+    private ImageView eliminarResp;
+
     public TitledPane getPaneBorrar() {
         return paneBorrar;
     }
@@ -102,6 +105,7 @@ public class HelpController {
         FileInputStream fis5 = null;
         FileInputStream fis6 = null;
         FileInputStream fis7 = null;
+        FileInputStream fis8 = null;
         try {
             fis = new FileInputStream("resources/images/menu.png");
             fis1 = new FileInputStream("resources/images/verEmpleados.png");
@@ -111,6 +115,7 @@ public class HelpController {
             fis5 = new FileInputStream("resources/images/filtro.png");
             fis6 = new FileInputStream("resources/images/subirImagen.png");
             fis7 = new FileInputStream("resources/images/contrasenia.png");
+            fis8 = new FileInputStream("resources/images/responsabilidad.png");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -123,6 +128,7 @@ public class HelpController {
         filtrarEmpleados.setImage(new Image(fis5));
         aniadirImagen.setImage(new Image(fis6));
         ayudaContrasenia.setImage(new Image(fis7));
+        eliminarResp.setImage(new Image(fis8));
 
     }
     private void progresoAcordeon(){

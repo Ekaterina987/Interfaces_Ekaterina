@@ -1,3 +1,4 @@
+/* PALETA */
 * {
     -fx-primario: #3C976F;
     -fx-secundario: #1b5e47;
@@ -8,7 +9,7 @@
     -fx-blanco: #faf9f8;
     -fx-negro:  #181c1b;
 }
-
+/* GLOBAL */
 #root-layout{
     -fx-background-color: -fx-blanco;
 }
@@ -16,6 +17,33 @@
     -fx-font-family: "Noto Sans";
     -fx-text-fill: -fx-negro;
 }
+.btn{
+    -fx-background-color: -fx-verde-claro;
+    -fx-cursor: hand;
+    -fx-background-radius: 0;
+}
+.btn:hover{
+    -fx-background-color: -fx-secundario;
+    -fx-text-fill: -fx-blanco;
+}
+
+.context-menu .menu-item:focused{
+    -fx-background-color: -fx-gris-claro;
+}
+.context-menu .menu-item:hover{
+    -fx-background-color: -fx-gris-medio;
+}
+.scroll-bar .thumb{
+    -fx-background-color: -fx-gris-claro;
+    -fx-background-radius: 0;
+}
+.scroll-bar, .scroll-bar .track{
+    -fx-background-color: -fx-blanco;
+}
+.corner{
+    -fx-background-color: -fx-gris-claro;
+}
+/* MENU */
 #menu-bar{
     -fx-background-color: -fx-primario;
 }
@@ -50,31 +78,4 @@
     -fx-border-width: 1;
     -fx-border-style: dashed;
     -fx-underline: false;
-}
-
-.btn{
-    -fx-background-color: -fx-verde-claro;
-    -fx-cursor: hand;
-    -fx-background-radius: 0;
-}
-.btn:hover{
-    -fx-background-color: -fx-secundario;
-    -fx-text-fill: -fx-blanco;
-}
-
-.context-menu .menu-item:focused{
-    -fx-background-color: -fx-gris-claro;
-}
-.context-menu .menu-item:hover{
-    -fx-background-color: -fx-gris-medio;
-}
-.scroll-bar .thumb{
-    -fx-background-color: -fx-gris-claro;
-    -fx-background-radius: 0;
-}
-.scroll-bar, .scroll-bar .track{
-    -fx-background-color: -fx-blanco;
-}
-.corner{
-    -fx-background-color: -fx-gris-claro;
 }
