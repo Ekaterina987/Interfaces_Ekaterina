@@ -316,6 +316,8 @@ public class Main extends Application {
 		ArrayList<String> resp = new ArrayList<>(Arrays.asList("Administración de empresa", "RRHH", "Contabilidad", "Contacto colaboradores"));
 		ArrayList<String> resp1 = new ArrayList<>(Arrays.asList("Captación y mantenimiento de sponsors", "Relación con usuarios", "Mantenimiento redes sociales"));
 		ArrayList<String> resp2 = new ArrayList<>(Arrays.asList("Programación", "Diseño", "Gestión bases de datos", "Actualizaciones", "Mantenimiento aplicación"));
+		ArrayList<String> resp3 = new ArrayList<>(Arrays.asList("Captación y mantenimiento de sponsors", "Relación con usuarios"));
+		ArrayList<String> resp4 = new ArrayList<>(Arrays.asList("Diseño", "Actualizaciones", "Mantenimiento aplicación"));
 
 		data = FXCollections.observableArrayList(
 				new Empleado("Tony", "Ávila", "tonyavila@demtr.com", "c0ntra5eniA",
@@ -323,7 +325,11 @@ public class Main extends Application {
 				new Empleado("Diego", "Jaular", "diegojaular@demtr.com", "c0ntra5eniA",
 						"Comercial y publicidad", "Director", "Jefe", resp1, "06/03/2022", "Madrid" ),
 				new Empleado("Ekaterina", "Stroevitch", "ekaterinastroevitch@demtr.com", "c0ntra5eniA",
-						"Sistemas y desarrollo", "Director", "Jefe", resp2, "06/03/2022", "Madrid" ));
+						"Sistemas y desarrollo", "Director", "Jefe", resp2, "06/03/2022", "Madrid" ),
+				new Empleado("Juan", "Palomo", "juanpalomo@demtr.com", "c0ntra5eniA",
+						"Comercial y publicidad", "Empleado", "Comercial", resp3, "16/04/2022", "Granada" ),
+				new Empleado("Bruno", "Munari", "brunomunari@demtr.com", "c0ntra5eniA",
+						"Sistemas y desarrollo", "Empleado", "Diseñador", resp4, "18/04/2022", "León" ));
 
 		errores = new ArrayList<>();
 		fields = new HashMap<>();

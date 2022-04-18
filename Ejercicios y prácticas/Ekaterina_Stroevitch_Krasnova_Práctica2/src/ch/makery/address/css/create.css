@@ -8,6 +8,9 @@
     -fx-blanco: #faf9f8;
     -fx-negro:  #181c1b;
 }
+#grid-empleado{
+    -fx-min-width: 600;
+}
 
 #btn-imagen:hover{
     -fx-opacity: 0.6;

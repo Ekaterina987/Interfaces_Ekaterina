@@ -68,4 +68,13 @@
 .context-menu .menu-item:hover{
     -fx-background-color: -fx-gris-medio;
 }
-
+.scroll-bar .thumb{
+    -fx-background-color: -fx-gris-claro;
+    -fx-background-radius: 0;
+}
+.scroll-bar, .scroll-bar .track{
+    -fx-background-color: -fx-blanco;
+}
+.corner{
+    -fx-background-color: -fx-gris-claro;
+}
