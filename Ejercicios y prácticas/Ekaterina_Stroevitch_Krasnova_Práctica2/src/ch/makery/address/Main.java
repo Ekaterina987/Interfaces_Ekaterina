@@ -1,5 +1,7 @@
 package ch.makery.address;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.*;
 
@@ -16,6 +18,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Point2D;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.text.Text;
@@ -84,7 +87,14 @@ public class Main extends Application {
 			Scene scene = new Scene(rootLayout);
 			scene.getStylesheets().add(Main.class.getResource("css/global.css").toExternalForm());
 			primaryStage.setScene(scene);
-			primaryStage.setTitle("Práctica 2");
+			primaryStage.setTitle("Gestión Empleados Demtr");
+			FileInputStream fis = null;
+			try {
+				fis = new FileInputStream("resources/images/employee.png");
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			}
+			primaryStage.getIcons().add(new Image(fis));
 			primaryStage.show();
 			Main.setStage(primaryStage);
 		} catch (Exception e) {

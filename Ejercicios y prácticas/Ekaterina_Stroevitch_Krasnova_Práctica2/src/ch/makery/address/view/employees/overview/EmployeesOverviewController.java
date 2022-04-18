@@ -96,8 +96,8 @@ public class EmployeesOverviewController {
 		FileInputStream fis1 = null;
 		FileInputStream fis2 = null;
     	try {
-			fis = new FileInputStream("resources/images/empleados.png");
-			fis1 = new FileInputStream("resources/images/departamento.png");
+			fis = new FileInputStream("resources/images/network.png");
+			fis1 = new FileInputStream("resources/images/department.png");
 			fis2 = new FileInputStream("resources/images/create.png");
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();

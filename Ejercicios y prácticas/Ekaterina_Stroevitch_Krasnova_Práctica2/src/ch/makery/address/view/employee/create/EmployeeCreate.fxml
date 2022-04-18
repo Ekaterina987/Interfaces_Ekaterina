@@ -82,12 +82,12 @@
             </Label>
             <HBox id="radio-buttons" alignment="CENTER_LEFT" spacing="10.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
                <children>
-                  <RadioButton fx:id="rEmpleado" mnemonicParsing="false" styleClass="radio" text="Empleado">
+                  <RadioButton fx:id="rEmpleado" mnemonicParsing="false" text="Empleado">
                      <toggleGroup>
                         <ToggleGroup fx:id="posicion" />
                      </toggleGroup></RadioButton>
-                  <RadioButton fx:id="rAdministrador" mnemonicParsing="false" styleClass="radio" text="Administrador" toggleGroup="$posicion" />
-                  <RadioButton fx:id="rDirector" mnemonicParsing="false" styleClass="radio" text="Director" toggleGroup="$posicion" />
+                  <RadioButton fx:id="rAdministrador" mnemonicParsing="false" text="Administrador" toggleGroup="$posicion" />
+                  <RadioButton fx:id="rDirector" mnemonicParsing="false" text="Director" toggleGroup="$posicion" />
                </children>
             </HBox>
             <ListView fx:id="listResponsabilidades" editable="true" prefHeight="200.0" prefWidth="200.0" styleClass="list-view" GridPane.columnIndex="1" GridPane.rowIndex="4" />

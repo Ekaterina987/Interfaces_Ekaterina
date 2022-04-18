@@ -4,23 +4,26 @@
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
 
-<AnchorPane id="anchor-help" prefHeight="691.0" prefWidth="920.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.view.help.HelpController">
+<AnchorPane id="anchor-help" prefHeight="691.0" prefWidth="920.0" stylesheets="@../../css/tutorial.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.view.help.HelpController">
    <children>
       <Accordion id="acordeon-tutorial" fx:id="acordeon" layoutX="112.0" layoutY="71.0" prefHeight="549.0" prefWidth="697.0">
         <panes>
-          <TitledPane fx:id="paneNavegar" text="Como navegar" styleClass="titled-pane">
+          <TitledPane fx:id="paneNavegar" styleClass="titled-pane" text="Como navegar">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="550.0" style="-fx-background-color: white;">
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="550.0" styleClass="anchor-inner">
                      <children>
                         <Text layoutX="34.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="texto" text="Para navegar por el sitio hay que utilizar los botones que se encuentran en el menú posicionado en la parte superior de la ventana. Desde Archivo se puede cerrar el panel abierto. Desde Editar se pueden crear, editar y borrar empleados. En Ver se puede ver el listado de empleados. En Ayuda se puede acceder al tutorial de la aplicación." wrappingWidth="626.13671875" />
-                        <ImageView fx:id="navegar" fitHeight="52.0" fitWidth="613.0" layoutX="41.0" layoutY="245.0" styleClass="imagen">
+                        <ImageView fx:id="navegar" fitHeight="73.0" fitWidth="631.0" layoutX="34.0" layoutY="234.0">
                            <image>
                               <Image url="@../../../../../../resources/images/menu.png" />
                            </image>
@@ -31,45 +34,114 @@
                   <Font name="Noto Sans Regular" size="12.0" />
                </font>
           </TitledPane>
-          <TitledPane fx:id="paneVer" text="Ver empleados" styleClass="titled-pane">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
-                     <children>
-                        <Text layoutX="32.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="texto" text="Para ver los empleados se debe acceder desde Ver → Empleados. En la pantalla de empleados se pueden ver todos los empleados y sus datos a excepción de la contraseña que es privada. A la izquierda se pueden filtrar los empleados por departamentos. También se pueden crear nuevos empleados o modificar un empleado seleccionándolo y haciendo click en el botón Acciones → Editar. También se puede eliminar un empleado seleccionándolo y haciendo click en Acciones → Borrar." wrappingWidth="630.13671875" />
-                        <ImageView fx:id="verEmpleados" fitHeight="123.0" fitWidth="586.0" layoutX="54.0" layoutY="212.0" styleClass="imagen">
-                           <image>
-                              <Image url="@../../../../../../resources/images/verEmpleados.png" />
-                           </image>
-                        </ImageView>
-                        <Hyperlink layoutX="134.0" layoutY="154.0" onAction="#ayudaBorrar" text="Ayuda" />
-                     </children></AnchorPane>
-            </content>
-               <font>
-                  <Font name="Noto Sans Regular" size="12.0" />
-               </font>
-          </TitledPane>
-          <TitledPane fx:id="paneCrear" text="Crear empleados" styleClass="titled-pane">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
-                     <children>
-                        <Text layoutX="28.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="texto" text="Para crear empleados se debe acceder desde el menú a Editar → Crear. En la pantalla se podrá rellenar un formulario con los datos del empleado. Se puede añadir una imagen al empleado en la parte superior, pulsando en el icono de la cámara. También se puede rellenar su nombre, apellidos, correo electrónico, puesto, contraseña y se pueden seleccionar cada una de sus responsabilidades, su departamento, posición, fecha de contratación y la ciudad en la que trabaja." wrappingWidth="637.13671875" />
-                        <ImageView fx:id="crearEmpleados" fitHeight="293.0" fitWidth="469.0" layoutX="113.0" layoutY="116.0" styleClass="imagen">
-                           <image>
-                              <Image url="@../../../../../../resources/images/crearEmpleados.png" />
-                           </image>
-                        </ImageView>
-                     </children></AnchorPane>
-            </content>
-               <font>
-                  <Font name="Noto Sans Regular" size="12.0" />
-               </font>
-          </TitledPane>
-            <TitledPane fx:id="paneEditar" text="Editar empleados" styleClass="titled-pane">
+            <TitledPane fx:id="paneVer" animated="false" text="Ver empleados">
               <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="anchor-inner">
+                     <children>
+                        <TabPane prefHeight="407.0" prefWidth="697.0" tabClosingPolicy="UNAVAILABLE">
+                           <tabs>
+                              <Tab text="Ver empleados">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="anchor-inner">
+                                       <children>
+                                          <TextFlow layoutX="55.0" layoutY="41.0" prefHeight="92.0" prefWidth="586.0">
+                                             <children>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="texto" text="Para ver los empleados se debe acceder desde Ver → Empleados. En la pantalla de empleados se pueden ver todos los empleados y sus datos a excepción de la contraseña que es privada. Se pueden crear nuevos empleados o modificar un empleado seleccionándolo y haciendo click en el botón Editar. También se puede eliminar un empleado seleccionándolo y haciendo click en Borrar.  " wrappingWidth="178.048828125" />
+                                                <Hyperlink onAction="#ayudaBorrar" styleClass="ayuda" text="Ayuda" />
+                                             </children>
+                                          </TextFlow>
+                                          <ImageView fx:id="verEmpleados" fitHeight="201.0" fitWidth="582.0" layoutX="57.0" layoutY="167.0">
+                                             <image>
+                                                <Image url="@../../../../../../resources/images/verEmpleados.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Text layoutX="55.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Los botones de Editar y Borrar sólo están habilitados al seleccionar un empleado, al igual que los elementos de menú correspondientes. " wrappingWidth="587.287109375" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                              <Tab text="Filtrar empleados">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="anchor-inner">
+                                       <children>
+                                          <Text layoutX="61.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="texto" text="Se pueden filtrar los empleados por departamento seleccionando un departamento en el lado izquierdo. Si se desea ver todos los empleados se puede pulsar en Todos o en Departamentos." wrappingWidth="574.048828125" />
+                                          <ImageView fx:id="filtrarEmpleados" fitHeight="222.0" fitWidth="510.0" layoutX="93.0" layoutY="118.0">
+                                             <image>
+                                                <Image url="@../../../../../../resources/images/filtro.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                           </tabs>
+                        </TabPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </TitledPane>
+          <TitledPane fx:id="paneCrear" styleClass="titled-pane" text="Crear empleados">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="anchor-inner">
+                     <children>
+                        <TabPane prefHeight="425.0" prefWidth="697.0" tabClosingPolicy="UNAVAILABLE">
+                          <tabs>
+                            <Tab text="Crear empleado">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Text layoutX="30.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="texto" text="Para crear empleados se debe acceder desde el menú a Editar → Crear. En la pantalla se podrá rellenar un formulario con los datos del empleado. Se puede rellenar su nombre, apellidos, correo electrónico, puesto, contraseña y se pueden seleccionar cada una de sus responsabilidades, su departamento, posición, fecha de contratación y la ciudad en la que trabaja." wrappingWidth="637.13671875" />
+                                          <ImageView fx:id="crearEmpleados" fitHeight="235.0" fitWidth="388.0" layoutX="155.0" layoutY="114.0">
+                                             <image>
+                                                <Image url="@../../../../../../resources/images/crearEmpleados.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                            <Tab text="Añadir imagen">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="anchor-inner">
+                                       <children>
+                                          <Text layoutX="30.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="texto" text="Para añadir una imagen al empleado se puede pinchar en el icono de la cámara y aparecerá una ventana que permitirá seleccionar la imagen. También se puede arrastrar la imagen directamente al icono de la cámara." wrappingWidth="637.13671875" />
+                                          <ImageView fx:id="aniadirImagen" fitHeight="283.0" fitWidth="416.0" layoutX="141.0" layoutY="93.0">
+                                             <image>
+                                                <Image url="@../../../../../../resources/images/subirImagen.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                              <Tab text="Ayuda contraseña">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="anchor-inner">
+                                       <children>
+                                          <Text layoutX="30.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="texto" text="El icono con el símbolo de interrogación a la izquierda del campo contraseña muestra una ayuda sobre la contraseña cuando se posiciona el ratón sobre este." wrappingWidth="637.13671875" />
+                                          <ImageView fx:id="ayudaContrasenia" fitHeight="95.0" fitWidth="594.0" layoutX="52.0" layoutY="151.0">
+                                             <image>
+                                                <Image url="@../../../../../../resources/images/contrasenia.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </Tab>
+                          </tabs>
+                        </TabPane>
+                     </children></AnchorPane>
+            </content>
+               <font>
+                  <Font name="Noto Sans Regular" size="12.0" />
+               </font>
+          </TitledPane>
+            <TitledPane fx:id="paneEditar" styleClass="titled-pane" text="Editar empleados">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="anchor-inner">
                      <children>
                         <Text layoutX="28.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="texto" text="Para editar empleados se debe seleccionar el empleado desde Ver → Empleados y  acceder desde el menú a Editar → Editar. En la pantalla se podrá rellenar un formulario con los datos del empleado que se desean modificar. Se puede añadir o cambial la imagen del empleado en la parte superior, pulsando en el icono de la cámara. También se puede modificar su nombre, apellidos, correo electrónico, puesto, contraseña, responsabilidades, su departamento, posición, fecha de contratación y la ciudad en la que trabaja." wrappingWidth="643.13671875" />
-                        <ImageView fx:id="editarEmpleados" fitHeight="286.0" fitWidth="458.0" layoutX="121.0" layoutY="123.0" styleClass="imagen">
+                        <ImageView fx:id="editarEmpleados" fitHeight="236.0" fitWidth="390.0" layoutX="153.0" layoutY="131.0">
                            <image>
                               <Image url="@../../../../../../resources/images/modificarEmpleado.png" />
                            </image>
@@ -80,12 +152,12 @@
                   <Font name="Noto Sans Regular" size="12.0" />
                </font>
             </TitledPane>
-            <TitledPane fx:id="paneBorrar" text="Borrar empleados" styleClass="titled-pane">
+            <TitledPane fx:id="paneBorrar" styleClass="titled-pane" text="Borrar empleados">
               <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="anchor-inner">
                      <children>
                         <Text layoutX="32.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="texto" text="También se puede borrar un empleado desde el menú Editar → Borrar. Para ello se debe tener seleccionado el empleado que se desea borrar en Ver → Empleados.." wrappingWidth="632.13671875" />
-                        <ImageView fx:id="borrarEmpleados" fitHeight="133.0" fitWidth="634.0" layoutX="31.0" layoutY="169.0" styleClass="imagen">
+                        <ImageView fx:id="borrarEmpleados" fitHeight="201.0" fitWidth="610.0" layoutX="32.0" layoutY="147.0">
                            <image>
                               <Image url="@../../../../../../resources/images/borrarEmpleado.png" />
                            </image>

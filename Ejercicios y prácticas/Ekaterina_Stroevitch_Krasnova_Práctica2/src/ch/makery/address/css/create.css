@@ -136,7 +136,12 @@
     -fx-border-width: 0;
     -fx-effect: none;
 }
-
-.radio{
+.radio-button{
     -fx-focus-color: -fx-primario;
+}
+.radio{
+    -fx-background-color: -fx-gris-claro;
+}
+
+.radio-button .dot {
 }
