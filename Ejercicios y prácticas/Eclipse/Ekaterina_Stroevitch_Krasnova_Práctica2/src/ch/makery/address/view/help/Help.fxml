@@ -30,11 +30,8 @@
                         </ImageView>
                      </children></AnchorPane>
             </content>
-               <font>
-                  <Font name="Noto Sans Regular" size="12.0" />
-               </font>
           </TitledPane>
-            <TitledPane fx:id="paneVer" animated="false" text="Ver empleados">
+            <TitledPane fx:id="paneVer" text="Ver empleados">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="anchor-inner">
                      <children>
@@ -146,9 +143,6 @@
                         </TabPane>
                      </children></AnchorPane>
             </content>
-               <font>
-                  <Font name="Noto Sans Regular" size="12.0" />
-               </font>
           </TitledPane>
             <TitledPane fx:id="paneEditar" styleClass="titled-pane" text="Editar empleados">
               <content>
@@ -162,9 +156,6 @@
                         </ImageView>
                      </children></AnchorPane>
               </content>
-               <font>
-                  <Font name="Noto Sans Regular" size="12.0" />
-               </font>
             </TitledPane>
             <TitledPane fx:id="paneBorrar" styleClass="titled-pane" text="Borrar empleados">
               <content>
@@ -178,16 +169,10 @@
                         </ImageView>
                      </children></AnchorPane>
               </content>
-               <font>
-                  <Font name="Noto Sans Regular" size="12.0" />
-               </font>
             </TitledPane>
         </panes>
       </Accordion>
       <Label alignment="CENTER" layoutX="395.0" layoutY="19.0" styleClass="h1" text="Tutorial">
-         <font>
-            <Font name="Noto Sans Regular" size="36.0" />
-         </font>
       </Label>
       <ProgressBar id="progress-bar" fx:id="barraProgreso" layoutX="112.0" layoutY="620.0" prefHeight="18.0" prefWidth="697.0" progress="0.0" />
    </children>

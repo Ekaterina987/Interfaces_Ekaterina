@@ -1,0 +1,1 @@
+java -jar --module-path "libraries\javafx-sdk-17.0.2\lib" --add-modules=javafx.controls,javafx.fxml "Ekaterina_Stroevitch_Krasnova_Práctica2.jar"
