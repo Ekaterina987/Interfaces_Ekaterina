@@ -1,0 +1,125 @@
+/* PALETA */
+* {
+    -fx-primario: #3C976F;
+    -fx-secundario: #1b5e47;
+    -fx-verde-claro: #67b995;
+    -fx-gris-claro: #d7d0d0;
+    -fx-gris-medio: #a29d9d;
+    -fx-gris-oscuro: #575454;
+    -fx-blanco: #faf9f8;
+    -fx-negro:  #181c1b;
+}
+/* PANEL */
+#split-overview{
+    -fx-min-width: 600;
+}
+#split-overview > *{
+    -fx-background-color: -fx-blanco;
+}
+#split-overview .split-pane-divider{
+    -fx-background-color: -fx-gris-medio;
+}
+/* TABLA */
+.table-view{
+    -fx-pref-width: 720;
+    -fx-pref-height: 345;
+    -fx-background-color: white;
+    -fx-border-color: -fx-gris-claro;
+    -fx-padding: 0;
+}
+
+
+.table-view > *{
+    -fx-pref-width: 61;
+}
+.column-header{
+    -fx-border-color: -fx-gris-oscuro;
+    -fx-border-width: 0 1 0 0;
+    -fx-border-style: solid;
+
+}
+.column-header, .filler{
+    -fx-background-color: -fx-gris-medio;
+}
+.show-hide-columns-button{
+    -fx-background-color: -fx-gris-claro;
+}
+.table-cell{
+    -fx-border-color: -fx-gris-claro;
+    -fx-border-width: 0 1 0 0;
+}
+.table-view .table-row-cell:selected .table-cell{
+    -fx-text-fill: -fx-negro;
+    -fx-border-color: -fx-gris-medio;
+    -fx-border-width: 0 1 0 0;
+}
+.table-row-cell:odd:filled{
+    -fx-background-color: #f5f2f1;
+
+}
+.table-row-cell:even:filled{
+    -fx-background-color: -fx-blanco;
+}
+.table-row-cell:empty {
+    -fx-background-color: -fx-blanco;
+}
+.table-row-cell:empty .table-cell {
+     -fx-border-width: 0;
+ }
+.table-row-cell:selected .table-cell{
+    -fx-background-color: -fx-gris-claro;
+
+}
+/* LISTA */
+
+.list-view{
+    -fx-background-color: -fx-blanco;
+    -fx-border-color: -fx-gris-claro;
+    -fx-border-width: 1;
+    -fx-border-style: solid;
+
+}
+.list-view:focused{
+    -fx-border-color: -fx-primario;
+    -fx-border-width: 1;
+    -fx-border-style: solid;
+}
+.list-cell:selected{
+    -fx-background-color: -fx-gris-claro;
+    -fx-text-fill: -fx-negro;
+}
+.list-cell:focused{
+    -fx-border-width: 0;
+}
+.list-cell:odd{
+    -fx-background-color: -fx-blanco;
+}
+.list-cell:even{
+    -fx-background-color: white;
+}
+/* PAGINATION */
+.pagination{
+    -fx-padding: 40 0 0 0;
+}
+
+.pagination > .pagination-control > .control-box {
+    -fx-spacing: 0;
+}
+.number-button{
+    -fx-background-color: -fx-gris-claro;
+}
+.number-button:selected{
+    -fx-background-color: -fx-gris-medio;
+}
+.left-arrow-button, .right-arrow-button{
+    -fx-background-color: -fx-gris-medio;
+    -fx-background-radius: 0;
+}
+/* ARBOL */
+.tree-cell:selected{
+    -fx-background-color: -fx-gris-medio;
+}
+.tree-cell{
+    -fx-background-insets: 0;
+    -fx-background-color: white;
+}

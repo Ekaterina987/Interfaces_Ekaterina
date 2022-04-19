@@ -1,0 +1,43 @@
+/* PALETA */
+* {
+    -fx-primario: #3C976F;
+    -fx-secundario: #1b5e47;
+    -fx-verde-claro: #67b995;
+    -fx-gris-claro: #d7d0d0;
+    -fx-gris-medio: #a29d9d;
+    -fx-gris-oscuro: #575454;
+    -fx-blanco: #faf9f8;
+    -fx-negro:  #181c1b;
+}
+/* ANCHOR PANE */
+.anchor-inner{
+    -fx-background-color: -fx-blanco;
+}
+/* TITLED PANE */
+.title {
+    -fx-background-color: -fx-gris-medio;
+    -fx-background-insets: 1;
+}
+.arrow-button .arrow{
+    -fx-background-color: -fx-gris-claro;
+    -fx-focus-color: transparent;
+}
+/* PROGRESS BAR */
+.progress-bar{
+    -fx-progress-color: -fx-primario;
+}
+.progress-bar .track{
+    -fx-background-color: -fx-gris-claro;
+    -fx-background-radius: 0;
+}
+.progress-bar  .bar{
+    -fx-background-color: -fx-primario;
+}
+/* TAB PANE */
+.tab-pane .tab{
+    -fx-background-color: #f1ecec;
+    -fx-focus-color: -fx-primario;
+}
+.tab-header-background{
+    -fx-background-color: -fx-gris-claro;
+}

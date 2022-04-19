@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<GridPane id="grid-empleado" fx:id="gridPane" prefHeight="567.0" prefWidth="763.0" stylesheets="@../../../css/create.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.view.employee.create.EmployeeCreateController">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints minHeight="10.0" vgrow="NEVER" />
+      <RowConstraints maxHeight="132.0" minHeight="10.0" prefHeight="81.0" vgrow="NEVER" />
+      <RowConstraints maxHeight="368.0" minHeight="10.0" prefHeight="325.0" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+      <GridPane id="grid-form" hgap="20.0" prefHeight="312.0" prefWidth="723.0" GridPane.rowIndex="2">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="120.0" minWidth="10.0" prefWidth="104.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="275.0" minWidth="10.0" prefWidth="275.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="169.0" minWidth="10.0" prefWidth="106.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="285.0" minWidth="10.0" prefWidth="241.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="51.0" minHeight="4.0" prefHeight="19.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="140.0" minHeight="10.0" prefHeight="125.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label text="Nombre">
+
+            </Label>
+            <Label text="Apellidos" GridPane.rowIndex="1">
+
+            </Label>
+            <Label text="Correo" GridPane.rowIndex="2">
+
+            </Label>
+            <Label text="Departamento" GridPane.columnIndex="2" GridPane.rowIndex="1">
+
+            </Label>
+            <Label text="Posición" GridPane.columnIndex="2" GridPane.rowIndex="2">
+
+            </Label>
+            <TextField fx:id="inputNombre" promptText="Nombre..." styleClass="field" GridPane.columnIndex="1">
+
+            </TextField>
+            <TextField fx:id="inputApellidos" promptText="Apellidos..." styleClass="field" GridPane.columnIndex="1" GridPane.rowIndex="1">
+
+            </TextField>
+            <TextField fx:id="inputCorreo" promptText="Correo electrónico..." styleClass="field" GridPane.columnIndex="1" GridPane.rowIndex="2">
+
+            </TextField>
+            <PasswordField fx:id="inputContrasenia" promptText="Contraseña..." styleClass="field" GridPane.columnIndex="3" />
+            <ChoiceBox fx:id="choiceDepartamento" prefWidth="150.0" styleClass="choice-box" value="Selecciona un departamento..." GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Label text="Responsabilidades" GridPane.rowIndex="4">
+            </Label>
+            <Label text="Ciudad" GridPane.columnIndex="2" GridPane.rowIndex="4">
+            </Label>
+            <HBox id="radio-buttons" alignment="CENTER_LEFT" spacing="10.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+               <children>
+                  <RadioButton fx:id="rEmpleado" mnemonicParsing="false" text="Empleado">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="posicion" />
+                     </toggleGroup></RadioButton>
+                  <RadioButton fx:id="rAdministrador" mnemonicParsing="false" text="Administrador" toggleGroup="$posicion" />
+                  <RadioButton fx:id="rDirector" mnemonicParsing="false" text="Director" toggleGroup="$posicion" />
+               </children>
+            </HBox>
+            <ListView fx:id="listResponsabilidades" editable="true" prefHeight="200.0" prefWidth="200.0" styleClass="list-view" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <ComboBox fx:id="comboCiudad" prefWidth="150.0" promptText="Elige ciudad..." styleClass="combo-box" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+            <Label text="Puesto" GridPane.rowIndex="3">
+            </Label>
+            <Label text="Fecha contratación" GridPane.columnIndex="2" GridPane.rowIndex="3">
+            </Label>
+            <TextField fx:id="inputPuesto" promptText="Puesto..." styleClass="field" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            </TextField>
+            <DatePicker fx:id="inputFecha" promptText="Elige una fecha" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <HBox alignment="CENTER_LEFT" spacing="5.0" styleClass="box-contrasenia" GridPane.columnIndex="2">
+               <children>
+                  <StackPane id="tooltip" fx:id="tooltip">
+                     <children>
+                        <Rectangle id="rectangle" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="20.0" stroke="BLACK" strokeType="INSIDE" width="20.0" />
+                        <Text id="question" strokeType="OUTSIDE" strokeWidth="0.0" text="?" />
+                     </children>
+                  </StackPane>
+                  <Label text="Contraseña">
+                     <font>
+                        <Font name="Noto Sans Regular" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </GridPane>
+      <GridPane id="grid-title">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+            <ColumnConstraints hgrow="NEVER" minWidth="10.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label fx:id="empleadoLabel" styleClass="h1" text="Nuevo empleado">
+               <font>
+                  <Font name="Noto Sans Regular" size="36.0" />
+               </font>
+            </Label>
+            <Hyperlink onAction="#irAyuda" styleClass="ayuda" text="Ayuda" GridPane.columnIndex="1" />
+         </children>
+      </GridPane>
+      <TilePane id="tile-pane" alignment="CENTER_LEFT" prefColumns="3" prefRows="1" prefTileHeight="20.0" GridPane.rowIndex="1">
+         <children>
+            <Button id="btn-crear" fx:id="mainButton" defaultButton="true" mnemonicParsing="false" onAction="#guardarEmpleado" prefHeight="25.0" prefWidth="65.0" styleClass="btn" text="Crear">
+            </Button>
+            <Button id="btn-descartar" cancelButton="true" mnemonicParsing="false" onAction="#descartar" prefHeight="25.0" prefWidth="91.0" styleClass="btn" text="Descartar">
+            </Button>
+            <Button id="btn-imagen" mnemonicParsing="false" onAction="#aniadirImagen" prefHeight="82.0" prefWidth="93.0" style="-fx-background-color: transparent;">
+               <font>
+                  <Font name="Noto Sans Regular" size="36.0" />
+               </font>
+               <graphic>
+                  <StackPane id="stack-pane">
+                     <children>
+                        <ImageView id="no-image" fx:id="noImagen" fitHeight="84.0" fitWidth="86.0" onDragDropped="#handleDrop" onDragOver="#handleDragOver" opacity="0.49" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../../../resources/images/no-image.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <Label id="plus" fx:id="plus" text="+">
+                           <font>
+                              <Font name="Noto Sans Regular" size="36.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </StackPane>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </TilePane>
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</GridPane>
