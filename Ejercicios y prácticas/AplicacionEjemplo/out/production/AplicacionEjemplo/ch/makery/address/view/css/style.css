@@ -1,0 +1,55 @@
+#border-root{
+    -fx-background-color: #212121;
+}
+#menu-bar{
+    -fx-background-color: #414141;
+    -fx-border-color: #858585;
+    -fx-border-width: 0 0 1 0;
+}
+.label, .table-cell{
+    -fx-text-fill: white;
+    -fx-font-family: "Source Sans Pro Light";
+    -fx-font-size: 16;
+}
+.menu .label, .menu-item .label{
+    -fx-font-size: 1.5em;
+}
+
+#split-overview >*{
+    -fx-background-color: #212121;
+}
+#split-overview .split-pane-divider {
+    -fx-background-color: #414141;
+}
+#p-details{
+    -fx-font-size: 3.5em;
+}
+.column-header{
+    -fx-background-color: #212121;
+    -fx-alignment: left;
+}
+.column-header .label{
+    -fx-border-color: white;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-insets: 5;
+
+}
+.table-row-cell{
+
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: #242424;
+}
+.table-row-cell:odd{
+    -fx-background-color: #212121;
+}
+.table-row-cell:even{
+    -fx-background-color: #222222;
+
+}
+.table-row-cell:focused{
+    -fx-border-color: #00b2ff;
+    -fx-border-width: 1 1 1 1;
+}
+.table-cell{
+    -fx-border-width: 0;
+}
