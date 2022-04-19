@@ -21,7 +21,7 @@
 	<section name="quick_assist_proposal_size">
 	</section>
 	<section name="ClasspathContainerSelectionPage">
-		<item key="index" value="6"/>
+		<item key="index" value="1"/>
 	</section>
 	<section name="NewPackageWizardPage">
 		<item key="create_package_info_java" value="false"/>
@@ -63,5 +63,21 @@
 		<item key="patterns" value="*"/>
 		<item key="updateSimilarElements" value="false"/>
 		<item key="updateSimilarElementsMatchStrategy" value="1"/>
+	</section>
+	<section name="FatJarPackageWizard">
+		<item key="FatJarPackageWizardPage.ANTSCRIPT_SAVE" value="true"/>
+		<item key="FatJarPackageWizardPage.ANTSCRIPT_LOCATION" value="C:\Users\Vespertino\Documents\GitHub\Interfaces_Ekaterina\Ejercicios y prácticas\script.xml"/>
+		<item key="FatJarPackageWizardPage.LIBRARY_HANDLING" value="1"/>
+		<item key="FatJarPackageWizardPage.LAUNCH_CONFIGURATION_SELECTION_NAME" value="Main (2) - Ekaterina_Stroevitch_Krasnova_Práctica2"/>
+		<item key="FatJarPackageWizardPage.DESTINATION_PATH_SELECTION" value="Ekaterina_Stroevitch_Krasnova_Práctica2\build\Ekaterina_Stroevitch_Krasnova_Práctica2.jar"/>
+		<list key="FatJarPackageWizardPage.DESTINATION_NAMES_ID">
+			<item value="Ekaterina_Stroevitch_Krasnova_Práctica2/build/Ekaterina_Stroevitch_Krasnova_Práctica2.jar"/>
+			<item value="Ekaterina_Stroevitch_Krasnova_Práctica2\build\Ekaterina_Stroevitch_Krasnova_Práctica2.jar"/>
+		</list>
+		<list key="FatJarPackageWizardPage.ANTSCRIPT_LOCATION_HISTORY">
+			<item value="C:\Users\Vespertino\Documents\GitHub\Interfaces_Ekaterina\Ejercicios y prácticas\script.xml"/>
+			<item value="C:\Users\Vespertino\Documents\GitHub\Interfaces_Ekaterina\Ejercicios y prácticas\script1.xml"/>
+			<item value="script1.xml"/>
+		</list>
 	</section>
 </section>

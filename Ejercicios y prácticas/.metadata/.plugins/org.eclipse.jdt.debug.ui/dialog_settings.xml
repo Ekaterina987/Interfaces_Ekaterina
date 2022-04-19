@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<item key="org.eclipse.jdt.debug.ui.jre_preference_page_context.columnWidth0" value="112"/>
+	<item key="org.eclipse.jdt.debug.ui.jre_preference_page_context.columnWidth1" value="185"/>
+	<item key="org.eclipse.jdt.debug.ui.jre_preference_page_context.columnWidth2" value="82"/>
+	<item key="org.eclipse.jdt.debug.ui.jre_preference_page_context.sortColumn" value="1"/>
 	<section name="org.eclipse.jdt.debug.ui.MAIN_METHOD_SELECTION_DIALOG">
 		<item key="ShowStatusLine" value="true"/>
 		<item key="History" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;History&gt;&#x0D;&#x0A;&lt;historyRootNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=AplicacionEjemplo/src&amp;lt;ch.makery.address{Main.java[Main&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=Unidad8_EjercicioLayouts/src&amp;lt;ch.makery.address{MainLayouts.java[MainLayouts&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=EjemploPráctica/src&amp;lt;application{MainPractica.java[MainPractica&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=PracticaJavaFX/src&amp;lt;ch.makery.address{Main.java[Main&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=EjerciciosEventos_Dialogos_Unidad10/src&amp;lt;ch.makery.address{Main.java[Main&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=Ekaterina_Stroevitch_Krasnova_Práctica2/src&amp;lt;ch.makery.address{Main.java[Main&lt;/infoNode&gt;&#x0D;&#x0A;&lt;/historyRootNode&gt;&#x0D;&#x0A;&lt;/History&gt;"/>

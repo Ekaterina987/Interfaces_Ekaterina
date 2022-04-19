@@ -7,8 +7,6 @@ import java.io.FileNotFoundException;
 import ch.makery.address.Main;
 import ch.makery.address.model.Empleado;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;

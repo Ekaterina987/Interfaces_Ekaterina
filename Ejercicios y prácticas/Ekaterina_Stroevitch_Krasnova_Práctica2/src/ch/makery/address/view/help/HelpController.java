@@ -2,10 +2,6 @@ package ch.makery.address.view.help;
 
         import java.io.FileInputStream;
         import java.io.FileNotFoundException;
-        import java.net.URL;
-        import java.util.ResourceBundle;
-
-        import ch.makery.address.Main;
         import javafx.event.ActionEvent;
         import javafx.fxml.FXML;
         import javafx.scene.control.Accordion;
@@ -13,7 +9,6 @@ package ch.makery.address.view.help;
         import javafx.scene.control.TitledPane;
         import javafx.scene.image.Image;
         import javafx.scene.image.ImageView;
-        import javafx.scene.layout.StackPane;
 
 public class HelpController {
 
