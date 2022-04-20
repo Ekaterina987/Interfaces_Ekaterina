@@ -45,7 +45,13 @@ public class PersonController {
 
 	private Person persona;
 
+	public Person getPersona() {
+		return persona;
+	}
 
+	public void setPersona(Person persona) {
+		this.persona = persona;
+	}
 
 	@FXML
 	void initialize() {

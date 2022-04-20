@@ -179,6 +179,7 @@ public class Main extends Application {
 		if (index != -1){
 			data.set(index, persona);
 			peC.generarValores(persona);
+			peC.setPersona(null);
 			dialogoExitoEditar();
 		}else{
 			data.add(persona);

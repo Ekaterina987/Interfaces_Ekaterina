@@ -1,7 +1,7 @@
 #border-root{
     -fx-background-color: #212121;
 }
-#menu-bar{
+.menu-bar{
     -fx-background-color: #414141;
     -fx-border-color: #858585;
     -fx-border-width: 0 0 1 0;
@@ -14,13 +14,13 @@
 .menu .label, .menu-item .label{
     -fx-font-size: 1.5em;
 }
-.context-menu{
+.menu .context-menu{
     -fx-background-color: #858585;
 }
-#split-overview >*{
+#anchor-derecha{
     -fx-background-color: #212121;
 }
-#split-overview .split-pane-divider {
+.split-pane-divider {
     -fx-background-color: #414141;
 }
 #p-details{
@@ -28,12 +28,12 @@
 }
 .column-header{
     -fx-background-color: #212121;
-    -fx-alignment: left;
 }
 .column-header .label{
     -fx-border-color: white;
     -fx-border-width: 0 0 1 0;
     -fx-border-insets: 5;
+    -fx-alignment: center-left;
 
 }
 .table-row-cell{
