@@ -54,12 +54,12 @@
                               <Label text="City" GridPane.rowIndex="3" />
                               <Label text="Postal Code" GridPane.rowIndex="4" />
                               <Label text="Birthday" GridPane.rowIndex="5" />
-                              <Label fx:id="labelFirstName" text="Label" GridPane.columnIndex="1" />
-                              <Label fx:id="labelLastName" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <Label fx:id="labelStreet" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <Label fx:id="labelCity" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                              <Label fx:id="labelPC" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                              <Label fx:id="labelBirthday" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                              <Label fx:id="labelFirstName" styleClass="bold" text="Label" GridPane.columnIndex="1" />
+                              <Label fx:id="labelLastName" styleClass="bold" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label fx:id="labelStreet" styleClass="bold" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label fx:id="labelCity" styleClass="bold" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label fx:id="labelPC" styleClass="bold" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <Label fx:id="labelBirthday" styleClass="bold" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                            </children>
                         </GridPane>
                      </children>
