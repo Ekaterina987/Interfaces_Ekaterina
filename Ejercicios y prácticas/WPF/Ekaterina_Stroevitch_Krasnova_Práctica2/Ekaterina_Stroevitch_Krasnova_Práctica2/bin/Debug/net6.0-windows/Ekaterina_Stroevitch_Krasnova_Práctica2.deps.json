@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Ekaterina_Stroevitch_Krasnova_Práctica2/1.0.0": {
+        "runtime": {
+          "Ekaterina_Stroevitch_Krasnova_Práctica2.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Ekaterina_Stroevitch_Krasnova_Práctica2/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
