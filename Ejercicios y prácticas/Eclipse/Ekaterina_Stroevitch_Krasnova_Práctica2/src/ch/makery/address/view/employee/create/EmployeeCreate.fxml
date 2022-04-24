@@ -125,11 +125,7 @@
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <Label fx:id="empleadoLabel" styleClass="h1" text="Nuevo empleado">
-               <font>
-                  <Font name="Noto Sans Regular" size="36.0" />
-               </font>
-            </Label>
+            <Label fx:id="empleadoLabel" styleClass="h1" text="Nuevo empleado" />
             <Hyperlink onAction="#irAyuda" styleClass="ayuda" text="Ayuda" GridPane.columnIndex="1" />
          </children>
       </GridPane>

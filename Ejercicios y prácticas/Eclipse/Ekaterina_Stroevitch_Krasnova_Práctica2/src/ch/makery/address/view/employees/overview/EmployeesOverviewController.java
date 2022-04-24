@@ -42,7 +42,11 @@ public class EmployeesOverviewController {
 	private FilteredList<Empleado> filteredData;
 
 	private Empleado actual;
-
+	
+	/*
+	 * Se crea el árbol de departamentos, se inhabilitan los botones de crear y editar, se inicializa la tabla de empleados y se 
+	 * inicializa la paginación
+	 */
 
 	@FXML
 	void initialize() {
@@ -54,6 +58,7 @@ public class EmployeesOverviewController {
 		inicializarPaginacion();
 
 	}
+	
 	@FXML
     private void crearEmpleado(ActionEvent event) {    	
     	Main.crear();
@@ -78,6 +83,7 @@ public class EmployeesOverviewController {
 		editarButton.setDisable(false);
 		borrarButton.setDisable(false);
 	}
+
 	public void editarEmpleado(){
 		if (actual != null) {
 			Main.editar(actual);
@@ -88,7 +94,10 @@ public class EmployeesOverviewController {
 			Main.dialogoConfirmacionBorrar(actual);
 		}
 	}
-	
+	/*
+	 * Método que crea los elementos del árbol de empleados, y da valor a las imágenes de la página por si la url del archivo 
+	 * fxml falla
+	 */
 	private void crearTree() {
 		FileInputStream fis = null;
 		FileInputStream fis1 = null;
@@ -126,6 +135,9 @@ public class EmployeesOverviewController {
 		rootItem.setExpanded(true);
 		treeDepartamentos.setRoot(rootItem);
 	}
+	/*
+	 * Método que inicializa la tabla de empleados y las columnas de la tabla, también le asigna una clase
+	 */
 	private void inicializarTabla(){
 		tablaEmpleados = new TableView<>();
 		tablaEmpleados.getStyleClass().add("table-view");
@@ -150,6 +162,9 @@ public class EmployeesOverviewController {
 		colCiudad.setCellValueFactory(new PropertyValueFactory<Empleado,String>("ciudad"));
 		tablaEmpleados.getColumns().addAll(colNombre, colApellidos, colCorreo, colDepartamento, colPuesto, colPosicion, colResponsabilidades, colFecha, colCiudad);
 	}
+	/*
+	 * Método que inicializa las páginas de la paginación
+	 */
 	private void inicializarPaginacion(){
 		pagination.setPageCount((Main.getData().size() % 3) == 0 ?  Main.getData().size() / 3 : (Main.getData().size() / 3) + 1);
 		pagination.setPageFactory(new Callback<Integer, Node>() {
@@ -159,7 +174,12 @@ public class EmployeesOverviewController {
 			}
 		});
 	}
-	
+	/*
+	 * Método que crea una lista filtrada para el árbol de departamentos y establece lo que se debe mostrar al pulsar en los elementos del
+	 * árbol, también modifica la paginación para que se adapte a los elementos que han sido filtrados.
+	 * También establece una row factory para la tabla de empleados que al pinchar en algún empleado el valor del empleado actual pasa a ser
+	 * ese empleado, y habilita los botones y menús de editar y crear
+	 */
 	public void setDatos(ObservableList<Empleado> data) {
 		filteredData = new FilteredList<>(data, p -> true);
 		treeDepartamentos.getSelectionModel().selectedItemProperty().addListener((v, oldValue, newValue) -> {
@@ -206,6 +226,9 @@ public class EmployeesOverviewController {
             return row ;
         });
 	}
+	/*
+	 * Método que crea las páginas del paginador
+	 */
 	private Pane crearPagina(int pageIndex, ObservableList<Empleado> data) {
 		Pane contenedor = new Pane();
 		int deIndex = pageIndex * 3;

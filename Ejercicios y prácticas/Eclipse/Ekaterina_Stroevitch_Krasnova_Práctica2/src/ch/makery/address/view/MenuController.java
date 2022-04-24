@@ -26,7 +26,9 @@ public class MenuController {
 		return inicio;
 	}
 
-
+	/*
+	 * Se inicializan las imágenes e inhabilitan los menús de editar y borrar
+	 */
 	@FXML
 	void initialize() {
 		inicializarImagenes();
@@ -71,6 +73,9 @@ public class MenuController {
 		menuEditar.setDisable(false);
 		menuBorrar.setDisable(false);
 	}
+	/*
+	 * Se da un valor a las imágenes por si la url del fxml falla
+	 */
 	private void inicializarImagenes(){
 		FileInputStream fis = null;
 		try {

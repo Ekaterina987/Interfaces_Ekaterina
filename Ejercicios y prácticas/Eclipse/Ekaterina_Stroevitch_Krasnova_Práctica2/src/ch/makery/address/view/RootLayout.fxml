@@ -10,7 +10,6 @@
 <?import javafx.scene.input.KeyCodeCombination?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <BorderPane id="root-layout" fx:id="rootLayout" prefHeight="700.0" prefWidth="920.0" stylesheets="@../css/global.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.view.MenuController">
@@ -57,21 +56,13 @@
    <center>
       <AnchorPane fx:id="inicio" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="285.0" layoutY="123.0" styleClass="h1" text="Bienvenido al sistema">
-               <font>
-                  <Font name="Noto Sans Regular" size="36.0" />
-               </font>
-            </Label>
+            <Label layoutX="285.0" layoutY="123.0" styleClass="h1" text="Bienvenido al sistema" />
             <ImageView id="logo" fx:id="logoDemtr" fitHeight="200.0" fitWidth="158.0" layoutX="390.0" layoutY="217.0">
                <image>
                   <Image url="@../../../../../resources/images/logo1.png" />
                </image>
             </ImageView>
-            <Text layoutX="232.0" layoutY="473.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" text="Para empezar a usar la aplicación puedes navegar por el menú situado en la parte superior de la ventana." textAlignment="CENTER" wrappingWidth="474.6796875">
-               <font>
-                  <Font name="Noto Sans Regular" size="18.0" />
-               </font>
-            </Text>
+            <Text layoutX="232.0" layoutY="473.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" text="Para empezar a usar la aplicación puedes navegar por el menú situado en la parte superior de la ventana." textAlignment="CENTER" wrappingWidth="474.6796875" />
             <Hyperlink layoutX="798.0" layoutY="40.0" onAction="#irAyuda" styleClass="ayuda" text="Ayuda" />
          </children>
       </AnchorPane>

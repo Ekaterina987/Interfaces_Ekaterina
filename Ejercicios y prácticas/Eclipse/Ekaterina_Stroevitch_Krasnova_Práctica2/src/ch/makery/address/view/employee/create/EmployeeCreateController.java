@@ -109,7 +109,11 @@ public class EmployeeCreateController {
 	public void setEditar(boolean editar) {
 		this.editar = editar;
 	}
-
+	/* 
+	 * Se da una url a las imágenes, se inhabilitan los menús de editar y borrar, se inicializa la lista de responsabilidades 
+	 * y el tooltip de la contraseña, se formatea el campo del correo para que las letras se vuelvan minúsculas, se añaden los elementos
+	 * del desplegable del campo departamento y los elementos del desplegable del campo ciudad y se inicializa el empleado como un empleado vacío
+	 */
 	@FXML
     void initialize() {
 
@@ -129,6 +133,9 @@ public class EmployeeCreateController {
 		empleado = new Empleado();
 
     }
+	/*
+	 * Método que permite mandar los datos del empleado que se ha creado o modificado para que los valide
+	 */
 	@FXML
 	private void guardarEmpleado(ActionEvent event) {
 		RadioButton posicionSeleccionada = (RadioButton) posicion.getSelectedToggle();
@@ -160,7 +167,9 @@ public class EmployeeCreateController {
 				inputContrasenia.getText(), dept, pos,
 				inputPuesto.getText(), resp, fecha, ciudad);
 	}
-
+	/*
+	 * Método que permite descartar los cambios y lanza una alerta de confirmación de dicho descarte
+	 */
 	@FXML
 	void descartar(ActionEvent event) {
 		Alert confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -174,13 +183,19 @@ public class EmployeeCreateController {
 		}
 
 	}
+	/*
+	 * Método que gestiona el evento de arrastrar un fichero sobre el control de la imagen del empleado
+	 */
 	@FXML
 	void handleDragOver(DragEvent event) {
 		if (event.getDragboard().hasFiles()) {
 			event.acceptTransferModes(TransferMode.ANY);
 		}
 	}
-
+	/*
+	 * Método que gestiona el evento de soltar un fichero sobre el control de la imagen del empleado, recoge dicha imagen
+	 * y modifica los estilos de la imagen
+	 */
 	@FXML
 	void handleDrop(DragEvent event) throws FileNotFoundException {
 		List<File> files = event.getDragboard().getFiles();
@@ -192,6 +207,9 @@ public class EmployeeCreateController {
 		}
 
 	}
+	/*
+	 * Método que permite añadir una imagen a través del explorador de archivos
+	 */
 	@FXML
 	void aniadirImagen(ActionEvent event) throws FileNotFoundException {
 		FileChooser fileChooser = new FileChooser();
@@ -205,6 +223,9 @@ public class EmployeeCreateController {
 		}
 
 	}
+	/*
+	 * Método que comprueba si se desea crear o editar un empleado y manda a la sección del tutorial correspondiente
+	 */
 	@FXML
 	void irAyuda(ActionEvent event) {
 		if(editar){
@@ -214,6 +235,9 @@ public class EmployeeCreateController {
 		}
 
 	}
+	/*
+	 * Método que establece una url a la imágen ya predefinida, por si la url del fxml falla
+	 */
 	private void urlImagenes(){
 		FileInputStream fis = null;
 		try {
@@ -225,6 +249,12 @@ public class EmployeeCreateController {
 		noImagen.setImage(new Image(fis));
 		noImagen.setPreserveRatio(true);
 	}
+	/*
+	 * Método que añade los elementos de la lista de responsabilidades, y permite seleccionarlos de forma dinámica, añadiéndose la opción
+	 * de elegir responsabilidad cada vez que se elige una, eliminando de las opciones las que ya han sido escogidas, cambiando el estilo
+	 * de la opción de elegir una responsabilidad y estableciendo un menú de contexto a las responsabilidades ya escogidas para permitir 
+	 * eliminarlas si se desea
+	 */
 	private void inicializarResponsabilidades(){
 		responsabilidades.addAll("Programación", "Diseño", "Gestión bases de datos", "Actualizaciones", "Mantenimiento aplicación", "Captación y mantenimiento de sponsors", "Relación con usuarios", "Mantenimiento redes sociales", "Administración de empresa", "RRHH", "Contabilidad", "Contacto colaboradores");
 		eleccion = FXCollections.observableArrayList();
@@ -287,6 +317,9 @@ public class EmployeeCreateController {
 
 		listResponsabilidades.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
 	}
+	/*
+	 * Método que muestra el tooltip cuando se posiciona el ratón sobre el icono de interrogación y lo oculta cuando se quita el cursor
+	 */
 	private void inicializarTootlip(){
 		tooltip.setOnMouseEntered(new EventHandler<MouseEvent>() {
 			@Override
@@ -299,6 +332,10 @@ public class EmployeeCreateController {
 		tooltip.setOnMouseExited(
 				e->Main.ocultarPopup());
 	}
+	/*
+	 * Método que se ejecuta cuando se desea modificar un empleado, se cambian los valores de algunas etiquetas, y se rellenan los campos
+	 * con los datos del empleado
+	 */
     
     public void editarEmpleado(Empleado empleado) {
 		this.empleado = empleado;
@@ -332,6 +369,10 @@ public class EmployeeCreateController {
 				break;
 		}
     }
+    /*
+     * Método que muestra una alerta de confirmación y en caso de que se confirme, elimina el elemento de la lista de responsabilidades
+     * que se haya seleccionado
+     */
 	private void confirmacionEliminar(String item){
 		Alert confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
 		confirmAlert.getDialogPane().addEventFilter(KeyEvent.KEY_PRESSED, Main.getManejo());

@@ -101,6 +101,9 @@ public class Main extends Application {
 			e.printStackTrace();
 		}
 	}
+	/*
+	 * Carga la vista de creado de empleados y da el valor false al booleano de editar
+	 */
 	public static void crear() {
 		try {
 			FXMLLoader loader = new FXMLLoader();
@@ -114,6 +117,10 @@ public class Main extends Application {
 			e.printStackTrace();
 		}
 	}
+	/*
+	 * Carga la vista de creado de empleados y da el valor true al booleano de editar, también ejecuta el método del controlador que establece
+	 * los valores de los campos a los datos del empleado seleccionado
+	 */
 	public static void editar(Empleado empleado) {
 		try {
 
@@ -132,6 +139,9 @@ public class Main extends Application {
 			e.printStackTrace();
 		}
 	}
+	/*
+	 * Carga la vista de visualización de empleados y establece los valores de los empleados en la tabla
+	 */
 
 	public static void verEmpleados() {
 		try {
@@ -171,7 +181,10 @@ public class Main extends Application {
 	public static void volverInicio() {
 		rootLayout.setCenter(menuController.getInicio());
 	}
-
+	/*
+	 * Método que guarda el empleado en cuestión, recibe como parámetros su posición en la lista de empleados, y su nombre y apellidos
+	 * anteriores a ser editado, la posición permite saber si se está editando o creando un nuevo empleado
+	 */
 	public static void guardarEmpleado(int i, Empleado empleado, String nombre, String apellidos) {
 		if (i != -1){
 			dialogoConfirmacionEditar(i, empleado, nombre, apellidos);
@@ -183,7 +196,9 @@ public class Main extends Application {
 		}
 
 	}
-
+	/*
+	 * Método que muestra una alerta de éxito al crear o modificar un empleado
+	 */
 	public static void dialogoExitoCrearMod(String accion) {
 
 		Alert infoAlert = new Alert(AlertType.INFORMATION);
@@ -193,6 +208,9 @@ public class Main extends Application {
 
 		infoAlert.showAndWait();
 	}
+	/*
+	 * Método que muestra una alerta de error al crear o modificar un empleado, junto con los errores encontrados
+	 */
 	public static void dialogoErrorCrearMod() {
 		Alert errorAlert = new Alert(AlertType.ERROR);
 		errorAlert.getDialogPane().addEventFilter(KeyEvent.KEY_PRESSED, manejo);
@@ -204,6 +222,9 @@ public class Main extends Application {
 		errorAlert.showAndWait();
 		errores.clear();
 	}
+	/*
+	 * Método que muestra una alerta de confirmación de modificación del empleado, y en caso de que se confirme lo modifica
+	 */
 	public static void dialogoConfirmacionEditar(int i, Empleado empleado,String nombre,String apellidos){
 		Alert confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
 		confirmAlert.getDialogPane().addEventFilter(KeyEvent.KEY_PRESSED, manejo);
@@ -218,6 +239,9 @@ public class Main extends Application {
 		}
 
 	}
+	/*
+	 * Método que muestra una alerta de confirmación de borrado del empleado, y en caso de que se confirme lo borra
+	 */
 	public static void dialogoConfirmacionBorrar(Empleado empleado){
 		Alert confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
 		confirmAlert.getDialogPane().addEventFilter(KeyEvent.KEY_PRESSED, manejo);
@@ -232,7 +256,10 @@ public class Main extends Application {
 
 	}
 
-
+	/*
+	 * Método que valida los datos introducidos al crear o modificar un empleado y guarda los errores en una lista, si hay errores muestra
+	 * el diálogo de error y si no los hay guarda el empleado
+	 */
 	public static void validarDatos(Empleado e, String nombre, String apellidos, String correo, String contrasenia, String departamento, String posicion, String puesto, String responsabilidades, String fechaInicio, String ciudad) {
 		fields.put("nombre", nombre);
 		fields.put("apellidos", apellidos);
@@ -303,7 +330,9 @@ public class Main extends Application {
 		menuController.habilitarMenu();
 	}
 
-
+	/*
+	 * Método que muestra un popup con la información sobre cómo debe ser la contraseña del empleado
+	 */
 	public static void mostrarPopup(Point2D point){
 		TextFlow tf = new TextFlow(new Text("La contraseña debe tener un largo entre 6 y 12 caracteres y contener al menos una letra mayúscula, una minúscula y un número"));
 		popup = new Popup();
@@ -322,6 +351,9 @@ public class Main extends Application {
 	public static void ocultarPopup(){
 		popup.hide();
 	}
+	/*
+	 * Médoto que inicializa los empleados que hay inicialmente y sus datos
+	 */
 	private static void inicializarValores(){
 		ArrayList<String> resp = new ArrayList<>(Arrays.asList("Administración de empresa", "RRHH", "Contabilidad", "Contacto colaboradores"));
 		ArrayList<String> resp1 = new ArrayList<>(Arrays.asList("Captación y mantenimiento de sponsors", "Relación con usuarios", "Mantenimiento redes sociales"));
@@ -350,7 +382,9 @@ public class Main extends Application {
 		};
 	}
 
-
+	/*
+	 * Los métodos a continuación sirven para redireccionar a la sección de ayuda correspondiente en cada momento, y expanden dicha sección
+	 */
 	public static void ayudaNavegar(){
 		try {
 

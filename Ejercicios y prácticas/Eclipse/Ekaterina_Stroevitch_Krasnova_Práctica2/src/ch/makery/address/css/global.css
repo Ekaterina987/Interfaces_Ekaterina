@@ -13,15 +13,15 @@
 #root-layout{
     -fx-background-color: -fx-blanco;
 }
+.ayuda, .texto, .h1, .h3, #plus, .label, .field, .menu-item, .titled-pane, .btn, .radio, .choice-box, .combo-box, .date, .list-view, .tree-view, .table-view{
+    -fx-font-family: "Noto Sans";
+    -fx-text-fill: -fx-negro;
+}
 .h1{
 	-fx-font-size: 3.375em;
 }
 .h3{
 	-fx-font-size: 1.5em;
-}
-.ayuda, .texto, .h1, .h3, #plus, .label, .field, .menu-item, .titled-pane, .btn, .radio, .choice-box, .combo-box, .date, .list-view, .tree-view, .table-view{
-    -fx-font-family: "Noto Sans";
-    -fx-text-fill: -fx-negro;
 }
 .btn{
     -fx-background-color: -fx-verde-claro;

@@ -84,13 +84,18 @@ public class HelpController {
     public Accordion getAcordeon() {
         return acordeon;
     }
-
+    /*
+     * Se inicializan las imágenes y la barra de progreso
+     */
     @FXML
     void initialize() {
         inicializarImagenes();
         progresoAcordeon();
 
     }
+    /*
+     * Se da un valor a las imágenes por si la url del fxml falla
+     */
     private void inicializarImagenes(){
         FileInputStream fis = null;
         FileInputStream fis1 = null;
@@ -126,6 +131,9 @@ public class HelpController {
         eliminarResp.setImage(new Image(fis8));
 
     }
+    /*
+     * Método que establece el valor inicial de la barra de progreso y el valor de esta en función de qué panel del acordeón está expandido
+     */
     private void progresoAcordeon(){
         barraProgreso.setProgress(0);
         acordeon.expandedPaneProperty().addListener((observable, oldValue, newValue) -> {
@@ -142,6 +150,9 @@ public class HelpController {
 
         });
     }
+    /*
+     * Método que expande el panel del tutorial que muestra como borrar un elemento
+     */
     @FXML
     void ayudaBorrar(ActionEvent event) {
         acordeon.setExpandedPane(paneBorrar);
