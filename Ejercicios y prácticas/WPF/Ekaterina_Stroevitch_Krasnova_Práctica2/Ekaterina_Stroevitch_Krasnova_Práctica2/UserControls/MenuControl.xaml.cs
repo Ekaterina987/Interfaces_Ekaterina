@@ -27,25 +27,21 @@ namespace Ekaterina_Stroevitch_Krasnova_Práctica2.UserControls
 
         private void CrearItem_Click(object sender, RoutedEventArgs e)
         {
-            CrearEditar.Editar = false;
-            CrearEditar ce = new CrearEditar();
-            
-            MainWindow window = Application.Current.MainWindow as MainWindow;
-            window.Content = ce;
+            MainWindow.CrearItem_Click(sender, e);
+        }
+        private void ModificarItem_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow.ModificarItem_Click(sender, e);
         }
 
         private void VerEmpleados_Click(object sender, RoutedEventArgs e)
         {
-            VisualizacionEmpleados ve = new VisualizacionEmpleados();
-            MainWindow window = Application.Current.MainWindow as MainWindow;
-            window.Content = ve;
+            MainWindow.VerEmpleados_Click(sender, e);
         }
 
         private void VolverInicio_Click(object sender, RoutedEventArgs e)
         {
-            Inicio inicio = new Inicio();
-            MainWindow window = Application.Current.MainWindow as MainWindow;
-            window.Content = inicio;
+            MainWindow.VolverInicio_Click(sender, e);
         }
     }
 }

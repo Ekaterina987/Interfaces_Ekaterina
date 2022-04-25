@@ -18,7 +18,7 @@
                 </MenuItem>
                 <MenuItem Header="_Editar">
                     <MenuItem Header="_Crear" InputGestureText="Ctrl+C" Click="CrearItem_Click"/>
-                    <MenuItem Header="_Editar" InputGestureText="Ctrl+U" />
+                    <MenuItem Header="_Editar" InputGestureText="Ctrl+U" Click="ModificarItem_Click"/>
                     <Separator />
                     <MenuItem Header="_Borrar" InputGestureText="Ctrl+D"/>
                 </MenuItem>

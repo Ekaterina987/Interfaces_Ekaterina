@@ -7,24 +7,24 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="CrearEditar.xaml.cs">
+    <Compile Update="View\CrearEditar\CrearEditar.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Inicio.xaml.cs">
+    <Compile Update="View\Inicio\Inicio.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="UserControls\MenuControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="VisualizacionEmpleados.xaml.cs">
+    <Compile Update="View\VisualizacionEmpleados\VisualizacionEmpleados.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="CrearEditar.xaml">
+    <Page Update="View\CrearEditar\CrearEditar.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Inicio.xaml">
+    <Page Update="View\Inicio\Inicio.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
@@ -36,7 +36,7 @@
     <Page Update="UserControls\MenuControl.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="VisualizacionEmpleados.xaml">
+    <Page Update="View\VisualizacionEmpleados\VisualizacionEmpleados.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

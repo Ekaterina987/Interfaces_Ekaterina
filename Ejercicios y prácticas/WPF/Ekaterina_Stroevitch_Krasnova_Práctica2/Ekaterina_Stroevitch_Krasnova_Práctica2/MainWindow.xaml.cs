@@ -51,6 +51,37 @@ namespace Ekaterina_Stroevitch_Krasnova_Práctica2
 
 
         }
+        public static void CrearItem_Click(object sender, RoutedEventArgs e)
+        {
+            CrearEditar.Editar = false;
+            CrearEditar ce = new CrearEditar();
+
+            MainWindow window = Application.Current.MainWindow as MainWindow;
+            window.Content = ce;
+        }
+        public static void ModificarItem_Click(object sender, RoutedEventArgs e)
+        {
+            CrearEditar.Editar = true;
+            CrearEditar ce = new CrearEditar();
+
+
+            MainWindow window = Application.Current.MainWindow as MainWindow;
+            window.Content = ce;
+        }
+
+        public static void VerEmpleados_Click(object sender, RoutedEventArgs e)
+        {
+            VisualizacionEmpleados ve = new VisualizacionEmpleados();
+            MainWindow window = Application.Current.MainWindow as MainWindow;
+            window.Content = ve;
+        }
+
+        public static void VolverInicio_Click(object sender, RoutedEventArgs e)
+        {
+            Inicio inicio = new Inicio();
+            MainWindow window = Application.Current.MainWindow as MainWindow;
+            window.Content = inicio;
+        }
 
     }
 }

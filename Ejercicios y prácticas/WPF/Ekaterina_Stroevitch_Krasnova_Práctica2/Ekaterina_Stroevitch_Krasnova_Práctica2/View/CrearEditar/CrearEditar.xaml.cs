@@ -48,6 +48,17 @@ namespace Ekaterina_Stroevitch_Krasnova_Práctica2
             }
         }
 
+        private string textoTitulo;
+
+        public string TextoTitulo
+        {
+            get { return textoTitulo; }
+            set
+            {
+                textoTitulo = value;
+            }
+        }
+
         public CrearEditar()
         {
             InitializeComponent();
@@ -59,11 +70,12 @@ namespace Ekaterina_Stroevitch_Krasnova_Práctica2
         {
             if (editar)
             {
+                TextoTitulo = "Modificar Empleado";
                 TextoBotonCrear = "Guardar";
-                //BtnCrear.Content = "Guardar";
             }
             else if(!editar)
             {
+                TextoTitulo = "Crear Empleado";
                 TextoBotonCrear = "Crear";
             }
         }

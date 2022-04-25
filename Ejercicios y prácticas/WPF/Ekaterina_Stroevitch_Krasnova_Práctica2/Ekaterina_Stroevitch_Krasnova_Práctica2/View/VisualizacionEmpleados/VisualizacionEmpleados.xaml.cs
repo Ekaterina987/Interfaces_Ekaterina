@@ -28,15 +28,13 @@ namespace Ekaterina_Stroevitch_Krasnova_Práctica2
 
             dgEmpleados.ItemsSource = MainWindow.EmpleadoList;
         }
-
+        private void CrearItem_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow.CrearItem_Click(sender, e);
+        }
         private void ModificarItem_Click(object sender, RoutedEventArgs e)
         {
-            CrearEditar.Editar = true;
-            CrearEditar ce = new CrearEditar();
-            
-
-            MainWindow window = Application.Current.MainWindow as MainWindow;
-            window.Content = ce;
+            MainWindow.ModificarItem_Click(sender, e);
         }
     }
 }
