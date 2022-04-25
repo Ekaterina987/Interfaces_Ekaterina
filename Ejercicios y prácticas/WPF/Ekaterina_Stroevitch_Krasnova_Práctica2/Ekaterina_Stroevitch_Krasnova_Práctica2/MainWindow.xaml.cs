@@ -33,5 +33,11 @@ namespace Ekaterina_Stroevitch_Krasnova_Práctica2
             CrearEditar ce = new CrearEditar();
             this.Content = ce;
         }
+
+        private void VerEmpleados_Click(object sender, RoutedEventArgs e)
+        {
+            VisualizacionEmpleados ve = new VisualizacionEmpleados();
+            this.Content = ve;
+        }
     }
 }

@@ -10,6 +10,9 @@
     <Compile Update="CrearEditar.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="VisualizacionEmpleados.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="CrearEditar.xaml">
@@ -19,6 +22,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="ResourceDictionaries\All.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VisualizacionEmpleados.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
