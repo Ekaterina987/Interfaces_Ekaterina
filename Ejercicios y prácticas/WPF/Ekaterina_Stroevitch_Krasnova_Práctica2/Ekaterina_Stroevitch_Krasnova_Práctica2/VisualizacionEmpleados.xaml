@@ -22,7 +22,7 @@
             
             <StackPanel Grid.Row="0" Orientation="Horizontal" Style="{StaticResource StackPanelBotones}">
                 <Button Content="Crear" Style="{StaticResource BtnCrear}"/>
-                <Button Content="Editar" Style="{StaticResource BtnEditar}" />
+                <Button Content="Editar" Style="{StaticResource BtnEditar}" Click="ModificarItem_Click"/>
                 <Button Content="Borrar" Style="{StaticResource BtnBorrar}" />
             </StackPanel>
             <StackPanel Grid.Row="1">

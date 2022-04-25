@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Text.RegularExpressions;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace Ekaterina_Stroevitch_Krasnova_Práctica2
 {
@@ -21,10 +23,51 @@ namespace Ekaterina_Stroevitch_Krasnova_Práctica2
     /// </summary>
     public partial class CrearEditar : Page
     {
+        private static bool editar;
+
+        public static bool Editar
+        {
+            get
+            {
+                return editar;
+            }
+            set
+            {
+                editar = value;
+            }
+        }
+
+        private string textoBotonCrear;
+
+        public string TextoBotonCrear
+        {
+            get { return textoBotonCrear; }
+            set
+            {
+                textoBotonCrear = value;
+            }
+        }
+
         public CrearEditar()
         {
             InitializeComponent();
+            InicializarValores();
+            this.DataContext = this;
         }
+
+        private void InicializarValores()
+        {
+            if (editar)
+            {
+                TextoBotonCrear = "Guardar";
+                //BtnCrear.Content = "Guardar";
+            }
+            else if(!editar)
+            {
+                TextoBotonCrear = "Crear";
+            }
+        }
+        
 
         private void Button_Crear(object sender, RoutedEventArgs e)
         {
@@ -36,16 +79,31 @@ namespace Ekaterina_Stroevitch_Krasnova_Práctica2
             {
                 resps.Add(item.Content.ToString());
             }
-            
-
-            Empleado = new Empleado() { Nombre = Nombre.Text, Apellidos = Apellidos.Text,
-                Correo = Correo.Text, Responsabilidades = resps, Contrasenia = Contrasenia.Password.ToString(), 
-                Departamento = cbiD.Content.ToString(), Posicion = this.Pos, Puesto = Puesto.Text, 
-                FechaContratacion = Date.SelectedDate.Value.ToString("dd/MM/yyyy"), Ciudad = cbiC.Content.ToString()};
-            MainWindow.EmpleadoList.Add(Empleado);
-
-            MessageBox.Show("Se ha creado el empleado " + Empleado.Nombre + " " + Empleado.Apellidos);
-
+            string comboD = "";
+            if (ComboDepartamento.SelectedIndex != -1)
+            {
+                comboD = cbiD.Content.ToString();
+            }
+            string comboC = "";
+            if (ComboCiudad.SelectedIndex != -1)
+            {
+                comboC = cbiC.Content.ToString();
+            }
+            string fechaC = "";
+            if (Date.SelectedDate != null)
+            {
+                fechaC = Date.SelectedDate.Value.ToString("dd/MM/yyyy");
+            }
+            ValidarDatos(Nombre.Text,
+                    Apellidos.Text,
+                    Correo.Text,
+                    resps,
+                    Contrasenia.Password.ToString(),
+                    comboD,
+                    this.Pos,
+                    Puesto.Text,
+                    fechaC,
+                    comboC);
 
         }
         internal string Pos;
@@ -87,7 +145,7 @@ namespace Ekaterina_Stroevitch_Krasnova_Práctica2
                     }
                     else if (entry.Key == "correo")
                     {
-                        Regex patron = new Regex(@"[a-z]+@[a-z]+\\.[a-z]+");
+                        Regex patron = new Regex(@"[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$");
                         if (!patron.IsMatch(entry.Value))
                         {
                             errores.Add("El correo no es válido");
@@ -105,7 +163,28 @@ namespace Ekaterina_Stroevitch_Krasnova_Práctica2
             }
             if(errores.Count > 0)
             {
-                MessageBox.Show(String.Join("\n", errores));
+                MessageBox.Show(String.Join("\n", errores), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
+                Empleado = new Empleado()
+                {
+                    Nombre = nombre,
+                    Apellidos = apellidos,
+                    Correo = correo,
+                    Responsabilidades = responsabilidades,
+                    Contrasenia = contrasenia,
+                    Departamento = departamento,
+                    Posicion = posicion,
+                    Puesto = puesto,
+                    FechaContratacion = fecha,
+                    Ciudad = ciudad
+                };
+                List<Empleado> listaEmpleados = MainWindow.EmpleadoList;
+                listaEmpleados.Add(Empleado);
+                MainWindow.EmpleadoList = listaEmpleados;
+
+                MessageBox.Show("Se ha creado el empleado " + Empleado.Nombre + " " + Empleado.Apellidos, "Éxito");
             }
         }
 

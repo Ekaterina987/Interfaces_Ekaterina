@@ -21,7 +21,14 @@ namespace Ekaterina_Stroevitch_Krasnova_Práctica2
     /// </summary>
     public partial class MainWindow : Window
     {
-        public static List<Empleado> EmpleadoList { get; set; }
+        private static List<Empleado> empleadoList;
+
+        public static List<Empleado> EmpleadoList { 
+            get { return empleadoList; }
+            set { empleadoList = value; }
+        }
+       
+
         public MainWindow()
         {
             InitializeComponent();

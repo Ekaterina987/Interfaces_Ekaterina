@@ -16,27 +16,13 @@ using System.Windows.Shapes;
 namespace Ekaterina_Stroevitch_Krasnova_Práctica2
 {
     /// <summary>
-    /// Lógica de interacción para VisualizacionEmpleados.xaml
+    /// Lógica de interacción para Inicio.xaml
     /// </summary>
-    public partial class VisualizacionEmpleados : Page
+    public partial class Inicio : Page
     {
-
-        public VisualizacionEmpleados()
+        public Inicio()
         {
-
             InitializeComponent();
-
-            dgEmpleados.ItemsSource = MainWindow.EmpleadoList;
-        }
-
-        private void ModificarItem_Click(object sender, RoutedEventArgs e)
-        {
-            CrearEditar.Editar = true;
-            CrearEditar ce = new CrearEditar();
-            
-
-            MainWindow window = Application.Current.MainWindow as MainWindow;
-            window.Content = ce;
         }
     }
 }

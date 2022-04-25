@@ -22,10 +22,10 @@
             </Grid.RowDefinitions>
             
             <StackPanel Grid.Row="0" Orientation="Horizontal">
-                <Label Content="Nuevo empleado" Style="{StaticResource H1}"/>
+                <Label Content="Nuevo empleado" Style="{StaticResource H1}" Name="NuevoEmpleado"/>
             </StackPanel>
             <StackPanel Grid.Row="1" Orientation="Horizontal" Style="{StaticResource StackPanelBotones}">
-                <Button Content="Crear" Style="{StaticResource BtnCrear}" Click="Button_Crear"/>
+                <Button Content="{Binding Path=TextoBotonCrear, Mode=TwoWay}" Style="{StaticResource BtnCrear}" Click="Button_Crear" Name="BtnCrear"/>
                 <Button Content="Descartar" Style="{StaticResource BtnDescartar}"/>
             </StackPanel>
             <Grid Grid.Row="2" Height="320" Margin="0 40 0 0">

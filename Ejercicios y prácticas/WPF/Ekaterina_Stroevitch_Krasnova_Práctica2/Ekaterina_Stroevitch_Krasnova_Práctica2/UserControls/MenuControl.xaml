@@ -13,7 +13,7 @@
         <DockPanel Grid.Row="0">
             <Menu DockPanel.Dock="Top" Style="{StaticResource Menu}">
                 <MenuItem Header="_Archivo">
-                    <MenuItem Header="_Inicio" />
+                    <MenuItem Header="_Inicio" Click="VolverInicio_Click"/>
 
                 </MenuItem>
                 <MenuItem Header="_Editar">
