@@ -11,7 +11,7 @@ namespace Ekaterina_Stroevitch_Krasnova_Práctica2
         public string Nombre { get; set; }
         public string Apellidos { get; set; }
         public string Correo { get; set; }
-        public System.Collections.IList Responsabilidades { get; set; }
+        public List<string> Responsabilidades { get; set; }
         public string Contrasenia { get; set; }
         public string Departamento { get; set; }
         public string Posicion { get; set; }

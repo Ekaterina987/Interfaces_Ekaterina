@@ -20,16 +20,13 @@ namespace Ekaterina_Stroevitch_Krasnova_Práctica2
     /// </summary>
     public partial class VisualizacionEmpleados : Page
     {
+
         public VisualizacionEmpleados()
         {
+
             InitializeComponent();
-            List<string> resps = new List<string>();
-            resps.Add("Captación y mantenimiento de sponsors");
-            resps.Add("Relación con usuarios");
-            List<Empleado> lista = new List<Empleado>();
-            lista.Add(new Empleado() { Nombre = "Juan", Apellidos="Palomo", Correo="jpalomo@gmail.com", 
-                Departamento = "Servicios Compartidos", Puesto="Jefe", Posicion= "Director", Responsabilidades=resps, FechaContratacion="06/04/2022", Ciudad="Madrid"});
-            dgEmpleados.ItemsSource = lista;
+
+            dgEmpleados.ItemsSource = MainWindow.EmpleadoList;
         }
     }
 }

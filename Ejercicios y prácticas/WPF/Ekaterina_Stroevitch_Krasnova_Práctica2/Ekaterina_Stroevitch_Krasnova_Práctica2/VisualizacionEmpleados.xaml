@@ -3,9 +3,9 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:Ekaterina_Stroevitch_Krasnova_Práctica2"
+      xmlns:local="clr-namespace:Ekaterina_Stroevitch_Krasnova_Práctica2.UserControls"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="720" d:DesignWidth="960"
       Title="VisualizacionEmpleados">
 
     <Grid>
@@ -13,34 +13,41 @@
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <Button Content="Crear" Style="{StaticResource BtnCrear}"/>
-            <Button Content="Editar" Style="{StaticResource BtnEditar}" />
-            <Button Content="Borrar" Style="{StaticResource BtnBorrar}" />
-        </StackPanel>
-        <StackPanel Grid.Row="1">
-            <DataGrid Name="dgEmpleados" AutoGenerateColumns="False">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" />
-                    <DataGridTextColumn Header="Apellidos" Binding="{Binding Apellidos}" />
-                    <DataGridTextColumn Header="Correo" Binding="{Binding Correo}" />
-                    <DataGridTextColumn Header="Departamento" Binding="{Binding Departamento}" />
-                    <DataGridTextColumn Header="Puesto" Binding="{Binding Puesto}" />
-                    <DataGridTextColumn Header="Posicion" Binding="{Binding Posicion}" />
-                    <!--<DataGridTextColumn Header="Responsabilidades" Binding="{Binding Responsabilidades}" />-->
-                    <DataGridTemplateColumn Header="Responsabilidades">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <ListView ItemsSource="{Binding Responsabilidades}">
+        <local:MenuControl Grid.Row="0"/>
+        <Grid Grid.Row="1" Style="{StaticResource GridLayout}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            
+            <StackPanel Grid.Row="0" Orientation="Horizontal" Style="{StaticResource StackPanelBotones}">
+                <Button Content="Crear" Style="{StaticResource BtnCrear}"/>
+                <Button Content="Editar" Style="{StaticResource BtnEditar}" />
+                <Button Content="Borrar" Style="{StaticResource BtnBorrar}" />
+            </StackPanel>
+            <StackPanel Grid.Row="1">
+                <DataGrid Name="dgEmpleados" AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" />
+                        <DataGridTextColumn Header="Apellidos" Binding="{Binding Apellidos}" />
+                        <DataGridTextColumn Header="Correo" Binding="{Binding Correo}" />
+                        <DataGridTextColumn Header="Departamento" Binding="{Binding Departamento}" />
+                        <DataGridTextColumn Header="Puesto" Binding="{Binding Puesto}" />
+                        <DataGridTextColumn Header="Posicion" Binding="{Binding Posicion}" />
+                        <DataGridTemplateColumn Header="Responsabilidades">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <ListView ItemsSource="{Binding Responsabilidades}">
 
-                                </ListView>
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
-                    <DataGridTextColumn Header="Fecha de contratación" Binding="{Binding FechaContratacion}" />
-                    <DataGridTextColumn Header="Ciudad" Binding="{Binding Ciudad}" />
-                </DataGrid.Columns>
-            </DataGrid>
-        </StackPanel>
+                                    </ListView>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn Header="Fecha de contratación" Binding="{Binding FechaContratacion}" />
+                        <DataGridTextColumn Header="Ciudad" Binding="{Binding Ciudad}" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Page>

@@ -3,87 +3,95 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:Ekaterina_Stroevitch_Krasnova_Práctica2"
+      xmlns:local="clr-namespace:Ekaterina_Stroevitch_Krasnova_Práctica2.UserControls"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="720" d:DesignWidth="960"
       Title="CrearEditar">
 
-    <Grid Margin="20">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <Label Content="Nuevo empleado" Style="{StaticResource H1}"/>
-        </StackPanel>
-        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0 20">
-            <Button Content="Crear" Style="{StaticResource BtnCrear}" Click="Button_Crear"/>
-            <Button Content="Descartar" Style="{StaticResource BtnDescartar}"/>
-        </StackPanel>
-        <Grid Grid.Row="2" Height="320" Margin="0 40 0 0">
-            
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"></ColumnDefinition>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition Width="Auto"></ColumnDefinition>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
+        <local:MenuControl Grid.Row="0"/>
+        <Grid Grid.Row="1" Style="{StaticResource GridLayout}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
-            <Label Content="Nombre" Grid.Row="0" Grid.Column="0" Style="{StaticResource Text}"/>
-            <TextBox Grid.Row="0" Grid.Column="1" Style="{StaticResource Input}" Name="Nombre"/>
-            <Label Content="Apellidos" Grid.Row="1" Grid.Column="0" Style="{StaticResource Text}"/>
-            <TextBox Grid.Row="1" Grid.Column="1" Style="{StaticResource Input}" Name="Apellidos"/>
-            <Label Content="Correo" Grid.Row="2" Grid.Column="0" Style="{StaticResource Text}"/>
-            <TextBox Grid.Row="2" Grid.Column="1" Style="{StaticResource Input}" Name="Correo"/>
-            <Label Content="Puesto" Grid.Row="3" Grid.Column="0" Style="{StaticResource Text}"/>
-            <TextBox Grid.Row="3" Grid.Column="1" Style="{StaticResource Input}" Name="Puesto"/>
-            <Label Content="Responsabilidades" Grid.Row="4" Grid.Column="0" Style="{StaticResource Text}"/>
-            <ListBox Grid.Row="4" Grid.Column="1" Style="{StaticResource ListBox}" SelectionMode="Multiple" Name="ListaResponsabilidades">
-                <ListBoxItem>Programación</ListBoxItem>
-                <ListBoxItem>Diseño</ListBoxItem>
-                <ListBoxItem>Gestión bases de datos</ListBoxItem>
-                <ListBoxItem>Actualizaciones</ListBoxItem>
-                <ListBoxItem>Mantenimiento aplicación</ListBoxItem>
-                <ListBoxItem>Captación y mantenimiento de sponsors</ListBoxItem>
-                <ListBoxItem>Relación con usuarios</ListBoxItem>
-                <ListBoxItem>Mantenimiento redes sociales</ListBoxItem>
-                <ListBoxItem>Administración de empresa</ListBoxItem>
-                <ListBoxItem>RRHH</ListBoxItem>
-                <ListBoxItem>Contabilidad</ListBoxItem>
-                <ListBoxItem>Contacto colaboradores</ListBoxItem>
-            </ListBox>
-            <Label Content="Contraseña" Grid.Row="0" Grid.Column="2" Style="{StaticResource Text}"/>
-            <PasswordBox Grid.Row="0" Grid.Column="4" Style="{StaticResource PasswordBox}" Name="Contrasenia"/>
-            <Label Content="Departamento" Grid.Row="1" Grid.Column="2" Style="{StaticResource Text}"/>
-            <ComboBox Grid.Row="1" Grid.Column="4" Style="{StaticResource ComboBox}" Text="Selecciona un departamento..." 
-                      IsEditable="True" IsReadOnly="True" Name="ComboDepartamento">
-                <ComboBoxItem>Sistemas y desarrollo</ComboBoxItem>
-                <ComboBoxItem>Comercial y publicidad</ComboBoxItem>
-                <ComboBoxItem>Servicios compartidos</ComboBoxItem>
-            </ComboBox>
-            <Label Content="Posición" Grid.Row="2" Grid.Column="2" Style="{StaticResource Text}"/>
-            <StackPanel Grid.Row="2" Grid.Column="4" Orientation="Horizontal" Style="{StaticResource RadioStackPanel}" Name="StackRadio">
-                <RadioButton Content="Empleado" Style="{StaticResource RadioButton}" Name="RadioEmpleado" Click="RadioEmpleado_Click"/>
-                <RadioButton Content="Administrador" Style="{StaticResource RadioButton}" Name="RadioAdmin" Click="RadioAdmin_Click"/>
-                <RadioButton Content="Director" Style="{StaticResource RadioButton}" Name="RadioDirector" Click="RadioDirector_Click"/>
+            
+            <StackPanel Grid.Row="0" Orientation="Horizontal">
+                <Label Content="Nuevo empleado" Style="{StaticResource H1}"/>
             </StackPanel>
-            <Label Content="Fecha contratación" Grid.Row="3" Grid.Column="2" Style="{StaticResource Text}"/>
-            <DatePicker Grid.Row="3" Grid.Column="4" Style="{StaticResource DatePicker}" Name="Date"/>
-            <Label Content="Ciudad" Grid.Row="4" Grid.Column="2" Style="{StaticResource Text}"/>
-            <ComboBox Grid.Row="4" Grid.Column="4" Style="{StaticResource ComboBox}" Text="Elige ciudad..." IsEditable="True"
- IsReadOnly="True" Name="ComboCiudad">
-                <ComboBoxItem>Madrid</ComboBoxItem>
-                <ComboBoxItem>Santiago de Compostela</ComboBoxItem>
-                <ComboBoxItem>Granada</ComboBoxItem>
-                <ComboBoxItem>León</ComboBoxItem>
-            </ComboBox>
+            <StackPanel Grid.Row="1" Orientation="Horizontal" Style="{StaticResource StackPanelBotones}">
+                <Button Content="Crear" Style="{StaticResource BtnCrear}" Click="Button_Crear"/>
+                <Button Content="Descartar" Style="{StaticResource BtnDescartar}"/>
+            </StackPanel>
+            <Grid Grid.Row="2" Height="320" Margin="0 40 0 0">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label Content="Nombre" Grid.Row="0" Grid.Column="0" Style="{StaticResource Text}"/>
+                <TextBox Grid.Row="0" Grid.Column="1" Style="{StaticResource Input}" Name="Nombre"/>
+                <Label Content="Apellidos" Grid.Row="1" Grid.Column="0" Style="{StaticResource Text}"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Style="{StaticResource Input}" Name="Apellidos"/>
+                <Label Content="Correo" Grid.Row="2" Grid.Column="0" Style="{StaticResource Text}"/>
+                <TextBox Grid.Row="2" Grid.Column="1" Style="{StaticResource Input}" Name="Correo"/>
+                <Label Content="Puesto" Grid.Row="3" Grid.Column="0" Style="{StaticResource Text}"/>
+                <TextBox Grid.Row="3" Grid.Column="1" Style="{StaticResource Input}" Name="Puesto"/>
+                <Label Content="Responsabilidades" Grid.Row="4" Grid.Column="0" Style="{StaticResource Text}"/>
+                <ListBox Grid.Row="4" Grid.Column="1" Style="{StaticResource ListBox}" SelectionMode="Multiple" Name="ListaResponsabilidades">
+                    <ListBoxItem>Programación</ListBoxItem>
+                    <ListBoxItem>Diseño</ListBoxItem>
+                    <ListBoxItem>Gestión bases de datos</ListBoxItem>
+                    <ListBoxItem>Actualizaciones</ListBoxItem>
+                    <ListBoxItem>Mantenimiento aplicación</ListBoxItem>
+                    <ListBoxItem>Captación y mantenimiento de sponsors</ListBoxItem>
+                    <ListBoxItem>Relación con usuarios</ListBoxItem>
+                    <ListBoxItem>Mantenimiento redes sociales</ListBoxItem>
+                    <ListBoxItem>Administración de empresa</ListBoxItem>
+                    <ListBoxItem>RRHH</ListBoxItem>
+                    <ListBoxItem>Contabilidad</ListBoxItem>
+                    <ListBoxItem>Contacto colaboradores</ListBoxItem>
+                </ListBox>
+                <Label Content="Contraseña" Grid.Row="0" Grid.Column="2" Style="{StaticResource Text}"/>
+                <PasswordBox Grid.Row="0" Grid.Column="4" Style="{StaticResource PasswordBox}" Name="Contrasenia"/>
+                <Label Content="Departamento" Grid.Row="1" Grid.Column="2" Style="{StaticResource Text}"/>
+                <ComboBox Grid.Row="1" Grid.Column="4" Style="{StaticResource ComboBox}" Text="Selecciona un departamento..." 
+                          IsEditable="True" IsReadOnly="True" Name="ComboDepartamento">
+                    <ComboBoxItem>Sistemas y desarrollo</ComboBoxItem>
+                    <ComboBoxItem>Comercial y publicidad</ComboBoxItem>
+                    <ComboBoxItem>Servicios compartidos</ComboBoxItem>
+                </ComboBox>
+                <Label Content="Posición" Grid.Row="2" Grid.Column="2" Style="{StaticResource Text}"/>
+                <StackPanel Grid.Row="2" Grid.Column="4" Orientation="Horizontal" Style="{StaticResource RadioStackPanel}" Name="StackRadio">
+                    <RadioButton Content="Empleado" Style="{StaticResource RadioButton}" Name="RadioEmpleado" Click="RadioEmpleado_Click"/>
+                    <RadioButton Content="Administrador" Style="{StaticResource RadioButton}" Name="RadioAdmin" Click="RadioAdmin_Click"/>
+                    <RadioButton Content="Director" Style="{StaticResource RadioButton}" Name="RadioDirector" Click="RadioDirector_Click"/>
+                </StackPanel>
+                <Label Content="Fecha contratación" Grid.Row="3" Grid.Column="2" Style="{StaticResource Text}"/>
+                <DatePicker Grid.Row="3" Grid.Column="4" Style="{StaticResource DatePicker}" Name="Date"/>
+                <Label Content="Ciudad" Grid.Row="4" Grid.Column="2" Style="{StaticResource Text}"/>
+                <ComboBox Grid.Row="4" Grid.Column="4" Style="{StaticResource ComboBox}" Text="Elige ciudad..." IsEditable="True"
+     IsReadOnly="True" Name="ComboCiudad">
+                    <ComboBoxItem>Madrid</ComboBoxItem>
+                    <ComboBoxItem>Santiago de Compostela</ComboBoxItem>
+                    <ComboBoxItem>Granada</ComboBoxItem>
+                    <ComboBoxItem>León</ComboBoxItem>
+                </ComboBox>
+            </Grid>
         </Grid>
         <StackPanel Grid.RowSpan="3"/>
 

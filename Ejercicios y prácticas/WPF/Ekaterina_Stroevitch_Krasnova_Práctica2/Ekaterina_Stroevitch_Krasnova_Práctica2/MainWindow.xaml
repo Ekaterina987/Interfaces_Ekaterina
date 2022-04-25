@@ -3,30 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Ekaterina_Stroevitch_Krasnova_Práctica2"
+        xmlns:local="clr-namespace:Ekaterina_Stroevitch_Krasnova_Práctica2.UserControls"
         mc:Ignorable="d"
         Title="MainWindow" Height="720" Width="960">
     <StackPanel>
-        <DockPanel>
-            <Menu DockPanel.Dock="Top">
-                <MenuItem Header="_Archivo">
-                    <MenuItem Header="_Inicio" />
-
-                </MenuItem>
-                <MenuItem Header="_Editar">
-                    <MenuItem Header="_Crear" InputGestureText="Ctrl+C" Click="CrearItem_Click"/>
-                    <MenuItem Header="_Editar" InputGestureText="Ctrl+U" />
-                    <Separator />
-                    <MenuItem Header="_Borrar" InputGestureText="Ctrl+D"/>
-                </MenuItem>
-                <MenuItem Header="_Ver">
-                    <MenuItem Header="_Empleados" InputGestureText="Ctrl+R" Click="VerEmpleados_Click"/>
-                </MenuItem>
-                <MenuItem Header="_Ayuda">
-                    <MenuItem Header="_Tutorial"/>
-                </MenuItem>
-            </Menu>
-        </DockPanel>
+        <local:MenuControl/>
         <Grid Height="577">
             <Grid Style="{StaticResource GridInicio}" VerticalAlignment="Center">
                 <Grid.RowDefinitions>
