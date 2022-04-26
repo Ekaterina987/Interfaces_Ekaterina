@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Ekaterina_Stroevitch_Krasnova_Práctica2.UserControls;
+using System.Collections.ObjectModel;
 
 namespace Ekaterina_Stroevitch_Krasnova_Práctica2
 {
@@ -22,15 +23,9 @@ namespace Ekaterina_Stroevitch_Krasnova_Práctica2
     /// </summary>
     public partial class MainWindow : Window
     {
-        private static List<Empleado> empleadoList;
+        private Empleado empleadoActual;
 
-        public static List<Empleado> EmpleadoList { 
-            get { return empleadoList; }
-            set { empleadoList = value; }
-        }
-        private static Empleado empleadoActual;
-
-        public static Empleado EmpleadoActual
+        public Empleado EmpleadoActual
         {
             get { return empleadoActual; }
             set
@@ -38,21 +33,42 @@ namespace Ekaterina_Stroevitch_Krasnova_Práctica2
                 empleadoActual = value;
             }
         }
-        private static MenuControl menuControl;
-        public static MenuControl MenuControl
+        public Boolean IsEmpleadoSelected
         {
-            get { return menuControl; }
-            set { menuControl = value; }
+            get { return (Boolean)GetValue(IsEmpleadoSelectedProperty); }
+            set { SetValue(IsEmpleadoSelectedProperty, value); }
         }
+
+        public static readonly DependencyProperty IsEmpleadoSelectedProperty =
+            DependencyProperty.Register("IsEmpleadoSelected", typeof(Boolean), typeof(MainWindow), new PropertyMetadata(default(Boolean)));
+
+        public ObservableCollection<Empleado> EmpleadosList { get; set; }
 
         public MainWindow()
         {
             InitializeComponent();
-            EmpleadoList = new List<Empleado>();
+            IsEmpleadoSelected = false;
+
+            
+            MenuControl.VentanaPrincipal = this;
+            Inicio.VentanaPrincipal = this;
+            Inicio inicio = new Inicio();
+            MainWindow window = this;
+            window.Content = inicio;
+            
+            VisualizacionEmpleados.VentanaPrincipal = this;
+            CrearEditar.VentanaPrincipal = this;
+            
+
+            this.DataContext = this;
+
+            EmpleadosList = new ObservableCollection<Empleado>();
+
             List<string> resps = new List<string>();
+
             resps.Add("Captación y mantenimiento de sponsors");
             resps.Add("Relación con usuarios");
-            EmpleadoList.Add(new Empleado()
+            EmpleadosList.Add(new Empleado()
             {
                 Nombre = "Juan",
                 Apellidos = "Palomo",
@@ -68,7 +84,7 @@ namespace Ekaterina_Stroevitch_Krasnova_Práctica2
 
 
         }
-        public static void CrearItem_Click(object sender, RoutedEventArgs e)
+        public void CrearItem_Click(object sender, RoutedEventArgs e)
         {
             CrearEditar.Editar = false;
             empleadoActual = null;
@@ -77,7 +93,7 @@ namespace Ekaterina_Stroevitch_Krasnova_Práctica2
             MainWindow window = Application.Current.MainWindow as MainWindow;
             window.Content = ce;
         }
-        public static void ModificarItem_Click(object sender, RoutedEventArgs e)
+        public void ModificarItem_Click(object sender, RoutedEventArgs e)
         {
             CrearEditar.Editar = true;
             CrearEditar ce = new CrearEditar();
@@ -87,23 +103,31 @@ namespace Ekaterina_Stroevitch_Krasnova_Práctica2
             window.Content = ce;
         }
 
-        public static void VerEmpleados_Click(object sender, RoutedEventArgs e)
+        public void VerEmpleados_Click(object sender, RoutedEventArgs e)
         {
             VisualizacionEmpleados ve = new VisualizacionEmpleados();
             MainWindow window = Application.Current.MainWindow as MainWindow;
             window.Content = ve;
         }
 
-        public static void VolverInicio_Click(object sender, RoutedEventArgs e)
+        public void VolverInicio_Click(object sender, RoutedEventArgs e)
         {
             Inicio inicio = new Inicio();
             MainWindow window = Application.Current.MainWindow as MainWindow;
             window.Content = inicio;
         }
-
-        private void Row_Click(object sender, RoutedEventArgs e)
+        public void BorrarItem_Click(object sender, RoutedEventArgs e)
         {
-            
+            if (EmpleadosList.Contains(empleadoActual))
+            {
+                MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("¿Quieres borrar al empleado " + empleadoActual.Nombre + " " + empleadoActual.Apellidos + "?", "Confirmar borrado", System.Windows.MessageBoxButton.YesNo);
+                if (messageBoxResult == MessageBoxResult.Yes)
+                {
+                    EmpleadosList.Remove(empleadoActual);
+                    IsEmpleadoSelected = false;
+                }
+                
+            }
         }
 
     }

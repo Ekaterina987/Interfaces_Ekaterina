@@ -26,7 +26,7 @@
             </StackPanel>
             <StackPanel Grid.Row="1" Orientation="Horizontal" Style="{StaticResource StackPanelBotones}">
                 <Button Content="{Binding Path=TextoBotonCrear, Mode=OneTime}" Style="{StaticResource BtnCrear}" Click="Button_Crear" Name="BtnCrear"/>
-                <Button Content="Descartar" Style="{StaticResource BtnDescartar}"/>
+                <Button Content="Descartar" Style="{StaticResource BtnDescartar}" Click="Button_Descartar"/>
             </StackPanel>
             <Grid Grid.Row="2" Height="320" Margin="0 40 0 0">
 

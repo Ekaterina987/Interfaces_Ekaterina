@@ -21,26 +21,41 @@ namespace Ekaterina_Stroevitch_Krasnova_Práctica2
     /// </summary>
     public partial class VisualizacionEmpleados : Page
     {
+        private static MainWindow ventanaPrincipal;
+        public static MainWindow VentanaPrincipal
+        {
+            get { return ventanaPrincipal; }
+            set { ventanaPrincipal = value; }
+        }
         public VisualizacionEmpleados()
         {
             InitializeComponent();
-            this.DataContext = MainWindow.MenuControl;
-
-            dgEmpleados.ItemsSource = MainWindow.EmpleadoList;
+            VentanaPrincipal.IsEmpleadoSelected = false;
+            this.DataContext = VentanaPrincipal;
+            dgEmpleados.DataContext = VentanaPrincipal;
+            generarTabla();
         }
         private void CrearItem_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow.CrearItem_Click(sender, e);
+            VentanaPrincipal.CrearItem_Click(sender, e);
         }
         private void ModificarItem_Click(object sender, RoutedEventArgs e)
         {
-            Empleado empleado = (Empleado)dgEmpleados.SelectedItem;
-            MainWindow.EmpleadoActual = empleado;
-            MainWindow.ModificarItem_Click(sender, e);
+            VentanaPrincipal.ModificarItem_Click(sender, e);
+        }
+        private void BorrarItem_Click(object sender, RoutedEventArgs e)
+        {
+            VentanaPrincipal.BorrarItem_Click(sender, e);
         }
         private void Row_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow.MenuControl.IsEmpleadoSelected = true;
+            Empleado empleado = (Empleado)dgEmpleados.SelectedItem;
+            VentanaPrincipal.EmpleadoActual = empleado;
+            VentanaPrincipal.IsEmpleadoSelected = true;
+        }
+        public void generarTabla()
+        {
+            dgEmpleados.ItemsSource = VentanaPrincipal.EmpleadosList;
         }
     }
 }

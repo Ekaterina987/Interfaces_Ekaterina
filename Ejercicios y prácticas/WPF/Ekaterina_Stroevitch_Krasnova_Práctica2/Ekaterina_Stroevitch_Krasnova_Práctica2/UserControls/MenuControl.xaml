@@ -18,9 +18,9 @@
                 </MenuItem>
                 <MenuItem Header="_Editar">
                     <MenuItem Header="_Crear" InputGestureText="Ctrl+C" Click="CrearItem_Click"/>
-                    <MenuItem Header="_Editar" InputGestureText="Ctrl+U" Click="ModificarItem_Click" IsEnabled="{Binding IsEmpleadoSelected}"/>
+                    <MenuItem Header="_Editar" InputGestureText="Ctrl+U" Click="ModificarItem_Click" IsEnabled="{Binding Path=IsEmpleadoSelected}"/>
                     <Separator />
-                    <MenuItem Header="_Borrar" InputGestureText="Ctrl+D"/>
+                    <MenuItem Header="_Borrar" InputGestureText="Ctrl+D" Click="BorrarItem_Click" IsEnabled="{Binding Path=IsEmpleadoSelected}"/>
                 </MenuItem>
                 <MenuItem Header="_Ver">
                     <MenuItem Header="_Empleados" InputGestureText="Ctrl+R" Click="VerEmpleados_Click"/>

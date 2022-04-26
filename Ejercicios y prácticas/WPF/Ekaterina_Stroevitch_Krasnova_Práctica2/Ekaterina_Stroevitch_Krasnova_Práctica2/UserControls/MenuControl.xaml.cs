@@ -20,45 +20,45 @@ namespace Ekaterina_Stroevitch_Krasnova_Práctica2.UserControls
     /// </summary>
     public partial class MenuControl : UserControl
     {
-        public Boolean IsEmpleadoSelected
+
+        private static MainWindow ventanaPrincipal;
+        public static MainWindow VentanaPrincipal
         {
-            get { return (Boolean)GetValue(IsEmpleadoSelectedProperty); }
-            set { SetValue(IsEmpleadoSelectedProperty, value);}
+            get { return ventanaPrincipal; }
+            set { ventanaPrincipal = value; }
         }
-
-        public static readonly DependencyProperty IsEmpleadoSelectedProperty =
-            DependencyProperty.Register("IsEmpleadoSelected", typeof(Boolean), typeof(MenuControl), new PropertyMetadata(default(Boolean)));
-
         public MenuControl()
         {
             
             InitializeComponent();
-            MainWindow.MenuControl = this;
-            this.DataContext = this;
-            
+            this.DataContext = VentanaPrincipal;
         }
 
         private void CrearItem_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow.CrearItem_Click(sender, e);
+            VentanaPrincipal.CrearItem_Click(sender, e);
         }
         private void ModificarItem_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow.ModificarItem_Click(sender, e);
+            VentanaPrincipal.ModificarItem_Click(sender, e);
+        }
+        private void BorrarItem_Click(object sender, RoutedEventArgs e)
+        {
+            VentanaPrincipal.BorrarItem_Click(sender, e);
         }
 
         private void VerEmpleados_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow.VerEmpleados_Click(sender, e);
+            VentanaPrincipal.VerEmpleados_Click(sender, e);
         }
 
         private void VolverInicio_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow.VolverInicio_Click(sender, e);
+            VentanaPrincipal.VolverInicio_Click(sender, e);
         }
         private void Row_Click(object sender, RoutedEventArgs e)
         {
-            IsEmpleadoSelected = true;
+            VentanaPrincipal.IsEmpleadoSelected = true;
         }
     }
 }

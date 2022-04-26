@@ -20,9 +20,16 @@ namespace Ekaterina_Stroevitch_Krasnova_Práctica2
     /// </summary>
     public partial class Inicio : Page
     {
+        private static MainWindow ventanaPrincipal;
+        public static MainWindow VentanaPrincipal
+        {
+            get { return ventanaPrincipal; }
+            set { ventanaPrincipal = value; }
+        }
         public Inicio()
         {
             InitializeComponent();
+            VentanaPrincipal.IsEmpleadoSelected = false;
         }
     }
 }

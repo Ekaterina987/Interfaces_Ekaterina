@@ -7,18 +7,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="720" Width="960">
     <StackPanel>
-        <local:MenuControl/>
-        <Grid Height="577">
-            <Grid Style="{StaticResource GridInicio}" VerticalAlignment="Center">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"></RowDefinition>
-                    <RowDefinition Height="Auto"></RowDefinition>
-                    <RowDefinition Height="Auto"></RowDefinition>
-                </Grid.RowDefinitions>
-                <Label Grid.Row="0" Content="Bienvenido al sistema" Style="{StaticResource H1}"/>
-                <Image Grid.Row="1" Width="137" Source="/logo1.png" Height="174" Style="{StaticResource Image}"/>
-                <TextBlock Grid.Row="2" TextWrapping="Wrap" Style="{StaticResource TextBlock}"><Run Language="es-es" Text="Para empezar a usar la aplicación puedes navegar por el menú situado en la parte superior de la ventana" Style="{StaticResource H3}"/></TextBlock>
-            </Grid>
-        </Grid>
+        
     </StackPanel>
 </Window>

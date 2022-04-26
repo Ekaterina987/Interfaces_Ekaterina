@@ -15,7 +15,9 @@ namespace Ekaterina_Stroevitch_Krasnova_Práctica2
     {
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-
+            MainWindow mainWindow= new MainWindow();
+            mainWindow.InitializeComponent();
+            mainWindow.Show();
         }
     }
 }

@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.Text.RegularExpressions;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Collections.ObjectModel;
 
 namespace Ekaterina_Stroevitch_Krasnova_Práctica2
 {
@@ -23,6 +24,13 @@ namespace Ekaterina_Stroevitch_Krasnova_Práctica2
     /// </summary>
     public partial class CrearEditar : Page
     {
+        private static MainWindow ventanaPrincipal;
+        public static MainWindow VentanaPrincipal
+        {
+            get { return ventanaPrincipal; }
+            set { ventanaPrincipal = value; }
+        }
+
         private static bool editar;
 
         public static bool Editar
@@ -63,6 +71,7 @@ namespace Ekaterina_Stroevitch_Krasnova_Práctica2
         {
             InitializeComponent();
             InicializarValores();
+            VentanaPrincipal.IsEmpleadoSelected = false;
             this.DataContext = this;
         }
 
@@ -72,28 +81,28 @@ namespace Ekaterina_Stroevitch_Krasnova_Práctica2
             {
                 TextoTitulo = "Modificar Empleado";
                 TextoBotonCrear = "Guardar";
-                if (MainWindow.EmpleadoActual != null)
+                if (VentanaPrincipal.EmpleadoActual != null)
                 {
-                    Nombre.Text = MainWindow.EmpleadoActual.Nombre;
-                    Apellidos.Text = MainWindow.EmpleadoActual.Apellidos;
-                    Correo.Text = MainWindow.EmpleadoActual.Correo;
-                    Puesto.Text = MainWindow.EmpleadoActual.Puesto;
+                    Nombre.Text = VentanaPrincipal.EmpleadoActual.Nombre;
+                    Apellidos.Text = VentanaPrincipal.EmpleadoActual.Apellidos;
+                    Correo.Text = VentanaPrincipal.EmpleadoActual.Correo;
+                    Puesto.Text = VentanaPrincipal.EmpleadoActual.Puesto;
                     for(int i = 0; i < ListaResponsabilidades.Items.Count; i++)
                     {
-                        for(int j = 0; j < MainWindow.EmpleadoActual.Responsabilidades.Count; j++)
+                        for(int j = 0; j < VentanaPrincipal.EmpleadoActual.Responsabilidades.Count; j++)
                         {
                             ListBoxItem lbi = (ListBoxItem)ListaResponsabilidades.Items.GetItemAt(i);
-                            if (MainWindow.EmpleadoActual.Responsabilidades[j] == lbi.Content.ToString())
+                            if (VentanaPrincipal.EmpleadoActual.Responsabilidades[j] == lbi.Content.ToString())
                             {
                                 ListaResponsabilidades.SelectedItems.Add(ListaResponsabilidades.Items.GetItemAt(i));
                             }
                         }
                         
                     }
-                    Contrasenia.Password = MainWindow.EmpleadoActual.Contrasenia;
-                    ComboDepartamento.SelectedValue = MainWindow.EmpleadoActual.Departamento;
-                    Date.SelectedDate = DateTime.Parse(MainWindow.EmpleadoActual.FechaContratacion);
-                    switch (MainWindow.EmpleadoActual.Posicion)
+                    Contrasenia.Password = VentanaPrincipal.EmpleadoActual.Contrasenia;
+                    ComboDepartamento.SelectedValue = VentanaPrincipal.EmpleadoActual.Departamento;
+                    Date.SelectedDate = DateTime.Parse(VentanaPrincipal.EmpleadoActual.FechaContratacion);
+                    switch (VentanaPrincipal.EmpleadoActual.Posicion)
                     {
                         case "Empleado":
                             RadioEmpleado.IsChecked = true;
@@ -105,7 +114,7 @@ namespace Ekaterina_Stroevitch_Krasnova_Práctica2
                             RadioDirector.IsChecked = true;
                             break;
                     }
-                    ComboCiudad.SelectedValue = MainWindow.EmpleadoActual.Ciudad;
+                    ComboCiudad.SelectedValue = VentanaPrincipal.EmpleadoActual.Ciudad;
                 }
             }
             else if(!editar)
@@ -163,8 +172,8 @@ namespace Ekaterina_Stroevitch_Krasnova_Práctica2
                     this.Pos,
                     Puesto.Text,
                     fechaC,
-                    comboC, 
-                    MainWindow.EmpleadoActual);
+                    comboC,
+                    VentanaPrincipal.EmpleadoActual);
             }
             else
             {
@@ -203,7 +212,6 @@ namespace Ekaterina_Stroevitch_Krasnova_Práctica2
             List<string> errores = new List<string>();
             foreach (KeyValuePair<string, string> entry in dic)
             {
-                // do something with entry.Value or entry.Key
                 if(entry.Value == "")
                 {
                     errores.Add("El campo " + entry.Key + " no puede estar vacío");
@@ -242,25 +250,25 @@ namespace Ekaterina_Stroevitch_Krasnova_Práctica2
             }
             else
             {
-                List<Empleado> listaEmpleados = MainWindow.EmpleadoList;
-                if (listaEmpleados.Contains(empleado))
+                ObservableCollection<Empleado> Collection = VentanaPrincipal.EmpleadosList;
+                if (Collection.Contains(empleado))
                 {
 
                     MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("¿Quieres modificar a " + empleado.Nombre + " " + empleado.Apellidos + "?", "Confirmar modificación", System.Windows.MessageBoxButton.YesNo);
                     if (messageBoxResult == MessageBoxResult.Yes)
                     {
-                        var index = listaEmpleados.IndexOf(empleado);
+                        var index = Collection.IndexOf(empleado);
                         Empleado anterior = empleado.Clone();
-                        listaEmpleados[index].Nombre = nombre;
-                        listaEmpleados[index].Apellidos = apellidos;
-                        listaEmpleados[index].Correo = correo;
-                        listaEmpleados[index].Responsabilidades = responsabilidades;
-                        listaEmpleados[index].Contrasenia = contrasenia;
-                        listaEmpleados[index].Departamento = departamento;
-                        listaEmpleados[index].Posicion = posicion;
-                        listaEmpleados[index].Puesto = puesto;
-                        listaEmpleados[index].FechaContratacion = fecha;
-                        listaEmpleados[index].Ciudad = ciudad;
+                        Collection[index].Nombre = nombre;
+                        Collection[index].Apellidos = apellidos;
+                        Collection[index].Correo = correo;
+                        Collection[index].Responsabilidades = responsabilidades;
+                        Collection[index].Contrasenia = contrasenia;
+                        Collection[index].Departamento = departamento;
+                        Collection[index].Posicion = posicion;
+                        Collection[index].Puesto = puesto;
+                        Collection[index].FechaContratacion = fecha;
+                        Collection[index].Ciudad = ciudad;
 
                         MessageBox.Show("Se han modificado los datos del empleado " + anterior.Nombre + " " + anterior.Apellidos, "Éxito");
                     }
@@ -280,13 +288,22 @@ namespace Ekaterina_Stroevitch_Krasnova_Práctica2
                         FechaContratacion = fecha,
                         Ciudad = ciudad
                     };
-                    listaEmpleados.Add(empleado);
+                    Collection.Add(empleado);
                     MessageBox.Show("Se ha creado el empleado " + empleado.Nombre + " " + empleado.Apellidos, "Éxito");
                 }
 
-                
-                MainWindow.EmpleadoList = listaEmpleados;
 
+                VentanaPrincipal.EmpleadosList = Collection;
+
+            }
+        }
+
+        private void Button_Descartar(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("¿Quieres descartar los cambios?", "Confirmar descartado", System.Windows.MessageBoxButton.YesNo);
+            if (messageBoxResult == MessageBoxResult.Yes)
+            {
+                VentanaPrincipal.VerEmpleados_Click(sender, e);
             }
         }
     }

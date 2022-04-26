@@ -23,10 +23,10 @@
             <StackPanel Grid.Row="0" Orientation="Horizontal" Style="{StaticResource StackPanelBotones}">
                 <Button Content="Crear" Style="{StaticResource BtnCrear}" Click="CrearItem_Click"/>
                 <Button Content="Editar" Style="{StaticResource BtnEditar}" Click="ModificarItem_Click" IsEnabled="{Binding Path=IsEmpleadoSelected}"/>
-                <Button Content="Borrar" Style="{StaticResource BtnBorrar}" />
+                <Button Content="Borrar" Style="{StaticResource BtnBorrar}" Click="BorrarItem_Click" IsEnabled="{Binding Path=IsEmpleadoSelected}"/>
             </StackPanel>
             <StackPanel Grid.Row="1">
-                <DataGrid Name="dgEmpleados" AutoGenerateColumns="False" IsReadOnly="true">
+                <DataGrid Name="dgEmpleados" AutoGenerateColumns="False" IsReadOnly="true" ItemsSource="{Binding Collection}">
                     <DataGrid.ItemContainerStyle>
                         <Style TargetType="DataGridRow">
                             <EventSetter Event="MouseUp" Handler="Row_Click"/>
