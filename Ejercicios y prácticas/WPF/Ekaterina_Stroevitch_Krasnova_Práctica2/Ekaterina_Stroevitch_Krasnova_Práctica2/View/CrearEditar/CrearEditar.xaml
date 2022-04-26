@@ -70,22 +70,24 @@
                 <PasswordBox Grid.Row="0" Grid.Column="4" Style="{StaticResource PasswordBox}" Name="Contrasenia"/>
                 <Label Content="Departamento" Grid.Row="1" Grid.Column="2" Style="{StaticResource Text}"/>
                 <ComboBox Grid.Row="1" Grid.Column="4" Style="{StaticResource ComboBox}" Text="Selecciona un departamento..." 
-                          IsEditable="True" IsReadOnly="True" Name="ComboDepartamento">
+                          IsEditable="True" IsReadOnly="True" Name="ComboDepartamento" SelectedValuePath="Content">
                     <ComboBoxItem>Sistemas y desarrollo</ComboBoxItem>
                     <ComboBoxItem>Comercial y publicidad</ComboBoxItem>
                     <ComboBoxItem>Servicios compartidos</ComboBoxItem>
                 </ComboBox>
                 <Label Content="Posición" Grid.Row="2" Grid.Column="2" Style="{StaticResource Text}"/>
-                <StackPanel Grid.Row="2" Grid.Column="4" Orientation="Horizontal" Style="{StaticResource RadioStackPanel}" Name="StackRadio">
-                    <RadioButton Content="Empleado" Style="{StaticResource RadioButton}" Name="RadioEmpleado" Click="RadioEmpleado_Click"/>
-                    <RadioButton Content="Administrador" Style="{StaticResource RadioButton}" Name="RadioAdmin" Click="RadioAdmin_Click"/>
-                    <RadioButton Content="Director" Style="{StaticResource RadioButton}" Name="RadioDirector" Click="RadioDirector_Click"/>
-                </StackPanel>
+                <GroupBox Grid.Row="2" Grid.Column="4" Name="RadioGroup">
+                    <StackPanel  Orientation="Horizontal" Style="{StaticResource RadioStackPanel}" Name="StackRadio">
+                        <RadioButton Content="Empleado" Style="{StaticResource RadioButton}" Name="RadioEmpleado" />
+                        <RadioButton Content="Administrador" Style="{StaticResource RadioButton}" Name="RadioAdmin" />
+                        <RadioButton Content="Director" Style="{StaticResource RadioButton}" Name="RadioDirector" />
+                    </StackPanel>
+                </GroupBox>
                 <Label Content="Fecha contratación" Grid.Row="3" Grid.Column="2" Style="{StaticResource Text}"/>
                 <DatePicker Grid.Row="3" Grid.Column="4" Style="{StaticResource DatePicker}" Name="Date"/>
                 <Label Content="Ciudad" Grid.Row="4" Grid.Column="2" Style="{StaticResource Text}"/>
                 <ComboBox Grid.Row="4" Grid.Column="4" Style="{StaticResource ComboBox}" Text="Elige ciudad..." IsEditable="True"
-     IsReadOnly="True" Name="ComboCiudad">
+     IsReadOnly="True" Name="ComboCiudad" SelectedValuePath="Content">
                     <ComboBoxItem>Madrid</ComboBoxItem>
                     <ComboBoxItem>Santiago de Compostela</ComboBoxItem>
                     <ComboBoxItem>Granada</ComboBoxItem>

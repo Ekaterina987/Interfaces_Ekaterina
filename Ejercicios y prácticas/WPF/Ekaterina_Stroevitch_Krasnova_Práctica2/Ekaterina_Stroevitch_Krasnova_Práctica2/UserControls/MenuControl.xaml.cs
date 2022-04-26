@@ -20,9 +20,18 @@ namespace Ekaterina_Stroevitch_Krasnova_Práctica2.UserControls
     /// </summary>
     public partial class MenuControl : UserControl
     {
+        private static Boolean isEmpleadoSelected;
+        public static Boolean IsEmpleadoSelected
+        {
+            get { return isEmpleadoSelected; }
+            set { isEmpleadoSelected = value; }
+        }
+
         public MenuControl()
         {
+            IsEmpleadoSelected = true;
             InitializeComponent();
+           
         }
 
         private void CrearItem_Click(object sender, RoutedEventArgs e)

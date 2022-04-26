@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Ekaterina_Stroevitch_Krasnova_Práctica2.UserControls;
 
 namespace Ekaterina_Stroevitch_Krasnova_Práctica2
 {
@@ -27,7 +28,16 @@ namespace Ekaterina_Stroevitch_Krasnova_Práctica2
             get { return empleadoList; }
             set { empleadoList = value; }
         }
-       
+        private static Empleado empleadoActual;
+
+        public static Empleado EmpleadoActual
+        {
+            get { return empleadoActual; }
+            set
+            {
+                empleadoActual = value;
+            }
+        }
 
         public MainWindow()
         {
@@ -41,9 +51,10 @@ namespace Ekaterina_Stroevitch_Krasnova_Práctica2
                 Nombre = "Juan",
                 Apellidos = "Palomo",
                 Correo = "jpalomo@gmail.com",
-                Departamento = "Servicios Compartidos",
+                Contrasenia = "1234",
+                Departamento = "Servicios compartidos",
                 Puesto = "Jefe",
-                Posicion = "Director",
+                Posicion = "Empleado",
                 Responsabilidades = resps,
                 FechaContratacion = "06/04/2022",
                 Ciudad = "Madrid"
@@ -54,6 +65,7 @@ namespace Ekaterina_Stroevitch_Krasnova_Práctica2
         public static void CrearItem_Click(object sender, RoutedEventArgs e)
         {
             CrearEditar.Editar = false;
+            empleadoActual = null;
             CrearEditar ce = new CrearEditar();
 
             MainWindow window = Application.Current.MainWindow as MainWindow;

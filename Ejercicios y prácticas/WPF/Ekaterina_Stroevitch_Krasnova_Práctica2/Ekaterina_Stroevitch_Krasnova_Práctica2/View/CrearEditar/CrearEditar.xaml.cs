@@ -72,6 +72,41 @@ namespace Ekaterina_Stroevitch_Krasnova_Práctica2
             {
                 TextoTitulo = "Modificar Empleado";
                 TextoBotonCrear = "Guardar";
+                if (MainWindow.EmpleadoActual != null)
+                {
+                    Nombre.Text = MainWindow.EmpleadoActual.Nombre;
+                    Apellidos.Text = MainWindow.EmpleadoActual.Apellidos;
+                    Correo.Text = MainWindow.EmpleadoActual.Correo;
+                    Puesto.Text = MainWindow.EmpleadoActual.Puesto;
+                    for(int i = 0; i < ListaResponsabilidades.Items.Count; i++)
+                    {
+                        for(int j = 0; j < MainWindow.EmpleadoActual.Responsabilidades.Count; j++)
+                        {
+                            ListBoxItem lbi = (ListBoxItem)ListaResponsabilidades.Items.GetItemAt(i);
+                            if (MainWindow.EmpleadoActual.Responsabilidades[j] == lbi.Content.ToString())
+                            {
+                                ListaResponsabilidades.SelectedItems.Add(ListaResponsabilidades.Items.GetItemAt(i));
+                            }
+                        }
+                        
+                    }
+                    Contrasenia.Password = MainWindow.EmpleadoActual.Contrasenia;
+                    ComboDepartamento.SelectedValue = MainWindow.EmpleadoActual.Departamento;
+                    Date.SelectedDate = DateTime.Parse(MainWindow.EmpleadoActual.FechaContratacion);
+                    switch (MainWindow.EmpleadoActual.Posicion)
+                    {
+                        case "Empleado":
+                            RadioEmpleado.IsChecked = true;
+                            break;
+                        case "Administrador":
+                            RadioAdmin.IsChecked = true;
+                            break;
+                        case "Director":
+                            RadioDirector.IsChecked = true;
+                            break;
+                    }
+                    ComboCiudad.SelectedValue = MainWindow.EmpleadoActual.Ciudad;
+                }
             }
             else if(!editar)
             {
@@ -79,7 +114,7 @@ namespace Ekaterina_Stroevitch_Krasnova_Práctica2
                 TextoBotonCrear = "Crear";
             }
         }
-        
+        internal string Pos;
 
         private void Button_Crear(object sender, RoutedEventArgs e)
         {
@@ -106,7 +141,20 @@ namespace Ekaterina_Stroevitch_Krasnova_Práctica2
             {
                 fechaC = Date.SelectedDate.Value.ToString("dd/MM/yyyy");
             }
-            ValidarDatos(Nombre.Text,
+            if (RadioEmpleado.IsChecked == true)
+            {
+                this.Pos = "Empleado";
+            }else if(RadioAdmin.IsChecked == true)
+            {
+                this.Pos = "Administrador";
+            }
+            else if (RadioDirector.IsChecked == true)
+            {
+                this.Pos = "Director";
+            }
+            if (editar)
+            {
+                ValidarDatos(Nombre.Text,
                     Apellidos.Text,
                     Correo.Text,
                     resps,
@@ -115,14 +163,29 @@ namespace Ekaterina_Stroevitch_Krasnova_Práctica2
                     this.Pos,
                     Puesto.Text,
                     fechaC,
-                    comboC);
+                    comboC, 
+                    MainWindow.EmpleadoActual);
+            }
+            else
+            {
+                ValidarDatos(Nombre.Text,
+                    Apellidos.Text,
+                    Correo.Text,
+                    resps,
+                    Contrasenia.Password.ToString(),
+                    comboD,
+                    this.Pos,
+                    Puesto.Text,
+                    fechaC,
+                    comboC,
+                    new Empleado());
+            }
 
         }
-        internal string Pos;
-        public Empleado Empleado;
+        
 
         private void ValidarDatos(string nombre, string apellidos, string correo, List<string> responsabilidades,
-            string contrasenia, string departamento, string posicion, string puesto, string fecha, string ciudad)
+            string contrasenia, string departamento, string posicion, string puesto, string fecha, string ciudad, Empleado empleado)
         {
             string joined = String.Join("\n", responsabilidades);
             Dictionary<string, string> dic = new Dictionary<string, string>();
@@ -179,40 +242,52 @@ namespace Ekaterina_Stroevitch_Krasnova_Práctica2
             }
             else
             {
-                Empleado = new Empleado()
-                {
-                    Nombre = nombre,
-                    Apellidos = apellidos,
-                    Correo = correo,
-                    Responsabilidades = responsabilidades,
-                    Contrasenia = contrasenia,
-                    Departamento = departamento,
-                    Posicion = posicion,
-                    Puesto = puesto,
-                    FechaContratacion = fecha,
-                    Ciudad = ciudad
-                };
                 List<Empleado> listaEmpleados = MainWindow.EmpleadoList;
-                listaEmpleados.Add(Empleado);
+                if (listaEmpleados.Contains(empleado))
+                {
+
+                    MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("¿Quieres modificar a " + empleado.Nombre + " " + empleado.Apellidos + "?", "Confirmar modificación", System.Windows.MessageBoxButton.YesNo);
+                    if (messageBoxResult == MessageBoxResult.Yes)
+                    {
+                        var index = listaEmpleados.IndexOf(empleado);
+                        Empleado anterior = empleado.Clone();
+                        listaEmpleados[index].Nombre = nombre;
+                        listaEmpleados[index].Apellidos = apellidos;
+                        listaEmpleados[index].Correo = correo;
+                        listaEmpleados[index].Responsabilidades = responsabilidades;
+                        listaEmpleados[index].Contrasenia = contrasenia;
+                        listaEmpleados[index].Departamento = departamento;
+                        listaEmpleados[index].Posicion = posicion;
+                        listaEmpleados[index].Puesto = puesto;
+                        listaEmpleados[index].FechaContratacion = fecha;
+                        listaEmpleados[index].Ciudad = ciudad;
+
+                        MessageBox.Show("Se han modificado los datos del empleado " + anterior.Nombre + " " + anterior.Apellidos, "Éxito");
+                    }
+                }
+                else
+                {
+                    empleado = new Empleado()
+                    {
+                        Nombre = nombre,
+                        Apellidos = apellidos,
+                        Correo = correo,
+                        Responsabilidades = responsabilidades,
+                        Contrasenia = contrasenia,
+                        Departamento = departamento,
+                        Posicion = posicion,
+                        Puesto = puesto,
+                        FechaContratacion = fecha,
+                        Ciudad = ciudad
+                    };
+                    listaEmpleados.Add(empleado);
+                    MessageBox.Show("Se ha creado el empleado " + empleado.Nombre + " " + empleado.Apellidos, "Éxito");
+                }
+
+                
                 MainWindow.EmpleadoList = listaEmpleados;
 
-                MessageBox.Show("Se ha creado el empleado " + Empleado.Nombre + " " + Empleado.Apellidos, "Éxito");
             }
-        }
-
-        private void RadioEmpleado_Click(object sender, RoutedEventArgs e)
-        {
-            Pos = "Empleado";
-        }
-
-        private void RadioAdmin_Click(object sender, RoutedEventArgs e)
-        {
-            Pos = "Admin";
-        }
-
-        private void RadioDirector_Click(object sender, RoutedEventArgs e)
-        {
-            Pos = "Director";
         }
     }
 }

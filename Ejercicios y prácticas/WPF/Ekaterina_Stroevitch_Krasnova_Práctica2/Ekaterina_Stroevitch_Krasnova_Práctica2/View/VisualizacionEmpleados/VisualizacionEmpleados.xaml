@@ -22,11 +22,16 @@
             
             <StackPanel Grid.Row="0" Orientation="Horizontal" Style="{StaticResource StackPanelBotones}">
                 <Button Content="Crear" Style="{StaticResource BtnCrear}" Click="CrearItem_Click"/>
-                <Button Content="Editar" Style="{StaticResource BtnEditar}" Click="ModificarItem_Click"/>
+                <Button Content="Editar" Style="{StaticResource BtnEditar}" Click="ModificarItem_Click" IsEnabled="{Binding IsEmpleadoSelected}"/>
                 <Button Content="Borrar" Style="{StaticResource BtnBorrar}" />
             </StackPanel>
             <StackPanel Grid.Row="1">
-                <DataGrid Name="dgEmpleados" AutoGenerateColumns="False">
+                <DataGrid Name="dgEmpleados" AutoGenerateColumns="False" IsReadOnly="true">
+                    <DataGrid.ItemContainerStyle>
+                        <Style TargetType="DataGridRow">
+                            <EventSetter Event="MouseUp" Handler="Row_Click"/>
+                        </Style>
+                    </DataGrid.ItemContainerStyle>
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" />
                         <DataGridTextColumn Header="Apellidos" Binding="{Binding Apellidos}" />

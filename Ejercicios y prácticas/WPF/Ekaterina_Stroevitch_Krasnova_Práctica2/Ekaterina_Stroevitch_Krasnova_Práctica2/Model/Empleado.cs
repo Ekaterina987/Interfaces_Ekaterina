@@ -18,5 +18,10 @@ namespace Ekaterina_Stroevitch_Krasnova_Práctica2
         public string Puesto { get; set; }
         public string FechaContratacion { get; set; }
         public string Ciudad { get; set; }
+
+        public Empleado Clone()
+        {
+            return (Empleado)this.MemberwiseClone();
+        }
     }
 }
