@@ -4,18 +4,19 @@
         <Setter Property="Height" Value="Auto"/>
     </Style>
     <Style TargetType="Menu" x:Key="Menu">
-        <Setter Property="FontSize" Value="14"/>
-        <Setter Property="FontFamily" Value="Source Sans Pro"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="FontFamily" Value="Noto Sans"/>
         <Setter Property="Padding" Value="10 5"/>
+        <Setter Property="Background" Value="#3C976F"/>
     </Style>
     <Style TargetType="Label" x:Key="H1">
         <Setter Property="FontSize" Value="42"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
-        <Setter Property="FontFamily" Value="Source Sans Pro"/>
+        <Setter Property="FontFamily" Value="Noto Sans"/>
     </Style>
     <Style TargetType="Run" x:Key="H3">
-        <Setter Property="FontFamily" Value="Source Sans Pro"/>
-        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="FontFamily" Value="Noto Sans"/>
+        <Setter Property="FontSize" Value="18"/>
     </Style>
     <Style TargetType="TextBlock" x:Key="TextBlock">
         <Setter Property="Margin" Value="0,30,0,0"/>
@@ -26,72 +27,95 @@
         <Setter Property="Margin" Value="0,30,0,0"/>
     </Style>
     <Style TargetType="Label" x:Key="Text">
-        <Setter Property="FontFamily" Value="Source Sans Pro"/>
-        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontFamily" Value="Noto Sans"/>
+        <Setter Property="FontSize" Value="14"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
     </Style>
     <Style TargetType="TextBox" x:Key="Input">
-        <Setter Property="FontFamily" Value="Source Sans Pro"/>
-        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontFamily" Value="Noto Sans"/>
+        <Setter Property="FontSize" Value="14"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="Margin" Value="10"/>
     </Style>
     <Style TargetType="ListBox" x:Key="ListBox">
-        <Setter Property="FontFamily" Value="Source Sans Pro"/>
-        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontFamily" Value="Noto Sans"/>
+        <Setter Property="FontSize" Value="14"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="Margin" Value="10"/>
     </Style>
     <Style TargetType="PasswordBox" x:Key="PasswordBox">
-        <Setter Property="FontFamily" Value="Source Sans Pro"/>
-        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontFamily" Value="Noto Sans"/>
+        <Setter Property="FontSize" Value="14"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="Margin" Value="10"/>
     </Style>
     <Style TargetType="ComboBox" x:Key="ComboBox">
-        <Setter Property="FontFamily" Value="Source Sans Pro"/>
-        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontFamily" Value="Noto Sans"/>
+        <Setter Property="FontSize" Value="14"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="Margin" Value="10"/>
+    </Style>
+    <Style TargetType="GroupBox" x:Key="RadioGroup">
+        <Setter Property="Padding" Value="0"/>
     </Style>
     <Style TargetType="StackPanel" x:Key="RadioStackPanel">
         <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="Margin" Value="10"/>
     </Style>
     <Style TargetType="RadioButton" x:Key="RadioButton">
-        <Setter Property="FontFamily" Value="Source Sans Pro"/>
-        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontFamily" Value="Noto Sans"/>
+        <Setter Property="FontSize" Value="14"/>
         <Setter Property="Margin" Value="0, 0, 10, 0"/>
     </Style>
     <Style TargetType="DatePicker" x:Key="DatePicker">
-        <Setter Property="FontFamily" Value="Source Sans Pro"/>
-        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontFamily" Value="Noto Sans"/>
+        <Setter Property="FontSize" Value="14"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="Margin" Value="10"/>
     </Style>
     <Style TargetType="Button" x:Key="BtnCrear">
-        <Setter Property="FontFamily" Value="Source Sans Pro"/>
-        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontFamily" Value="Noto Sans"/>
+        <Setter Property="FontSize" Value="14"/>
         <Setter Property="Margin" Value="0, 0, 20, 0"/>
-        <Setter Property="Padding" Value="10, 5, 10, 5"/>
+        <Setter Property="Background" Value="#67b995"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="Border" Background="{TemplateBinding Background}" Padding="10, 5, 10, 5">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#1b5e47" TargetName="Border" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
     </Style>
     <Style TargetType="Button" x:Key="BtnDescartar">
-        <Setter Property="FontFamily" Value="Source Sans Pro"/>
-        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontFamily" Value="Noto Sans"/>
+        <Setter Property="FontSize" Value="14"/>
         <Setter Property="Margin" Value="20, 0, 0, 0"/>
         <Setter Property="Padding" Value="10, 5, 10, 5"/>
+        <Setter Property="Background" Value="#a29d9d"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
     </Style>
     <Style TargetType="Button" x:Key="BtnEditar">
-        <Setter Property="FontFamily" Value="Source Sans Pro"/>
-        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontFamily" Value="Noto Sans"/>
+        <Setter Property="FontSize" Value="14"/>
         <Setter Property="Margin" Value="20, 0, 20, 0"/>
         <Setter Property="Padding" Value="10, 5, 10, 5"/>
+        <Setter Property="Background" Value="#67b995"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
     </Style>
     <Style TargetType="Button" x:Key="BtnBorrar">
-        <Setter Property="FontFamily" Value="Source Sans Pro"/>
-        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontFamily" Value="Noto Sans"/>
+        <Setter Property="FontSize" Value="14"/>
         <Setter Property="Margin" Value="20, 0, 0, 0"/>
         <Setter Property="Padding" Value="10, 5, 10, 5"/>
+        <Setter Property="Background" Value="#a29d9d"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
     </Style>
     <Style TargetType="StackPanel" x:Key="StackPanelBotones">
         <Setter Property="Margin" Value="0 20"/>

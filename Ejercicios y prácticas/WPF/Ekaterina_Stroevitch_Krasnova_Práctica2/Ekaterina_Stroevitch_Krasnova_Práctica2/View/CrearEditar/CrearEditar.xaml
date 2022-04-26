@@ -76,7 +76,7 @@
                     <ComboBoxItem>Servicios compartidos</ComboBoxItem>
                 </ComboBox>
                 <Label Content="Posición" Grid.Row="2" Grid.Column="2" Style="{StaticResource Text}"/>
-                <GroupBox Grid.Row="2" Grid.Column="4" Name="RadioGroup">
+                <GroupBox Grid.Row="2" Grid.Column="4" Name="RadioGroup" Style="{StaticResource RadioGroup}">
                     <StackPanel  Orientation="Horizontal" Style="{StaticResource RadioStackPanel}" Name="StackRadio">
                         <RadioButton Content="Empleado" Style="{StaticResource RadioButton}" Name="RadioEmpleado" />
                         <RadioButton Content="Administrador" Style="{StaticResource RadioButton}" Name="RadioAdmin" />

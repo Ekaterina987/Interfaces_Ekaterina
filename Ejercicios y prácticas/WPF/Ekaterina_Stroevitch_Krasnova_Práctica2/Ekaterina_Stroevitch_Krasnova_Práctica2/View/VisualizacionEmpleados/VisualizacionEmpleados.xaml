@@ -32,8 +32,19 @@
                             <EventSetter Event="MouseUp" Handler="Row_Click"/>
                         </Style>
                     </DataGrid.ItemContainerStyle>
+                    <DataGrid.Resources>
+                        <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#d7d0d0"/>
+                        <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="#181c1b"/>
+                        
+                        <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="Background" Value="#a29d9d" />
+                            <Setter Property="BorderBrush" Value="Black" />
+                            <Setter Property="BorderThickness" Value="0,0,1,0"/>
+                            <Setter Property="Padding" Value="5"/>
+                        </Style>
+                    </DataGrid.Resources>
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" />
+                        <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}"/>
                         <DataGridTextColumn Header="Apellidos" Binding="{Binding Apellidos}" />
                         <DataGridTextColumn Header="Correo" Binding="{Binding Correo}" />
                         <DataGridTextColumn Header="Departamento" Binding="{Binding Departamento}" />
