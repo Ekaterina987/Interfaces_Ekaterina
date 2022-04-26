@@ -20,18 +20,22 @@ namespace Ekaterina_Stroevitch_Krasnova_Práctica2.UserControls
     /// </summary>
     public partial class MenuControl : UserControl
     {
-        private static Boolean isEmpleadoSelected;
-        public static Boolean IsEmpleadoSelected
+        public Boolean IsEmpleadoSelected
         {
-            get { return isEmpleadoSelected; }
-            set { isEmpleadoSelected = value; }
+            get { return (Boolean)GetValue(IsEmpleadoSelectedProperty); }
+            set { SetValue(IsEmpleadoSelectedProperty, value);}
         }
+
+        public static readonly DependencyProperty IsEmpleadoSelectedProperty =
+            DependencyProperty.Register("IsEmpleadoSelected", typeof(Boolean), typeof(MenuControl), new PropertyMetadata(default(Boolean)));
 
         public MenuControl()
         {
-            IsEmpleadoSelected = true;
+            
             InitializeComponent();
-           
+            MainWindow.MenuControl = this;
+            this.DataContext = this;
+            
         }
 
         private void CrearItem_Click(object sender, RoutedEventArgs e)
@@ -51,6 +55,10 @@ namespace Ekaterina_Stroevitch_Krasnova_Práctica2.UserControls
         private void VolverInicio_Click(object sender, RoutedEventArgs e)
         {
             MainWindow.VolverInicio_Click(sender, e);
+        }
+        private void Row_Click(object sender, RoutedEventArgs e)
+        {
+            IsEmpleadoSelected = true;
         }
     }
 }

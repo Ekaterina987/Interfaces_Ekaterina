@@ -38,6 +38,12 @@ namespace Ekaterina_Stroevitch_Krasnova_Práctica2
                 empleadoActual = value;
             }
         }
+        private static MenuControl menuControl;
+        public static MenuControl MenuControl
+        {
+            get { return menuControl; }
+            set { menuControl = value; }
+        }
 
         public MainWindow()
         {
@@ -93,6 +99,11 @@ namespace Ekaterina_Stroevitch_Krasnova_Práctica2
             Inicio inicio = new Inicio();
             MainWindow window = Application.Current.MainWindow as MainWindow;
             window.Content = inicio;
+        }
+
+        private void Row_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
 
     }
