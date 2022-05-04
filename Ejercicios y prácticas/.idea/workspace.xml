@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1a1264f7-10a2-446a-aa0a-1fafbfad1e32" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Ejercicios/Ejercicio1/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ejercicios/Ejercicio1/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ejercicios/Ejercicio1/js/script.js" afterDir="false" />
+    <list default="true" id="1a1264f7-10a2-446a-aa0a-1fafbfad1e32" name="Default Changelist" comment="Ejercicio 1">
+      <change afterPath="$PROJECT_DIR$/Ejercicios/Ejercicio 2/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ejercicios/Ejercicio 2/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ejercicios/Ejercicio 2/js/script.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -15,9 +15,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -35,9 +35,16 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Ejercicios/Ejercicio 2" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Usuarios\Ekaterina\Documentos\GitHub\Interfaces_Ekaterina\Ejercicios y prácticas\Ejercicios\Ejercicio 2" />
+      <recent name="D:\Usuarios\Ekaterina\Documentos\GitHub\Interfaces_Ekaterina\Ejercicios y prácticas\Ejercicios\Ejercicio 2\js" />
+      <recent name="D:\Usuarios\Ekaterina\Documentos\GitHub\Interfaces_Ekaterina\Ejercicios y prácticas\Ejercicios\Ejercicio 2\css" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -47,8 +54,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1651652503710</updated>
-      <workItem from="1651652504991" duration="1348000" />
+      <workItem from="1651652504991" duration="3308000" />
     </task>
+    <task id="LOCAL-00001" summary="Ejercicio 1">
+      <created>1651654011966</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1651654011966</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -64,5 +79,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Ejercicio 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ejercicio 1" />
   </component>
 </project>
